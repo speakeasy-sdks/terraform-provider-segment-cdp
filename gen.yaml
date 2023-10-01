@@ -2,8 +2,8 @@ configVersion: 1.0.0
 management:
   docChecksum: 57c3249c0d8939335f2b15be6a4bc7c9
   docVersion: 36.2.0
-  speakeasyVersion: 1.91.3
-  generationVersion: 2.139.1
+  speakeasyVersion: 1.92.2
+  generationVersion: 2.142.2
 generation:
   comments:
     disableComments: false
@@ -14,10 +14,10 @@ generation:
   tagNamespacingDisabled: false
 features:
   terraform:
-    core: 2.90.0
+    core: 2.91.1
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
 terraform:
-  version: 0.3.0
+  version: 0.4.0
   author: ds-terraform
   packageName: segment_public_api
