@@ -14,10 +14,24 @@ type ListUsersRequest struct {
 	Pagination shared.PaginationInput `queryParam:"style=deepObject,explode=true,name=pagination"`
 }
 
+func (o *ListUsersRequest) GetPagination() shared.PaginationInput {
+	if o == nil {
+		return shared.PaginationInput{}
+	}
+	return o.Pagination
+}
+
 // ListUsers200ApplicationVndSegmentV1betaPlusJSON - OK
 type ListUsers200ApplicationVndSegmentV1betaPlusJSON struct {
 	// Returns the list of users.
 	Data *shared.ListUsersV1Output `json:"data,omitempty"`
+}
+
+func (o *ListUsers200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListUsersV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 // ListUsers200ApplicationVndSegmentV1alphaPlusJSON - OK
@@ -26,16 +40,37 @@ type ListUsers200ApplicationVndSegmentV1alphaPlusJSON struct {
 	Data *shared.ListUsersV1Output `json:"data,omitempty"`
 }
 
+func (o *ListUsers200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListUsersV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // ListUsers200ApplicationVndSegmentV1PlusJSON - OK
 type ListUsers200ApplicationVndSegmentV1PlusJSON struct {
 	// Returns the list of users.
 	Data *shared.ListUsersV1Output `json:"data,omitempty"`
 }
 
+func (o *ListUsers200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListUsersV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // ListUsers200ApplicationJSON - OK
 type ListUsers200ApplicationJSON struct {
 	// Returns the list of users.
 	Data *shared.ListUsersV1Output `json:"data,omitempty"`
+}
+
+func (o *ListUsers200ApplicationJSON) GetData() *shared.ListUsersV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type ListUsersResponse struct {
@@ -55,4 +90,60 @@ type ListUsersResponse struct {
 	ListUsers200ApplicationVndSegmentV1alphaPlusJSONObject *ListUsers200ApplicationVndSegmentV1alphaPlusJSON
 	// OK
 	ListUsers200ApplicationVndSegmentV1betaPlusJSONObject *ListUsers200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListUsersResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListUsersResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *ListUsersResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListUsersResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListUsersResponse) GetListUsers200ApplicationJSONObject() *ListUsers200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListUsers200ApplicationJSONObject
+}
+
+func (o *ListUsersResponse) GetListUsers200ApplicationVndSegmentV1PlusJSONObject() *ListUsers200ApplicationVndSegmentV1PlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListUsers200ApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListUsersResponse) GetListUsers200ApplicationVndSegmentV1alphaPlusJSONObject() *ListUsers200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListUsers200ApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListUsersResponse) GetListUsers200ApplicationVndSegmentV1betaPlusJSONObject() *ListUsers200ApplicationVndSegmentV1betaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListUsers200ApplicationVndSegmentV1betaPlusJSONObject
 }

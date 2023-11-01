@@ -12,10 +12,31 @@ type CreateEdgeFunctionsRequest struct {
 	SourceID                      string                               `pathParam:"style=simple,explode=false,name=sourceId"`
 }
 
+func (o *CreateEdgeFunctionsRequest) GetCreateEdgeFunctionsAlphaInput() shared.CreateEdgeFunctionsAlphaInput {
+	if o == nil {
+		return shared.CreateEdgeFunctionsAlphaInput{}
+	}
+	return o.CreateEdgeFunctionsAlphaInput
+}
+
+func (o *CreateEdgeFunctionsRequest) GetSourceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SourceID
+}
+
 // CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON - OK
 type CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Output for CreateEdgeFunctions.
 	Data *shared.CreateEdgeFunctionsAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateEdgeFunctionsAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type CreateEdgeFunctionsResponse struct {
@@ -29,4 +50,39 @@ type CreateEdgeFunctionsResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject *CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *CreateEdgeFunctionsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateEdgeFunctionsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateEdgeFunctionsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateEdgeFunctionsResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *CreateEdgeFunctionsResponse) GetCreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject
 }

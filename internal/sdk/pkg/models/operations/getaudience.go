@@ -12,10 +12,31 @@ type GetAudienceRequest struct {
 	SpaceID string `pathParam:"style=simple,explode=false,name=spaceId"`
 }
 
+func (o *GetAudienceRequest) GetID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ID
+}
+
+func (o *GetAudienceRequest) GetSpaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SpaceID
+}
+
 // GetAudience200ApplicationVndSegmentV1alphaPlusJSON - OK
 type GetAudience200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Audience output for update.
 	Data *shared.GetAudienceAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *GetAudience200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetAudienceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type GetAudienceResponse struct {
@@ -29,4 +50,39 @@ type GetAudienceResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	GetAudience200ApplicationVndSegmentV1alphaPlusJSONObject *GetAudience200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *GetAudienceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetAudienceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetAudienceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetAudienceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *GetAudienceResponse) GetGetAudience200ApplicationVndSegmentV1alphaPlusJSONObject() *GetAudience200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetAudience200ApplicationVndSegmentV1alphaPlusJSONObject
 }

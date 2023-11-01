@@ -12,10 +12,31 @@ type CreateDestinationSubscriptionRequest struct {
 	DestinationID                           string                                         `pathParam:"style=simple,explode=false,name=destinationId"`
 }
 
+func (o *CreateDestinationSubscriptionRequest) GetCreateDestinationSubscriptionAlphaInput() shared.CreateDestinationSubscriptionAlphaInput {
+	if o == nil {
+		return shared.CreateDestinationSubscriptionAlphaInput{}
+	}
+	return o.CreateDestinationSubscriptionAlphaInput
+}
+
+func (o *CreateDestinationSubscriptionRequest) GetDestinationID() string {
+	if o == nil {
+		return ""
+	}
+	return o.DestinationID
+}
+
 // CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSON - OK
 type CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Returns a newly created Destination subscription.
 	Data *shared.CreateDestinationSubscriptionAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateDestinationSubscriptionAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type CreateDestinationSubscriptionResponse struct {
@@ -29,4 +50,39 @@ type CreateDestinationSubscriptionResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSONObject *CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *CreateDestinationSubscriptionResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateDestinationSubscriptionResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateDestinationSubscriptionResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateDestinationSubscriptionResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *CreateDestinationSubscriptionResponse) GetCreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSONObject
 }

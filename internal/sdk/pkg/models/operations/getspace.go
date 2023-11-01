@@ -11,10 +11,24 @@ type GetSpaceRequest struct {
 	SpaceID string `pathParam:"style=simple,explode=false,name=spaceId"`
 }
 
+func (o *GetSpaceRequest) GetSpaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SpaceID
+}
+
 // GetSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
 type GetSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Response for the getSpaceById endpoint.
 	Data *shared.GetSpaceAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *GetSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetSpaceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type GetSpaceResponse struct {
@@ -28,4 +42,39 @@ type GetSpaceResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	GetSpace200ApplicationVndSegmentV1alphaPlusJSONObject *GetSpace200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *GetSpaceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetSpaceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetSpaceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetSpaceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *GetSpaceResponse) GetGetSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *GetSpace200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetSpace200ApplicationVndSegmentV1alphaPlusJSONObject
 }

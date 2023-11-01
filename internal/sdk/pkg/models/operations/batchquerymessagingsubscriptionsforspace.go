@@ -12,10 +12,31 @@ type BatchQueryMessagingSubscriptionsForSpaceRequest struct {
 	SpaceID                                            string                                                    `pathParam:"style=simple,explode=false,name=spaceId"`
 }
 
+func (o *BatchQueryMessagingSubscriptionsForSpaceRequest) GetBatchQueryMessagingSubscriptionsForSpaceAlphaInput() shared.BatchQueryMessagingSubscriptionsForSpaceAlphaInput {
+	if o == nil {
+		return shared.BatchQueryMessagingSubscriptionsForSpaceAlphaInput{}
+	}
+	return o.BatchQueryMessagingSubscriptionsForSpaceAlphaInput
+}
+
+func (o *BatchQueryMessagingSubscriptionsForSpaceRequest) GetSpaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SpaceID
+}
+
 // BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
 type BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Batch get response.
 	Data *shared.BatchQueryMessagingSubscriptionsForSpaceAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.BatchQueryMessagingSubscriptionsForSpaceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type BatchQueryMessagingSubscriptionsForSpaceResponse struct {
@@ -29,4 +50,39 @@ type BatchQueryMessagingSubscriptionsForSpaceResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSONObject *BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetBatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSONObject
 }

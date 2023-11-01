@@ -2,22 +2,25 @@ configVersion: 1.0.0
 management:
   docChecksum: 57c3249c0d8939335f2b15be6a4bc7c9
   docVersion: 36.2.0
-  speakeasyVersion: 1.96.1
-  generationVersion: 2.150.0
+  speakeasyVersion: 1.109.2
+  generationVersion: 2.173.0
 generation:
   comments:
     disableComments: false
     omitDescriptionIfSummaryPresent: false
   baseServerURL: ""
+  repoURL: https://github.com/speakeasy-sdks/terraform-provider-segment-cdp.git
   sdkClassName: segment-public-api
   singleTagPerOp: false
   tagNamespacingDisabled: false
 features:
   terraform:
-    core: 2.92.1
+    core: 2.93.3
     globalSecurity: 2.81.1
     globalServerURLs: 2.82.0
 terraform:
-  version: 0.5.1
+  version: 0.6.0
   author: ds-terraform
   packageName: segment_public_api
+  published: true
+  repoSubDirectory: .

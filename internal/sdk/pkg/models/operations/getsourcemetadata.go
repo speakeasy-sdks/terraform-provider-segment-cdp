@@ -11,10 +11,24 @@ type GetSourceMetadataRequest struct {
 	SourceMetadataID string `pathParam:"style=simple,explode=false,name=sourceMetadataId"`
 }
 
+func (o *GetSourceMetadataRequest) GetSourceMetadataID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SourceMetadataID
+}
+
 // GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSON - OK
 type GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSON struct {
 	// Returns the Source catalog item looked up by id.
 	Data *shared.GetSourceMetadataV1Output `json:"data,omitempty"`
+}
+
+func (o *GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.GetSourceMetadataV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 // GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSON - OK
@@ -23,16 +37,37 @@ type GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSON struct {
 	Data *shared.GetSourceMetadataV1Output `json:"data,omitempty"`
 }
 
+func (o *GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetSourceMetadataV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // GetSourceMetadata200ApplicationVndSegmentV1PlusJSON - OK
 type GetSourceMetadata200ApplicationVndSegmentV1PlusJSON struct {
 	// Returns the Source catalog item looked up by id.
 	Data *shared.GetSourceMetadataV1Output `json:"data,omitempty"`
 }
 
+func (o *GetSourceMetadata200ApplicationVndSegmentV1PlusJSON) GetData() *shared.GetSourceMetadataV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // GetSourceMetadata200ApplicationJSON - OK
 type GetSourceMetadata200ApplicationJSON struct {
 	// Returns the Source catalog item looked up by id.
 	Data *shared.GetSourceMetadataV1Output `json:"data,omitempty"`
+}
+
+func (o *GetSourceMetadata200ApplicationJSON) GetData() *shared.GetSourceMetadataV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type GetSourceMetadataResponse struct {
@@ -52,4 +87,60 @@ type GetSourceMetadataResponse struct {
 	GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSONObject *GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSON
 	// OK
 	GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSONObject *GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *GetSourceMetadataResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *GetSourceMetadataResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *GetSourceMetadataResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *GetSourceMetadataResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *GetSourceMetadataResponse) GetGetSourceMetadata200ApplicationJSONObject() *GetSourceMetadata200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetSourceMetadata200ApplicationJSONObject
+}
+
+func (o *GetSourceMetadataResponse) GetGetSourceMetadata200ApplicationVndSegmentV1PlusJSONObject() *GetSourceMetadata200ApplicationVndSegmentV1PlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetSourceMetadata200ApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *GetSourceMetadataResponse) GetGetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSONObject() *GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *GetSourceMetadataResponse) GetGetSourceMetadata200ApplicationVndSegmentV1betaPlusJSONObject() *GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSONObject
 }

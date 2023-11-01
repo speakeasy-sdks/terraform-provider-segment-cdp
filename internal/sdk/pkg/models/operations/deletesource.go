@@ -11,10 +11,24 @@ type DeleteSourceRequest struct {
 	SourceID string `pathParam:"style=simple,explode=false,name=sourceId"`
 }
 
+func (o *DeleteSourceRequest) GetSourceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SourceID
+}
+
 // DeleteSource200ApplicationVndSegmentV1betaPlusJSON - OK
 type DeleteSource200ApplicationVndSegmentV1betaPlusJSON struct {
 	// Returns the status of a Source deletion.
 	Data *shared.DeleteSourceV1Output `json:"data,omitempty"`
+}
+
+func (o *DeleteSource200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.DeleteSourceV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 // DeleteSource200ApplicationVndSegmentV1alphaPlusJSON - OK
@@ -23,16 +37,37 @@ type DeleteSource200ApplicationVndSegmentV1alphaPlusJSON struct {
 	Data *shared.DeleteSourceAlphaOutput `json:"data,omitempty"`
 }
 
+func (o *DeleteSource200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.DeleteSourceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // DeleteSource200ApplicationVndSegmentV1PlusJSON - OK
 type DeleteSource200ApplicationVndSegmentV1PlusJSON struct {
 	// Returns the status of a Source deletion.
 	Data *shared.DeleteSourceV1Output `json:"data,omitempty"`
 }
 
+func (o *DeleteSource200ApplicationVndSegmentV1PlusJSON) GetData() *shared.DeleteSourceV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // DeleteSource200ApplicationJSON - OK
 type DeleteSource200ApplicationJSON struct {
 	// Returns the status of a Source deletion.
 	Data *shared.DeleteSourceV1Output `json:"data,omitempty"`
+}
+
+func (o *DeleteSource200ApplicationJSON) GetData() *shared.DeleteSourceV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type DeleteSourceResponse struct {
@@ -52,4 +87,60 @@ type DeleteSourceResponse struct {
 	DeleteSource200ApplicationVndSegmentV1alphaPlusJSONObject *DeleteSource200ApplicationVndSegmentV1alphaPlusJSON
 	// OK
 	DeleteSource200ApplicationVndSegmentV1betaPlusJSONObject *DeleteSource200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *DeleteSourceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *DeleteSourceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *DeleteSourceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *DeleteSourceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *DeleteSourceResponse) GetDeleteSource200ApplicationJSONObject() *DeleteSource200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteSource200ApplicationJSONObject
+}
+
+func (o *DeleteSourceResponse) GetDeleteSource200ApplicationVndSegmentV1PlusJSONObject() *DeleteSource200ApplicationVndSegmentV1PlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteSource200ApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *DeleteSourceResponse) GetDeleteSource200ApplicationVndSegmentV1alphaPlusJSONObject() *DeleteSource200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteSource200ApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *DeleteSourceResponse) GetDeleteSource200ApplicationVndSegmentV1betaPlusJSONObject() *DeleteSource200ApplicationVndSegmentV1betaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.DeleteSource200ApplicationVndSegmentV1betaPlusJSONObject
 }

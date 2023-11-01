@@ -15,10 +15,31 @@ type ListProfilesWarehouseInSpaceRequest struct {
 	SpaceID    string                  `pathParam:"style=simple,explode=false,name=spaceId"`
 }
 
+func (o *ListProfilesWarehouseInSpaceRequest) GetPagination() *shared.PaginationInput {
+	if o == nil {
+		return nil
+	}
+	return o.Pagination
+}
+
+func (o *ListProfilesWarehouseInSpaceRequest) GetSpaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SpaceID
+}
+
 // ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
 type ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Returns all Profiles Warehouse based on spaceID and pagination.
 	Data *shared.ListProfilesWarehouseInSpaceAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListProfilesWarehouseInSpaceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type ListProfilesWarehouseInSpaceResponse struct {
@@ -32,4 +53,39 @@ type ListProfilesWarehouseInSpaceResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSONObject *ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *ListProfilesWarehouseInSpaceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListProfilesWarehouseInSpaceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListProfilesWarehouseInSpaceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListProfilesWarehouseInSpaceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *ListProfilesWarehouseInSpaceResponse) GetListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSONObject
 }

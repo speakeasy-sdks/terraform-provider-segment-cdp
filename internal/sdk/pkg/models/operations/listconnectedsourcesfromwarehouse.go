@@ -15,10 +15,31 @@ type ListConnectedSourcesFromWarehouseRequest struct {
 	WarehouseID string                 `pathParam:"style=simple,explode=false,name=warehouseId"`
 }
 
+func (o *ListConnectedSourcesFromWarehouseRequest) GetPagination() shared.PaginationInput {
+	if o == nil {
+		return shared.PaginationInput{}
+	}
+	return o.Pagination
+}
+
+func (o *ListConnectedSourcesFromWarehouseRequest) GetWarehouseID() string {
+	if o == nil {
+		return ""
+	}
+	return o.WarehouseID
+}
+
 // ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
 type ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
 	// Returns a list of Sources connected to a Warehouse.
 	Data *shared.ListConnectedSourcesFromWarehouseV1Output `json:"data,omitempty"`
+}
+
+func (o *ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListConnectedSourcesFromWarehouseV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 // ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
@@ -27,16 +48,37 @@ type ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON st
 	Data *shared.ListConnectedSourcesFromWarehouseV1Output `json:"data,omitempty"`
 }
 
+func (o *ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListConnectedSourcesFromWarehouseV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1PlusJSON - OK
 type ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1PlusJSON struct {
 	// Returns a list of Sources connected to a Warehouse.
 	Data *shared.ListConnectedSourcesFromWarehouseV1Output `json:"data,omitempty"`
 }
 
+func (o *ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListConnectedSourcesFromWarehouseV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // ListConnectedSourcesFromWarehouse200ApplicationJSON - OK
 type ListConnectedSourcesFromWarehouse200ApplicationJSON struct {
 	// Returns a list of Sources connected to a Warehouse.
 	Data *shared.ListConnectedSourcesFromWarehouseV1Output `json:"data,omitempty"`
+}
+
+func (o *ListConnectedSourcesFromWarehouse200ApplicationJSON) GetData() *shared.ListConnectedSourcesFromWarehouseV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type ListConnectedSourcesFromWarehouseResponse struct {
@@ -56,4 +98,60 @@ type ListConnectedSourcesFromWarehouseResponse struct {
 	ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON
 	// OK
 	ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListConnectedSourcesFromWarehouseResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListConnectedSourcesFromWarehouseResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *ListConnectedSourcesFromWarehouseResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListConnectedSourcesFromWarehouseResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListConnectedSourcesFromWarehouseResponse) GetListConnectedSourcesFromWarehouse200ApplicationJSONObject() *ListConnectedSourcesFromWarehouse200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListConnectedSourcesFromWarehouse200ApplicationJSONObject
+}
+
+func (o *ListConnectedSourcesFromWarehouseResponse) GetListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1PlusJSONObject() *ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1PlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListConnectedSourcesFromWarehouseResponse) GetListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListConnectedSourcesFromWarehouseResponse) GetListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

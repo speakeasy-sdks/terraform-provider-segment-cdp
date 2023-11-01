@@ -13,6 +13,13 @@ type CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON struct {
 	Data *shared.CreateReverseEtlModelOutput `json:"data,omitempty"`
 }
 
+func (o *CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateReverseEtlModelOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 type CreateReverseEtlModelResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -24,4 +31,39 @@ type CreateReverseEtlModelResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject *CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *CreateReverseEtlModelResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateReverseEtlModelResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateReverseEtlModelResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateReverseEtlModelResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *CreateReverseEtlModelResponse) GetCreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject
 }

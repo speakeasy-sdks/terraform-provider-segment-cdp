@@ -13,10 +13,38 @@ type UpdateSelectiveSyncForWarehouseAndSpaceRequest struct {
 	WarehouseID                                       string                                                   `pathParam:"style=simple,explode=false,name=warehouseId"`
 }
 
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceRequest) GetUpdateSelectiveSyncForWarehouseAndSpaceAlphaInput() shared.UpdateSelectiveSyncForWarehouseAndSpaceAlphaInput {
+	if o == nil {
+		return shared.UpdateSelectiveSyncForWarehouseAndSpaceAlphaInput{}
+	}
+	return o.UpdateSelectiveSyncForWarehouseAndSpaceAlphaInput
+}
+
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceRequest) GetSpaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SpaceID
+}
+
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceRequest) GetWarehouseID() string {
+	if o == nil {
+		return ""
+	}
+	return o.WarehouseID
+}
+
 // UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
 type UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Results from a SelectiveSync patch to a Space Warehouse connection.
 	Data *shared.UpdateSelectiveSyncForWarehouseAndSpaceAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateSelectiveSyncForWarehouseAndSpaceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type UpdateSelectiveSyncForWarehouseAndSpaceResponse struct {
@@ -30,4 +58,39 @@ type UpdateSelectiveSyncForWarehouseAndSpaceResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetUpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject
 }

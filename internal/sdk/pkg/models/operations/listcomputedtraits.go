@@ -15,10 +15,31 @@ type ListComputedTraitsRequest struct {
 	SpaceID    string                 `pathParam:"style=simple,explode=false,name=spaceId"`
 }
 
+func (o *ListComputedTraitsRequest) GetPagination() shared.PaginationInput {
+	if o == nil {
+		return shared.PaginationInput{}
+	}
+	return o.Pagination
+}
+
+func (o *ListComputedTraitsRequest) GetSpaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SpaceID
+}
+
 // ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON - OK
 type ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// List computed traits endpoint output.
 	Data *shared.ListComputedTraitsAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListComputedTraitsAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type ListComputedTraitsResponse struct {
@@ -32,4 +53,39 @@ type ListComputedTraitsResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSONObject *ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *ListComputedTraitsResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *ListComputedTraitsResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *ListComputedTraitsResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *ListComputedTraitsResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *ListComputedTraitsResponse) GetListComputedTraits200ApplicationVndSegmentV1alphaPlusJSONObject() *ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSONObject
 }

@@ -13,6 +13,13 @@ type CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON struct 
 	Data *shared.CreateInsertFunctionInstanceAlphaOutput `json:"data,omitempty"`
 }
 
+func (o *CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateInsertFunctionInstanceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 type CreateInsertFunctionInstanceResponse struct {
 	// HTTP response content type for this operation
 	ContentType string
@@ -24,4 +31,39 @@ type CreateInsertFunctionInstanceResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject *CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *CreateInsertFunctionInstanceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateInsertFunctionInstanceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateInsertFunctionInstanceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateInsertFunctionInstanceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *CreateInsertFunctionInstanceResponse) GetCreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject
 }

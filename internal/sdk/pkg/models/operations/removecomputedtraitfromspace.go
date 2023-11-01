@@ -12,10 +12,31 @@ type RemoveComputedTraitFromSpaceRequest struct {
 	SpaceID string `pathParam:"style=simple,explode=false,name=spaceId"`
 }
 
+func (o *RemoveComputedTraitFromSpaceRequest) GetID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ID
+}
+
+func (o *RemoveComputedTraitFromSpaceRequest) GetSpaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SpaceID
+}
+
 // RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
 type RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Delete computed trait endpoint output.
 	Data *shared.RemoveComputedTraitFromSpaceAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RemoveComputedTraitFromSpaceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type RemoveComputedTraitFromSpaceResponse struct {
@@ -29,4 +50,39 @@ type RemoveComputedTraitFromSpaceResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject *RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *RemoveComputedTraitFromSpaceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *RemoveComputedTraitFromSpaceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *RemoveComputedTraitFromSpaceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *RemoveComputedTraitFromSpaceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *RemoveComputedTraitFromSpaceResponse) GetRemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject
 }

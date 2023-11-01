@@ -13,10 +13,24 @@ type CreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON struct {
 	Data *shared.CreateTrackingPlanV1Output `json:"data,omitempty"`
 }
 
+func (o *CreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateTrackingPlanV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON - OK
 type CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Result of a CreateTrackingPlan call.
 	Data *shared.CreateTrackingPlanV1Output `json:"data,omitempty"`
+}
+
+func (o *CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateTrackingPlanV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 // CreateTrackingPlan200ApplicationVndSegmentV1PlusJSON - OK
@@ -25,10 +39,24 @@ type CreateTrackingPlan200ApplicationVndSegmentV1PlusJSON struct {
 	Data *shared.CreateTrackingPlanV1Output `json:"data,omitempty"`
 }
 
+func (o *CreateTrackingPlan200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateTrackingPlanV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
+}
+
 // CreateTrackingPlan200ApplicationJSON - OK
 type CreateTrackingPlan200ApplicationJSON struct {
 	// Result of a CreateTrackingPlan call.
 	Data *shared.CreateTrackingPlanV1Output `json:"data,omitempty"`
+}
+
+func (o *CreateTrackingPlan200ApplicationJSON) GetData() *shared.CreateTrackingPlanV1Output {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type CreateTrackingPlanResponse struct {
@@ -48,4 +76,60 @@ type CreateTrackingPlanResponse struct {
 	CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject *CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
 	// OK
 	CreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject *CreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateTrackingPlanResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *CreateTrackingPlanResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *CreateTrackingPlanResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *CreateTrackingPlanResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *CreateTrackingPlanResponse) GetCreateTrackingPlan200ApplicationJSONObject() *CreateTrackingPlan200ApplicationJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateTrackingPlan200ApplicationJSONObject
+}
+
+func (o *CreateTrackingPlanResponse) GetCreateTrackingPlan200ApplicationVndSegmentV1PlusJSONObject() *CreateTrackingPlan200ApplicationVndSegmentV1PlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateTrackingPlan200ApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateTrackingPlanResponse) GetCreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateTrackingPlanResponse) GetCreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject() *CreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.CreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject
 }

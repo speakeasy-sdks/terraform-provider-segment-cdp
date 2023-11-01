@@ -12,10 +12,31 @@ type RemoveAudienceFromSpaceRequest struct {
 	SpaceID string `pathParam:"style=simple,explode=false,name=spaceId"`
 }
 
+func (o *RemoveAudienceFromSpaceRequest) GetID() string {
+	if o == nil {
+		return ""
+	}
+	return o.ID
+}
+
+func (o *RemoveAudienceFromSpaceRequest) GetSpaceID() string {
+	if o == nil {
+		return ""
+	}
+	return o.SpaceID
+}
+
 // RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
 type RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
 	// Delete audience endpoint output.
 	Data *shared.RemoveAudienceFromSpaceAlphaOutput `json:"data,omitempty"`
+}
+
+func (o *RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RemoveAudienceFromSpaceAlphaOutput {
+	if o == nil {
+		return nil
+	}
+	return o.Data
 }
 
 type RemoveAudienceFromSpaceResponse struct {
@@ -29,4 +50,39 @@ type RemoveAudienceFromSpaceResponse struct {
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
 	RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject *RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON
+}
+
+func (o *RemoveAudienceFromSpaceResponse) GetContentType() string {
+	if o == nil {
+		return ""
+	}
+	return o.ContentType
+}
+
+func (o *RemoveAudienceFromSpaceResponse) GetStatusCode() int {
+	if o == nil {
+		return 0
+	}
+	return o.StatusCode
+}
+
+func (o *RemoveAudienceFromSpaceResponse) GetRawResponse() *http.Response {
+	if o == nil {
+		return nil
+	}
+	return o.RawResponse
+}
+
+func (o *RemoveAudienceFromSpaceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelope {
+	if o == nil {
+		return nil
+	}
+	return o.RequestErrorEnvelope
+}
+
+func (o *RemoveAudienceFromSpaceResponse) GetRemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON {
+	if o == nil {
+		return nil
+	}
+	return o.RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject
 }
