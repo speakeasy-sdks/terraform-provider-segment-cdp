@@ -26,52 +26,52 @@ func (o *AddConnectionFromSourceToWarehouseRequest) GetWarehouseID() string {
 	return o.WarehouseID
 }
 
-// AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// AddConnectionFromSourceToWarehouseWarehousesResponse200ResponseBody - OK
+type AddConnectionFromSourceToWarehouseWarehousesResponse200ResponseBody struct {
 	// Response indicating whether the connection was successful.
 	Data *shared.AddConnectionFromSourceToWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.AddConnectionFromSourceToWarehouseV1Output {
+func (o *AddConnectionFromSourceToWarehouseWarehousesResponse200ResponseBody) GetData() *shared.AddConnectionFromSourceToWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// AddConnectionFromSourceToWarehouseWarehousesResponseResponseBody - OK
+type AddConnectionFromSourceToWarehouseWarehousesResponseResponseBody struct {
 	// Response indicating whether the connection was successful.
 	Data *shared.AddConnectionFromSourceToWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.AddConnectionFromSourceToWarehouseV1Output {
+func (o *AddConnectionFromSourceToWarehouseWarehousesResponseResponseBody) GetData() *shared.AddConnectionFromSourceToWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// AddConnectionFromSourceToWarehouseWarehousesResponseBody - OK
+type AddConnectionFromSourceToWarehouseWarehousesResponseBody struct {
 	// Response indicating whether the connection was successful.
 	Data *shared.AddConnectionFromSourceToWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.AddConnectionFromSourceToWarehouseV1Output {
+func (o *AddConnectionFromSourceToWarehouseWarehousesResponseBody) GetData() *shared.AddConnectionFromSourceToWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// AddConnectionFromSourceToWarehouse200ApplicationJSON - OK
-type AddConnectionFromSourceToWarehouse200ApplicationJSON struct {
+// AddConnectionFromSourceToWarehouseResponseBody - OK
+type AddConnectionFromSourceToWarehouseResponseBody struct {
 	// Response indicating whether the connection was successful.
 	Data *shared.AddConnectionFromSourceToWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *AddConnectionFromSourceToWarehouse200ApplicationJSON) GetData() *shared.AddConnectionFromSourceToWarehouseV1Output {
+func (o *AddConnectionFromSourceToWarehouseResponseBody) GetData() *shared.AddConnectionFromSourceToWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *AddConnectionFromSourceToWarehouse200ApplicationJSON) GetData() *shared
 }
 
 type AddConnectionFromSourceToWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *AddConnectionFromSourceToWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *AddConnectionFromSourceToWarehouseWarehousesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *AddConnectionFromSourceToWarehouseWarehousesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *AddConnectionFromSourceToWarehouseWarehousesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type AddConnectionFromSourceToWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	AddConnectionFromSourceToWarehouse200ApplicationJSONObject *AddConnectionFromSourceToWarehouse200ApplicationJSON
-	// OK
-	AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSONObject *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *AddConnectionFromSourceToWarehouseResponse) GetTwoHundredApplicationJSONObject() *AddConnectionFromSourceToWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *AddConnectionFromSourceToWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *AddConnectionFromSourceToWarehouseWarehousesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *AddConnectionFromSourceToWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *AddConnectionFromSourceToWarehouseWarehousesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *AddConnectionFromSourceToWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *AddConnectionFromSourceToWarehouseWarehousesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *AddConnectionFromSourceToWarehouseResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *AddConnectionFromSourceToWarehouseResponse) GetRawResponse() *http.Resp
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *AddConnectionFromSourceToWarehouseResponse) GetAddConnectionFromSourceToWarehouse200ApplicationJSONObject() *AddConnectionFromSourceToWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.AddConnectionFromSourceToWarehouse200ApplicationJSONObject
-}
-
-func (o *AddConnectionFromSourceToWarehouseResponse) GetAddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSONObject() *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *AddConnectionFromSourceToWarehouseResponse) GetAddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *AddConnectionFromSourceToWarehouseResponse) GetAddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

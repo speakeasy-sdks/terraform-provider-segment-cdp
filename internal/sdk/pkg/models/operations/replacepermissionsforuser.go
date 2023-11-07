@@ -26,52 +26,52 @@ func (o *ReplacePermissionsForUserRequest) GetUserID() string {
 	return o.UserID
 }
 
-// ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSON - OK
-type ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSON struct {
+// ReplacePermissionsForUserIAMUsersResponse200ResponseBody - OK
+type ReplacePermissionsForUserIAMUsersResponse200ResponseBody struct {
 	// Returns the user's permissions, including the updated permissions.
 	Data *shared.ReplacePermissionsForUserV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ReplacePermissionsForUserV1Output {
+func (o *ReplacePermissionsForUserIAMUsersResponse200ResponseBody) GetData() *shared.ReplacePermissionsForUserV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ReplacePermissionsForUserIAMUsersResponseResponseBody - OK
+type ReplacePermissionsForUserIAMUsersResponseResponseBody struct {
 	// Returns the user's permissions, including the updated permissions.
 	Data *shared.ReplacePermissionsForUserV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ReplacePermissionsForUserV1Output {
+func (o *ReplacePermissionsForUserIAMUsersResponseResponseBody) GetData() *shared.ReplacePermissionsForUserV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSON - OK
-type ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSON struct {
+// ReplacePermissionsForUserIAMUsersResponseBody - OK
+type ReplacePermissionsForUserIAMUsersResponseBody struct {
 	// Returns the user's permissions, including the updated permissions.
 	Data *shared.ReplacePermissionsForUserV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ReplacePermissionsForUserV1Output {
+func (o *ReplacePermissionsForUserIAMUsersResponseBody) GetData() *shared.ReplacePermissionsForUserV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplacePermissionsForUser200ApplicationJSON - OK
-type ReplacePermissionsForUser200ApplicationJSON struct {
+// ReplacePermissionsForUserResponseBody - OK
+type ReplacePermissionsForUserResponseBody struct {
 	// Returns the user's permissions, including the updated permissions.
 	Data *shared.ReplacePermissionsForUserV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplacePermissionsForUser200ApplicationJSON) GetData() *shared.ReplacePermissionsForUserV1Output {
+func (o *ReplacePermissionsForUserResponseBody) GetData() *shared.ReplacePermissionsForUserV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *ReplacePermissionsForUser200ApplicationJSON) GetData() *shared.ReplaceP
 }
 
 type ReplacePermissionsForUserResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ReplacePermissionsForUserResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ReplacePermissionsForUserIAMUsersResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ReplacePermissionsForUserIAMUsersResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ReplacePermissionsForUserIAMUsersResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type ReplacePermissionsForUserResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ReplacePermissionsForUser200ApplicationJSONObject *ReplacePermissionsForUser200ApplicationJSON
-	// OK
-	ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSONObject *ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSONObject *ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSONObject *ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ReplacePermissionsForUserResponse) GetTwoHundredApplicationJSONObject() *ReplacePermissionsForUserResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ReplacePermissionsForUserResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ReplacePermissionsForUserIAMUsersResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ReplacePermissionsForUserResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ReplacePermissionsForUserIAMUsersResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ReplacePermissionsForUserResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ReplacePermissionsForUserIAMUsersResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ReplacePermissionsForUserResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *ReplacePermissionsForUserResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ReplacePermissionsForUserResponse) GetReplacePermissionsForUser200ApplicationJSONObject() *ReplacePermissionsForUser200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplacePermissionsForUser200ApplicationJSONObject
-}
-
-func (o *ReplacePermissionsForUserResponse) GetReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSONObject() *ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ReplacePermissionsForUserResponse) GetReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSONObject() *ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ReplacePermissionsForUserResponse) GetReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSONObject() *ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSONObject
 }

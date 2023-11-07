@@ -2,8 +2,8 @@
 
 package shared
 
-// UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput - The input parameters for updating a Destination subscription.
-type UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput struct {
+// DestinationSubscriptionUpdateInput - The input parameters for updating a Destination subscription.
+type DestinationSubscriptionUpdateInput struct {
 	// Is the subscription enabled.
 	Enabled *bool `json:"enabled,omitempty"`
 	// The user-defined name for the subscription.
@@ -14,28 +14,28 @@ type UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInpu
 	Trigger *string `json:"trigger,omitempty"`
 }
 
-func (o *UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput) GetEnabled() *bool {
+func (o *DestinationSubscriptionUpdateInput) GetEnabled() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Enabled
 }
 
-func (o *UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput) GetName() *string {
+func (o *DestinationSubscriptionUpdateInput) GetName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Name
 }
 
-func (o *UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput) GetSettings() map[string]interface{} {
+func (o *DestinationSubscriptionUpdateInput) GetSettings() map[string]interface{} {
 	if o == nil {
 		return nil
 	}
 	return o.Settings
 }
 
-func (o *UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput) GetTrigger() *string {
+func (o *DestinationSubscriptionUpdateInput) GetTrigger() *string {
 	if o == nil {
 		return nil
 	}
@@ -45,12 +45,12 @@ func (o *UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdate
 // UpdateSubscriptionForDestinationAlphaInput - The basic input parameters for updating a Destination subscription.
 type UpdateSubscriptionForDestinationAlphaInput struct {
 	// A set of valid Destination input params required for updating.
-	Input UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput `json:"input"`
+	Input DestinationSubscriptionUpdateInput `json:"input"`
 }
 
-func (o *UpdateSubscriptionForDestinationAlphaInput) GetInput() UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput {
+func (o *UpdateSubscriptionForDestinationAlphaInput) GetInput() DestinationSubscriptionUpdateInput {
 	if o == nil {
-		return UpdateSubscriptionForDestinationAlphaInputDestinationSubscriptionUpdateInput{}
+		return DestinationSubscriptionUpdateInput{}
 	}
 	return o.Input
 }

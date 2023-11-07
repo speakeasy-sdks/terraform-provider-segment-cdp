@@ -19,8 +19,8 @@ type AcceptHeaderEnum string
 
 const (
 	AcceptHeaderEnumApplicationJson                      AcceptHeaderEnum = "application/json"
-	AcceptHeaderEnumApplicationVndSegmentV1alphaPlusJson AcceptHeaderEnum = "application/vnd.segment.v1alpha+json"
 	AcceptHeaderEnumApplicationVndSegmentV1PlusJson      AcceptHeaderEnum = "application/vnd.segment.v1+json"
+	AcceptHeaderEnumApplicationVndSegmentV1alphaPlusJson AcceptHeaderEnum = "application/vnd.segment.v1alpha+json"
 	AcceptHeaderEnumApplicationVndSegmentV1betaPlusJson  AcceptHeaderEnum = "application/vnd.segment.v1beta+json"
 )
 

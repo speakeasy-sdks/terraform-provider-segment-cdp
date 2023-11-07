@@ -7,52 +7,52 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateValidationInWarehouseWarehousesResponse200ResponseBody - OK
+type CreateValidationInWarehouseWarehousesResponse200ResponseBody struct {
 	// Returns the status of a Warehouse connection settings after an attempt to connect to it.
 	Data *shared.CreateValidationInWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateValidationInWarehouseV1Output {
+func (o *CreateValidationInWarehouseWarehousesResponse200ResponseBody) GetData() *shared.CreateValidationInWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateValidationInWarehouseWarehousesResponseResponseBody - OK
+type CreateValidationInWarehouseWarehousesResponseResponseBody struct {
 	// Returns the status of a Warehouse connection settings after an attempt to connect to it.
 	Data *shared.CreateValidationInWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateValidationInWarehouseV1Output {
+func (o *CreateValidationInWarehouseWarehousesResponseResponseBody) GetData() *shared.CreateValidationInWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// CreateValidationInWarehouseWarehousesResponseBody - OK
+type CreateValidationInWarehouseWarehousesResponseBody struct {
 	// Returns the status of a Warehouse connection settings after an attempt to connect to it.
 	Data *shared.CreateValidationInWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateValidationInWarehouseV1Output {
+func (o *CreateValidationInWarehouseWarehousesResponseBody) GetData() *shared.CreateValidationInWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateValidationInWarehouse200ApplicationJSON - OK
-type CreateValidationInWarehouse200ApplicationJSON struct {
+// CreateValidationInWarehouseResponseBody - OK
+type CreateValidationInWarehouseResponseBody struct {
 	// Returns the status of a Warehouse connection settings after an attempt to connect to it.
 	Data *shared.CreateValidationInWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateValidationInWarehouse200ApplicationJSON) GetData() *shared.CreateValidationInWarehouseV1Output {
+func (o *CreateValidationInWarehouseResponseBody) GetData() *shared.CreateValidationInWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -60,6 +60,14 @@ func (o *CreateValidationInWarehouse200ApplicationJSON) GetData() *shared.Create
 }
 
 type CreateValidationInWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateValidationInWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateValidationInWarehouseWarehousesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateValidationInWarehouseWarehousesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateValidationInWarehouseWarehousesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -68,14 +76,34 @@ type CreateValidationInWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateValidationInWarehouse200ApplicationJSONObject *CreateValidationInWarehouse200ApplicationJSON
-	// OK
-	CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSONObject *CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateValidationInWarehouseResponse) GetTwoHundredApplicationJSONObject() *CreateValidationInWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateValidationInWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateValidationInWarehouseWarehousesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateValidationInWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateValidationInWarehouseWarehousesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateValidationInWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateValidationInWarehouseWarehousesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateValidationInWarehouseResponse) GetContentType() string {
@@ -104,32 +132,4 @@ func (o *CreateValidationInWarehouseResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateValidationInWarehouseResponse) GetCreateValidationInWarehouse200ApplicationJSONObject() *CreateValidationInWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateValidationInWarehouse200ApplicationJSONObject
-}
-
-func (o *CreateValidationInWarehouseResponse) GetCreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSONObject() *CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateValidationInWarehouseResponse) GetCreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateValidationInWarehouseResponse) GetCreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

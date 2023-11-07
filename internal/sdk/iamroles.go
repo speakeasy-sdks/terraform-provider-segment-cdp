@@ -15,20 +15,20 @@ import (
 	"strings"
 )
 
-// iamRoles - A role gives a user access to resources within a Workspace. Roles are additive, and can combine to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
-type iamRoles struct {
+// IAMRoles - A role gives a user access to resources within a Workspace. Roles are additive, and can combine to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
+type IAMRoles struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newIAMRoles(sdkConfig sdkConfiguration) *iamRoles {
-	return &iamRoles{
+func newIAMRoles(sdkConfig sdkConfiguration) *IAMRoles {
+	return &IAMRoles{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // ListRoles - List Roles
 // Returns a list of Roles available to apply to permissions for users and/or groups.
-func (s *iamRoles) ListRoles(ctx context.Context, request operations.ListRolesRequest, opts ...operations.Option) (*operations.ListRolesResponse, error) {
+func (s *IAMRoles) ListRoles(ctx context.Context, request operations.ListRolesRequest, opts ...operations.Option) (*operations.ListRolesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -86,33 +86,33 @@ func (s *iamRoles) ListRoles(ctx context.Context, request operations.ListRolesRe
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListRoles200ApplicationJSON
+			var out operations.ListRolesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListRoles200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListRoles200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListRolesIAMRolesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListRoles200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListRoles200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListRolesIAMRolesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListRoles200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListRoles200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListRolesIAMRolesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListRoles200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

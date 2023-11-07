@@ -7,56 +7,56 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// PreviewDestinationFilter200ApplicationVndSegmentV1betaPlusJSON - OK
-type PreviewDestinationFilter200ApplicationVndSegmentV1betaPlusJSON struct {
+// PreviewDestinationFilterDestinationFiltersResponse200ResponseBody - OK
+type PreviewDestinationFilterDestinationFiltersResponse200ResponseBody struct {
 	// Preview output from applying the Destination filter.
 	// Segment modifies or nullifies payloads depending on the provided filter actions.
 	Data *shared.PreviewDestinationFilterV1Output `json:"data,omitempty"`
 }
 
-func (o *PreviewDestinationFilter200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.PreviewDestinationFilterV1Output {
+func (o *PreviewDestinationFilterDestinationFiltersResponse200ResponseBody) GetData() *shared.PreviewDestinationFilterV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// PreviewDestinationFilter200ApplicationVndSegmentV1alphaPlusJSON - OK
-type PreviewDestinationFilter200ApplicationVndSegmentV1alphaPlusJSON struct {
+// PreviewDestinationFilterDestinationFiltersResponseResponseBody - OK
+type PreviewDestinationFilterDestinationFiltersResponseResponseBody struct {
 	// Preview output from applying the Destination filter.
 	// Segment modifies or nullifies payloads depending on the provided filter actions.
 	Data *shared.PreviewDestinationFilterV1Output `json:"data,omitempty"`
 }
 
-func (o *PreviewDestinationFilter200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.PreviewDestinationFilterV1Output {
+func (o *PreviewDestinationFilterDestinationFiltersResponseResponseBody) GetData() *shared.PreviewDestinationFilterV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// PreviewDestinationFilter200ApplicationVndSegmentV1PlusJSON - OK
-type PreviewDestinationFilter200ApplicationVndSegmentV1PlusJSON struct {
+// PreviewDestinationFilterDestinationFiltersResponseBody - OK
+type PreviewDestinationFilterDestinationFiltersResponseBody struct {
 	// Preview output from applying the Destination filter.
 	// Segment modifies or nullifies payloads depending on the provided filter actions.
 	Data *shared.PreviewDestinationFilterV1Output `json:"data,omitempty"`
 }
 
-func (o *PreviewDestinationFilter200ApplicationVndSegmentV1PlusJSON) GetData() *shared.PreviewDestinationFilterV1Output {
+func (o *PreviewDestinationFilterDestinationFiltersResponseBody) GetData() *shared.PreviewDestinationFilterV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// PreviewDestinationFilter200ApplicationJSON - OK
-type PreviewDestinationFilter200ApplicationJSON struct {
+// PreviewDestinationFilterResponseBody - OK
+type PreviewDestinationFilterResponseBody struct {
 	// Preview output from applying the Destination filter.
 	// Segment modifies or nullifies payloads depending on the provided filter actions.
 	Data *shared.PreviewDestinationFilterV1Output `json:"data,omitempty"`
 }
 
-func (o *PreviewDestinationFilter200ApplicationJSON) GetData() *shared.PreviewDestinationFilterV1Output {
+func (o *PreviewDestinationFilterResponseBody) GetData() *shared.PreviewDestinationFilterV1Output {
 	if o == nil {
 		return nil
 	}
@@ -64,6 +64,14 @@ func (o *PreviewDestinationFilter200ApplicationJSON) GetData() *shared.PreviewDe
 }
 
 type PreviewDestinationFilterResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *PreviewDestinationFilterResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *PreviewDestinationFilterDestinationFiltersResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *PreviewDestinationFilterDestinationFiltersResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *PreviewDestinationFilterDestinationFiltersResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -72,14 +80,34 @@ type PreviewDestinationFilterResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	PreviewDestinationFilter200ApplicationJSONObject *PreviewDestinationFilter200ApplicationJSON
-	// OK
-	PreviewDestinationFilter200ApplicationVndSegmentV1PlusJSONObject *PreviewDestinationFilter200ApplicationVndSegmentV1PlusJSON
-	// OK
-	PreviewDestinationFilter200ApplicationVndSegmentV1alphaPlusJSONObject *PreviewDestinationFilter200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	PreviewDestinationFilter200ApplicationVndSegmentV1betaPlusJSONObject *PreviewDestinationFilter200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *PreviewDestinationFilterResponse) GetTwoHundredApplicationJSONObject() *PreviewDestinationFilterResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *PreviewDestinationFilterResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *PreviewDestinationFilterDestinationFiltersResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *PreviewDestinationFilterResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *PreviewDestinationFilterDestinationFiltersResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *PreviewDestinationFilterResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *PreviewDestinationFilterDestinationFiltersResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *PreviewDestinationFilterResponse) GetContentType() string {
@@ -108,32 +136,4 @@ func (o *PreviewDestinationFilterResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *PreviewDestinationFilterResponse) GetPreviewDestinationFilter200ApplicationJSONObject() *PreviewDestinationFilter200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PreviewDestinationFilter200ApplicationJSONObject
-}
-
-func (o *PreviewDestinationFilterResponse) GetPreviewDestinationFilter200ApplicationVndSegmentV1PlusJSONObject() *PreviewDestinationFilter200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PreviewDestinationFilter200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *PreviewDestinationFilterResponse) GetPreviewDestinationFilter200ApplicationVndSegmentV1alphaPlusJSONObject() *PreviewDestinationFilter200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PreviewDestinationFilter200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *PreviewDestinationFilterResponse) GetPreviewDestinationFilter200ApplicationVndSegmentV1betaPlusJSONObject() *PreviewDestinationFilter200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.PreviewDestinationFilter200ApplicationVndSegmentV1betaPlusJSONObject
 }

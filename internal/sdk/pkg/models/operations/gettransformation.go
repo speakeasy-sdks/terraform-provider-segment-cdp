@@ -18,52 +18,52 @@ func (o *GetTransformationRequest) GetTransformationID() string {
 	return o.TransformationID
 }
 
-// GetTransformation200ApplicationVndSegmentV1betaPlusJSON - OK
-type GetTransformation200ApplicationVndSegmentV1betaPlusJSON struct {
+// GetTransformationTransformationsResponse200ResponseBody - OK
+type GetTransformationTransformationsResponse200ResponseBody struct {
 	// The output of Transformation retrieval.
 	Data *shared.GetTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *GetTransformation200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.GetTransformationV1Output {
+func (o *GetTransformationTransformationsResponse200ResponseBody) GetData() *shared.GetTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetTransformation200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetTransformation200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetTransformationTransformationsResponseResponseBody - OK
+type GetTransformationTransformationsResponseResponseBody struct {
 	// The output of Transformation retrieval.
 	Data *shared.GetTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *GetTransformation200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetTransformationV1Output {
+func (o *GetTransformationTransformationsResponseResponseBody) GetData() *shared.GetTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetTransformation200ApplicationVndSegmentV1PlusJSON - OK
-type GetTransformation200ApplicationVndSegmentV1PlusJSON struct {
+// GetTransformationTransformationsResponseBody - OK
+type GetTransformationTransformationsResponseBody struct {
 	// The output of Transformation retrieval.
 	Data *shared.GetTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *GetTransformation200ApplicationVndSegmentV1PlusJSON) GetData() *shared.GetTransformationV1Output {
+func (o *GetTransformationTransformationsResponseBody) GetData() *shared.GetTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetTransformation200ApplicationJSON - OK
-type GetTransformation200ApplicationJSON struct {
+// GetTransformationResponseBody - OK
+type GetTransformationResponseBody struct {
 	// The output of Transformation retrieval.
 	Data *shared.GetTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *GetTransformation200ApplicationJSON) GetData() *shared.GetTransformationV1Output {
+func (o *GetTransformationResponseBody) GetData() *shared.GetTransformationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *GetTransformation200ApplicationJSON) GetData() *shared.GetTransformatio
 }
 
 type GetTransformationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetTransformationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *GetTransformationTransformationsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *GetTransformationTransformationsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *GetTransformationTransformationsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type GetTransformationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetTransformation200ApplicationJSONObject *GetTransformation200ApplicationJSON
-	// OK
-	GetTransformation200ApplicationVndSegmentV1PlusJSONObject *GetTransformation200ApplicationVndSegmentV1PlusJSON
-	// OK
-	GetTransformation200ApplicationVndSegmentV1alphaPlusJSONObject *GetTransformation200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	GetTransformation200ApplicationVndSegmentV1betaPlusJSONObject *GetTransformation200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *GetTransformationResponse) GetTwoHundredApplicationJSONObject() *GetTransformationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *GetTransformationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *GetTransformationTransformationsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *GetTransformationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *GetTransformationTransformationsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *GetTransformationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *GetTransformationTransformationsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *GetTransformationResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *GetTransformationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetTransformationResponse) GetGetTransformation200ApplicationJSONObject() *GetTransformation200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetTransformation200ApplicationJSONObject
-}
-
-func (o *GetTransformationResponse) GetGetTransformation200ApplicationVndSegmentV1PlusJSONObject() *GetTransformation200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetTransformation200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *GetTransformationResponse) GetGetTransformation200ApplicationVndSegmentV1alphaPlusJSONObject() *GetTransformation200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetTransformation200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *GetTransformationResponse) GetGetTransformation200ApplicationVndSegmentV1betaPlusJSONObject() *GetTransformation200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetTransformation200ApplicationVndSegmentV1betaPlusJSONObject
 }

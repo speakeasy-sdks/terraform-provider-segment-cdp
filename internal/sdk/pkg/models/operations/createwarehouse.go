@@ -7,52 +7,52 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateWarehouseWarehousesResponse200ResponseBody - OK
+type CreateWarehouseWarehousesResponse200ResponseBody struct {
 	// Returns the newly created Warehouse.
 	Data *shared.CreateWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateWarehouseV1Output {
+func (o *CreateWarehouseWarehousesResponse200ResponseBody) GetData() *shared.CreateWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateWarehouseWarehousesResponseResponseBody - OK
+type CreateWarehouseWarehousesResponseResponseBody struct {
 	// Returns the newly created Warehouse.
 	Data *shared.CreateWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateWarehouseV1Output {
+func (o *CreateWarehouseWarehousesResponseResponseBody) GetData() *shared.CreateWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type CreateWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// CreateWarehouseWarehousesResponseBody - OK
+type CreateWarehouseWarehousesResponseBody struct {
 	// Returns the newly created Warehouse.
 	Data *shared.CreateWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateWarehouseV1Output {
+func (o *CreateWarehouseWarehousesResponseBody) GetData() *shared.CreateWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateWarehouse200ApplicationJSON - OK
-type CreateWarehouse200ApplicationJSON struct {
+// CreateWarehouseResponseBody - OK
+type CreateWarehouseResponseBody struct {
 	// Returns the newly created Warehouse.
 	Data *shared.CreateWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateWarehouse200ApplicationJSON) GetData() *shared.CreateWarehouseV1Output {
+func (o *CreateWarehouseResponseBody) GetData() *shared.CreateWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -60,6 +60,14 @@ func (o *CreateWarehouse200ApplicationJSON) GetData() *shared.CreateWarehouseV1O
 }
 
 type CreateWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateWarehouseWarehousesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateWarehouseWarehousesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateWarehouseWarehousesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -68,14 +76,34 @@ type CreateWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateWarehouse200ApplicationJSONObject *CreateWarehouse200ApplicationJSON
-	// OK
-	CreateWarehouse200ApplicationVndSegmentV1PlusJSONObject *CreateWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *CreateWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateWarehouseResponse) GetTwoHundredApplicationJSONObject() *CreateWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateWarehouseWarehousesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateWarehouseWarehousesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateWarehouseWarehousesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateWarehouseResponse) GetContentType() string {
@@ -104,32 +132,4 @@ func (o *CreateWarehouseResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateWarehouseResponse) GetCreateWarehouse200ApplicationJSONObject() *CreateWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateWarehouse200ApplicationJSONObject
-}
-
-func (o *CreateWarehouseResponse) GetCreateWarehouse200ApplicationVndSegmentV1PlusJSONObject() *CreateWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateWarehouseResponse) GetCreateWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateWarehouseResponse) GetCreateWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *CreateWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

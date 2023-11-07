@@ -18,52 +18,52 @@ func (o *GetWarehouseMetadataRequest) GetWarehouseMetadataID() string {
 	return o.WarehouseMetadataID
 }
 
-// GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSON - OK
-type GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSON struct {
+// GetWarehouseMetadataCatalogResponse200ResponseBody - OK
+type GetWarehouseMetadataCatalogResponse200ResponseBody struct {
 	// Returns a Warehouse catalog item looked up by id.
 	Data *shared.GetWarehouseMetadataV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.GetWarehouseMetadataV1Output {
+func (o *GetWarehouseMetadataCatalogResponse200ResponseBody) GetData() *shared.GetWarehouseMetadataV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetWarehouseMetadataCatalogResponseResponseBody - OK
+type GetWarehouseMetadataCatalogResponseResponseBody struct {
 	// Returns a Warehouse catalog item looked up by id.
 	Data *shared.GetWarehouseMetadataV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetWarehouseMetadataV1Output {
+func (o *GetWarehouseMetadataCatalogResponseResponseBody) GetData() *shared.GetWarehouseMetadataV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSON - OK
-type GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSON struct {
+// GetWarehouseMetadataCatalogResponseBody - OK
+type GetWarehouseMetadataCatalogResponseBody struct {
 	// Returns a Warehouse catalog item looked up by id.
 	Data *shared.GetWarehouseMetadataV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSON) GetData() *shared.GetWarehouseMetadataV1Output {
+func (o *GetWarehouseMetadataCatalogResponseBody) GetData() *shared.GetWarehouseMetadataV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehouseMetadata200ApplicationJSON - OK
-type GetWarehouseMetadata200ApplicationJSON struct {
+// GetWarehouseMetadataResponseBody - OK
+type GetWarehouseMetadataResponseBody struct {
 	// Returns a Warehouse catalog item looked up by id.
 	Data *shared.GetWarehouseMetadataV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehouseMetadata200ApplicationJSON) GetData() *shared.GetWarehouseMetadataV1Output {
+func (o *GetWarehouseMetadataResponseBody) GetData() *shared.GetWarehouseMetadataV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *GetWarehouseMetadata200ApplicationJSON) GetData() *shared.GetWarehouseM
 }
 
 type GetWarehouseMetadataResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetWarehouseMetadataResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *GetWarehouseMetadataCatalogResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *GetWarehouseMetadataCatalogResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *GetWarehouseMetadataCatalogResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type GetWarehouseMetadataResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetWarehouseMetadata200ApplicationJSONObject *GetWarehouseMetadata200ApplicationJSON
-	// OK
-	GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSONObject *GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSON
-	// OK
-	GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSONObject *GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSONObject *GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *GetWarehouseMetadataResponse) GetTwoHundredApplicationJSONObject() *GetWarehouseMetadataResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *GetWarehouseMetadataResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *GetWarehouseMetadataCatalogResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *GetWarehouseMetadataResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *GetWarehouseMetadataCatalogResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *GetWarehouseMetadataResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *GetWarehouseMetadataCatalogResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *GetWarehouseMetadataResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *GetWarehouseMetadataResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetWarehouseMetadataResponse) GetGetWarehouseMetadata200ApplicationJSONObject() *GetWarehouseMetadata200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehouseMetadata200ApplicationJSONObject
-}
-
-func (o *GetWarehouseMetadataResponse) GetGetWarehouseMetadata200ApplicationVndSegmentV1PlusJSONObject() *GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *GetWarehouseMetadataResponse) GetGetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSONObject() *GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *GetWarehouseMetadataResponse) GetGetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSONObject() *GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSONObject
 }

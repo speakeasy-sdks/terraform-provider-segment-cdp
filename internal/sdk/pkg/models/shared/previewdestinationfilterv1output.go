@@ -2,8 +2,8 @@
 
 package shared
 
-// PreviewDestinationFilterV1OutputResult - The filtered JSON output.
-type PreviewDestinationFilterV1OutputResult struct {
+// Result - The filtered JSON output.
+type Result struct {
 }
 
 // PreviewDestinationFilterV1Output - Preview output from applying the Destination filter.
@@ -12,7 +12,7 @@ type PreviewDestinationFilterV1Output struct {
 	// The pre-filter JSON input.
 	InputPayload map[string]interface{} `json:"inputPayload"`
 	// The filtered JSON output.
-	Result *PreviewDestinationFilterV1OutputResult `json:"result"`
+	Result *Result `json:"result"`
 }
 
 func (o *PreviewDestinationFilterV1Output) GetInputPayload() map[string]interface{} {
@@ -22,7 +22,7 @@ func (o *PreviewDestinationFilterV1Output) GetInputPayload() map[string]interfac
 	return o.InputPayload
 }
 
-func (o *PreviewDestinationFilterV1Output) GetResult() *PreviewDestinationFilterV1OutputResult {
+func (o *PreviewDestinationFilterV1Output) GetResult() *Result {
 	if o == nil {
 		return nil
 	}

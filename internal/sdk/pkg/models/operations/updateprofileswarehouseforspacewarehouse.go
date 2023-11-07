@@ -34,13 +34,13 @@ func (o *UpdateProfilesWarehouseForSpaceWarehouseRequest) GetWarehouseID() strin
 	return o.WarehouseID
 }
 
-// UpdateProfilesWarehouseForSpaceWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateProfilesWarehouseForSpaceWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateProfilesWarehouseForSpaceWarehouseResponseBody - OK
+type UpdateProfilesWarehouseForSpaceWarehouseResponseBody struct {
 	// Returns the updated Warehouse.
 	Data *shared.UpdateProfilesWarehouseForSpaceWarehouseAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *UpdateProfilesWarehouseForSpaceWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateProfilesWarehouseForSpaceWarehouseAlphaOutput {
+func (o *UpdateProfilesWarehouseForSpaceWarehouseResponseBody) GetData() *shared.UpdateProfilesWarehouseForSpaceWarehouseAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -57,7 +57,7 @@ type UpdateProfilesWarehouseForSpaceWarehouseResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	UpdateProfilesWarehouseForSpaceWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateProfilesWarehouseForSpaceWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+	Object *UpdateProfilesWarehouseForSpaceWarehouseResponseBody
 }
 
 func (o *UpdateProfilesWarehouseForSpaceWarehouseResponse) GetContentType() string {
@@ -88,9 +88,9 @@ func (o *UpdateProfilesWarehouseForSpaceWarehouseResponse) GetRequestErrorEnvelo
 	return o.RequestErrorEnvelope
 }
 
-func (o *UpdateProfilesWarehouseForSpaceWarehouseResponse) GetUpdateProfilesWarehouseForSpaceWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateProfilesWarehouseForSpaceWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *UpdateProfilesWarehouseForSpaceWarehouseResponse) GetObject() *UpdateProfilesWarehouseForSpaceWarehouseResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.UpdateProfilesWarehouseForSpaceWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

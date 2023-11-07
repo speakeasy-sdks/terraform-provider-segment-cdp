@@ -18,13 +18,13 @@ func (o *GetSpaceRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// GetSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetSpaceResponseBody - OK
+type GetSpaceResponseBody struct {
 	// Response for the getSpaceById endpoint.
 	Data *shared.GetSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *GetSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetSpaceAlphaOutput {
+func (o *GetSpaceResponseBody) GetData() *shared.GetSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -41,7 +41,7 @@ type GetSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	GetSpace200ApplicationVndSegmentV1alphaPlusJSONObject *GetSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *GetSpaceResponseBody
 }
 
 func (o *GetSpaceResponse) GetContentType() string {
@@ -72,9 +72,9 @@ func (o *GetSpaceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnvelop
 	return o.RequestErrorEnvelope
 }
 
-func (o *GetSpaceResponse) GetGetSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *GetSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *GetSpaceResponse) GetObject() *GetSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

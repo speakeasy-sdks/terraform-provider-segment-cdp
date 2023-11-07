@@ -21,52 +21,52 @@ func (o *GetDestinationsCatalogRequest) GetPagination() shared.PaginationInput {
 	return o.Pagination
 }
 
-// GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSON - OK
-type GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSON struct {
+// GetDestinationsCatalogCatalogResponse200ResponseBody - OK
+type GetDestinationsCatalogCatalogResponse200ResponseBody struct {
 	// Returns a list of all Destination catalog items contained within a given page.
 	Data *shared.GetDestinationsCatalogV1Output `json:"data,omitempty"`
 }
 
-func (o *GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.GetDestinationsCatalogV1Output {
+func (o *GetDestinationsCatalogCatalogResponse200ResponseBody) GetData() *shared.GetDestinationsCatalogV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetDestinationsCatalogCatalogResponseResponseBody - OK
+type GetDestinationsCatalogCatalogResponseResponseBody struct {
 	// Returns a list of all Destination catalog items contained within a given page.
 	Data *shared.GetDestinationsCatalogV1Output `json:"data,omitempty"`
 }
 
-func (o *GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetDestinationsCatalogV1Output {
+func (o *GetDestinationsCatalogCatalogResponseResponseBody) GetData() *shared.GetDestinationsCatalogV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSON - OK
-type GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSON struct {
+// GetDestinationsCatalogCatalogResponseBody - OK
+type GetDestinationsCatalogCatalogResponseBody struct {
 	// Returns a list of all Destination catalog items contained within a given page.
 	Data *shared.GetDestinationsCatalogV1Output `json:"data,omitempty"`
 }
 
-func (o *GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSON) GetData() *shared.GetDestinationsCatalogV1Output {
+func (o *GetDestinationsCatalogCatalogResponseBody) GetData() *shared.GetDestinationsCatalogV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetDestinationsCatalog200ApplicationJSON - OK
-type GetDestinationsCatalog200ApplicationJSON struct {
+// GetDestinationsCatalogResponseBody - OK
+type GetDestinationsCatalogResponseBody struct {
 	// Returns a list of all Destination catalog items contained within a given page.
 	Data *shared.GetDestinationsCatalogV1Output `json:"data,omitempty"`
 }
 
-func (o *GetDestinationsCatalog200ApplicationJSON) GetData() *shared.GetDestinationsCatalogV1Output {
+func (o *GetDestinationsCatalogResponseBody) GetData() *shared.GetDestinationsCatalogV1Output {
 	if o == nil {
 		return nil
 	}
@@ -74,6 +74,14 @@ func (o *GetDestinationsCatalog200ApplicationJSON) GetData() *shared.GetDestinat
 }
 
 type GetDestinationsCatalogResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetDestinationsCatalogResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *GetDestinationsCatalogCatalogResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *GetDestinationsCatalogCatalogResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *GetDestinationsCatalogCatalogResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -82,14 +90,34 @@ type GetDestinationsCatalogResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetDestinationsCatalog200ApplicationJSONObject *GetDestinationsCatalog200ApplicationJSON
-	// OK
-	GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSONObject *GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSON
-	// OK
-	GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSONObject *GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSONObject *GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *GetDestinationsCatalogResponse) GetTwoHundredApplicationJSONObject() *GetDestinationsCatalogResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *GetDestinationsCatalogResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *GetDestinationsCatalogCatalogResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *GetDestinationsCatalogResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *GetDestinationsCatalogCatalogResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *GetDestinationsCatalogResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *GetDestinationsCatalogCatalogResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *GetDestinationsCatalogResponse) GetContentType() string {
@@ -118,32 +146,4 @@ func (o *GetDestinationsCatalogResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetDestinationsCatalogResponse) GetGetDestinationsCatalog200ApplicationJSONObject() *GetDestinationsCatalog200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDestinationsCatalog200ApplicationJSONObject
-}
-
-func (o *GetDestinationsCatalogResponse) GetGetDestinationsCatalog200ApplicationVndSegmentV1PlusJSONObject() *GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *GetDestinationsCatalogResponse) GetGetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSONObject() *GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *GetDestinationsCatalogResponse) GetGetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSONObject() *GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSONObject
 }

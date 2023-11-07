@@ -7,52 +7,52 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateDestination200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateDestination200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateDestinationDestinationsResponse200ResponseBody - OK
+type CreateDestinationDestinationsResponse200ResponseBody struct {
 	// Creates a new Destination.
 	Data *shared.CreateDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateDestination200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateDestinationV1Output {
+func (o *CreateDestinationDestinationsResponse200ResponseBody) GetData() *shared.CreateDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateDestination200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateDestination200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateDestinationDestinationsResponseResponseBody - OK
+type CreateDestinationDestinationsResponseResponseBody struct {
 	// Creates a new Destination.
 	Data *shared.CreateDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateDestination200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateDestinationV1Output {
+func (o *CreateDestinationDestinationsResponseResponseBody) GetData() *shared.CreateDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateDestination200ApplicationVndSegmentV1PlusJSON - OK
-type CreateDestination200ApplicationVndSegmentV1PlusJSON struct {
+// CreateDestinationDestinationsResponseBody - OK
+type CreateDestinationDestinationsResponseBody struct {
 	// Creates a new Destination.
 	Data *shared.CreateDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateDestination200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateDestinationV1Output {
+func (o *CreateDestinationDestinationsResponseBody) GetData() *shared.CreateDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateDestination200ApplicationJSON - OK
-type CreateDestination200ApplicationJSON struct {
+// CreateDestinationResponseBody - OK
+type CreateDestinationResponseBody struct {
 	// Creates a new Destination.
 	Data *shared.CreateDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateDestination200ApplicationJSON) GetData() *shared.CreateDestinationV1Output {
+func (o *CreateDestinationResponseBody) GetData() *shared.CreateDestinationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -60,6 +60,14 @@ func (o *CreateDestination200ApplicationJSON) GetData() *shared.CreateDestinatio
 }
 
 type CreateDestinationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateDestinationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateDestinationDestinationsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateDestinationDestinationsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateDestinationDestinationsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -68,14 +76,34 @@ type CreateDestinationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateDestination200ApplicationJSONObject *CreateDestination200ApplicationJSON
-	// OK
-	CreateDestination200ApplicationVndSegmentV1PlusJSONObject *CreateDestination200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateDestination200ApplicationVndSegmentV1alphaPlusJSONObject *CreateDestination200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateDestination200ApplicationVndSegmentV1betaPlusJSONObject *CreateDestination200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateDestinationResponse) GetTwoHundredApplicationJSONObject() *CreateDestinationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateDestinationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateDestinationDestinationsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateDestinationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateDestinationDestinationsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateDestinationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateDestinationDestinationsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateDestinationResponse) GetContentType() string {
@@ -104,32 +132,4 @@ func (o *CreateDestinationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateDestinationResponse) GetCreateDestination200ApplicationJSONObject() *CreateDestination200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateDestination200ApplicationJSONObject
-}
-
-func (o *CreateDestinationResponse) GetCreateDestination200ApplicationVndSegmentV1PlusJSONObject() *CreateDestination200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateDestination200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateDestinationResponse) GetCreateDestination200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateDestination200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateDestination200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateDestinationResponse) GetCreateDestination200ApplicationVndSegmentV1betaPlusJSONObject() *CreateDestination200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateDestination200ApplicationVndSegmentV1betaPlusJSONObject
 }

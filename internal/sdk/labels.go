@@ -15,15 +15,15 @@ import (
 	"strings"
 )
 
-// labels - Workspace owners can use Labels to grant users access to groups of resources. When you add a Label to a Source or Personas Space, any users to whom you assign that Label gain access to those resources.
+// Labels - Workspace owners can use Labels to grant users access to groups of resources. When you add a Label to a Source or Personas Space, any users to whom you assign that Label gain access to those resources.
 //
 // To create or configure labels, go to the Labels tab in your Workspace settings. Only Workspace Owners can manage labels for the entire Workspace.
-type labels struct {
+type Labels struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newLabels(sdkConfig sdkConfiguration) *labels {
-	return &labels{
+func newLabels(sdkConfig sdkConfiguration) *Labels {
+	return &Labels{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -34,7 +34,7 @@ func newLabels(sdkConfig sdkConfiguration) *labels {
 // • When called, this endpoint may generate the `Label Created` event in the [audit trail](/tag/Audit-Trail).
 //
 // The rate limit for this endpoint is 60 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *labels) CreateLabel(ctx context.Context, request shared.CreateLabelV1Input, opts ...operations.Option) (*operations.CreateLabelResponse, error) {
+func (s *Labels) CreateLabel(ctx context.Context, request shared.CreateLabelV1Input, opts ...operations.Option) (*operations.CreateLabelResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -102,33 +102,33 @@ func (s *labels) CreateLabel(ctx context.Context, request shared.CreateLabelV1In
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateLabel200ApplicationJSON
+			var out operations.CreateLabelResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateLabel200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateLabel200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateLabelLabelsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateLabel200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateLabel200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateLabelLabelsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateLabel200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateLabel200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateLabelLabelsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateLabel200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -159,7 +159,7 @@ func (s *labels) CreateLabel(ctx context.Context, request shared.CreateLabelV1In
 // • When called, this endpoint may generate the `Label Deleted` event in the [audit trail](/tag/Audit-Trail).
 //
 // The rate limit for this endpoint is 60 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *labels) DeleteLabel(ctx context.Context, request operations.DeleteLabelRequest, opts ...operations.Option) (*operations.DeleteLabelResponse, error) {
+func (s *Labels) DeleteLabel(ctx context.Context, request operations.DeleteLabelRequest, opts ...operations.Option) (*operations.DeleteLabelResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -216,33 +216,33 @@ func (s *labels) DeleteLabel(ctx context.Context, request operations.DeleteLabel
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteLabel200ApplicationJSON
+			var out operations.DeleteLabelResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteLabel200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.DeleteLabel200ApplicationVndSegmentV1PlusJSON
+			var out operations.DeleteLabelLabelsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteLabel200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteLabel200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteLabelLabelsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteLabel200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.DeleteLabel200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.DeleteLabelLabelsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteLabel200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -269,7 +269,7 @@ func (s *labels) DeleteLabel(ctx context.Context, request operations.DeleteLabel
 
 // ListLabels - List Labels
 // Returns a list of all available labels.
-func (s *labels) ListLabels(ctx context.Context, opts ...operations.Option) (*operations.ListLabelsResponse, error) {
+func (s *Labels) ListLabels(ctx context.Context, opts ...operations.Option) (*operations.ListLabelsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -323,33 +323,33 @@ func (s *labels) ListLabels(ctx context.Context, opts ...operations.Option) (*op
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListLabels200ApplicationJSON
+			var out operations.ListLabelsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListLabels200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListLabels200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListLabelsLabelsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListLabels200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListLabels200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListLabelsLabelsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListLabels200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListLabels200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListLabelsLabelsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListLabels200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

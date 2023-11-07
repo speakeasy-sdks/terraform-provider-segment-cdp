@@ -18,52 +18,52 @@ func (o *DeleteTransformationRequest) GetTransformationID() string {
 	return o.TransformationID
 }
 
-// DeleteTransformation200ApplicationVndSegmentV1betaPlusJSON - OK
-type DeleteTransformation200ApplicationVndSegmentV1betaPlusJSON struct {
+// DeleteTransformationTransformationsResponse200ResponseBody - OK
+type DeleteTransformationTransformationsResponse200ResponseBody struct {
 	// The output of delete Transformation.
 	Data *shared.DeleteTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteTransformation200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.DeleteTransformationV1Output {
+func (o *DeleteTransformationTransformationsResponse200ResponseBody) GetData() *shared.DeleteTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteTransformation200ApplicationVndSegmentV1alphaPlusJSON - OK
-type DeleteTransformation200ApplicationVndSegmentV1alphaPlusJSON struct {
+// DeleteTransformationTransformationsResponseResponseBody - OK
+type DeleteTransformationTransformationsResponseResponseBody struct {
 	// The output of delete Transformation.
 	Data *shared.DeleteTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteTransformation200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.DeleteTransformationV1Output {
+func (o *DeleteTransformationTransformationsResponseResponseBody) GetData() *shared.DeleteTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteTransformation200ApplicationVndSegmentV1PlusJSON - OK
-type DeleteTransformation200ApplicationVndSegmentV1PlusJSON struct {
+// DeleteTransformationTransformationsResponseBody - OK
+type DeleteTransformationTransformationsResponseBody struct {
 	// The output of delete Transformation.
 	Data *shared.DeleteTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteTransformation200ApplicationVndSegmentV1PlusJSON) GetData() *shared.DeleteTransformationV1Output {
+func (o *DeleteTransformationTransformationsResponseBody) GetData() *shared.DeleteTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteTransformation200ApplicationJSON - OK
-type DeleteTransformation200ApplicationJSON struct {
+// DeleteTransformationResponseBody - OK
+type DeleteTransformationResponseBody struct {
 	// The output of delete Transformation.
 	Data *shared.DeleteTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteTransformation200ApplicationJSON) GetData() *shared.DeleteTransformationV1Output {
+func (o *DeleteTransformationResponseBody) GetData() *shared.DeleteTransformationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *DeleteTransformation200ApplicationJSON) GetData() *shared.DeleteTransfo
 }
 
 type DeleteTransformationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *DeleteTransformationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *DeleteTransformationTransformationsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *DeleteTransformationTransformationsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *DeleteTransformationTransformationsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type DeleteTransformationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	DeleteTransformation200ApplicationJSONObject *DeleteTransformation200ApplicationJSON
-	// OK
-	DeleteTransformation200ApplicationVndSegmentV1PlusJSONObject *DeleteTransformation200ApplicationVndSegmentV1PlusJSON
-	// OK
-	DeleteTransformation200ApplicationVndSegmentV1alphaPlusJSONObject *DeleteTransformation200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	DeleteTransformation200ApplicationVndSegmentV1betaPlusJSONObject *DeleteTransformation200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *DeleteTransformationResponse) GetTwoHundredApplicationJSONObject() *DeleteTransformationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *DeleteTransformationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *DeleteTransformationTransformationsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *DeleteTransformationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *DeleteTransformationTransformationsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *DeleteTransformationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *DeleteTransformationTransformationsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *DeleteTransformationResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *DeleteTransformationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteTransformationResponse) GetDeleteTransformation200ApplicationJSONObject() *DeleteTransformation200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteTransformation200ApplicationJSONObject
-}
-
-func (o *DeleteTransformationResponse) GetDeleteTransformation200ApplicationVndSegmentV1PlusJSONObject() *DeleteTransformation200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteTransformation200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *DeleteTransformationResponse) GetDeleteTransformation200ApplicationVndSegmentV1alphaPlusJSONObject() *DeleteTransformation200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteTransformation200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *DeleteTransformationResponse) GetDeleteTransformation200ApplicationVndSegmentV1betaPlusJSONObject() *DeleteTransformation200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteTransformation200ApplicationVndSegmentV1betaPlusJSONObject
 }

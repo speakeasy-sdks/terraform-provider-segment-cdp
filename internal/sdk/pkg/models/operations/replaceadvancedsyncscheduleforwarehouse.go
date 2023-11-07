@@ -26,52 +26,52 @@ func (o *ReplaceAdvancedSyncScheduleForWarehouseRequest) GetWarehouseID() string
 	return o.WarehouseID
 }
 
-// ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponse200ResponseBody - OK
+type ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponse200ResponseBody struct {
 	// Returns the advanced sync schedule for a Warehouse.
 	Data *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output {
+func (o *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponse200ResponseBody) GetData() *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseResponseBody - OK
+type ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseResponseBody struct {
 	// Returns the advanced sync schedule for a Warehouse.
 	Data *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output {
+func (o *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseResponseBody) GetData() *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseBody - OK
+type ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseBody struct {
 	// Returns the advanced sync schedule for a Warehouse.
 	Data *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output {
+func (o *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseBody) GetData() *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSON - OK
-type ReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSON struct {
+// ReplaceAdvancedSyncScheduleForWarehouseResponseBody - OK
+type ReplaceAdvancedSyncScheduleForWarehouseResponseBody struct {
 	// Returns the advanced sync schedule for a Warehouse.
 	Data *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSON) GetData() *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output {
+func (o *ReplaceAdvancedSyncScheduleForWarehouseResponseBody) GetData() *shared.ReplaceAdvancedSyncScheduleForWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSON) GetData() *s
 }
 
 type ReplaceAdvancedSyncScheduleForWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ReplaceAdvancedSyncScheduleForWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type ReplaceAdvancedSyncScheduleForWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSONObject *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSON
-	// OK
-	ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1PlusJSONObject *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetTwoHundredApplicationJSONObject() *ReplaceAdvancedSyncScheduleForWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ReplaceAdvancedSyncScheduleForWarehouseSelectiveSyncResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetRawResponse() *http
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSONObject() *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceAdvancedSyncScheduleForWarehouse200ApplicationJSONObject
-}
-
-func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1PlusJSONObject() *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ReplaceAdvancedSyncScheduleForWarehouseResponse) GetReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceAdvancedSyncScheduleForWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

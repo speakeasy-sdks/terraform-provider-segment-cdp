@@ -18,52 +18,52 @@ func (o *DeleteWarehouseRequest) GetWarehouseID() string {
 	return o.WarehouseID
 }
 
-// DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// DeleteWarehouseWarehousesResponse200ResponseBody - OK
+type DeleteWarehouseWarehousesResponse200ResponseBody struct {
 	// Returns the status of a Warehouse deletion.
 	Data *shared.DeleteWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.DeleteWarehouseV1Output {
+func (o *DeleteWarehouseWarehousesResponse200ResponseBody) GetData() *shared.DeleteWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// DeleteWarehouseWarehousesResponseResponseBody - OK
+type DeleteWarehouseWarehousesResponseResponseBody struct {
 	// Returns the status of a Warehouse deletion.
 	Data *shared.DeleteWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.DeleteWarehouseV1Output {
+func (o *DeleteWarehouseWarehousesResponseResponseBody) GetData() *shared.DeleteWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type DeleteWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// DeleteWarehouseWarehousesResponseBody - OK
+type DeleteWarehouseWarehousesResponseBody struct {
 	// Returns the status of a Warehouse deletion.
 	Data *shared.DeleteWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.DeleteWarehouseV1Output {
+func (o *DeleteWarehouseWarehousesResponseBody) GetData() *shared.DeleteWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteWarehouse200ApplicationJSON - OK
-type DeleteWarehouse200ApplicationJSON struct {
+// DeleteWarehouseResponseBody - OK
+type DeleteWarehouseResponseBody struct {
 	// Returns the status of a Warehouse deletion.
 	Data *shared.DeleteWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteWarehouse200ApplicationJSON) GetData() *shared.DeleteWarehouseV1Output {
+func (o *DeleteWarehouseResponseBody) GetData() *shared.DeleteWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *DeleteWarehouse200ApplicationJSON) GetData() *shared.DeleteWarehouseV1O
 }
 
 type DeleteWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *DeleteWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *DeleteWarehouseWarehousesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *DeleteWarehouseWarehousesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *DeleteWarehouseWarehousesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type DeleteWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	DeleteWarehouse200ApplicationJSONObject *DeleteWarehouse200ApplicationJSON
-	// OK
-	DeleteWarehouse200ApplicationVndSegmentV1PlusJSONObject *DeleteWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *DeleteWarehouseResponse) GetTwoHundredApplicationJSONObject() *DeleteWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *DeleteWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *DeleteWarehouseWarehousesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *DeleteWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *DeleteWarehouseWarehousesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *DeleteWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *DeleteWarehouseWarehousesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *DeleteWarehouseResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *DeleteWarehouseResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteWarehouseResponse) GetDeleteWarehouse200ApplicationJSONObject() *DeleteWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteWarehouse200ApplicationJSONObject
-}
-
-func (o *DeleteWarehouseResponse) GetDeleteWarehouse200ApplicationVndSegmentV1PlusJSONObject() *DeleteWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *DeleteWarehouseResponse) GetDeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *DeleteWarehouseResponse) GetDeleteWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

@@ -26,52 +26,52 @@ func (o *AddLabelsToSourceRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSON - OK
-type AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSON struct {
+// AddLabelsToSourceSourcesResponse200ResponseBody - OK
+type AddLabelsToSourceSourcesResponse200ResponseBody struct {
 	// Applies an existing label to an existing Source.
 	Data *shared.AddLabelsToSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.AddLabelsToSourceV1Output {
+func (o *AddLabelsToSourceSourcesResponse200ResponseBody) GetData() *shared.AddLabelsToSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSON - OK
-type AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSON struct {
+// AddLabelsToSourceSourcesResponseResponseBody - OK
+type AddLabelsToSourceSourcesResponseResponseBody struct {
 	// Applies an existing label to an existing Source.
 	Data *shared.AddLabelsToSourceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.AddLabelsToSourceAlphaOutput {
+func (o *AddLabelsToSourceSourcesResponseResponseBody) GetData() *shared.AddLabelsToSourceAlphaOutput {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// AddLabelsToSource200ApplicationVndSegmentV1PlusJSON - OK
-type AddLabelsToSource200ApplicationVndSegmentV1PlusJSON struct {
+// AddLabelsToSourceSourcesResponseBody - OK
+type AddLabelsToSourceSourcesResponseBody struct {
 	// Applies an existing label to an existing Source.
 	Data *shared.AddLabelsToSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *AddLabelsToSource200ApplicationVndSegmentV1PlusJSON) GetData() *shared.AddLabelsToSourceV1Output {
+func (o *AddLabelsToSourceSourcesResponseBody) GetData() *shared.AddLabelsToSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// AddLabelsToSource200ApplicationJSON - OK
-type AddLabelsToSource200ApplicationJSON struct {
+// AddLabelsToSourceResponseBody - OK
+type AddLabelsToSourceResponseBody struct {
 	// Applies an existing label to an existing Source.
 	Data *shared.AddLabelsToSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *AddLabelsToSource200ApplicationJSON) GetData() *shared.AddLabelsToSourceV1Output {
+func (o *AddLabelsToSourceResponseBody) GetData() *shared.AddLabelsToSourceV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *AddLabelsToSource200ApplicationJSON) GetData() *shared.AddLabelsToSourc
 }
 
 type AddLabelsToSourceResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *AddLabelsToSourceResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *AddLabelsToSourceSourcesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *AddLabelsToSourceSourcesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *AddLabelsToSourceSourcesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type AddLabelsToSourceResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	AddLabelsToSource200ApplicationJSONObject *AddLabelsToSource200ApplicationJSON
-	// OK
-	AddLabelsToSource200ApplicationVndSegmentV1PlusJSONObject *AddLabelsToSource200ApplicationVndSegmentV1PlusJSON
-	// OK
-	AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSONObject *AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSONObject *AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *AddLabelsToSourceResponse) GetTwoHundredApplicationJSONObject() *AddLabelsToSourceResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *AddLabelsToSourceResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *AddLabelsToSourceSourcesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *AddLabelsToSourceResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *AddLabelsToSourceSourcesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *AddLabelsToSourceResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *AddLabelsToSourceSourcesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *AddLabelsToSourceResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *AddLabelsToSourceResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *AddLabelsToSourceResponse) GetAddLabelsToSource200ApplicationJSONObject() *AddLabelsToSource200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.AddLabelsToSource200ApplicationJSONObject
-}
-
-func (o *AddLabelsToSourceResponse) GetAddLabelsToSource200ApplicationVndSegmentV1PlusJSONObject() *AddLabelsToSource200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.AddLabelsToSource200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *AddLabelsToSourceResponse) GetAddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSONObject() *AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *AddLabelsToSourceResponse) GetAddLabelsToSource200ApplicationVndSegmentV1betaPlusJSONObject() *AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSONObject
 }

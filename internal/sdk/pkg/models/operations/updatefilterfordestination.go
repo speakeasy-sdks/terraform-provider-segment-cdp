@@ -34,52 +34,52 @@ func (o *UpdateFilterForDestinationRequest) GetFilterID() string {
 	return o.FilterID
 }
 
-// UpdateFilterForDestination200ApplicationVndSegmentV1betaPlusJSON - OK
-type UpdateFilterForDestination200ApplicationVndSegmentV1betaPlusJSON struct {
+// UpdateFilterForDestinationDestinationFiltersResponse200ResponseBody - OK
+type UpdateFilterForDestinationDestinationFiltersResponse200ResponseBody struct {
 	// Output for UpdateDestinationFilterV1.
 	Data *shared.UpdateFilterForDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateFilterForDestination200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.UpdateFilterForDestinationV1Output {
+func (o *UpdateFilterForDestinationDestinationFiltersResponse200ResponseBody) GetData() *shared.UpdateFilterForDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateFilterForDestination200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateFilterForDestination200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateFilterForDestinationDestinationFiltersResponseResponseBody - OK
+type UpdateFilterForDestinationDestinationFiltersResponseResponseBody struct {
 	// Output for UpdateDestinationFilterV1.
 	Data *shared.UpdateFilterForDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateFilterForDestination200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateFilterForDestinationV1Output {
+func (o *UpdateFilterForDestinationDestinationFiltersResponseResponseBody) GetData() *shared.UpdateFilterForDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateFilterForDestination200ApplicationVndSegmentV1PlusJSON - OK
-type UpdateFilterForDestination200ApplicationVndSegmentV1PlusJSON struct {
+// UpdateFilterForDestinationDestinationFiltersResponseBody - OK
+type UpdateFilterForDestinationDestinationFiltersResponseBody struct {
 	// Output for UpdateDestinationFilterV1.
 	Data *shared.UpdateFilterForDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateFilterForDestination200ApplicationVndSegmentV1PlusJSON) GetData() *shared.UpdateFilterForDestinationV1Output {
+func (o *UpdateFilterForDestinationDestinationFiltersResponseBody) GetData() *shared.UpdateFilterForDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateFilterForDestination200ApplicationJSON - OK
-type UpdateFilterForDestination200ApplicationJSON struct {
+// UpdateFilterForDestinationResponseBody - OK
+type UpdateFilterForDestinationResponseBody struct {
 	// Output for UpdateDestinationFilterV1.
 	Data *shared.UpdateFilterForDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateFilterForDestination200ApplicationJSON) GetData() *shared.UpdateFilterForDestinationV1Output {
+func (o *UpdateFilterForDestinationResponseBody) GetData() *shared.UpdateFilterForDestinationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -87,6 +87,14 @@ func (o *UpdateFilterForDestination200ApplicationJSON) GetData() *shared.UpdateF
 }
 
 type UpdateFilterForDestinationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *UpdateFilterForDestinationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *UpdateFilterForDestinationDestinationFiltersResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *UpdateFilterForDestinationDestinationFiltersResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *UpdateFilterForDestinationDestinationFiltersResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -95,14 +103,34 @@ type UpdateFilterForDestinationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	UpdateFilterForDestination200ApplicationJSONObject *UpdateFilterForDestination200ApplicationJSON
-	// OK
-	UpdateFilterForDestination200ApplicationVndSegmentV1PlusJSONObject *UpdateFilterForDestination200ApplicationVndSegmentV1PlusJSON
-	// OK
-	UpdateFilterForDestination200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateFilterForDestination200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	UpdateFilterForDestination200ApplicationVndSegmentV1betaPlusJSONObject *UpdateFilterForDestination200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *UpdateFilterForDestinationResponse) GetTwoHundredApplicationJSONObject() *UpdateFilterForDestinationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *UpdateFilterForDestinationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *UpdateFilterForDestinationDestinationFiltersResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *UpdateFilterForDestinationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *UpdateFilterForDestinationDestinationFiltersResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *UpdateFilterForDestinationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *UpdateFilterForDestinationDestinationFiltersResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *UpdateFilterForDestinationResponse) GetContentType() string {
@@ -131,32 +159,4 @@ func (o *UpdateFilterForDestinationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *UpdateFilterForDestinationResponse) GetUpdateFilterForDestination200ApplicationJSONObject() *UpdateFilterForDestination200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateFilterForDestination200ApplicationJSONObject
-}
-
-func (o *UpdateFilterForDestinationResponse) GetUpdateFilterForDestination200ApplicationVndSegmentV1PlusJSONObject() *UpdateFilterForDestination200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateFilterForDestination200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *UpdateFilterForDestinationResponse) GetUpdateFilterForDestination200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateFilterForDestination200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateFilterForDestination200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *UpdateFilterForDestinationResponse) GetUpdateFilterForDestination200ApplicationVndSegmentV1betaPlusJSONObject() *UpdateFilterForDestination200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateFilterForDestination200ApplicationVndSegmentV1betaPlusJSONObject
 }

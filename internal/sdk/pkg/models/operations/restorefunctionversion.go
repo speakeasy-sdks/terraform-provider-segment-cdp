@@ -26,13 +26,13 @@ func (o *RestoreFunctionVersionRequest) GetFunctionID() string {
 	return o.FunctionID
 }
 
-// RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSON - OK
-type RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSON struct {
+// RestoreFunctionVersionResponseBody - OK
+type RestoreFunctionVersionResponseBody struct {
 	// Restore version output.
 	Data *shared.RestoreFunctionVersionAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RestoreFunctionVersionAlphaOutput {
+func (o *RestoreFunctionVersionResponseBody) GetData() *shared.RestoreFunctionVersionAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type RestoreFunctionVersionResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSONObject *RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSON
+	Object *RestoreFunctionVersionResponseBody
 }
 
 func (o *RestoreFunctionVersionResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *RestoreFunctionVersionResponse) GetRequestErrorEnvelope() *shared.Reque
 	return o.RequestErrorEnvelope
 }
 
-func (o *RestoreFunctionVersionResponse) GetRestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSONObject() *RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *RestoreFunctionVersionResponse) GetObject() *RestoreFunctionVersionResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

@@ -26,13 +26,13 @@ func (o *CreateEdgeFunctionsRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateEdgeFunctionsResponseBody - OK
+type CreateEdgeFunctionsResponseBody struct {
 	// Output for CreateEdgeFunctions.
 	Data *shared.CreateEdgeFunctionsAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateEdgeFunctionsAlphaOutput {
+func (o *CreateEdgeFunctionsResponseBody) GetData() *shared.CreateEdgeFunctionsAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type CreateEdgeFunctionsResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject *CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON
+	Object *CreateEdgeFunctionsResponseBody
 }
 
 func (o *CreateEdgeFunctionsResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *CreateEdgeFunctionsResponse) GetRequestErrorEnvelope() *shared.RequestE
 	return o.RequestErrorEnvelope
 }
 
-func (o *CreateEdgeFunctionsResponse) GetCreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *CreateEdgeFunctionsResponse) GetObject() *CreateEdgeFunctionsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.CreateEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

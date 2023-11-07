@@ -21,52 +21,52 @@ func (o *GetWarehousesCatalogRequest) GetPagination() shared.PaginationInput {
 	return o.Pagination
 }
 
-// GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSON - OK
-type GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSON struct {
+// GetWarehousesCatalogCatalogResponse200ResponseBody - OK
+type GetWarehousesCatalogCatalogResponse200ResponseBody struct {
 	// Returns a list of all Warehouse catalog items contained within a given page.
 	Data *shared.GetWarehousesCatalogV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.GetWarehousesCatalogV1Output {
+func (o *GetWarehousesCatalogCatalogResponse200ResponseBody) GetData() *shared.GetWarehousesCatalogV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetWarehousesCatalogCatalogResponseResponseBody - OK
+type GetWarehousesCatalogCatalogResponseResponseBody struct {
 	// Returns a list of all Warehouse catalog items contained within a given page.
 	Data *shared.GetWarehousesCatalogV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetWarehousesCatalogV1Output {
+func (o *GetWarehousesCatalogCatalogResponseResponseBody) GetData() *shared.GetWarehousesCatalogV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSON - OK
-type GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSON struct {
+// GetWarehousesCatalogCatalogResponseBody - OK
+type GetWarehousesCatalogCatalogResponseBody struct {
 	// Returns a list of all Warehouse catalog items contained within a given page.
 	Data *shared.GetWarehousesCatalogV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSON) GetData() *shared.GetWarehousesCatalogV1Output {
+func (o *GetWarehousesCatalogCatalogResponseBody) GetData() *shared.GetWarehousesCatalogV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehousesCatalog200ApplicationJSON - OK
-type GetWarehousesCatalog200ApplicationJSON struct {
+// GetWarehousesCatalogResponseBody - OK
+type GetWarehousesCatalogResponseBody struct {
 	// Returns a list of all Warehouse catalog items contained within a given page.
 	Data *shared.GetWarehousesCatalogV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehousesCatalog200ApplicationJSON) GetData() *shared.GetWarehousesCatalogV1Output {
+func (o *GetWarehousesCatalogResponseBody) GetData() *shared.GetWarehousesCatalogV1Output {
 	if o == nil {
 		return nil
 	}
@@ -74,6 +74,14 @@ func (o *GetWarehousesCatalog200ApplicationJSON) GetData() *shared.GetWarehouses
 }
 
 type GetWarehousesCatalogResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetWarehousesCatalogResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *GetWarehousesCatalogCatalogResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *GetWarehousesCatalogCatalogResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *GetWarehousesCatalogCatalogResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -82,14 +90,34 @@ type GetWarehousesCatalogResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetWarehousesCatalog200ApplicationJSONObject *GetWarehousesCatalog200ApplicationJSON
-	// OK
-	GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSONObject *GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSON
-	// OK
-	GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSONObject *GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSONObject *GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *GetWarehousesCatalogResponse) GetTwoHundredApplicationJSONObject() *GetWarehousesCatalogResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *GetWarehousesCatalogResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *GetWarehousesCatalogCatalogResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *GetWarehousesCatalogResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *GetWarehousesCatalogCatalogResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *GetWarehousesCatalogResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *GetWarehousesCatalogCatalogResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *GetWarehousesCatalogResponse) GetContentType() string {
@@ -118,32 +146,4 @@ func (o *GetWarehousesCatalogResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetWarehousesCatalogResponse) GetGetWarehousesCatalog200ApplicationJSONObject() *GetWarehousesCatalog200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehousesCatalog200ApplicationJSONObject
-}
-
-func (o *GetWarehousesCatalogResponse) GetGetWarehousesCatalog200ApplicationVndSegmentV1PlusJSONObject() *GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *GetWarehousesCatalogResponse) GetGetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSONObject() *GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *GetWarehousesCatalogResponse) GetGetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSONObject() *GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSONObject
 }

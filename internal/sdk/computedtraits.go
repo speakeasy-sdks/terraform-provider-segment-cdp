@@ -14,17 +14,17 @@ import (
 	"segment_public_api/internal/sdk/pkg/utils"
 )
 
-// computedTraits - Computed traits allow you to quickly create new traits for a user or profile based on that user's tracked interactions. Using the events and event properties that you send through page and track calls, Segment will calculate and keep up-to-date, over time, the value for your defined computed trait. These can be computations like the total number of orders a customer has completed, the lifetime revenue of a customer, the most frequent user to determine which user is most active in an account, or the unique visitors count to assess how many visitors from a single domain.
+// ComputedTraits - Computed traits allow you to quickly create new traits for a user or profile based on that user's tracked interactions. Using the events and event properties that you send through page and track calls, Segment will calculate and keep up-to-date, over time, the value for your defined computed trait. These can be computations like the total number of orders a customer has completed, the lifetime revenue of a customer, the most frequent user to determine which user is most active in an account, or the unique visitors count to assess how many visitors from a single domain.
 //
 // > **Note**: The Computed Traits API is currently in a Private Beta. If you are interested in joining the Private Beta, then please reach out to your customer success manager.
 //
 // Note that when using a unique list computed trait, Segment limits the number of Event Properties that can be added to the specific trait to 10,000. If your computed trait exceeds this limit, Segment will not persist any new Event Properties and will drop new trait keys and corresponding values.
-type computedTraits struct {
+type ComputedTraits struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newComputedTraits(sdkConfig sdkConfiguration) *computedTraits {
-	return &computedTraits{
+func newComputedTraits(sdkConfig sdkConfiguration) *ComputedTraits {
+	return &ComputedTraits{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -37,7 +37,7 @@ func newComputedTraits(sdkConfig sdkConfiguration) *computedTraits {
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Computed Trait feature enabled. Please reach out to your customer success manager for more information.
 //
 // The rate limit for this endpoint is 100 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *computedTraits) GetComputedTrait(ctx context.Context, request operations.GetComputedTraitRequest, opts ...operations.Option) (*operations.GetComputedTraitResponse, error) {
+func (s *ComputedTraits) GetComputedTrait(ctx context.Context, request operations.GetComputedTraitRequest, opts ...operations.Option) (*operations.GetComputedTraitResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -94,12 +94,12 @@ func (s *computedTraits) GetComputedTrait(ctx context.Context, request operation
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetComputedTrait200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetComputedTraitResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetComputedTrait200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -132,7 +132,7 @@ func (s *computedTraits) GetComputedTrait(ctx context.Context, request operation
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Computed Trait feature enabled. Please reach out to your customer success manager for more information.
 //
 // The rate limit for this endpoint is 25 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *computedTraits) ListComputedTraits(ctx context.Context, request operations.ListComputedTraitsRequest, opts ...operations.Option) (*operations.ListComputedTraitsResponse, error) {
+func (s *ComputedTraits) ListComputedTraits(ctx context.Context, request operations.ListComputedTraitsRequest, opts ...operations.Option) (*operations.ListComputedTraitsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -193,12 +193,12 @@ func (s *computedTraits) ListComputedTraits(ctx context.Context, request operati
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListComputedTraitsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -233,7 +233,7 @@ func (s *computedTraits) ListComputedTraits(ctx context.Context, request operati
 // • When called, this endpoint may generate the `Computed Trait Deleted` event in the [audit trail](/tag/Audit-Trail).
 //
 // The rate limit for this endpoint is 20 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *computedTraits) RemoveComputedTraitFromSpace(ctx context.Context, request operations.RemoveComputedTraitFromSpaceRequest, opts ...operations.Option) (*operations.RemoveComputedTraitFromSpaceResponse, error) {
+func (s *ComputedTraits) RemoveComputedTraitFromSpace(ctx context.Context, request operations.RemoveComputedTraitFromSpaceRequest, opts ...operations.Option) (*operations.RemoveComputedTraitFromSpaceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -290,12 +290,12 @@ func (s *computedTraits) RemoveComputedTraitFromSpace(ctx context.Context, reque
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.RemoveComputedTraitFromSpaceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -332,7 +332,7 @@ func (s *computedTraits) RemoveComputedTraitFromSpace(ctx context.Context, reque
 // • Note that when a Computed Trait is updated, the Computed Trait will be locked from future edits until the changes have been incorporated. You can find more information [in the Segment docs](https://segment-docs.netlify.app/docs/unify/traits/computed-traits/#editing-realtime-traits).
 //
 // The rate limit for this endpoint is 10 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *computedTraits) UpdateComputedTraitForSpace(ctx context.Context, request operations.UpdateComputedTraitForSpaceRequest, opts ...operations.Option) (*operations.UpdateComputedTraitForSpaceResponse, error) {
+func (s *ComputedTraits) UpdateComputedTraitForSpace(ctx context.Context, request operations.UpdateComputedTraitForSpaceRequest, opts ...operations.Option) (*operations.UpdateComputedTraitForSpaceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -403,12 +403,12 @@ func (s *computedTraits) UpdateComputedTraitForSpace(ctx context.Context, reques
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateComputedTraitForSpaceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

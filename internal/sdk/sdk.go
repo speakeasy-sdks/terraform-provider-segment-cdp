@@ -70,11 +70,26 @@ func (c *sdkConfiguration) GetServerDetails() (string, map[string]string) {
 //
 // See the next sections for more information on how to use the Segment Public API.
 type SegmentPublicAPI struct {
-	// Audiences play a key role in gaining a deeper understanding of your users. Audiences allow you to group users or profiles based on shared characteristics, behaviors, and attributes. Using events passed into Segment, traits, and computed traits you can create Audiences which can help unlock more relevant engagement and communication.
+	// A Workspace is a group of Sources that you administer and Segment bills together. Workspaces help companies manage access for different users and data Sources and let you collaborate with team members, add permissions, and share Sources across your team using a shared billing account.
 	//
-	// > **Note**: The Audience API is currently in a Private Beta. If you are interested in joining the Private Beta, then please reach out to your customer success manager.
+	// When you first log in to your Segment account, you can create a new Workspace, or choose to log into an existing Workspace if your account is part of an existing organization.
 	//
-	Audiences *audiences
+	// As the Segment Public API scopes tokens to a Workspace, all operations within the API are also limited to the Workspace to which that token belongs.
+	//
+	// ## Migrate from the Config API
+	//
+	// Like the Segment Public API, the Config API has one endpoint to retrieve details about a Workspace. The [getWorkspace endpoint](https://reference.segmentapis.com/#7ed2968b-c4a5-4cfb-b4bf-7d28c7b38bd2) returns the following fields:
+	//
+	// | Config API     | Public API                           |
+	// | -------------- | ------------------------------------ |
+	// | `create_time`  | Not returned                         |
+	// | `display_name` | `name`                               |
+	// | `id`           | `id`                                 |
+	// | `name`         | `slug` (`workspace/` prefix removed) |
+	//
+	// To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
+	//
+	Workspaces *Workspaces
 	// These endpoints let you list all the Sources, Destinations, and Destination settings that Segment supports.
 	//
 	// ## Migrate from the Config API
@@ -116,27 +131,7 @@ type SegmentPublicAPI struct {
 	//
 	// To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
 	//
-	Catalog *catalog
-	// Computed traits allow you to quickly create new traits for a user or profile based on that user's tracked interactions. Using the events and event properties that you send through page and track calls, Segment will calculate and keep up-to-date, over time, the value for your defined computed trait. These can be computations like the total number of orders a customer has completed, the lifetime revenue of a customer, the most frequent user to determine which user is most active in an account, or the unique visitors count to assess how many visitors from a single domain.
-	//
-	// > **Note**: The Computed Traits API is currently in a Private Beta. If you are interested in joining the Private Beta, then please reach out to your customer success manager.
-	//
-	// Note that when using a unique list computed trait, Segment limits the number of Event Properties that can be added to the specific trait to 10,000. If your computed trait exceeds this limit, Segment will not persist any new Event Properties and will drop new trait keys and corresponding values.
-	//
-	ComputedTraits *computedTraits
-	// In keeping with Segment's commitment to support GDPR and future privacy regulations such as the CCPA, you can delete and suppress data about end users if you identify that user with a `userId`, should they revoke or alter their consent to data collection. For instance, if an end user in the EU invokes their Right to Object or Right to Erasure under the GDPR, you can use the following features in Segment to block ongoing data collection about the user, and delete all historical data across Segment’s systems, connected S3 buckets and Warehouses, and supported downstream partners.
-	//
-	// Regulations enable you to issue a single request to delete and suppress data about a user by `userId`. All regulations are by default scoped to your Workspace and target all Sources within the Workspace. This way, you don't need to page over every Source within Segment to delete data about a user across all your users.
-	//
-	// All deletion and suppression actions within Segment are asynchronous, and fall under the umbrella of what Segment calls "Regulations." Regulations are requests to Segment to impart control over your data flow. You can issue these requests with the Segment Public API using the endpoints below.
-	//
-	// You can't replay data deleted through Regulations. For standard replay requests, Segment asks that you wait for deletions to complete and not submit any new deletion requests for the period of time that Segment replays data for you.
-	//
-	// ## Migrate from the Config API
-	//
-	// Deletion and Suppression got an overhaul in the Segment Public API. They’re now divided into Workspace, Source, and Cloud Source-related endpoints. The Public API simplifies these endpoints: the `attributes` input field is no longer required, and you can now pass an array of IDs to regulate (instead of a `parent`).
-	//
-	DeletionAndSuppression *deletionAndSuppression
+	Catalog *Catalog
 	// The Destination Filters API provides fine-grained controls that allow you to conditionally prevent data delivery to specific destinations. You can filter entire events (for example, selectively drop them) or block/allow individual fields in events before you send them. You can conditionally apply filters to each event based on the contents of that event’s payload. For example, you could apply a filter to Track events with a `plan` property equal to `Professional`, or you could apply a filter to events with a user email address that does not match `*@example.com`.
 	//
 	// ## Use cases
@@ -316,7 +311,7 @@ type SegmentPublicAPI struct {
 	//
 	// To migrate, replace any usages of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
 	//
-	DestinationFilters *destinationFilters
+	DestinationFilters *DestinationFilters
 	// Destinations receive data _from_ Segment.
 	//
 	// In the Segment Public API, you can manipulate Destinations and the connections between Sources and Destinations, as well as list and inspect their relationships.
@@ -339,23 +334,7 @@ type SegmentPublicAPI struct {
 	//
 	// To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
 	//
-	Destinations *destinations
-	// Edge functions enables you to write event enrichment and transformation logic in Javascript outside
-	// your client codebase and deployed to applications over-the-air dynamically.
-	//
-	// ## Availability
-	//
-	// Edge Functions are in Private Alpha testing and available to select customers. To opt in, contact your Customer Success Manager and ensure that you have one of Segment's new Mobile SDKs (Swift or Kotlin) configured.
-	//
-	// ## Migrate from the Config API
-	//
-	// | Config API | Public API                                                            |
-	// | ---------- | --------------------------------------------------------------------- |
-	// | `name`     | Use the Source `id` (See note on names vs IDs in the migration guide) |
-	//
-	// To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
-	//
-	EdgeFunctions *edgeFunctions
+	Destinations *Destinations
 	// Functions let you create your own Sources and Destinations directly within your Workspace to bring new types of data into Segment and send data to new tools with JavaScript - no extra infrastructure required.
 	//
 	// ## Migrate from the Config API
@@ -372,26 +351,31 @@ type SegmentPublicAPI struct {
 	// | `logo_url`    | `logoUrl`      |
 	// | `catalog_id`  | `catalogId`    |
 	//
-	Functions *functions
+	Functions *Functions
 	// A User Group is a set of Team Members with a set of shared policies. A Segment Team Member can be a member of one or many Groups. All roles in the Segment App are additive, which means that you can assign group memberships and individual roles to a single team member. For example, a single user can inherit roles from a Group definition AND have access to more resources through individually assigned roles.
 	//
-	IAMGroups *iamGroups
-	// A role gives a user access to resources within a Workspace. Roles are additive, and can combine to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
-	//
-	IAMRoles *iamRoles
+	IAMGroups *IAMGroups
 	// Segment’s access management tools let Workspace owners manage which users can access different parts of their Segment Workspaces.
 	//
-	IAMUsers *iamUsers
+	IAMUsers *IAMUsers
 	// Workspace owners can use Labels to grant users access to groups of resources. When you add a Label to a Source or Personas Space, any users to whom you assign that Label gain access to those resources.
 	//
 	// To create or configure labels, go to the Labels tab in your Workspace settings. Only Workspace Owners can manage labels for the entire Workspace.
 	//
-	Labels *labels
-	// A Profiles Sync Warehouse is a central repository of data collected from your workspace. It is what commonly comes to mind when you think about a relational database: structured data that fits into rows and columns.
+	Labels *Labels
+	// In keeping with Segment's commitment to support GDPR and future privacy regulations such as the CCPA, you can delete and suppress data about end users if you identify that user with a `userId`, should they revoke or alter their consent to data collection. For instance, if an end user in the EU invokes their Right to Object or Right to Erasure under the GDPR, you can use the following features in Segment to block ongoing data collection about the user, and delete all historical data across Segment’s systems, connected S3 buckets and Warehouses, and supported downstream partners.
 	//
-	// Using Segment’s Public API, you can create, delete, update, and list Spaces Warehouses connections.
+	// Regulations enable you to issue a single request to delete and suppress data about a user by `userId`. All regulations are by default scoped to your Workspace and target all Sources within the Workspace. This way, you don't need to page over every Source within Segment to delete data about a user across all your users.
 	//
-	ProfilesSync *profilesSync
+	// All deletion and suppression actions within Segment are asynchronous, and fall under the umbrella of what Segment calls "Regulations." Regulations are requests to Segment to impart control over your data flow. You can issue these requests with the Segment Public API using the endpoints below.
+	//
+	// You can't replay data deleted through Regulations. For standard replay requests, Segment asks that you wait for deletions to complete and not submit any new deletion requests for the period of time that Segment replays data for you.
+	//
+	// ## Migrate from the Config API
+	//
+	// Deletion and Suppression got an overhaul in the Segment Public API. They’re now divided into Workspace, Source, and Cloud Source-related endpoints. The Public API simplifies these endpoints: the `attributes` input field is no longer required, and you can now pass an array of IDs to regulate (instead of a `parent`).
+	//
+	DeletionAndSuppression *DeletionAndSuppression
 	// Reverse ETL allows the use of a database (aka: Segment Warehouse) as a source of
 	// data to be connected and sent to supported Segment Destinations. Previously, it
 	// was only possible to use a Segment Warehouse as a destination.
@@ -466,10 +450,10 @@ type SegmentPublicAPI struct {
 	// [go-time-parse-duration]: https://pkg.go.dev/time#ParseDuration
 	// [iana-timezones]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 	//
-	ReverseETL *reverseETL
-	// Warehouse Selective Sync allows you to manage the data that you send to your Warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and may slow down your Warehouse syncs.
+	ReverseETL *ReverseETL
+	// A role gives a user access to resources within a Workspace. Roles are additive, and can combine to configure a custom policy for a Team Member or a Group. A policy is at least one role plus one resource applied to an individual user or group.
 	//
-	SelectiveSync *selectiveSync
+	IAMRoles *IAMRoles
 	// In Segment, you create a Source (or more than one!) for each website or app you want to track. While it’s not required that you have a single Source for each server, site or app, Segment recommends that you create a Source for each unique source of data.
 	//
 	// ## Migrate from the Config API
@@ -485,13 +469,46 @@ type SegmentPublicAPI struct {
 	//
 	// To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
 	//
-	Sources *sources
+	Sources *Sources
+	// Edge functions enables you to write event enrichment and transformation logic in Javascript outside
+	// your client codebase and deployed to applications over-the-air dynamically.
+	//
+	// ## Availability
+	//
+	// Edge Functions are in Private Alpha testing and available to select customers. To opt in, contact your Customer Success Manager and ensure that you have one of Segment's new Mobile SDKs (Swift or Kotlin) configured.
+	//
+	// ## Migrate from the Config API
+	//
+	// | Config API | Public API                                                            |
+	// | ---------- | --------------------------------------------------------------------- |
+	// | `name`     | Use the Source `id` (See note on names vs IDs in the migration guide) |
+	//
+	// To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
+	//
+	EdgeFunctions *EdgeFunctions
 	// A space is a separate Personas environment. Consider the two main reasons you might use spaces:
 	//
 	// - To separate your development and production environments (highly recommended)
 	// - To separate environments for distinct teams or geographical regions
 	//
-	Spaces *spaces
+	Spaces *Spaces
+	// Audiences play a key role in gaining a deeper understanding of your users. Audiences allow you to group users or profiles based on shared characteristics, behaviors, and attributes. Using events passed into Segment, traits, and computed traits you can create Audiences which can help unlock more relevant engagement and communication.
+	//
+	// > **Note**: The Audience API is currently in a Private Beta. If you are interested in joining the Private Beta, then please reach out to your customer success manager.
+	//
+	Audiences *Audiences
+	// Computed traits allow you to quickly create new traits for a user or profile based on that user's tracked interactions. Using the events and event properties that you send through page and track calls, Segment will calculate and keep up-to-date, over time, the value for your defined computed trait. These can be computations like the total number of orders a customer has completed, the lifetime revenue of a customer, the most frequent user to determine which user is most active in an account, or the unique visitors count to assess how many visitors from a single domain.
+	//
+	// > **Note**: The Computed Traits API is currently in a Private Beta. If you are interested in joining the Private Beta, then please reach out to your customer success manager.
+	//
+	// Note that when using a unique list computed trait, Segment limits the number of Event Properties that can be added to the specific trait to 10,000. If your computed trait exceeds this limit, Segment will not persist any new Event Properties and will drop new trait keys and corresponding values.
+	//
+	ComputedTraits *ComputedTraits
+	// A Profiles Sync Warehouse is a central repository of data collected from your workspace. It is what commonly comes to mind when you think about a relational database: structured data that fits into rows and columns.
+	//
+	// Using Segment’s Public API, you can create, delete, update, and list Spaces Warehouses connections.
+	//
+	ProfilesSync *ProfilesSync
 	// A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources.
 	//
 	// The Segment Tracking Plan feature allows you to validate your expected events against the live events that Segment receives. Segment generates violations when an event doesn’t match the spec’d event in the Tracking Plan.
@@ -513,7 +530,7 @@ type SegmentPublicAPI struct {
 	//
 	// To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
 	//
-	TrackingPlans *trackingPlans
+	TrackingPlans *TrackingPlans
 	// With Transformations, you can change data as it flows through Segment to:
 	// - Correct bad data
 	// - Customize data for a specific destination
@@ -530,32 +547,15 @@ type SegmentPublicAPI struct {
 	//
 	// Visit [Segment's Transformations docs](https://segment.com/docs/protocols/transform/) to learn more.
 	//
-	Transformations *transformations
+	Transformations *Transformations
 	// A Warehouse is a central repository of data collected from one or more Sources. This is what commonly comes to mind when you think about a relational database: structured data that fits into rows and columns.
 	//
 	// Using the Segment Public API, you can create, delete, update, list, validate and connect Warehouses.
 	//
-	Warehouses *warehouses
-	// A Workspace is a group of Sources that you administer and Segment bills together. Workspaces help companies manage access for different users and data Sources and let you collaborate with team members, add permissions, and share Sources across your team using a shared billing account.
+	Warehouses *Warehouses
+	// Warehouse Selective Sync allows you to manage the data that you send to your Warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and may slow down your Warehouse syncs.
 	//
-	// When you first log in to your Segment account, you can create a new Workspace, or choose to log into an existing Workspace if your account is part of an existing organization.
-	//
-	// As the Segment Public API scopes tokens to a Workspace, all operations within the API are also limited to the Workspace to which that token belongs.
-	//
-	// ## Migrate from the Config API
-	//
-	// Like the Segment Public API, the Config API has one endpoint to retrieve details about a Workspace. The [getWorkspace endpoint](https://reference.segmentapis.com/#7ed2968b-c4a5-4cfb-b4bf-7d28c7b38bd2) returns the following fields:
-	//
-	// | Config API     | Public API                           |
-	// | -------------- | ------------------------------------ |
-	// | `create_time`  | Not returned                         |
-	// | `display_name` | `name`                               |
-	// | `id`           | `id`                                 |
-	// | `name`         | `slug` (`workspace/` prefix removed) |
-	//
-	// To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
-	//
-	Workspaces *workspaces
+	SelectiveSync *SelectiveSync
 
 	sdkConfiguration sdkConfiguration
 }
@@ -632,9 +632,9 @@ func New(opts ...SDKOption) *SegmentPublicAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "36.2.0",
-			SDKVersion:        "0.6.0",
-			GenVersion:        "2.173.0",
-			UserAgent:         "speakeasy-sdk/go 0.6.0 2.173.0 36.2.0 segment_public_api",
+			SDKVersion:        "0.7.0",
+			GenVersion:        "2.181.1",
+			UserAgent:         "speakeasy-sdk/go 0.7.0 2.181.1 36.2.0 segment_public_api",
 		},
 	}
 	for _, opt := range opts {
@@ -653,39 +653,39 @@ func New(opts ...SDKOption) *SegmentPublicAPI {
 		}
 	}
 
-	sdk.Audiences = newAudiences(sdk.sdkConfiguration)
+	sdk.Workspaces = newWorkspaces(sdk.sdkConfiguration)
 
 	sdk.Catalog = newCatalog(sdk.sdkConfiguration)
-
-	sdk.ComputedTraits = newComputedTraits(sdk.sdkConfiguration)
-
-	sdk.DeletionAndSuppression = newDeletionAndSuppression(sdk.sdkConfiguration)
 
 	sdk.DestinationFilters = newDestinationFilters(sdk.sdkConfiguration)
 
 	sdk.Destinations = newDestinations(sdk.sdkConfiguration)
 
-	sdk.EdgeFunctions = newEdgeFunctions(sdk.sdkConfiguration)
-
 	sdk.Functions = newFunctions(sdk.sdkConfiguration)
 
 	sdk.IAMGroups = newIAMGroups(sdk.sdkConfiguration)
-
-	sdk.IAMRoles = newIAMRoles(sdk.sdkConfiguration)
 
 	sdk.IAMUsers = newIAMUsers(sdk.sdkConfiguration)
 
 	sdk.Labels = newLabels(sdk.sdkConfiguration)
 
-	sdk.ProfilesSync = newProfilesSync(sdk.sdkConfiguration)
+	sdk.DeletionAndSuppression = newDeletionAndSuppression(sdk.sdkConfiguration)
 
 	sdk.ReverseETL = newReverseETL(sdk.sdkConfiguration)
 
-	sdk.SelectiveSync = newSelectiveSync(sdk.sdkConfiguration)
+	sdk.IAMRoles = newIAMRoles(sdk.sdkConfiguration)
 
 	sdk.Sources = newSources(sdk.sdkConfiguration)
 
+	sdk.EdgeFunctions = newEdgeFunctions(sdk.sdkConfiguration)
+
 	sdk.Spaces = newSpaces(sdk.sdkConfiguration)
+
+	sdk.Audiences = newAudiences(sdk.sdkConfiguration)
+
+	sdk.ComputedTraits = newComputedTraits(sdk.sdkConfiguration)
+
+	sdk.ProfilesSync = newProfilesSync(sdk.sdkConfiguration)
 
 	sdk.TrackingPlans = newTrackingPlans(sdk.sdkConfiguration)
 
@@ -693,7 +693,7 @@ func New(opts ...SDKOption) *SegmentPublicAPI {
 
 	sdk.Warehouses = newWarehouses(sdk.sdkConfiguration)
 
-	sdk.Workspaces = newWorkspaces(sdk.sdkConfiguration)
+	sdk.SelectiveSync = newSelectiveSync(sdk.sdkConfiguration)
 
 	return sdk
 }

@@ -29,52 +29,52 @@ func (o *ListUsersFromUserGroupRequest) GetUserGroupID() string {
 	return o.UserGroupID
 }
 
-// ListUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListUsersFromUserGroupIAMGroupsResponse200ResponseBody - OK
+type ListUsersFromUserGroupIAMGroupsResponse200ResponseBody struct {
 	// Returns the members of a user group with the given group id.
 	Data *shared.ListUsersFromUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *ListUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListUsersFromUserGroupV1Output {
+func (o *ListUsersFromUserGroupIAMGroupsResponse200ResponseBody) GetData() *shared.ListUsersFromUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListUsersFromUserGroupIAMGroupsResponseResponseBody - OK
+type ListUsersFromUserGroupIAMGroupsResponseResponseBody struct {
 	// Returns the members of a user group with the given group id.
 	Data *shared.ListUsersFromUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *ListUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListUsersFromUserGroupV1Output {
+func (o *ListUsersFromUserGroupIAMGroupsResponseResponseBody) GetData() *shared.ListUsersFromUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON - OK
-type ListUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON struct {
+// ListUsersFromUserGroupIAMGroupsResponseBody - OK
+type ListUsersFromUserGroupIAMGroupsResponseBody struct {
 	// Returns the members of a user group with the given group id.
 	Data *shared.ListUsersFromUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *ListUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListUsersFromUserGroupV1Output {
+func (o *ListUsersFromUserGroupIAMGroupsResponseBody) GetData() *shared.ListUsersFromUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListUsersFromUserGroup200ApplicationJSON - OK
-type ListUsersFromUserGroup200ApplicationJSON struct {
+// ListUsersFromUserGroupResponseBody - OK
+type ListUsersFromUserGroupResponseBody struct {
 	// Returns the members of a user group with the given group id.
 	Data *shared.ListUsersFromUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *ListUsersFromUserGroup200ApplicationJSON) GetData() *shared.ListUsersFromUserGroupV1Output {
+func (o *ListUsersFromUserGroupResponseBody) GetData() *shared.ListUsersFromUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
@@ -82,6 +82,14 @@ func (o *ListUsersFromUserGroup200ApplicationJSON) GetData() *shared.ListUsersFr
 }
 
 type ListUsersFromUserGroupResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListUsersFromUserGroupResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListUsersFromUserGroupIAMGroupsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListUsersFromUserGroupIAMGroupsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListUsersFromUserGroupIAMGroupsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -90,14 +98,34 @@ type ListUsersFromUserGroupResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListUsersFromUserGroup200ApplicationJSONObject *ListUsersFromUserGroup200ApplicationJSON
-	// OK
-	ListUsersFromUserGroup200ApplicationVndSegmentV1PlusJSONObject *ListUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject *ListUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSONObject *ListUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListUsersFromUserGroupResponse) GetTwoHundredApplicationJSONObject() *ListUsersFromUserGroupResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListUsersFromUserGroupResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListUsersFromUserGroupIAMGroupsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListUsersFromUserGroupResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListUsersFromUserGroupIAMGroupsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListUsersFromUserGroupResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListUsersFromUserGroupIAMGroupsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListUsersFromUserGroupResponse) GetContentType() string {
@@ -126,32 +154,4 @@ func (o *ListUsersFromUserGroupResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListUsersFromUserGroupResponse) GetListUsersFromUserGroup200ApplicationJSONObject() *ListUsersFromUserGroup200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListUsersFromUserGroup200ApplicationJSONObject
-}
-
-func (o *ListUsersFromUserGroupResponse) GetListUsersFromUserGroup200ApplicationVndSegmentV1PlusJSONObject() *ListUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListUsersFromUserGroup200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListUsersFromUserGroupResponse) GetListUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject() *ListUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListUsersFromUserGroupResponse) GetListUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSONObject() *ListUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSONObject
 }

@@ -26,13 +26,13 @@ func (o *RemoveProfilesWarehouseFromSpaceRequest) GetWarehouseID() string {
 	return o.WarehouseID
 }
 
-// RemoveProfilesWarehouseFromSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type RemoveProfilesWarehouseFromSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// RemoveProfilesWarehouseFromSpaceResponseBody - OK
+type RemoveProfilesWarehouseFromSpaceResponseBody struct {
 	// Returns the status of a Warehouse deletion.
 	Data *shared.RemoveProfilesWarehouseFromSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *RemoveProfilesWarehouseFromSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RemoveProfilesWarehouseFromSpaceAlphaOutput {
+func (o *RemoveProfilesWarehouseFromSpaceResponseBody) GetData() *shared.RemoveProfilesWarehouseFromSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type RemoveProfilesWarehouseFromSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	RemoveProfilesWarehouseFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject *RemoveProfilesWarehouseFromSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *RemoveProfilesWarehouseFromSpaceResponseBody
 }
 
 func (o *RemoveProfilesWarehouseFromSpaceResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *RemoveProfilesWarehouseFromSpaceResponse) GetRequestErrorEnvelope() *sh
 	return o.RequestErrorEnvelope
 }
 
-func (o *RemoveProfilesWarehouseFromSpaceResponse) GetRemoveProfilesWarehouseFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *RemoveProfilesWarehouseFromSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *RemoveProfilesWarehouseFromSpaceResponse) GetObject() *RemoveProfilesWarehouseFromSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.RemoveProfilesWarehouseFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

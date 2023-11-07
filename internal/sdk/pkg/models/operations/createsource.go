@@ -7,52 +7,52 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateSource200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateSource200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateSourceSourcesResponse200ResponseBody - OK
+type CreateSourceSourcesResponse200ResponseBody struct {
 	// Returns a newly created Source.
 	Data *shared.CreateSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateSource200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateSourceV1Output {
+func (o *CreateSourceSourcesResponse200ResponseBody) GetData() *shared.CreateSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateSource200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateSource200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateSourceSourcesResponseResponseBody - OK
+type CreateSourceSourcesResponseResponseBody struct {
 	// Returns the newly Source.
 	Data *shared.CreateSourceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *CreateSource200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateSourceAlphaOutput {
+func (o *CreateSourceSourcesResponseResponseBody) GetData() *shared.CreateSourceAlphaOutput {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateSource200ApplicationVndSegmentV1PlusJSON - OK
-type CreateSource200ApplicationVndSegmentV1PlusJSON struct {
+// CreateSourceSourcesResponseBody - OK
+type CreateSourceSourcesResponseBody struct {
 	// Returns a newly created Source.
 	Data *shared.CreateSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateSource200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateSourceV1Output {
+func (o *CreateSourceSourcesResponseBody) GetData() *shared.CreateSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateSource200ApplicationJSON - OK
-type CreateSource200ApplicationJSON struct {
+// CreateSourceResponseBody - OK
+type CreateSourceResponseBody struct {
 	// Returns a newly created Source.
 	Data *shared.CreateSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateSource200ApplicationJSON) GetData() *shared.CreateSourceV1Output {
+func (o *CreateSourceResponseBody) GetData() *shared.CreateSourceV1Output {
 	if o == nil {
 		return nil
 	}
@@ -60,6 +60,14 @@ func (o *CreateSource200ApplicationJSON) GetData() *shared.CreateSourceV1Output 
 }
 
 type CreateSourceResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateSourceResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateSourceSourcesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateSourceSourcesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateSourceSourcesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -68,14 +76,34 @@ type CreateSourceResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateSource200ApplicationJSONObject *CreateSource200ApplicationJSON
-	// OK
-	CreateSource200ApplicationVndSegmentV1PlusJSONObject *CreateSource200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateSource200ApplicationVndSegmentV1alphaPlusJSONObject *CreateSource200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateSource200ApplicationVndSegmentV1betaPlusJSONObject *CreateSource200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateSourceResponse) GetTwoHundredApplicationJSONObject() *CreateSourceResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateSourceResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateSourceSourcesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateSourceResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateSourceSourcesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateSourceResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateSourceSourcesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateSourceResponse) GetContentType() string {
@@ -104,32 +132,4 @@ func (o *CreateSourceResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateSourceResponse) GetCreateSource200ApplicationJSONObject() *CreateSource200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateSource200ApplicationJSONObject
-}
-
-func (o *CreateSourceResponse) GetCreateSource200ApplicationVndSegmentV1PlusJSONObject() *CreateSource200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateSource200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateSourceResponse) GetCreateSource200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateSource200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateSource200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateSourceResponse) GetCreateSource200ApplicationVndSegmentV1betaPlusJSONObject() *CreateSource200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateSource200ApplicationVndSegmentV1betaPlusJSONObject
 }

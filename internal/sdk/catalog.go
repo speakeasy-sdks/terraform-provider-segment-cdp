@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-// catalog - These endpoints let you list all the Sources, Destinations, and Destination settings that Segment supports.
+// Catalog - These endpoints let you list all the Sources, Destinations, and Destination settings that Segment supports.
 //
 // ## Migrate from the Config API
 //
@@ -55,19 +55,19 @@ import (
 // | website                    | `website`                                       |
 //
 // To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
-type catalog struct {
+type Catalog struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newCatalog(sdkConfig sdkConfiguration) *catalog {
-	return &catalog{
+func newCatalog(sdkConfig sdkConfiguration) *Catalog {
+	return &Catalog{
 		sdkConfiguration: sdkConfig,
 	}
 }
 
 // GetDestinationMetadata - Get Destination Metadata
 // Returns a Destination catalog item by its id.
-func (s *catalog) GetDestinationMetadata(ctx context.Context, request operations.GetDestinationMetadataRequest, opts ...operations.Option) (*operations.GetDestinationMetadataResponse, error) {
+func (s *Catalog) GetDestinationMetadata(ctx context.Context, request operations.GetDestinationMetadataRequest, opts ...operations.Option) (*operations.GetDestinationMetadataResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -124,33 +124,33 @@ func (s *catalog) GetDestinationMetadata(ctx context.Context, request operations
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetDestinationMetadata200ApplicationJSON
+			var out operations.GetDestinationMetadataResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinationMetadata200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetDestinationMetadata200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetDestinationMetadataCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinationMetadata200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetDestinationMetadata200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetDestinationMetadataCatalogResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinationMetadata200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetDestinationMetadata200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetDestinationMetadataCatalogResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinationMetadata200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -177,7 +177,7 @@ func (s *catalog) GetDestinationMetadata(ctx context.Context, request operations
 
 // GetDestinationsCatalog - Get Destinations Catalog
 // Returns a list of all available Destinations in the Segment catalog.
-func (s *catalog) GetDestinationsCatalog(ctx context.Context, request operations.GetDestinationsCatalogRequest, opts ...operations.Option) (*operations.GetDestinationsCatalogResponse, error) {
+func (s *Catalog) GetDestinationsCatalog(ctx context.Context, request operations.GetDestinationsCatalogRequest, opts ...operations.Option) (*operations.GetDestinationsCatalogResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -235,33 +235,33 @@ func (s *catalog) GetDestinationsCatalog(ctx context.Context, request operations
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetDestinationsCatalog200ApplicationJSON
+			var out operations.GetDestinationsCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinationsCatalog200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetDestinationsCatalogCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinationsCatalog200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetDestinationsCatalogCatalogResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinationsCatalog200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetDestinationsCatalogCatalogResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestinationsCatalog200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -288,7 +288,7 @@ func (s *catalog) GetDestinationsCatalog(ctx context.Context, request operations
 
 // GetSourceMetadata - Get Source Metadata
 // Returns a Source catalog item by its id.
-func (s *catalog) GetSourceMetadata(ctx context.Context, request operations.GetSourceMetadataRequest, opts ...operations.Option) (*operations.GetSourceMetadataResponse, error) {
+func (s *Catalog) GetSourceMetadata(ctx context.Context, request operations.GetSourceMetadataRequest, opts ...operations.Option) (*operations.GetSourceMetadataResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -345,33 +345,33 @@ func (s *catalog) GetSourceMetadata(ctx context.Context, request operations.GetS
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetSourceMetadata200ApplicationJSON
+			var out operations.GetSourceMetadataResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSourceMetadata200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetSourceMetadata200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetSourceMetadataCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSourceMetadata200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetSourceMetadataCatalogResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSourceMetadata200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetSourceMetadataCatalogResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSourceMetadata200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -398,7 +398,7 @@ func (s *catalog) GetSourceMetadata(ctx context.Context, request operations.GetS
 
 // GetSourcesCatalog - Get Sources Catalog
 // Returns a list of all available Sources in the Segment catalog.
-func (s *catalog) GetSourcesCatalog(ctx context.Context, request operations.GetSourcesCatalogRequest, opts ...operations.Option) (*operations.GetSourcesCatalogResponse, error) {
+func (s *Catalog) GetSourcesCatalog(ctx context.Context, request operations.GetSourcesCatalogRequest, opts ...operations.Option) (*operations.GetSourcesCatalogResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -456,33 +456,33 @@ func (s *catalog) GetSourcesCatalog(ctx context.Context, request operations.GetS
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetSourcesCatalog200ApplicationJSON
+			var out operations.GetSourcesCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSourcesCatalog200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetSourcesCatalog200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetSourcesCatalogCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSourcesCatalog200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetSourcesCatalog200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetSourcesCatalogCatalogResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSourcesCatalog200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetSourcesCatalog200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetSourcesCatalogCatalogResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSourcesCatalog200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -509,7 +509,7 @@ func (s *catalog) GetSourcesCatalog(ctx context.Context, request operations.GetS
 
 // GetWarehouseMetadata - Get Warehouse Metadata
 // Returns a Warehouse catalog item by its id.
-func (s *catalog) GetWarehouseMetadata(ctx context.Context, request operations.GetWarehouseMetadataRequest, opts ...operations.Option) (*operations.GetWarehouseMetadataResponse, error) {
+func (s *Catalog) GetWarehouseMetadata(ctx context.Context, request operations.GetWarehouseMetadataRequest, opts ...operations.Option) (*operations.GetWarehouseMetadataResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -566,33 +566,33 @@ func (s *catalog) GetWarehouseMetadata(ctx context.Context, request operations.G
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetWarehouseMetadata200ApplicationJSON
+			var out operations.GetWarehouseMetadataResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehouseMetadata200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetWarehouseMetadataCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehouseMetadata200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetWarehouseMetadataCatalogResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehouseMetadata200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetWarehouseMetadataCatalogResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehouseMetadata200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -619,7 +619,7 @@ func (s *catalog) GetWarehouseMetadata(ctx context.Context, request operations.G
 
 // GetWarehousesCatalog - Get Warehouses Catalog
 // Returns a list of all available Warehouses in the Segment catalog.
-func (s *catalog) GetWarehousesCatalog(ctx context.Context, request operations.GetWarehousesCatalogRequest, opts ...operations.Option) (*operations.GetWarehousesCatalogResponse, error) {
+func (s *Catalog) GetWarehousesCatalog(ctx context.Context, request operations.GetWarehousesCatalogRequest, opts ...operations.Option) (*operations.GetWarehousesCatalogResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -677,33 +677,33 @@ func (s *catalog) GetWarehousesCatalog(ctx context.Context, request operations.G
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetWarehousesCatalog200ApplicationJSON
+			var out operations.GetWarehousesCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehousesCatalog200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetWarehousesCatalogCatalogResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehousesCatalog200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetWarehousesCatalogCatalogResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehousesCatalog200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetWarehousesCatalogCatalogResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehousesCatalog200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

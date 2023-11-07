@@ -18,13 +18,13 @@ func (o *GetLatestFromEdgeFunctionsRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// GetLatestFromEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetLatestFromEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetLatestFromEdgeFunctionsResponseBody - OK
+type GetLatestFromEdgeFunctionsResponseBody struct {
 	// Output for GetLatestFromEdgeFunctions.
 	Data *shared.GetLatestFromEdgeFunctionsAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *GetLatestFromEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetLatestFromEdgeFunctionsAlphaOutput {
+func (o *GetLatestFromEdgeFunctionsResponseBody) GetData() *shared.GetLatestFromEdgeFunctionsAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -41,7 +41,7 @@ type GetLatestFromEdgeFunctionsResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	GetLatestFromEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject *GetLatestFromEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON
+	Object *GetLatestFromEdgeFunctionsResponseBody
 }
 
 func (o *GetLatestFromEdgeFunctionsResponse) GetContentType() string {
@@ -72,9 +72,9 @@ func (o *GetLatestFromEdgeFunctionsResponse) GetRequestErrorEnvelope() *shared.R
 	return o.RequestErrorEnvelope
 }
 
-func (o *GetLatestFromEdgeFunctionsResponse) GetGetLatestFromEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject() *GetLatestFromEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *GetLatestFromEdgeFunctionsResponse) GetObject() *GetLatestFromEdgeFunctionsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetLatestFromEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

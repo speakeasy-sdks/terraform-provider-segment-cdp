@@ -26,13 +26,13 @@ func (o *GetAudienceRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// GetAudience200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetAudience200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetAudienceResponseBody - OK
+type GetAudienceResponseBody struct {
 	// Audience output for update.
 	Data *shared.GetAudienceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *GetAudience200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetAudienceAlphaOutput {
+func (o *GetAudienceResponseBody) GetData() *shared.GetAudienceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type GetAudienceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	GetAudience200ApplicationVndSegmentV1alphaPlusJSONObject *GetAudience200ApplicationVndSegmentV1alphaPlusJSON
+	Object *GetAudienceResponseBody
 }
 
 func (o *GetAudienceResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *GetAudienceResponse) GetRequestErrorEnvelope() *shared.RequestErrorEnve
 	return o.RequestErrorEnvelope
 }
 
-func (o *GetAudienceResponse) GetGetAudience200ApplicationVndSegmentV1alphaPlusJSONObject() *GetAudience200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *GetAudienceResponse) GetObject() *GetAudienceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetAudience200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

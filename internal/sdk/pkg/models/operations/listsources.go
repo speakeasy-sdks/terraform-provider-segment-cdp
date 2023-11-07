@@ -21,52 +21,52 @@ func (o *ListSourcesRequest) GetPagination() shared.PaginationInput {
 	return o.Pagination
 }
 
-// ListSources200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListSources200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListSourcesSourcesResponse200ResponseBody - OK
+type ListSourcesSourcesResponse200ResponseBody struct {
 	// Returns a list of Sources that belong to the current Workspace.
 	Data *shared.ListSourcesV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSources200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListSourcesV1Output {
+func (o *ListSourcesSourcesResponse200ResponseBody) GetData() *shared.ListSourcesV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSources200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListSources200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListSourcesSourcesResponseResponseBody - OK
+type ListSourcesSourcesResponseResponseBody struct {
 	// Returns a list of Sources that belong to the current Workspace.
 	Data *shared.ListSourcesAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ListSources200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListSourcesAlphaOutput {
+func (o *ListSourcesSourcesResponseResponseBody) GetData() *shared.ListSourcesAlphaOutput {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSources200ApplicationVndSegmentV1PlusJSON - OK
-type ListSources200ApplicationVndSegmentV1PlusJSON struct {
+// ListSourcesSourcesResponseBody - OK
+type ListSourcesSourcesResponseBody struct {
 	// Returns a list of Sources that belong to the current Workspace.
 	Data *shared.ListSourcesV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSources200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListSourcesV1Output {
+func (o *ListSourcesSourcesResponseBody) GetData() *shared.ListSourcesV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSources200ApplicationJSON - OK
-type ListSources200ApplicationJSON struct {
+// ListSourcesResponseBody - OK
+type ListSourcesResponseBody struct {
 	// Returns a list of Sources that belong to the current Workspace.
 	Data *shared.ListSourcesV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSources200ApplicationJSON) GetData() *shared.ListSourcesV1Output {
+func (o *ListSourcesResponseBody) GetData() *shared.ListSourcesV1Output {
 	if o == nil {
 		return nil
 	}
@@ -74,6 +74,14 @@ func (o *ListSources200ApplicationJSON) GetData() *shared.ListSourcesV1Output {
 }
 
 type ListSourcesResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListSourcesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListSourcesSourcesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListSourcesSourcesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListSourcesSourcesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -82,14 +90,34 @@ type ListSourcesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListSources200ApplicationJSONObject *ListSources200ApplicationJSON
-	// OK
-	ListSources200ApplicationVndSegmentV1PlusJSONObject *ListSources200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListSources200ApplicationVndSegmentV1alphaPlusJSONObject *ListSources200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListSources200ApplicationVndSegmentV1betaPlusJSONObject *ListSources200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListSourcesResponse) GetTwoHundredApplicationJSONObject() *ListSourcesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListSourcesResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListSourcesSourcesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListSourcesResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListSourcesSourcesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListSourcesResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListSourcesSourcesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListSourcesResponse) GetContentType() string {
@@ -118,32 +146,4 @@ func (o *ListSourcesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListSourcesResponse) GetListSources200ApplicationJSONObject() *ListSources200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSources200ApplicationJSONObject
-}
-
-func (o *ListSourcesResponse) GetListSources200ApplicationVndSegmentV1PlusJSONObject() *ListSources200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSources200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListSourcesResponse) GetListSources200ApplicationVndSegmentV1alphaPlusJSONObject() *ListSources200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSources200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListSourcesResponse) GetListSources200ApplicationVndSegmentV1betaPlusJSONObject() *ListSources200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSources200ApplicationVndSegmentV1betaPlusJSONObject
 }

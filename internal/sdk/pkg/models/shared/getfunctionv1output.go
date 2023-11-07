@@ -7,22 +7,22 @@ import (
 	"fmt"
 )
 
-// GetFunctionV1OutputFunctionV1ResourceType - The Function type.
+// GetFunctionV1OutputResourceType - The Function type.
 //
 // Config API note: equal to `type`.
-type GetFunctionV1OutputFunctionV1ResourceType string
+type GetFunctionV1OutputResourceType string
 
 const (
-	GetFunctionV1OutputFunctionV1ResourceTypeDestination       GetFunctionV1OutputFunctionV1ResourceType = "DESTINATION"
-	GetFunctionV1OutputFunctionV1ResourceTypeInsertDestination GetFunctionV1OutputFunctionV1ResourceType = "INSERT_DESTINATION"
-	GetFunctionV1OutputFunctionV1ResourceTypeSource            GetFunctionV1OutputFunctionV1ResourceType = "SOURCE"
+	GetFunctionV1OutputResourceTypeDestination       GetFunctionV1OutputResourceType = "DESTINATION"
+	GetFunctionV1OutputResourceTypeInsertDestination GetFunctionV1OutputResourceType = "INSERT_DESTINATION"
+	GetFunctionV1OutputResourceTypeSource            GetFunctionV1OutputResourceType = "SOURCE"
 )
 
-func (e GetFunctionV1OutputFunctionV1ResourceType) ToPointer() *GetFunctionV1OutputFunctionV1ResourceType {
+func (e GetFunctionV1OutputResourceType) ToPointer() *GetFunctionV1OutputResourceType {
 	return &e
 }
 
-func (e *GetFunctionV1OutputFunctionV1ResourceType) UnmarshalJSON(data []byte) error {
+func (e *GetFunctionV1OutputResourceType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -33,10 +33,10 @@ func (e *GetFunctionV1OutputFunctionV1ResourceType) UnmarshalJSON(data []byte) e
 	case "INSERT_DESTINATION":
 		fallthrough
 	case "SOURCE":
-		*e = GetFunctionV1OutputFunctionV1ResourceType(v)
+		*e = GetFunctionV1OutputResourceType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for GetFunctionV1OutputFunctionV1ResourceType: %v", v)
+		return fmt.Errorf("invalid value for GetFunctionV1OutputResourceType: %v", v)
 	}
 }
 
@@ -69,7 +69,7 @@ type GetFunctionV1OutputFunctionV1 struct {
 	// The Function type.
 	//
 	// Config API note: equal to `type`.
-	ResourceType *GetFunctionV1OutputFunctionV1ResourceType `json:"resourceType,omitempty"`
+	ResourceType *GetFunctionV1OutputResourceType `json:"resourceType,omitempty"`
 	// The list of settings for this Function.
 	Settings []FunctionSettingV1 `json:"settings,omitempty"`
 }
@@ -158,7 +158,7 @@ func (o *GetFunctionV1OutputFunctionV1) GetPreviewWebhookURL() *string {
 	return o.PreviewWebhookURL
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetResourceType() *GetFunctionV1OutputFunctionV1ResourceType {
+func (o *GetFunctionV1OutputFunctionV1) GetResourceType() *GetFunctionV1OutputResourceType {
 	if o == nil {
 		return nil
 	}

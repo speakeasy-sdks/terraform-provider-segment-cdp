@@ -26,52 +26,52 @@ func (o *ReplaceUsersInUserGroupRequest) GetUserGroupID() string {
 	return o.UserGroupID
 }
 
-// ReplaceUsersInUserGroup200ApplicationVndSegmentV1betaPlusJSON - OK
-type ReplaceUsersInUserGroup200ApplicationVndSegmentV1betaPlusJSON struct {
+// ReplaceUsersInUserGroupIAMGroupsResponse200ResponseBody - OK
+type ReplaceUsersInUserGroupIAMGroupsResponse200ResponseBody struct {
 	// Returns the updated user group.
 	Data *shared.ReplaceUsersInUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceUsersInUserGroup200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ReplaceUsersInUserGroupV1Output {
+func (o *ReplaceUsersInUserGroupIAMGroupsResponse200ResponseBody) GetData() *shared.ReplaceUsersInUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceUsersInUserGroup200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ReplaceUsersInUserGroup200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ReplaceUsersInUserGroupIAMGroupsResponseResponseBody - OK
+type ReplaceUsersInUserGroupIAMGroupsResponseResponseBody struct {
 	// Returns the updated user group.
 	Data *shared.ReplaceUsersInUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceUsersInUserGroup200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ReplaceUsersInUserGroupV1Output {
+func (o *ReplaceUsersInUserGroupIAMGroupsResponseResponseBody) GetData() *shared.ReplaceUsersInUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceUsersInUserGroup200ApplicationVndSegmentV1PlusJSON - OK
-type ReplaceUsersInUserGroup200ApplicationVndSegmentV1PlusJSON struct {
+// ReplaceUsersInUserGroupIAMGroupsResponseBody - OK
+type ReplaceUsersInUserGroupIAMGroupsResponseBody struct {
 	// Returns the updated user group.
 	Data *shared.ReplaceUsersInUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceUsersInUserGroup200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ReplaceUsersInUserGroupV1Output {
+func (o *ReplaceUsersInUserGroupIAMGroupsResponseBody) GetData() *shared.ReplaceUsersInUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceUsersInUserGroup200ApplicationJSON - OK
-type ReplaceUsersInUserGroup200ApplicationJSON struct {
+// ReplaceUsersInUserGroupResponseBody - OK
+type ReplaceUsersInUserGroupResponseBody struct {
 	// Returns the updated user group.
 	Data *shared.ReplaceUsersInUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceUsersInUserGroup200ApplicationJSON) GetData() *shared.ReplaceUsersInUserGroupV1Output {
+func (o *ReplaceUsersInUserGroupResponseBody) GetData() *shared.ReplaceUsersInUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *ReplaceUsersInUserGroup200ApplicationJSON) GetData() *shared.ReplaceUse
 }
 
 type ReplaceUsersInUserGroupResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ReplaceUsersInUserGroupResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ReplaceUsersInUserGroupIAMGroupsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ReplaceUsersInUserGroupIAMGroupsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ReplaceUsersInUserGroupIAMGroupsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type ReplaceUsersInUserGroupResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ReplaceUsersInUserGroup200ApplicationJSONObject *ReplaceUsersInUserGroup200ApplicationJSON
-	// OK
-	ReplaceUsersInUserGroup200ApplicationVndSegmentV1PlusJSONObject *ReplaceUsersInUserGroup200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ReplaceUsersInUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject *ReplaceUsersInUserGroup200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ReplaceUsersInUserGroup200ApplicationVndSegmentV1betaPlusJSONObject *ReplaceUsersInUserGroup200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ReplaceUsersInUserGroupResponse) GetTwoHundredApplicationJSONObject() *ReplaceUsersInUserGroupResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ReplaceUsersInUserGroupResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ReplaceUsersInUserGroupIAMGroupsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ReplaceUsersInUserGroupResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceUsersInUserGroupIAMGroupsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ReplaceUsersInUserGroupResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ReplaceUsersInUserGroupIAMGroupsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ReplaceUsersInUserGroupResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *ReplaceUsersInUserGroupResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ReplaceUsersInUserGroupResponse) GetReplaceUsersInUserGroup200ApplicationJSONObject() *ReplaceUsersInUserGroup200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceUsersInUserGroup200ApplicationJSONObject
-}
-
-func (o *ReplaceUsersInUserGroupResponse) GetReplaceUsersInUserGroup200ApplicationVndSegmentV1PlusJSONObject() *ReplaceUsersInUserGroup200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceUsersInUserGroup200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ReplaceUsersInUserGroupResponse) GetReplaceUsersInUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceUsersInUserGroup200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceUsersInUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ReplaceUsersInUserGroupResponse) GetReplaceUsersInUserGroup200ApplicationVndSegmentV1betaPlusJSONObject() *ReplaceUsersInUserGroup200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceUsersInUserGroup200ApplicationVndSegmentV1betaPlusJSONObject
 }

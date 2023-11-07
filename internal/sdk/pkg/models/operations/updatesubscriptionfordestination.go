@@ -34,13 +34,13 @@ func (o *UpdateSubscriptionForDestinationRequest) GetID() string {
 	return o.ID
 }
 
-// UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateSubscriptionForDestinationResponseBody - OK
+type UpdateSubscriptionForDestinationResponseBody struct {
 	// Returns the updated Destination subscription.
 	Data *shared.UpdateSubscriptionForDestinationAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateSubscriptionForDestinationAlphaOutput {
+func (o *UpdateSubscriptionForDestinationResponseBody) GetData() *shared.UpdateSubscriptionForDestinationAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -57,7 +57,7 @@ type UpdateSubscriptionForDestinationResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSON
+	Object *UpdateSubscriptionForDestinationResponseBody
 }
 
 func (o *UpdateSubscriptionForDestinationResponse) GetContentType() string {
@@ -88,9 +88,9 @@ func (o *UpdateSubscriptionForDestinationResponse) GetRequestErrorEnvelope() *sh
 	return o.RequestErrorEnvelope
 }
 
-func (o *UpdateSubscriptionForDestinationResponse) GetUpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *UpdateSubscriptionForDestinationResponse) GetObject() *UpdateSubscriptionForDestinationResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

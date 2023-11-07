@@ -26,52 +26,52 @@ func (o *ReplaceLabelsInSourceRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSON - OK
-type ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSON struct {
+// ReplaceLabelsInSourceSourcesResponse200ResponseBody - OK
+type ReplaceLabelsInSourceSourcesResponse200ResponseBody struct {
 	// Response from replacing a list of labels in a Source.
 	Data *shared.ReplaceLabelsInSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ReplaceLabelsInSourceV1Output {
+func (o *ReplaceLabelsInSourceSourcesResponse200ResponseBody) GetData() *shared.ReplaceLabelsInSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ReplaceLabelsInSourceSourcesResponseResponseBody - OK
+type ReplaceLabelsInSourceSourcesResponseResponseBody struct {
 	// Response from replacing a list of labels in a Source.
 	Data *shared.ReplaceLabelsInSourceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ReplaceLabelsInSourceAlphaOutput {
+func (o *ReplaceLabelsInSourceSourcesResponseResponseBody) GetData() *shared.ReplaceLabelsInSourceAlphaOutput {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSON - OK
-type ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSON struct {
+// ReplaceLabelsInSourceSourcesResponseBody - OK
+type ReplaceLabelsInSourceSourcesResponseBody struct {
 	// Response from replacing a list of labels in a Source.
 	Data *shared.ReplaceLabelsInSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ReplaceLabelsInSourceV1Output {
+func (o *ReplaceLabelsInSourceSourcesResponseBody) GetData() *shared.ReplaceLabelsInSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceLabelsInSource200ApplicationJSON - OK
-type ReplaceLabelsInSource200ApplicationJSON struct {
+// ReplaceLabelsInSourceResponseBody - OK
+type ReplaceLabelsInSourceResponseBody struct {
 	// Response from replacing a list of labels in a Source.
 	Data *shared.ReplaceLabelsInSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceLabelsInSource200ApplicationJSON) GetData() *shared.ReplaceLabelsInSourceV1Output {
+func (o *ReplaceLabelsInSourceResponseBody) GetData() *shared.ReplaceLabelsInSourceV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *ReplaceLabelsInSource200ApplicationJSON) GetData() *shared.ReplaceLabel
 }
 
 type ReplaceLabelsInSourceResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ReplaceLabelsInSourceResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ReplaceLabelsInSourceSourcesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ReplaceLabelsInSourceSourcesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ReplaceLabelsInSourceSourcesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type ReplaceLabelsInSourceResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ReplaceLabelsInSource200ApplicationJSONObject *ReplaceLabelsInSource200ApplicationJSON
-	// OK
-	ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSONObject *ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSONObject *ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSONObject *ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ReplaceLabelsInSourceResponse) GetTwoHundredApplicationJSONObject() *ReplaceLabelsInSourceResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ReplaceLabelsInSourceResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ReplaceLabelsInSourceSourcesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ReplaceLabelsInSourceResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceLabelsInSourceSourcesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ReplaceLabelsInSourceResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ReplaceLabelsInSourceSourcesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ReplaceLabelsInSourceResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *ReplaceLabelsInSourceResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ReplaceLabelsInSourceResponse) GetReplaceLabelsInSource200ApplicationJSONObject() *ReplaceLabelsInSource200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceLabelsInSource200ApplicationJSONObject
-}
-
-func (o *ReplaceLabelsInSourceResponse) GetReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSONObject() *ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ReplaceLabelsInSourceResponse) GetReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ReplaceLabelsInSourceResponse) GetReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSONObject() *ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSONObject
 }

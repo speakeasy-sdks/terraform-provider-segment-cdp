@@ -7,22 +7,22 @@ import (
 	"fmt"
 )
 
-// CreateFunctionV1InputResourceType - The Function type.
+// ResourceType - The Function type.
 //
 // Config API note: equal to `type`.
-type CreateFunctionV1InputResourceType string
+type ResourceType string
 
 const (
-	CreateFunctionV1InputResourceTypeDestination       CreateFunctionV1InputResourceType = "DESTINATION"
-	CreateFunctionV1InputResourceTypeInsertDestination CreateFunctionV1InputResourceType = "INSERT_DESTINATION"
-	CreateFunctionV1InputResourceTypeSource            CreateFunctionV1InputResourceType = "SOURCE"
+	ResourceTypeDestination       ResourceType = "DESTINATION"
+	ResourceTypeInsertDestination ResourceType = "INSERT_DESTINATION"
+	ResourceTypeSource            ResourceType = "SOURCE"
 )
 
-func (e CreateFunctionV1InputResourceType) ToPointer() *CreateFunctionV1InputResourceType {
+func (e ResourceType) ToPointer() *ResourceType {
 	return &e
 }
 
-func (e *CreateFunctionV1InputResourceType) UnmarshalJSON(data []byte) error {
+func (e *ResourceType) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
 		return err
@@ -33,10 +33,10 @@ func (e *CreateFunctionV1InputResourceType) UnmarshalJSON(data []byte) error {
 	case "INSERT_DESTINATION":
 		fallthrough
 	case "SOURCE":
-		*e = CreateFunctionV1InputResourceType(v)
+		*e = ResourceType(v)
 		return nil
 	default:
-		return fmt.Errorf("invalid value for CreateFunctionV1InputResourceType: %v", v)
+		return fmt.Errorf("invalid value for ResourceType: %v", v)
 	}
 }
 
@@ -55,7 +55,7 @@ type CreateFunctionV1Input struct {
 	// The Function type.
 	//
 	// Config API note: equal to `type`.
-	ResourceType CreateFunctionV1InputResourceType `json:"resourceType"`
+	ResourceType ResourceType `json:"resourceType"`
 	// The list of settings for this Function.
 	Settings []FunctionSettingV1 `json:"settings,omitempty"`
 }
@@ -88,9 +88,9 @@ func (o *CreateFunctionV1Input) GetLogoURL() *string {
 	return o.LogoURL
 }
 
-func (o *CreateFunctionV1Input) GetResourceType() CreateFunctionV1InputResourceType {
+func (o *CreateFunctionV1Input) GetResourceType() ResourceType {
 	if o == nil {
-		return CreateFunctionV1InputResourceType("")
+		return ResourceType("")
 	}
 	return o.ResourceType
 }

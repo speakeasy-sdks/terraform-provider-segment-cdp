@@ -34,13 +34,13 @@ func (o *UpdateSelectiveSyncForWarehouseAndSpaceRequest) GetWarehouseID() string
 	return o.WarehouseID
 }
 
-// UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateSelectiveSyncForWarehouseAndSpaceResponseBody - OK
+type UpdateSelectiveSyncForWarehouseAndSpaceResponseBody struct {
 	// Results from a SelectiveSync patch to a Space Warehouse connection.
 	Data *shared.UpdateSelectiveSyncForWarehouseAndSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateSelectiveSyncForWarehouseAndSpaceAlphaOutput {
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponseBody) GetData() *shared.UpdateSelectiveSyncForWarehouseAndSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -57,7 +57,7 @@ type UpdateSelectiveSyncForWarehouseAndSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *UpdateSelectiveSyncForWarehouseAndSpaceResponseBody
 }
 
 func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetContentType() string {
@@ -88,9 +88,9 @@ func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetRequestErrorEnvelop
 	return o.RequestErrorEnvelope
 }
 
-func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetUpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *UpdateSelectiveSyncForWarehouseAndSpaceResponse) GetObject() *UpdateSelectiveSyncForWarehouseAndSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.UpdateSelectiveSyncForWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

@@ -14,16 +14,16 @@ import (
 	"segment_public_api/internal/sdk/pkg/utils"
 )
 
-// spaces - A space is a separate Personas environment. Consider the two main reasons you might use spaces:
+// Spaces - A space is a separate Personas environment. Consider the two main reasons you might use spaces:
 //
 // - To separate your development and production environments (highly recommended)
 // - To separate environments for distinct teams or geographical regions
-type spaces struct {
+type Spaces struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSpaces(sdkConfig sdkConfiguration) *spaces {
-	return &spaces{
+func newSpaces(sdkConfig sdkConfiguration) *Spaces {
+	return &Spaces{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -34,7 +34,7 @@ func newSpaces(sdkConfig sdkConfiguration) *spaces {
 // • This endpoint is in **Alpha** testing.  Please submit any feedback by sending email to friends@segment.com.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Spaces feature enabled. Please reach out to your customer success manager for more information.
-func (s *spaces) BatchQueryMessagingSubscriptionsForSpace(ctx context.Context, request operations.BatchQueryMessagingSubscriptionsForSpaceRequest, opts ...operations.Option) (*operations.BatchQueryMessagingSubscriptionsForSpaceResponse, error) {
+func (s *Spaces) BatchQueryMessagingSubscriptionsForSpace(ctx context.Context, request operations.BatchQueryMessagingSubscriptionsForSpaceRequest, opts ...operations.Option) (*operations.BatchQueryMessagingSubscriptionsForSpaceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -105,12 +105,12 @@ func (s *spaces) BatchQueryMessagingSubscriptionsForSpace(ctx context.Context, r
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.BatchQueryMessagingSubscriptionsForSpaceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -141,7 +141,7 @@ func (s *spaces) BatchQueryMessagingSubscriptionsForSpace(ctx context.Context, r
 // • This endpoint is in **Alpha** testing.  Please submit any feedback by sending email to friends@segment.com.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Spaces feature enabled. Please reach out to your customer success manager for more information.
-func (s *spaces) GetSpace(ctx context.Context, request operations.GetSpaceRequest, opts ...operations.Option) (*operations.GetSpaceResponse, error) {
+func (s *Spaces) GetSpace(ctx context.Context, request operations.GetSpaceRequest, opts ...operations.Option) (*operations.GetSpaceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -198,12 +198,12 @@ func (s *spaces) GetSpace(ctx context.Context, request operations.GetSpaceReques
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetSpace200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetSpaceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSpace200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -236,7 +236,7 @@ func (s *spaces) GetSpace(ctx context.Context, request operations.GetSpaceReques
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Spaces feature enabled. Please reach out to your customer success manager for more information.
 //
 // The rate limit for this endpoint is 60 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *spaces) ReplaceMessagingSubscriptionsInSpaces(ctx context.Context, request operations.ReplaceMessagingSubscriptionsInSpacesRequest, opts ...operations.Option) (*operations.ReplaceMessagingSubscriptionsInSpacesResponse, error) {
+func (s *Spaces) ReplaceMessagingSubscriptionsInSpaces(ctx context.Context, request operations.ReplaceMessagingSubscriptionsInSpacesRequest, opts ...operations.Option) (*operations.ReplaceMessagingSubscriptionsInSpacesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -307,12 +307,12 @@ func (s *spaces) ReplaceMessagingSubscriptionsInSpaces(ctx context.Context, requ
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ReplaceMessagingSubscriptionsInSpacesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

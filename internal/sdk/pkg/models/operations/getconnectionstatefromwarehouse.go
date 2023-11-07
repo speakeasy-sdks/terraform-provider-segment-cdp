@@ -18,52 +18,52 @@ func (o *GetConnectionStateFromWarehouseRequest) GetWarehouseID() string {
 	return o.WarehouseID
 }
 
-// GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// GetConnectionStateFromWarehouseWarehousesResponse200ResponseBody - OK
+type GetConnectionStateFromWarehouseWarehousesResponse200ResponseBody struct {
 	// Returns the status of a Warehouse connection settings after an attempt to connect to it.
 	Data *shared.GetConnectionStateFromWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.GetConnectionStateFromWarehouseV1Output {
+func (o *GetConnectionStateFromWarehouseWarehousesResponse200ResponseBody) GetData() *shared.GetConnectionStateFromWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetConnectionStateFromWarehouseWarehousesResponseResponseBody - OK
+type GetConnectionStateFromWarehouseWarehousesResponseResponseBody struct {
 	// Returns the status of a Warehouse connection settings after an attempt to connect to it.
 	Data *shared.GetConnectionStateFromWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetConnectionStateFromWarehouseV1Output {
+func (o *GetConnectionStateFromWarehouseWarehousesResponseResponseBody) GetData() *shared.GetConnectionStateFromWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// GetConnectionStateFromWarehouseWarehousesResponseBody - OK
+type GetConnectionStateFromWarehouseWarehousesResponseBody struct {
 	// Returns the status of a Warehouse connection settings after an attempt to connect to it.
 	Data *shared.GetConnectionStateFromWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.GetConnectionStateFromWarehouseV1Output {
+func (o *GetConnectionStateFromWarehouseWarehousesResponseBody) GetData() *shared.GetConnectionStateFromWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetConnectionStateFromWarehouse200ApplicationJSON - OK
-type GetConnectionStateFromWarehouse200ApplicationJSON struct {
+// GetConnectionStateFromWarehouseResponseBody - OK
+type GetConnectionStateFromWarehouseResponseBody struct {
 	// Returns the status of a Warehouse connection settings after an attempt to connect to it.
 	Data *shared.GetConnectionStateFromWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *GetConnectionStateFromWarehouse200ApplicationJSON) GetData() *shared.GetConnectionStateFromWarehouseV1Output {
+func (o *GetConnectionStateFromWarehouseResponseBody) GetData() *shared.GetConnectionStateFromWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *GetConnectionStateFromWarehouse200ApplicationJSON) GetData() *shared.Ge
 }
 
 type GetConnectionStateFromWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetConnectionStateFromWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *GetConnectionStateFromWarehouseWarehousesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *GetConnectionStateFromWarehouseWarehousesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *GetConnectionStateFromWarehouseWarehousesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type GetConnectionStateFromWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetConnectionStateFromWarehouse200ApplicationJSONObject *GetConnectionStateFromWarehouse200ApplicationJSON
-	// OK
-	GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSONObject *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *GetConnectionStateFromWarehouseResponse) GetTwoHundredApplicationJSONObject() *GetConnectionStateFromWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *GetConnectionStateFromWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *GetConnectionStateFromWarehouseWarehousesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *GetConnectionStateFromWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *GetConnectionStateFromWarehouseWarehousesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *GetConnectionStateFromWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *GetConnectionStateFromWarehouseWarehousesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *GetConnectionStateFromWarehouseResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *GetConnectionStateFromWarehouseResponse) GetRawResponse() *http.Respons
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetConnectionStateFromWarehouseResponse) GetGetConnectionStateFromWarehouse200ApplicationJSONObject() *GetConnectionStateFromWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetConnectionStateFromWarehouse200ApplicationJSONObject
-}
-
-func (o *GetConnectionStateFromWarehouseResponse) GetGetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSONObject() *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *GetConnectionStateFromWarehouseResponse) GetGetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *GetConnectionStateFromWarehouseResponse) GetGetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

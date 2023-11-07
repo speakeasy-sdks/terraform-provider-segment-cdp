@@ -7,13 +7,13 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateReverseEtlModelResponseBody - OK
+type CreateReverseEtlModelResponseBody struct {
 	// Defines the results of creating a Model.
 	Data *shared.CreateReverseEtlModelOutput `json:"data,omitempty"`
 }
 
-func (o *CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateReverseEtlModelOutput {
+func (o *CreateReverseEtlModelResponseBody) GetData() *shared.CreateReverseEtlModelOutput {
 	if o == nil {
 		return nil
 	}
@@ -30,7 +30,7 @@ type CreateReverseEtlModelResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject *CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON
+	Object *CreateReverseEtlModelResponseBody
 }
 
 func (o *CreateReverseEtlModelResponse) GetContentType() string {
@@ -61,9 +61,9 @@ func (o *CreateReverseEtlModelResponse) GetRequestErrorEnvelope() *shared.Reques
 	return o.RequestErrorEnvelope
 }
 
-func (o *CreateReverseEtlModelResponse) GetCreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *CreateReverseEtlModelResponse) GetObject() *CreateReverseEtlModelResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

@@ -37,13 +37,13 @@ func (o *ListSelectiveSyncsFromWarehouseAndSpaceRequest) GetWarehouseID() string
 	return o.WarehouseID
 }
 
-// ListSelectiveSyncsFromWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListSelectiveSyncsFromWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListSelectiveSyncsFromWarehouseAndSpaceResponseBody - OK
+type ListSelectiveSyncsFromWarehouseAndSpaceResponseBody struct {
 	// Results containing the Selective Sync configuration for a Space Warehouse Connection.
 	Data *shared.ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutput {
+func (o *ListSelectiveSyncsFromWarehouseAndSpaceResponseBody) GetData() *shared.ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -60,7 +60,7 @@ type ListSelectiveSyncsFromWarehouseAndSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	ListSelectiveSyncsFromWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject *ListSelectiveSyncsFromWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *ListSelectiveSyncsFromWarehouseAndSpaceResponseBody
 }
 
 func (o *ListSelectiveSyncsFromWarehouseAndSpaceResponse) GetContentType() string {
@@ -91,9 +91,9 @@ func (o *ListSelectiveSyncsFromWarehouseAndSpaceResponse) GetRequestErrorEnvelop
 	return o.RequestErrorEnvelope
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSpaceResponse) GetListSelectiveSyncsFromWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *ListSelectiveSyncsFromWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *ListSelectiveSyncsFromWarehouseAndSpaceResponse) GetObject() *ListSelectiveSyncsFromWarehouseAndSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.ListSelectiveSyncsFromWarehouseAndSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

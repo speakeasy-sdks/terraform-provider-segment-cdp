@@ -2,8 +2,8 @@
 
 package shared
 
-// ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta - Represents a logo.
-type ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta struct {
+// ProfilesWarehouseAlphaLogosBeta - Represents a logo.
+type ProfilesWarehouseAlphaLogosBeta struct {
 	// The alternative text for this logo.
 	Alt *string `json:"alt,omitempty"`
 	// The default URL for this logo.
@@ -12,21 +12,21 @@ type ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta struct {
 	Mark *string `json:"mark,omitempty"`
 }
 
-func (o *ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta) GetAlt() *string {
+func (o *ProfilesWarehouseAlphaLogosBeta) GetAlt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Alt
 }
 
-func (o *ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta) GetDefault() string {
+func (o *ProfilesWarehouseAlphaLogosBeta) GetDefault() string {
 	if o == nil {
 		return ""
 	}
 	return o.Default
 }
 
-func (o *ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta) GetMark() *string {
+func (o *ProfilesWarehouseAlphaLogosBeta) GetMark() *string {
 	if o == nil {
 		return nil
 	}
@@ -40,7 +40,7 @@ type ProfilesWarehouseAlphaWarehouseMetadataV1 struct {
 	// The id of this object.
 	ID string `json:"id"`
 	// Logo information for this object.
-	Logos ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta `json:"logos"`
+	Logos ProfilesWarehouseAlphaLogosBeta `json:"logos"`
 	// The name of this object.
 	Name string `json:"name"`
 	// The Integration options for this object.
@@ -63,9 +63,9 @@ func (o *ProfilesWarehouseAlphaWarehouseMetadataV1) GetID() string {
 	return o.ID
 }
 
-func (o *ProfilesWarehouseAlphaWarehouseMetadataV1) GetLogos() ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta {
+func (o *ProfilesWarehouseAlphaWarehouseMetadataV1) GetLogos() ProfilesWarehouseAlphaLogosBeta {
 	if o == nil {
-		return ProfilesWarehouseAlphaWarehouseMetadataV1LogosBeta{}
+		return ProfilesWarehouseAlphaLogosBeta{}
 	}
 	return o.Logos
 }

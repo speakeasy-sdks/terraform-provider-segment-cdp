@@ -18,13 +18,13 @@ func (o *DisableEdgeFunctionsRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// DisableEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON - OK
-type DisableEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON struct {
+// DisableEdgeFunctionsResponseBody - OK
+type DisableEdgeFunctionsResponseBody struct {
 	// Output for DisableEdgeFunctions.
 	Data *shared.DisableEdgeFunctionsAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *DisableEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.DisableEdgeFunctionsAlphaOutput {
+func (o *DisableEdgeFunctionsResponseBody) GetData() *shared.DisableEdgeFunctionsAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -41,7 +41,7 @@ type DisableEdgeFunctionsResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	DisableEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject *DisableEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON
+	Object *DisableEdgeFunctionsResponseBody
 }
 
 func (o *DisableEdgeFunctionsResponse) GetContentType() string {
@@ -72,9 +72,9 @@ func (o *DisableEdgeFunctionsResponse) GetRequestErrorEnvelope() *shared.Request
 	return o.RequestErrorEnvelope
 }
 
-func (o *DisableEdgeFunctionsResponse) GetDisableEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject() *DisableEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *DisableEdgeFunctionsResponse) GetObject() *DisableEdgeFunctionsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.DisableEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

@@ -7,13 +7,13 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateInsertFunctionInstanceResponseBody - OK
+type CreateInsertFunctionInstanceResponseBody struct {
 	// Creates an insert Function instance.
 	Data *shared.CreateInsertFunctionInstanceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateInsertFunctionInstanceAlphaOutput {
+func (o *CreateInsertFunctionInstanceResponseBody) GetData() *shared.CreateInsertFunctionInstanceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -30,7 +30,7 @@ type CreateInsertFunctionInstanceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject *CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON
+	Object *CreateInsertFunctionInstanceResponseBody
 }
 
 func (o *CreateInsertFunctionInstanceResponse) GetContentType() string {
@@ -61,9 +61,9 @@ func (o *CreateInsertFunctionInstanceResponse) GetRequestErrorEnvelope() *shared
 	return o.RequestErrorEnvelope
 }
 
-func (o *CreateInsertFunctionInstanceResponse) GetCreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *CreateInsertFunctionInstanceResponse) GetObject() *CreateInsertFunctionInstanceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

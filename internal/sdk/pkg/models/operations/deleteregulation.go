@@ -18,52 +18,52 @@ func (o *DeleteRegulationRequest) GetRegulateID() string {
 	return o.RegulateID
 }
 
-// DeleteRegulation200ApplicationVndSegmentV1betaPlusJSON - OK
-type DeleteRegulation200ApplicationVndSegmentV1betaPlusJSON struct {
+// DeleteRegulationDeletionAndSuppressionResponse200ResponseBody - OK
+type DeleteRegulationDeletionAndSuppressionResponse200ResponseBody struct {
 	// The output of the delete regulation call.
 	Data *shared.DeleteRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteRegulation200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.DeleteRegulationV1Output {
+func (o *DeleteRegulationDeletionAndSuppressionResponse200ResponseBody) GetData() *shared.DeleteRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteRegulation200ApplicationVndSegmentV1alphaPlusJSON - OK
-type DeleteRegulation200ApplicationVndSegmentV1alphaPlusJSON struct {
+// DeleteRegulationDeletionAndSuppressionResponseResponseBody - OK
+type DeleteRegulationDeletionAndSuppressionResponseResponseBody struct {
 	// The output of the delete regulation call.
 	Data *shared.DeleteRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteRegulation200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.DeleteRegulationV1Output {
+func (o *DeleteRegulationDeletionAndSuppressionResponseResponseBody) GetData() *shared.DeleteRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteRegulation200ApplicationVndSegmentV1PlusJSON - OK
-type DeleteRegulation200ApplicationVndSegmentV1PlusJSON struct {
+// DeleteRegulationDeletionAndSuppressionResponseBody - OK
+type DeleteRegulationDeletionAndSuppressionResponseBody struct {
 	// The output of the delete regulation call.
 	Data *shared.DeleteRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteRegulation200ApplicationVndSegmentV1PlusJSON) GetData() *shared.DeleteRegulationV1Output {
+func (o *DeleteRegulationDeletionAndSuppressionResponseBody) GetData() *shared.DeleteRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteRegulation200ApplicationJSON - OK
-type DeleteRegulation200ApplicationJSON struct {
+// DeleteRegulationResponseBody - OK
+type DeleteRegulationResponseBody struct {
 	// The output of the delete regulation call.
 	Data *shared.DeleteRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteRegulation200ApplicationJSON) GetData() *shared.DeleteRegulationV1Output {
+func (o *DeleteRegulationResponseBody) GetData() *shared.DeleteRegulationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *DeleteRegulation200ApplicationJSON) GetData() *shared.DeleteRegulationV
 }
 
 type DeleteRegulationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *DeleteRegulationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *DeleteRegulationDeletionAndSuppressionResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *DeleteRegulationDeletionAndSuppressionResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *DeleteRegulationDeletionAndSuppressionResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type DeleteRegulationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	DeleteRegulation200ApplicationJSONObject *DeleteRegulation200ApplicationJSON
-	// OK
-	DeleteRegulation200ApplicationVndSegmentV1PlusJSONObject *DeleteRegulation200ApplicationVndSegmentV1PlusJSON
-	// OK
-	DeleteRegulation200ApplicationVndSegmentV1alphaPlusJSONObject *DeleteRegulation200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	DeleteRegulation200ApplicationVndSegmentV1betaPlusJSONObject *DeleteRegulation200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *DeleteRegulationResponse) GetTwoHundredApplicationJSONObject() *DeleteRegulationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *DeleteRegulationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *DeleteRegulationDeletionAndSuppressionResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *DeleteRegulationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *DeleteRegulationDeletionAndSuppressionResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *DeleteRegulationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *DeleteRegulationDeletionAndSuppressionResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *DeleteRegulationResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *DeleteRegulationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteRegulationResponse) GetDeleteRegulation200ApplicationJSONObject() *DeleteRegulation200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteRegulation200ApplicationJSONObject
-}
-
-func (o *DeleteRegulationResponse) GetDeleteRegulation200ApplicationVndSegmentV1PlusJSONObject() *DeleteRegulation200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteRegulation200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *DeleteRegulationResponse) GetDeleteRegulation200ApplicationVndSegmentV1alphaPlusJSONObject() *DeleteRegulation200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteRegulation200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *DeleteRegulationResponse) GetDeleteRegulation200ApplicationVndSegmentV1betaPlusJSONObject() *DeleteRegulation200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteRegulation200ApplicationVndSegmentV1betaPlusJSONObject
 }

@@ -26,13 +26,13 @@ func (o *RemoveSubscriptionFromDestinationRequest) GetID() string {
 	return o.ID
 }
 
-// RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSON - OK
-type RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSON struct {
+// RemoveSubscriptionFromDestinationResponseBody - OK
+type RemoveSubscriptionFromDestinationResponseBody struct {
 	// Returns a Destination deletion flag.
 	Data *shared.RemoveSubscriptionFromDestinationAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RemoveSubscriptionFromDestinationAlphaOutput {
+func (o *RemoveSubscriptionFromDestinationResponseBody) GetData() *shared.RemoveSubscriptionFromDestinationAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type RemoveSubscriptionFromDestinationResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject *RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSON
+	Object *RemoveSubscriptionFromDestinationResponseBody
 }
 
 func (o *RemoveSubscriptionFromDestinationResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *RemoveSubscriptionFromDestinationResponse) GetRequestErrorEnvelope() *s
 	return o.RequestErrorEnvelope
 }
 
-func (o *RemoveSubscriptionFromDestinationResponse) GetRemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject() *RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *RemoveSubscriptionFromDestinationResponse) GetObject() *RemoveSubscriptionFromDestinationResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

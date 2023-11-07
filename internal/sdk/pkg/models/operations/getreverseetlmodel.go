@@ -18,13 +18,13 @@ func (o *GetReverseEtlModelRequest) GetModelID() string {
 	return o.ModelID
 }
 
-// GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetReverseEtlModelResponseBody - OK
+type GetReverseEtlModelResponseBody struct {
 	// Defines the result of getting a Model.
 	Data *shared.GetReverseEtlModelOutput `json:"data,omitempty"`
 }
 
-func (o *GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetReverseEtlModelOutput {
+func (o *GetReverseEtlModelResponseBody) GetData() *shared.GetReverseEtlModelOutput {
 	if o == nil {
 		return nil
 	}
@@ -41,7 +41,7 @@ type GetReverseEtlModelResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject *GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON
+	Object *GetReverseEtlModelResponseBody
 }
 
 func (o *GetReverseEtlModelResponse) GetContentType() string {
@@ -72,9 +72,9 @@ func (o *GetReverseEtlModelResponse) GetRequestErrorEnvelope() *shared.RequestEr
 	return o.RequestErrorEnvelope
 }
 
-func (o *GetReverseEtlModelResponse) GetGetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject() *GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *GetReverseEtlModelResponse) GetObject() *GetReverseEtlModelResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

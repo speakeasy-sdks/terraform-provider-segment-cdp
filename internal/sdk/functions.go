@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-// functions - Functions let you create your own Sources and Destinations directly within your Workspace to bring new types of data into Segment and send data to new tools with JavaScript - no extra infrastructure required.
+// Functions let you create your own Sources and Destinations directly within your Workspace to bring new types of data into Segment and send data to new tools with JavaScript - no extra infrastructure required.
 //
 // ## Migrate from the Config API
 //
@@ -30,12 +30,12 @@ import (
 // | `description` | `description`  |
 // | `logo_url`    | `logoUrl`      |
 // | `catalog_id`  | `catalogId`    |
-type functions struct {
+type Functions struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newFunctions(sdkConfig sdkConfiguration) *functions {
-	return &functions{
+func newFunctions(sdkConfig sdkConfiguration) *Functions {
+	return &Functions{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -44,7 +44,7 @@ func newFunctions(sdkConfig sdkConfiguration) *functions {
 // Creates a Function.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) CreateFunction(ctx context.Context, request shared.CreateFunctionV1Input, opts ...operations.Option) (*operations.CreateFunctionResponse, error) {
+func (s *Functions) CreateFunction(ctx context.Context, request shared.CreateFunctionV1Input, opts ...operations.Option) (*operations.CreateFunctionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -112,33 +112,33 @@ func (s *functions) CreateFunction(ctx context.Context, request shared.CreateFun
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateFunction200ApplicationJSON
+			var out operations.CreateFunctionResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateFunction200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateFunction200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateFunctionFunctionsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateFunction200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateFunction200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateFunctionFunctionsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateFunction200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateFunction200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateFunctionFunctionsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateFunction200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -167,7 +167,7 @@ func (s *functions) CreateFunction(ctx context.Context, request shared.CreateFun
 // Deploys a Function. Only applicable to Source Function instances.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) CreateFunctionDeployment(ctx context.Context, request operations.CreateFunctionDeploymentRequest, opts ...operations.Option) (*operations.CreateFunctionDeploymentResponse, error) {
+func (s *Functions) CreateFunctionDeployment(ctx context.Context, request operations.CreateFunctionDeploymentRequest, opts ...operations.Option) (*operations.CreateFunctionDeploymentResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -224,33 +224,33 @@ func (s *functions) CreateFunctionDeployment(ctx context.Context, request operat
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateFunctionDeployment200ApplicationJSON
+			var out operations.CreateFunctionDeploymentResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateFunctionDeployment200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateFunctionDeployment200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateFunctionDeploymentFunctionsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateFunctionDeployment200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateFunctionDeployment200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateFunctionDeploymentFunctionsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateFunctionDeployment200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateFunctionDeployment200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateFunctionDeploymentFunctionsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateFunctionDeployment200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -279,7 +279,7 @@ func (s *functions) CreateFunctionDeployment(ctx context.Context, request operat
 // Creates an insert Function instance connected to the given Destination.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) CreateInsertFunctionInstance(ctx context.Context, request shared.CreateInsertFunctionInstanceAlphaInput, opts ...operations.Option) (*operations.CreateInsertFunctionInstanceResponse, error) {
+func (s *Functions) CreateInsertFunctionInstance(ctx context.Context, request shared.CreateInsertFunctionInstanceAlphaInput, opts ...operations.Option) (*operations.CreateInsertFunctionInstanceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -347,12 +347,12 @@ func (s *functions) CreateInsertFunctionInstance(ctx context.Context, request sh
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateInsertFunctionInstanceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -381,7 +381,7 @@ func (s *functions) CreateInsertFunctionInstance(ctx context.Context, request sh
 // Deletes a Function.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) DeleteFunction(ctx context.Context, request operations.DeleteFunctionRequest, opts ...operations.Option) (*operations.DeleteFunctionResponse, error) {
+func (s *Functions) DeleteFunction(ctx context.Context, request operations.DeleteFunctionRequest, opts ...operations.Option) (*operations.DeleteFunctionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -438,33 +438,33 @@ func (s *functions) DeleteFunction(ctx context.Context, request operations.Delet
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteFunction200ApplicationJSON
+			var out operations.DeleteFunctionResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteFunction200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.DeleteFunction200ApplicationVndSegmentV1PlusJSON
+			var out operations.DeleteFunctionFunctionsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteFunction200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteFunction200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteFunctionFunctionsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteFunction200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.DeleteFunction200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.DeleteFunctionFunctionsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteFunction200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -493,7 +493,7 @@ func (s *functions) DeleteFunction(ctx context.Context, request operations.Delet
 // Deletes an insert Function instance.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) DeleteInsertFunctionInstance(ctx context.Context, request operations.DeleteInsertFunctionInstanceRequest, opts ...operations.Option) (*operations.DeleteInsertFunctionInstanceResponse, error) {
+func (s *Functions) DeleteInsertFunctionInstance(ctx context.Context, request operations.DeleteInsertFunctionInstanceRequest, opts ...operations.Option) (*operations.DeleteInsertFunctionInstanceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -550,12 +550,12 @@ func (s *functions) DeleteInsertFunctionInstance(ctx context.Context, request op
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteInsertFunctionInstanceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -584,7 +584,7 @@ func (s *functions) DeleteInsertFunctionInstance(ctx context.Context, request op
 // Gets a Function.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) GetFunction(ctx context.Context, request operations.GetFunctionRequest, opts ...operations.Option) (*operations.GetFunctionResponse, error) {
+func (s *Functions) GetFunction(ctx context.Context, request operations.GetFunctionRequest, opts ...operations.Option) (*operations.GetFunctionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -641,33 +641,33 @@ func (s *functions) GetFunction(ctx context.Context, request operations.GetFunct
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetFunction200ApplicationJSON
+			var out operations.GetFunctionResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetFunction200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetFunction200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetFunctionFunctionsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetFunction200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetFunction200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetFunctionFunctionsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetFunction200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetFunction200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetFunctionFunctionsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetFunction200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -696,7 +696,7 @@ func (s *functions) GetFunction(ctx context.Context, request operations.GetFunct
 // Gets a Function version.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) GetFunctionVersion(ctx context.Context, request operations.GetFunctionVersionRequest, opts ...operations.Option) (*operations.GetFunctionVersionResponse, error) {
+func (s *Functions) GetFunctionVersion(ctx context.Context, request operations.GetFunctionVersionRequest, opts ...operations.Option) (*operations.GetFunctionVersionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -753,12 +753,12 @@ func (s *functions) GetFunctionVersion(ctx context.Context, request operations.G
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetFunctionVersion200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetFunctionVersionResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetFunctionVersion200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -787,7 +787,7 @@ func (s *functions) GetFunctionVersion(ctx context.Context, request operations.G
 // Lists versions for a Function in a Workspace.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) ListFunctionVersions(ctx context.Context, request operations.ListFunctionVersionsRequest, opts ...operations.Option) (*operations.ListFunctionVersionsResponse, error) {
+func (s *Functions) ListFunctionVersions(ctx context.Context, request operations.ListFunctionVersionsRequest, opts ...operations.Option) (*operations.ListFunctionVersionsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -848,12 +848,12 @@ func (s *functions) ListFunctionVersions(ctx context.Context, request operations
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListFunctionVersionsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -882,7 +882,7 @@ func (s *functions) ListFunctionVersions(ctx context.Context, request operations
 // Restore an old Function version as the latest version.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) RestoreFunctionVersion(ctx context.Context, request operations.RestoreFunctionVersionRequest, opts ...operations.Option) (*operations.RestoreFunctionVersionResponse, error) {
+func (s *Functions) RestoreFunctionVersion(ctx context.Context, request operations.RestoreFunctionVersionRequest, opts ...operations.Option) (*operations.RestoreFunctionVersionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -953,12 +953,12 @@ func (s *functions) RestoreFunctionVersion(ctx context.Context, request operatio
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.RestoreFunctionVersionResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.RestoreFunctionVersion200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -990,7 +990,7 @@ func (s *functions) RestoreFunctionVersion(ctx context.Context, request operatio
 //
 // Config API omitted fields:
 // - `updateMask`
-func (s *functions) UpdateFunction(ctx context.Context, request operations.UpdateFunctionRequest, opts ...operations.Option) (*operations.UpdateFunctionResponse, error) {
+func (s *Functions) UpdateFunction(ctx context.Context, request operations.UpdateFunctionRequest, opts ...operations.Option) (*operations.UpdateFunctionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1061,33 +1061,33 @@ func (s *functions) UpdateFunction(ctx context.Context, request operations.Updat
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.UpdateFunction200ApplicationJSON
+			var out operations.UpdateFunctionResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateFunction200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.UpdateFunction200ApplicationVndSegmentV1PlusJSON
+			var out operations.UpdateFunctionFunctionsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateFunction200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateFunction200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateFunctionFunctionsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateFunction200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.UpdateFunction200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.UpdateFunctionFunctionsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateFunction200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1116,7 +1116,7 @@ func (s *functions) UpdateFunction(ctx context.Context, request operations.Updat
 // Updates an insert Function instance connected to the given Destination.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Functions feature enabled. Please reach out to your customer success manager for more information.
-func (s *functions) UpdateInsertFunctionInstance(ctx context.Context, request operations.UpdateInsertFunctionInstanceRequest, opts ...operations.Option) (*operations.UpdateInsertFunctionInstanceResponse, error) {
+func (s *Functions) UpdateInsertFunctionInstance(ctx context.Context, request operations.UpdateInsertFunctionInstanceRequest, opts ...operations.Option) (*operations.UpdateInsertFunctionInstanceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1187,12 +1187,12 @@ func (s *functions) UpdateInsertFunctionInstance(ctx context.Context, request op
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateInsertFunctionInstanceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

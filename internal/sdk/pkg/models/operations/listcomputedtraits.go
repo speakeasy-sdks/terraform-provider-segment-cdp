@@ -29,13 +29,13 @@ func (o *ListComputedTraitsRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListComputedTraitsResponseBody - OK
+type ListComputedTraitsResponseBody struct {
 	// List computed traits endpoint output.
 	Data *shared.ListComputedTraitsAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListComputedTraitsAlphaOutput {
+func (o *ListComputedTraitsResponseBody) GetData() *shared.ListComputedTraitsAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -52,7 +52,7 @@ type ListComputedTraitsResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSONObject *ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON
+	Object *ListComputedTraitsResponseBody
 }
 
 func (o *ListComputedTraitsResponse) GetContentType() string {
@@ -83,9 +83,9 @@ func (o *ListComputedTraitsResponse) GetRequestErrorEnvelope() *shared.RequestEr
 	return o.RequestErrorEnvelope
 }
 
-func (o *ListComputedTraitsResponse) GetListComputedTraits200ApplicationVndSegmentV1alphaPlusJSONObject() *ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *ListComputedTraitsResponse) GetObject() *ListComputedTraitsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.ListComputedTraits200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

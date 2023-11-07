@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-// sources - In Segment, you create a Source (or more than one!) for each website or app you want to track. While it’s not required that you have a single Source for each server, site or app, Segment recommends that you create a Source for each unique source of data.
+// Sources - In Segment, you create a Source (or more than one!) for each website or app you want to track. While it’s not required that you have a single Source for each server, site or app, Segment recommends that you create a Source for each unique source of data.
 //
 // ## Migrate from the Config API
 //
@@ -29,12 +29,12 @@ import (
 // | `create_time`  | None                                            |
 //
 // To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
-type sources struct {
+type Sources struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newSources(sdkConfig sdkConfiguration) *sources {
-	return &sources{
+func newSources(sdkConfig sdkConfiguration) *Sources {
+	return &Sources{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -43,7 +43,7 @@ func newSources(sdkConfig sdkConfiguration) *sources {
 // Adds an existing label to a Source.
 //
 // • When called, this endpoint may generate the `Source Modified` event in the [audit trail](/tag/Audit-Trail).
-func (s *sources) AddLabelsToSource(ctx context.Context, request operations.AddLabelsToSourceRequest, opts ...operations.Option) (*operations.AddLabelsToSourceResponse, error) {
+func (s *Sources) AddLabelsToSource(ctx context.Context, request operations.AddLabelsToSourceRequest, opts ...operations.Option) (*operations.AddLabelsToSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -114,33 +114,33 @@ func (s *sources) AddLabelsToSource(ctx context.Context, request operations.AddL
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.AddLabelsToSource200ApplicationJSON
+			var out operations.AddLabelsToSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddLabelsToSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.AddLabelsToSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.AddLabelsToSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddLabelsToSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.AddLabelsToSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddLabelsToSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.AddLabelsToSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddLabelsToSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -169,7 +169,7 @@ func (s *sources) AddLabelsToSource(ctx context.Context, request operations.AddL
 // Creates a new Source.
 //
 // • When called, this endpoint may generate the `Source Created` event in the [audit trail](/tag/Audit-Trail).
-func (s *sources) CreateSource(ctx context.Context, request shared.CreateSourceV1Input, opts ...operations.Option) (*operations.CreateSourceResponse, error) {
+func (s *Sources) CreateSource(ctx context.Context, request shared.CreateSourceV1Input, opts ...operations.Option) (*operations.CreateSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -237,33 +237,33 @@ func (s *sources) CreateSource(ctx context.Context, request shared.CreateSourceV
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateSource200ApplicationJSON
+			var out operations.CreateSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -292,7 +292,7 @@ func (s *sources) CreateSource(ctx context.Context, request shared.CreateSourceV
 // Deletes an existing Source.
 //
 // • When called, this endpoint may generate the `Source Deleted` event in the [audit trail](/tag/Audit-Trail).
-func (s *sources) DeleteSource(ctx context.Context, request operations.DeleteSourceRequest, opts ...operations.Option) (*operations.DeleteSourceResponse, error) {
+func (s *Sources) DeleteSource(ctx context.Context, request operations.DeleteSourceRequest, opts ...operations.Option) (*operations.DeleteSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -349,33 +349,33 @@ func (s *sources) DeleteSource(ctx context.Context, request operations.DeleteSou
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteSource200ApplicationJSON
+			var out operations.DeleteSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.DeleteSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.DeleteSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.DeleteSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.DeleteSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -402,7 +402,7 @@ func (s *sources) DeleteSource(ctx context.Context, request operations.DeleteSou
 
 // GetSource - Get Source
 // Returns a Source by its id.
-func (s *sources) GetSource(ctx context.Context, request operations.GetSourceRequest, opts ...operations.Option) (*operations.GetSourceResponse, error) {
+func (s *Sources) GetSource(ctx context.Context, request operations.GetSourceRequest, opts ...operations.Option) (*operations.GetSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -459,33 +459,33 @@ func (s *sources) GetSource(ctx context.Context, request operations.GetSourceReq
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetSource200ApplicationJSON
+			var out operations.GetSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -512,7 +512,7 @@ func (s *sources) GetSource(ctx context.Context, request operations.GetSourceReq
 
 // ListConnectedDestinationsFromSource - List Connected Destinations from Source
 // Returns a list of Destinations connected to a Source.
-func (s *sources) ListConnectedDestinationsFromSource(ctx context.Context, request operations.ListConnectedDestinationsFromSourceRequest, opts ...operations.Option) (*operations.ListConnectedDestinationsFromSourceResponse, error) {
+func (s *Sources) ListConnectedDestinationsFromSource(ctx context.Context, request operations.ListConnectedDestinationsFromSourceRequest, opts ...operations.Option) (*operations.ListConnectedDestinationsFromSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -573,33 +573,33 @@ func (s *sources) ListConnectedDestinationsFromSource(ctx context.Context, reque
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListConnectedDestinationsFromSource200ApplicationJSON
+			var out operations.ListConnectedDestinationsFromSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedDestinationsFromSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListConnectedDestinationsFromSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListConnectedDestinationsFromSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedDestinationsFromSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListConnectedDestinationsFromSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListConnectedDestinationsFromSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedDestinationsFromSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListConnectedDestinationsFromSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListConnectedDestinationsFromSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedDestinationsFromSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -626,7 +626,7 @@ func (s *sources) ListConnectedDestinationsFromSource(ctx context.Context, reque
 
 // ListConnectedWarehousesFromSource - List Connected Warehouses from Source
 // Returns a list of Warehouses connected to a Source.
-func (s *sources) ListConnectedWarehousesFromSource(ctx context.Context, request operations.ListConnectedWarehousesFromSourceRequest, opts ...operations.Option) (*operations.ListConnectedWarehousesFromSourceResponse, error) {
+func (s *Sources) ListConnectedWarehousesFromSource(ctx context.Context, request operations.ListConnectedWarehousesFromSourceRequest, opts ...operations.Option) (*operations.ListConnectedWarehousesFromSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -687,33 +687,33 @@ func (s *sources) ListConnectedWarehousesFromSource(ctx context.Context, request
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListConnectedWarehousesFromSource200ApplicationJSON
+			var out operations.ListConnectedWarehousesFromSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedWarehousesFromSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListConnectedWarehousesFromSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListConnectedWarehousesFromSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListConnectedWarehousesFromSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -740,7 +740,7 @@ func (s *sources) ListConnectedWarehousesFromSource(ctx context.Context, request
 
 // ListSchemaSettingsInSource - List Schema Settings in Source
 // Retrieves the schema configuration settings for a Source. If Protocols is not enabled for the Source, the configurations specific to Protocols will have default values.
-func (s *sources) ListSchemaSettingsInSource(ctx context.Context, request operations.ListSchemaSettingsInSourceRequest, opts ...operations.Option) (*operations.ListSchemaSettingsInSourceResponse, error) {
+func (s *Sources) ListSchemaSettingsInSource(ctx context.Context, request operations.ListSchemaSettingsInSourceRequest, opts ...operations.Option) (*operations.ListSchemaSettingsInSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -797,33 +797,33 @@ func (s *sources) ListSchemaSettingsInSource(ctx context.Context, request operat
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListSchemaSettingsInSource200ApplicationJSON
+			var out operations.ListSchemaSettingsInSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSchemaSettingsInSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListSchemaSettingsInSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListSchemaSettingsInSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSchemaSettingsInSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListSchemaSettingsInSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListSchemaSettingsInSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSchemaSettingsInSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListSchemaSettingsInSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListSchemaSettingsInSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSchemaSettingsInSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -850,7 +850,7 @@ func (s *sources) ListSchemaSettingsInSource(ctx context.Context, request operat
 
 // ListSources - List Sources
 // Returns a list of Sources.
-func (s *sources) ListSources(ctx context.Context, request operations.ListSourcesRequest, opts ...operations.Option) (*operations.ListSourcesResponse, error) {
+func (s *Sources) ListSources(ctx context.Context, request operations.ListSourcesRequest, opts ...operations.Option) (*operations.ListSourcesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -908,33 +908,33 @@ func (s *sources) ListSources(ctx context.Context, request operations.ListSource
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListSources200ApplicationJSON
+			var out operations.ListSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSources200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListSources200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListSourcesSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSources200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListSources200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListSourcesSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSources200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListSources200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListSourcesSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSources200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -961,7 +961,7 @@ func (s *sources) ListSources(ctx context.Context, request operations.ListSource
 
 // ReplaceLabelsInSource - Replace Labels in Source
 // Replaces all labels in a Source.
-func (s *sources) ReplaceLabelsInSource(ctx context.Context, request operations.ReplaceLabelsInSourceRequest, opts ...operations.Option) (*operations.ReplaceLabelsInSourceResponse, error) {
+func (s *Sources) ReplaceLabelsInSource(ctx context.Context, request operations.ReplaceLabelsInSourceRequest, opts ...operations.Option) (*operations.ReplaceLabelsInSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1032,33 +1032,33 @@ func (s *sources) ReplaceLabelsInSource(ctx context.Context, request operations.
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ReplaceLabelsInSource200ApplicationJSON
+			var out operations.ReplaceLabelsInSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceLabelsInSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.ReplaceLabelsInSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceLabelsInSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ReplaceLabelsInSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceLabelsInSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ReplaceLabelsInSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceLabelsInSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1089,7 +1089,7 @@ func (s *sources) ReplaceLabelsInSource(ctx context.Context, request operations.
 //	Config API omitted fields:
 //
 // - `updateMask`
-func (s *sources) UpdateSchemaSettingsInSource(ctx context.Context, request operations.UpdateSchemaSettingsInSourceRequest, opts ...operations.Option) (*operations.UpdateSchemaSettingsInSourceResponse, error) {
+func (s *Sources) UpdateSchemaSettingsInSource(ctx context.Context, request operations.UpdateSchemaSettingsInSourceRequest, opts ...operations.Option) (*operations.UpdateSchemaSettingsInSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1160,33 +1160,33 @@ func (s *sources) UpdateSchemaSettingsInSource(ctx context.Context, request oper
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.UpdateSchemaSettingsInSource200ApplicationJSON
+			var out operations.UpdateSchemaSettingsInSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSchemaSettingsInSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.UpdateSchemaSettingsInSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.UpdateSchemaSettingsInSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSchemaSettingsInSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateSchemaSettingsInSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateSchemaSettingsInSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSchemaSettingsInSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.UpdateSchemaSettingsInSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.UpdateSchemaSettingsInSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSchemaSettingsInSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1221,7 +1221,7 @@ func (s *sources) UpdateSchemaSettingsInSource(ctx context.Context, request oper
 //
 // Config API omitted fields:
 // - `updateMask`
-func (s *sources) UpdateSource(ctx context.Context, request operations.UpdateSourceRequest, opts ...operations.Option) (*operations.UpdateSourceResponse, error) {
+func (s *Sources) UpdateSource(ctx context.Context, request operations.UpdateSourceRequest, opts ...operations.Option) (*operations.UpdateSourceResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1292,33 +1292,33 @@ func (s *sources) UpdateSource(ctx context.Context, request operations.UpdateSou
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.UpdateSource200ApplicationJSON
+			var out operations.UpdateSourceResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSource200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.UpdateSource200ApplicationVndSegmentV1PlusJSON
+			var out operations.UpdateSourceSourcesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSource200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateSource200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateSourceSourcesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSource200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.UpdateSource200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.UpdateSourceSourcesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSource200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

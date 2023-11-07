@@ -26,52 +26,52 @@ func (o *CreateSourceRegulationRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// CreateSourceRegulation200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateSourceRegulation200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateSourceRegulationDeletionAndSuppressionResponse200ResponseBody - OK
+type CreateSourceRegulationDeletionAndSuppressionResponse200ResponseBody struct {
 	// The output of a create Source regulation call.
 	Data *shared.CreateSourceRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateSourceRegulation200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateSourceRegulationV1Output {
+func (o *CreateSourceRegulationDeletionAndSuppressionResponse200ResponseBody) GetData() *shared.CreateSourceRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateSourceRegulationDeletionAndSuppressionResponseResponseBody - OK
+type CreateSourceRegulationDeletionAndSuppressionResponseResponseBody struct {
 	// The output of a create Source regulation call.
 	Data *shared.CreateSourceRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateSourceRegulationV1Output {
+func (o *CreateSourceRegulationDeletionAndSuppressionResponseResponseBody) GetData() *shared.CreateSourceRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateSourceRegulation200ApplicationVndSegmentV1PlusJSON - OK
-type CreateSourceRegulation200ApplicationVndSegmentV1PlusJSON struct {
+// CreateSourceRegulationDeletionAndSuppressionResponseBody - OK
+type CreateSourceRegulationDeletionAndSuppressionResponseBody struct {
 	// The output of a create Source regulation call.
 	Data *shared.CreateSourceRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateSourceRegulation200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateSourceRegulationV1Output {
+func (o *CreateSourceRegulationDeletionAndSuppressionResponseBody) GetData() *shared.CreateSourceRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateSourceRegulation200ApplicationJSON - OK
-type CreateSourceRegulation200ApplicationJSON struct {
+// CreateSourceRegulationResponseBody - OK
+type CreateSourceRegulationResponseBody struct {
 	// The output of a create Source regulation call.
 	Data *shared.CreateSourceRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateSourceRegulation200ApplicationJSON) GetData() *shared.CreateSourceRegulationV1Output {
+func (o *CreateSourceRegulationResponseBody) GetData() *shared.CreateSourceRegulationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *CreateSourceRegulation200ApplicationJSON) GetData() *shared.CreateSourc
 }
 
 type CreateSourceRegulationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateSourceRegulationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateSourceRegulationDeletionAndSuppressionResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateSourceRegulationDeletionAndSuppressionResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateSourceRegulationDeletionAndSuppressionResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type CreateSourceRegulationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateSourceRegulation200ApplicationJSONObject *CreateSourceRegulation200ApplicationJSON
-	// OK
-	CreateSourceRegulation200ApplicationVndSegmentV1PlusJSONObject *CreateSourceRegulation200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateSourceRegulation200ApplicationVndSegmentV1alphaPlusJSONObject *CreateSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateSourceRegulation200ApplicationVndSegmentV1betaPlusJSONObject *CreateSourceRegulation200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateSourceRegulationResponse) GetTwoHundredApplicationJSONObject() *CreateSourceRegulationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateSourceRegulationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateSourceRegulationDeletionAndSuppressionResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateSourceRegulationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateSourceRegulationDeletionAndSuppressionResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateSourceRegulationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateSourceRegulationDeletionAndSuppressionResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateSourceRegulationResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *CreateSourceRegulationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateSourceRegulationResponse) GetCreateSourceRegulation200ApplicationJSONObject() *CreateSourceRegulation200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateSourceRegulation200ApplicationJSONObject
-}
-
-func (o *CreateSourceRegulationResponse) GetCreateSourceRegulation200ApplicationVndSegmentV1PlusJSONObject() *CreateSourceRegulation200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateSourceRegulation200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateSourceRegulationResponse) GetCreateSourceRegulation200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateSourceRegulation200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateSourceRegulationResponse) GetCreateSourceRegulation200ApplicationVndSegmentV1betaPlusJSONObject() *CreateSourceRegulation200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateSourceRegulation200ApplicationVndSegmentV1betaPlusJSONObject
 }

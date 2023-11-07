@@ -2,8 +2,8 @@
 
 package shared
 
-// GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta - Represents a logo.
-type GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta struct {
+// GetWarehouseMetadataV1OutputLogosBeta - Represents a logo.
+type GetWarehouseMetadataV1OutputLogosBeta struct {
 	// The alternative text for this logo.
 	Alt *string `json:"alt,omitempty"`
 	// The default URL for this logo.
@@ -12,21 +12,21 @@ type GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta struct {
 	Mark *string `json:"mark,omitempty"`
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta) GetAlt() *string {
+func (o *GetWarehouseMetadataV1OutputLogosBeta) GetAlt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Alt
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta) GetDefault() string {
+func (o *GetWarehouseMetadataV1OutputLogosBeta) GetDefault() string {
 	if o == nil {
 		return ""
 	}
 	return o.Default
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta) GetMark() *string {
+func (o *GetWarehouseMetadataV1OutputLogosBeta) GetMark() *string {
 	if o == nil {
 		return nil
 	}
@@ -40,7 +40,7 @@ type GetWarehouseMetadataV1OutputWarehouseMetadataV1 struct {
 	// The id of this object.
 	ID string `json:"id"`
 	// Logo information for this object.
-	Logos GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta `json:"logos"`
+	Logos GetWarehouseMetadataV1OutputLogosBeta `json:"logos"`
 	// The name of this object.
 	Name string `json:"name"`
 	// The Integration options for this object.
@@ -63,9 +63,9 @@ func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetID() string {
 	return o.ID
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetLogos() GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta {
+func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetLogos() GetWarehouseMetadataV1OutputLogosBeta {
 	if o == nil {
-		return GetWarehouseMetadataV1OutputWarehouseMetadataV1LogosBeta{}
+		return GetWarehouseMetadataV1OutputLogosBeta{}
 	}
 	return o.Logos
 }

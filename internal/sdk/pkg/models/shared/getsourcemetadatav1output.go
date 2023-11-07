@@ -2,8 +2,8 @@
 
 package shared
 
-// GetSourceMetadataV1OutputSourceMetadataV1LogosBeta - Represents a logo.
-type GetSourceMetadataV1OutputSourceMetadataV1LogosBeta struct {
+// GetSourceMetadataV1OutputLogosBeta - Represents a logo.
+type GetSourceMetadataV1OutputLogosBeta struct {
 	// The alternative text for this logo.
 	Alt *string `json:"alt,omitempty"`
 	// The default URL for this logo.
@@ -12,21 +12,21 @@ type GetSourceMetadataV1OutputSourceMetadataV1LogosBeta struct {
 	Mark *string `json:"mark,omitempty"`
 }
 
-func (o *GetSourceMetadataV1OutputSourceMetadataV1LogosBeta) GetAlt() *string {
+func (o *GetSourceMetadataV1OutputLogosBeta) GetAlt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Alt
 }
 
-func (o *GetSourceMetadataV1OutputSourceMetadataV1LogosBeta) GetDefault() string {
+func (o *GetSourceMetadataV1OutputLogosBeta) GetDefault() string {
 	if o == nil {
 		return ""
 	}
 	return o.Default
 }
 
-func (o *GetSourceMetadataV1OutputSourceMetadataV1LogosBeta) GetMark() *string {
+func (o *GetSourceMetadataV1OutputLogosBeta) GetMark() *string {
 	if o == nil {
 		return nil
 	}
@@ -46,7 +46,7 @@ type GetSourceMetadataV1OutputSourceMetadataV1 struct {
 	// True if this is a Cloud Event Source.
 	IsCloudEventSource bool `json:"isCloudEventSource"`
 	// The logos for this Source.
-	Logos GetSourceMetadataV1OutputSourceMetadataV1LogosBeta `json:"logos"`
+	Logos GetSourceMetadataV1OutputLogosBeta `json:"logos"`
 	// The user-friendly name of this Source.
 	//
 	// Config API note: equal to `displayName`.
@@ -87,9 +87,9 @@ func (o *GetSourceMetadataV1OutputSourceMetadataV1) GetIsCloudEventSource() bool
 	return o.IsCloudEventSource
 }
 
-func (o *GetSourceMetadataV1OutputSourceMetadataV1) GetLogos() GetSourceMetadataV1OutputSourceMetadataV1LogosBeta {
+func (o *GetSourceMetadataV1OutputSourceMetadataV1) GetLogos() GetSourceMetadataV1OutputLogosBeta {
 	if o == nil {
-		return GetSourceMetadataV1OutputSourceMetadataV1LogosBeta{}
+		return GetSourceMetadataV1OutputLogosBeta{}
 	}
 	return o.Logos
 }

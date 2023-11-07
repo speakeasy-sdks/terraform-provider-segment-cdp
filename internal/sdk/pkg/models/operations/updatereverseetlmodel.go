@@ -26,13 +26,13 @@ func (o *UpdateReverseEtlModelRequest) GetModelID() string {
 	return o.ModelID
 }
 
-// UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateReverseEtlModelResponseBody - OK
+type UpdateReverseEtlModelResponseBody struct {
 	// Defines the results of updating a Model.
 	Data *shared.UpdateReverseEtlModelOutput `json:"data,omitempty"`
 }
 
-func (o *UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateReverseEtlModelOutput {
+func (o *UpdateReverseEtlModelResponseBody) GetData() *shared.UpdateReverseEtlModelOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type UpdateReverseEtlModelResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON
+	Object *UpdateReverseEtlModelResponseBody
 }
 
 func (o *UpdateReverseEtlModelResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *UpdateReverseEtlModelResponse) GetRequestErrorEnvelope() *shared.Reques
 	return o.RequestErrorEnvelope
 }
 
-func (o *UpdateReverseEtlModelResponse) GetUpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *UpdateReverseEtlModelResponse) GetObject() *UpdateReverseEtlModelResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

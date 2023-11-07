@@ -7,52 +7,52 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateTransformation200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateTransformation200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateTransformationTransformationsResponse200ResponseBody - OK
+type CreateTransformationTransformationsResponse200ResponseBody struct {
 	// The output of a created Transformation.
 	Data *shared.CreateTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateTransformation200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateTransformationV1Output {
+func (o *CreateTransformationTransformationsResponse200ResponseBody) GetData() *shared.CreateTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateTransformation200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateTransformation200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateTransformationTransformationsResponseResponseBody - OK
+type CreateTransformationTransformationsResponseResponseBody struct {
 	// The output of a created Transformation.
 	Data *shared.CreateTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateTransformation200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateTransformationV1Output {
+func (o *CreateTransformationTransformationsResponseResponseBody) GetData() *shared.CreateTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateTransformation200ApplicationVndSegmentV1PlusJSON - OK
-type CreateTransformation200ApplicationVndSegmentV1PlusJSON struct {
+// CreateTransformationTransformationsResponseBody - OK
+type CreateTransformationTransformationsResponseBody struct {
 	// The output of a created Transformation.
 	Data *shared.CreateTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateTransformation200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateTransformationV1Output {
+func (o *CreateTransformationTransformationsResponseBody) GetData() *shared.CreateTransformationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateTransformation200ApplicationJSON - OK
-type CreateTransformation200ApplicationJSON struct {
+// CreateTransformationResponseBody - OK
+type CreateTransformationResponseBody struct {
 	// The output of a created Transformation.
 	Data *shared.CreateTransformationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateTransformation200ApplicationJSON) GetData() *shared.CreateTransformationV1Output {
+func (o *CreateTransformationResponseBody) GetData() *shared.CreateTransformationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -60,6 +60,14 @@ func (o *CreateTransformation200ApplicationJSON) GetData() *shared.CreateTransfo
 }
 
 type CreateTransformationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateTransformationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateTransformationTransformationsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateTransformationTransformationsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateTransformationTransformationsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -68,14 +76,34 @@ type CreateTransformationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateTransformation200ApplicationJSONObject *CreateTransformation200ApplicationJSON
-	// OK
-	CreateTransformation200ApplicationVndSegmentV1PlusJSONObject *CreateTransformation200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateTransformation200ApplicationVndSegmentV1alphaPlusJSONObject *CreateTransformation200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateTransformation200ApplicationVndSegmentV1betaPlusJSONObject *CreateTransformation200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateTransformationResponse) GetTwoHundredApplicationJSONObject() *CreateTransformationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateTransformationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateTransformationTransformationsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateTransformationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateTransformationTransformationsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateTransformationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateTransformationTransformationsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateTransformationResponse) GetContentType() string {
@@ -104,32 +132,4 @@ func (o *CreateTransformationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateTransformationResponse) GetCreateTransformation200ApplicationJSONObject() *CreateTransformation200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateTransformation200ApplicationJSONObject
-}
-
-func (o *CreateTransformationResponse) GetCreateTransformation200ApplicationVndSegmentV1PlusJSONObject() *CreateTransformation200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateTransformation200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateTransformationResponse) GetCreateTransformation200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateTransformation200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateTransformation200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateTransformationResponse) GetCreateTransformation200ApplicationVndSegmentV1betaPlusJSONObject() *CreateTransformation200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateTransformation200ApplicationVndSegmentV1betaPlusJSONObject
 }

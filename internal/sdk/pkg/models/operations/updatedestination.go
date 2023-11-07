@@ -26,52 +26,52 @@ func (o *UpdateDestinationRequest) GetDestinationID() string {
 	return o.DestinationID
 }
 
-// UpdateDestination200ApplicationVndSegmentV1betaPlusJSON - OK
-type UpdateDestination200ApplicationVndSegmentV1betaPlusJSON struct {
+// UpdateDestinationDestinationsResponse200ResponseBody - OK
+type UpdateDestinationDestinationsResponse200ResponseBody struct {
 	// Returns the updated Destination.
 	Data *shared.UpdateDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateDestination200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.UpdateDestinationV1Output {
+func (o *UpdateDestinationDestinationsResponse200ResponseBody) GetData() *shared.UpdateDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateDestination200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateDestination200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateDestinationDestinationsResponseResponseBody - OK
+type UpdateDestinationDestinationsResponseResponseBody struct {
 	// Returns the updated Destination.
 	Data *shared.UpdateDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateDestination200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateDestinationV1Output {
+func (o *UpdateDestinationDestinationsResponseResponseBody) GetData() *shared.UpdateDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateDestination200ApplicationVndSegmentV1PlusJSON - OK
-type UpdateDestination200ApplicationVndSegmentV1PlusJSON struct {
+// UpdateDestinationDestinationsResponseBody - OK
+type UpdateDestinationDestinationsResponseBody struct {
 	// Returns the updated Destination.
 	Data *shared.UpdateDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateDestination200ApplicationVndSegmentV1PlusJSON) GetData() *shared.UpdateDestinationV1Output {
+func (o *UpdateDestinationDestinationsResponseBody) GetData() *shared.UpdateDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateDestination200ApplicationJSON - OK
-type UpdateDestination200ApplicationJSON struct {
+// UpdateDestinationResponseBody - OK
+type UpdateDestinationResponseBody struct {
 	// Returns the updated Destination.
 	Data *shared.UpdateDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateDestination200ApplicationJSON) GetData() *shared.UpdateDestinationV1Output {
+func (o *UpdateDestinationResponseBody) GetData() *shared.UpdateDestinationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *UpdateDestination200ApplicationJSON) GetData() *shared.UpdateDestinatio
 }
 
 type UpdateDestinationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *UpdateDestinationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *UpdateDestinationDestinationsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *UpdateDestinationDestinationsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *UpdateDestinationDestinationsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type UpdateDestinationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	UpdateDestination200ApplicationJSONObject *UpdateDestination200ApplicationJSON
-	// OK
-	UpdateDestination200ApplicationVndSegmentV1PlusJSONObject *UpdateDestination200ApplicationVndSegmentV1PlusJSON
-	// OK
-	UpdateDestination200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateDestination200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	UpdateDestination200ApplicationVndSegmentV1betaPlusJSONObject *UpdateDestination200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *UpdateDestinationResponse) GetTwoHundredApplicationJSONObject() *UpdateDestinationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *UpdateDestinationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *UpdateDestinationDestinationsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *UpdateDestinationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *UpdateDestinationDestinationsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *UpdateDestinationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *UpdateDestinationDestinationsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *UpdateDestinationResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *UpdateDestinationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *UpdateDestinationResponse) GetUpdateDestination200ApplicationJSONObject() *UpdateDestination200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateDestination200ApplicationJSONObject
-}
-
-func (o *UpdateDestinationResponse) GetUpdateDestination200ApplicationVndSegmentV1PlusJSONObject() *UpdateDestination200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateDestination200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *UpdateDestinationResponse) GetUpdateDestination200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateDestination200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateDestination200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *UpdateDestinationResponse) GetUpdateDestination200ApplicationVndSegmentV1betaPlusJSONObject() *UpdateDestination200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateDestination200ApplicationVndSegmentV1betaPlusJSONObject
 }

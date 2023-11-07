@@ -21,52 +21,52 @@ func (o *ListTransformationsRequest) GetPagination() shared.PaginationInput {
 	return o.Pagination
 }
 
-// ListTransformations200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListTransformations200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListTransformationsTransformationsResponse200ResponseBody - OK
+type ListTransformationsTransformationsResponse200ResponseBody struct {
 	// Lists the Transformations associated with the current Workspace.
 	Data *shared.ListTransformationsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListTransformations200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListTransformationsV1Output {
+func (o *ListTransformationsTransformationsResponse200ResponseBody) GetData() *shared.ListTransformationsV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListTransformations200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListTransformations200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListTransformationsTransformationsResponseResponseBody - OK
+type ListTransformationsTransformationsResponseResponseBody struct {
 	// Lists the Transformations associated with the current Workspace.
 	Data *shared.ListTransformationsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListTransformations200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListTransformationsV1Output {
+func (o *ListTransformationsTransformationsResponseResponseBody) GetData() *shared.ListTransformationsV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListTransformations200ApplicationVndSegmentV1PlusJSON - OK
-type ListTransformations200ApplicationVndSegmentV1PlusJSON struct {
+// ListTransformationsTransformationsResponseBody - OK
+type ListTransformationsTransformationsResponseBody struct {
 	// Lists the Transformations associated with the current Workspace.
 	Data *shared.ListTransformationsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListTransformations200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListTransformationsV1Output {
+func (o *ListTransformationsTransformationsResponseBody) GetData() *shared.ListTransformationsV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListTransformations200ApplicationJSON - OK
-type ListTransformations200ApplicationJSON struct {
+// ListTransformationsResponseBody - OK
+type ListTransformationsResponseBody struct {
 	// Lists the Transformations associated with the current Workspace.
 	Data *shared.ListTransformationsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListTransformations200ApplicationJSON) GetData() *shared.ListTransformationsV1Output {
+func (o *ListTransformationsResponseBody) GetData() *shared.ListTransformationsV1Output {
 	if o == nil {
 		return nil
 	}
@@ -74,6 +74,14 @@ func (o *ListTransformations200ApplicationJSON) GetData() *shared.ListTransforma
 }
 
 type ListTransformationsResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListTransformationsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListTransformationsTransformationsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListTransformationsTransformationsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListTransformationsTransformationsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -82,14 +90,34 @@ type ListTransformationsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListTransformations200ApplicationJSONObject *ListTransformations200ApplicationJSON
-	// OK
-	ListTransformations200ApplicationVndSegmentV1PlusJSONObject *ListTransformations200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListTransformations200ApplicationVndSegmentV1alphaPlusJSONObject *ListTransformations200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListTransformations200ApplicationVndSegmentV1betaPlusJSONObject *ListTransformations200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListTransformationsResponse) GetTwoHundredApplicationJSONObject() *ListTransformationsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListTransformationsResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListTransformationsTransformationsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListTransformationsResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListTransformationsTransformationsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListTransformationsResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListTransformationsTransformationsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListTransformationsResponse) GetContentType() string {
@@ -118,32 +146,4 @@ func (o *ListTransformationsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListTransformationsResponse) GetListTransformations200ApplicationJSONObject() *ListTransformations200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListTransformations200ApplicationJSONObject
-}
-
-func (o *ListTransformationsResponse) GetListTransformations200ApplicationVndSegmentV1PlusJSONObject() *ListTransformations200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListTransformations200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListTransformationsResponse) GetListTransformations200ApplicationVndSegmentV1alphaPlusJSONObject() *ListTransformations200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListTransformations200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListTransformationsResponse) GetListTransformations200ApplicationVndSegmentV1betaPlusJSONObject() *ListTransformations200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListTransformations200ApplicationVndSegmentV1betaPlusJSONObject
 }

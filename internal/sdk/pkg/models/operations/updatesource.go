@@ -26,52 +26,52 @@ func (o *UpdateSourceRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// UpdateSource200ApplicationVndSegmentV1betaPlusJSON - OK
-type UpdateSource200ApplicationVndSegmentV1betaPlusJSON struct {
+// UpdateSourceSourcesResponse200ResponseBody - OK
+type UpdateSourceSourcesResponse200ResponseBody struct {
 	// Returns the updated Source.
 	Data *shared.UpdateSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateSource200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.UpdateSourceV1Output {
+func (o *UpdateSourceSourcesResponse200ResponseBody) GetData() *shared.UpdateSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateSource200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateSource200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateSourceSourcesResponseResponseBody - OK
+type UpdateSourceSourcesResponseResponseBody struct {
 	// Returns the updated Source.
 	Data *shared.UpdateSourceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *UpdateSource200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateSourceAlphaOutput {
+func (o *UpdateSourceSourcesResponseResponseBody) GetData() *shared.UpdateSourceAlphaOutput {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateSource200ApplicationVndSegmentV1PlusJSON - OK
-type UpdateSource200ApplicationVndSegmentV1PlusJSON struct {
+// UpdateSourceSourcesResponseBody - OK
+type UpdateSourceSourcesResponseBody struct {
 	// Returns the updated Source.
 	Data *shared.UpdateSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateSource200ApplicationVndSegmentV1PlusJSON) GetData() *shared.UpdateSourceV1Output {
+func (o *UpdateSourceSourcesResponseBody) GetData() *shared.UpdateSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateSource200ApplicationJSON - OK
-type UpdateSource200ApplicationJSON struct {
+// UpdateSourceResponseBody - OK
+type UpdateSourceResponseBody struct {
 	// Returns the updated Source.
 	Data *shared.UpdateSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateSource200ApplicationJSON) GetData() *shared.UpdateSourceV1Output {
+func (o *UpdateSourceResponseBody) GetData() *shared.UpdateSourceV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *UpdateSource200ApplicationJSON) GetData() *shared.UpdateSourceV1Output 
 }
 
 type UpdateSourceResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *UpdateSourceResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *UpdateSourceSourcesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *UpdateSourceSourcesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *UpdateSourceSourcesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type UpdateSourceResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	UpdateSource200ApplicationJSONObject *UpdateSource200ApplicationJSON
-	// OK
-	UpdateSource200ApplicationVndSegmentV1PlusJSONObject *UpdateSource200ApplicationVndSegmentV1PlusJSON
-	// OK
-	UpdateSource200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateSource200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	UpdateSource200ApplicationVndSegmentV1betaPlusJSONObject *UpdateSource200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *UpdateSourceResponse) GetTwoHundredApplicationJSONObject() *UpdateSourceResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *UpdateSourceResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *UpdateSourceSourcesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *UpdateSourceResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *UpdateSourceSourcesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *UpdateSourceResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *UpdateSourceSourcesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *UpdateSourceResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *UpdateSourceResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *UpdateSourceResponse) GetUpdateSource200ApplicationJSONObject() *UpdateSource200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateSource200ApplicationJSONObject
-}
-
-func (o *UpdateSourceResponse) GetUpdateSource200ApplicationVndSegmentV1PlusJSONObject() *UpdateSource200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateSource200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *UpdateSourceResponse) GetUpdateSource200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateSource200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateSource200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *UpdateSourceResponse) GetUpdateSource200ApplicationVndSegmentV1betaPlusJSONObject() *UpdateSource200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateSource200ApplicationVndSegmentV1betaPlusJSONObject
 }

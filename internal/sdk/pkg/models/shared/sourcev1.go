@@ -2,8 +2,8 @@
 
 package shared
 
-// SourceV1SourceMetadataV1LogosBeta - Represents a logo.
-type SourceV1SourceMetadataV1LogosBeta struct {
+// SourceV1LogosBeta - Represents a logo.
+type SourceV1LogosBeta struct {
 	// The alternative text for this logo.
 	Alt *string `json:"alt,omitempty"`
 	// The default URL for this logo.
@@ -12,21 +12,21 @@ type SourceV1SourceMetadataV1LogosBeta struct {
 	Mark *string `json:"mark,omitempty"`
 }
 
-func (o *SourceV1SourceMetadataV1LogosBeta) GetAlt() *string {
+func (o *SourceV1LogosBeta) GetAlt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Alt
 }
 
-func (o *SourceV1SourceMetadataV1LogosBeta) GetDefault() string {
+func (o *SourceV1LogosBeta) GetDefault() string {
 	if o == nil {
 		return ""
 	}
 	return o.Default
 }
 
-func (o *SourceV1SourceMetadataV1LogosBeta) GetMark() *string {
+func (o *SourceV1LogosBeta) GetMark() *string {
 	if o == nil {
 		return nil
 	}
@@ -46,7 +46,7 @@ type SourceV1SourceMetadataV1 struct {
 	// True if this is a Cloud Event Source.
 	IsCloudEventSource bool `json:"isCloudEventSource"`
 	// The logos for this Source.
-	Logos SourceV1SourceMetadataV1LogosBeta `json:"logos"`
+	Logos SourceV1LogosBeta `json:"logos"`
 	// The user-friendly name of this Source.
 	//
 	// Config API note: equal to `displayName`.
@@ -87,9 +87,9 @@ func (o *SourceV1SourceMetadataV1) GetIsCloudEventSource() bool {
 	return o.IsCloudEventSource
 }
 
-func (o *SourceV1SourceMetadataV1) GetLogos() SourceV1SourceMetadataV1LogosBeta {
+func (o *SourceV1SourceMetadataV1) GetLogos() SourceV1LogosBeta {
 	if o == nil {
-		return SourceV1SourceMetadataV1LogosBeta{}
+		return SourceV1LogosBeta{}
 	}
 	return o.Logos
 }

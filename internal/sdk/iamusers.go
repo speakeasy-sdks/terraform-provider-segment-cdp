@@ -15,13 +15,13 @@ import (
 	"strings"
 )
 
-// iamUsers - Segment’s access management tools let Workspace owners manage which users can access different parts of their Segment Workspaces.
-type iamUsers struct {
+// IAMUsers - Segment’s access management tools let Workspace owners manage which users can access different parts of their Segment Workspaces.
+type IAMUsers struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newIAMUsers(sdkConfig sdkConfiguration) *iamUsers {
-	return &iamUsers{
+func newIAMUsers(sdkConfig sdkConfiguration) *IAMUsers {
+	return &IAMUsers{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -33,7 +33,7 @@ func newIAMUsers(sdkConfig sdkConfiguration) *iamUsers {
 // * User Policy Updated
 //
 // The rate limit for this endpoint is 60 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *iamUsers) AddPermissionsToUser(ctx context.Context, request operations.AddPermissionsToUserRequest, opts ...operations.Option) (*operations.AddPermissionsToUserResponse, error) {
+func (s *IAMUsers) AddPermissionsToUser(ctx context.Context, request operations.AddPermissionsToUserRequest, opts ...operations.Option) (*operations.AddPermissionsToUserResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -104,33 +104,33 @@ func (s *iamUsers) AddPermissionsToUser(ctx context.Context, request operations.
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.AddPermissionsToUser200ApplicationJSON
+			var out operations.AddPermissionsToUserResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddPermissionsToUser200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.AddPermissionsToUser200ApplicationVndSegmentV1PlusJSON
+			var out operations.AddPermissionsToUserIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddPermissionsToUser200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.AddPermissionsToUser200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.AddPermissionsToUserIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddPermissionsToUser200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.AddPermissionsToUser200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.AddPermissionsToUserIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddPermissionsToUser200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -166,7 +166,7 @@ func (s *iamUsers) AddPermissionsToUser(ctx context.Context, request operations.
 // - `parent`
 //
 // The rate limit for this endpoint is 60 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *iamUsers) CreateInvites(ctx context.Context, request shared.CreateInvitesV1Input, opts ...operations.Option) (*operations.CreateInvitesResponse, error) {
+func (s *IAMUsers) CreateInvites(ctx context.Context, request shared.CreateInvitesV1Input, opts ...operations.Option) (*operations.CreateInvitesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -234,33 +234,33 @@ func (s *iamUsers) CreateInvites(ctx context.Context, request shared.CreateInvit
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateInvites200ApplicationJSON
+			var out operations.CreateInvitesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateInvites200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateInvites200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateInvitesIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateInvites200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateInvites200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateInvitesIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateInvites200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateInvites200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateInvitesIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateInvites200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -292,7 +292,7 @@ func (s *iamUsers) CreateInvites(ctx context.Context, request shared.CreateInvit
 // * Group Memberships Deleted
 //
 // The rate limit for this endpoint is 60 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *iamUsers) DeleteInvites(ctx context.Context, request operations.DeleteInvitesRequest, opts ...operations.Option) (*operations.DeleteInvitesResponse, error) {
+func (s *IAMUsers) DeleteInvites(ctx context.Context, request operations.DeleteInvitesRequest, opts ...operations.Option) (*operations.DeleteInvitesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -350,33 +350,33 @@ func (s *iamUsers) DeleteInvites(ctx context.Context, request operations.DeleteI
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteInvites200ApplicationJSON
+			var out operations.DeleteInvitesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteInvites200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.DeleteInvites200ApplicationVndSegmentV1PlusJSON
+			var out operations.DeleteInvitesIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteInvites200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteInvites200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteInvitesIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteInvites200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.DeleteInvites200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.DeleteInvitesIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteInvites200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -407,7 +407,7 @@ func (s *iamUsers) DeleteInvites(ctx context.Context, request operations.DeleteI
 // • When called, this endpoint may generate the `Group Memberships Deleted` event in the [audit trail](/tag/Audit-Trail).
 //
 // The rate limit for this endpoint is 60 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *iamUsers) DeleteUsers(ctx context.Context, request operations.DeleteUsersRequest, opts ...operations.Option) (*operations.DeleteUsersResponse, error) {
+func (s *IAMUsers) DeleteUsers(ctx context.Context, request operations.DeleteUsersRequest, opts ...operations.Option) (*operations.DeleteUsersResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -465,33 +465,33 @@ func (s *iamUsers) DeleteUsers(ctx context.Context, request operations.DeleteUse
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteUsers200ApplicationJSON
+			var out operations.DeleteUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteUsers200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.DeleteUsers200ApplicationVndSegmentV1PlusJSON
+			var out operations.DeleteUsersIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteUsers200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteUsers200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteUsersIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteUsers200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.DeleteUsers200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.DeleteUsersIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteUsers200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -518,7 +518,7 @@ func (s *iamUsers) DeleteUsers(ctx context.Context, request operations.DeleteUse
 
 // GetUser - Get User
 // Returns a user given their id.
-func (s *iamUsers) GetUser(ctx context.Context, request operations.GetUserRequest, opts ...operations.Option) (*operations.GetUserResponse, error) {
+func (s *IAMUsers) GetUser(ctx context.Context, request operations.GetUserRequest, opts ...operations.Option) (*operations.GetUserResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -575,33 +575,33 @@ func (s *iamUsers) GetUser(ctx context.Context, request operations.GetUserReques
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetUser200ApplicationJSON
+			var out operations.GetUserResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetUser200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetUser200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetUserIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetUser200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetUser200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetUserIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetUser200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetUser200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetUserIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetUser200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -631,7 +631,7 @@ func (s *iamUsers) GetUser(ctx context.Context, request operations.GetUserReques
 //
 // Config API omitted fields:
 // - `parent`
-func (s *iamUsers) ListInvites(ctx context.Context, request operations.ListInvitesRequest, opts ...operations.Option) (*operations.ListInvitesResponse, error) {
+func (s *IAMUsers) ListInvites(ctx context.Context, request operations.ListInvitesRequest, opts ...operations.Option) (*operations.ListInvitesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -689,33 +689,33 @@ func (s *iamUsers) ListInvites(ctx context.Context, request operations.ListInvit
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListInvites200ApplicationJSON
+			var out operations.ListInvitesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListInvites200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListInvites200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListInvitesIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListInvites200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListInvites200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListInvitesIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListInvites200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListInvites200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListInvitesIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListInvites200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -742,7 +742,7 @@ func (s *iamUsers) ListInvites(ctx context.Context, request operations.ListInvit
 
 // ListUserGroupsFromUser - List User Groups from User
 // Returns all groups a user belongs to.
-func (s *iamUsers) ListUserGroupsFromUser(ctx context.Context, request operations.ListUserGroupsFromUserRequest, opts ...operations.Option) (*operations.ListUserGroupsFromUserResponse, error) {
+func (s *IAMUsers) ListUserGroupsFromUser(ctx context.Context, request operations.ListUserGroupsFromUserRequest, opts ...operations.Option) (*operations.ListUserGroupsFromUserResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -803,33 +803,33 @@ func (s *iamUsers) ListUserGroupsFromUser(ctx context.Context, request operation
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListUserGroupsFromUser200ApplicationJSON
+			var out operations.ListUserGroupsFromUserResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListUserGroupsFromUser200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListUserGroupsFromUser200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListUserGroupsFromUserIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListUserGroupsFromUser200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListUserGroupsFromUser200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListUserGroupsFromUserIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListUserGroupsFromUser200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListUserGroupsFromUser200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListUserGroupsFromUserIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListUserGroupsFromUser200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -856,7 +856,7 @@ func (s *iamUsers) ListUserGroupsFromUser(ctx context.Context, request operation
 
 // ListUsers - List Users
 // Returns a list of users with access to the Workspace.
-func (s *iamUsers) ListUsers(ctx context.Context, request operations.ListUsersRequest, opts ...operations.Option) (*operations.ListUsersResponse, error) {
+func (s *IAMUsers) ListUsers(ctx context.Context, request operations.ListUsersRequest, opts ...operations.Option) (*operations.ListUsersResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -914,33 +914,33 @@ func (s *iamUsers) ListUsers(ctx context.Context, request operations.ListUsersRe
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListUsers200ApplicationJSON
+			var out operations.ListUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListUsers200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListUsers200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListUsersIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListUsers200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListUsers200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListUsersIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListUsers200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListUsers200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListUsersIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListUsers200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -971,7 +971,7 @@ func (s *iamUsers) ListUsers(ctx context.Context, request operations.ListUsersRe
 // • When called, this endpoint may generate the `Policy Deleted` event in the [audit trail](/tag/Audit-Trail).
 //
 // The rate limit for this endpoint is 60 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *iamUsers) ReplacePermissionsForUser(ctx context.Context, request operations.ReplacePermissionsForUserRequest, opts ...operations.Option) (*operations.ReplacePermissionsForUserResponse, error) {
+func (s *IAMUsers) ReplacePermissionsForUser(ctx context.Context, request operations.ReplacePermissionsForUserRequest, opts ...operations.Option) (*operations.ReplacePermissionsForUserResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1042,33 +1042,33 @@ func (s *iamUsers) ReplacePermissionsForUser(ctx context.Context, request operat
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ReplacePermissionsForUser200ApplicationJSON
+			var out operations.ReplacePermissionsForUserResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplacePermissionsForUser200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSON
+			var out operations.ReplacePermissionsForUserIAMUsersResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplacePermissionsForUser200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ReplacePermissionsForUserIAMUsersResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplacePermissionsForUser200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ReplacePermissionsForUserIAMUsersResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplacePermissionsForUser200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

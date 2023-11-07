@@ -18,52 +18,52 @@ func (o *DeleteDestinationRequest) GetDestinationID() string {
 	return o.DestinationID
 }
 
-// DeleteDestination200ApplicationVndSegmentV1betaPlusJSON - OK
-type DeleteDestination200ApplicationVndSegmentV1betaPlusJSON struct {
+// DeleteDestinationDestinationsResponse200ResponseBody - OK
+type DeleteDestinationDestinationsResponse200ResponseBody struct {
 	// Returns the status of a Destination deletion.
 	Data *shared.DeleteDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteDestination200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.DeleteDestinationV1Output {
+func (o *DeleteDestinationDestinationsResponse200ResponseBody) GetData() *shared.DeleteDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteDestination200ApplicationVndSegmentV1alphaPlusJSON - OK
-type DeleteDestination200ApplicationVndSegmentV1alphaPlusJSON struct {
+// DeleteDestinationDestinationsResponseResponseBody - OK
+type DeleteDestinationDestinationsResponseResponseBody struct {
 	// Returns the status of a Destination deletion.
 	Data *shared.DeleteDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteDestination200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.DeleteDestinationV1Output {
+func (o *DeleteDestinationDestinationsResponseResponseBody) GetData() *shared.DeleteDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteDestination200ApplicationVndSegmentV1PlusJSON - OK
-type DeleteDestination200ApplicationVndSegmentV1PlusJSON struct {
+// DeleteDestinationDestinationsResponseBody - OK
+type DeleteDestinationDestinationsResponseBody struct {
 	// Returns the status of a Destination deletion.
 	Data *shared.DeleteDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteDestination200ApplicationVndSegmentV1PlusJSON) GetData() *shared.DeleteDestinationV1Output {
+func (o *DeleteDestinationDestinationsResponseBody) GetData() *shared.DeleteDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// DeleteDestination200ApplicationJSON - OK
-type DeleteDestination200ApplicationJSON struct {
+// DeleteDestinationResponseBody - OK
+type DeleteDestinationResponseBody struct {
 	// Returns the status of a Destination deletion.
 	Data *shared.DeleteDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *DeleteDestination200ApplicationJSON) GetData() *shared.DeleteDestinationV1Output {
+func (o *DeleteDestinationResponseBody) GetData() *shared.DeleteDestinationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *DeleteDestination200ApplicationJSON) GetData() *shared.DeleteDestinatio
 }
 
 type DeleteDestinationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *DeleteDestinationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *DeleteDestinationDestinationsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *DeleteDestinationDestinationsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *DeleteDestinationDestinationsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type DeleteDestinationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	DeleteDestination200ApplicationJSONObject *DeleteDestination200ApplicationJSON
-	// OK
-	DeleteDestination200ApplicationVndSegmentV1PlusJSONObject *DeleteDestination200ApplicationVndSegmentV1PlusJSON
-	// OK
-	DeleteDestination200ApplicationVndSegmentV1alphaPlusJSONObject *DeleteDestination200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	DeleteDestination200ApplicationVndSegmentV1betaPlusJSONObject *DeleteDestination200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *DeleteDestinationResponse) GetTwoHundredApplicationJSONObject() *DeleteDestinationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *DeleteDestinationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *DeleteDestinationDestinationsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *DeleteDestinationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *DeleteDestinationDestinationsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *DeleteDestinationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *DeleteDestinationDestinationsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *DeleteDestinationResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *DeleteDestinationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *DeleteDestinationResponse) GetDeleteDestination200ApplicationJSONObject() *DeleteDestination200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteDestination200ApplicationJSONObject
-}
-
-func (o *DeleteDestinationResponse) GetDeleteDestination200ApplicationVndSegmentV1PlusJSONObject() *DeleteDestination200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteDestination200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *DeleteDestinationResponse) GetDeleteDestination200ApplicationVndSegmentV1alphaPlusJSONObject() *DeleteDestination200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteDestination200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *DeleteDestinationResponse) GetDeleteDestination200ApplicationVndSegmentV1betaPlusJSONObject() *DeleteDestination200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.DeleteDestination200ApplicationVndSegmentV1betaPlusJSONObject
 }

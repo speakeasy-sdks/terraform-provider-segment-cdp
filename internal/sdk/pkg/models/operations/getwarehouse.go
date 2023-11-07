@@ -18,52 +18,52 @@ func (o *GetWarehouseRequest) GetWarehouseID() string {
 	return o.WarehouseID
 }
 
-// GetWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type GetWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// GetWarehouseWarehousesResponse200ResponseBody - OK
+type GetWarehouseWarehousesResponse200ResponseBody struct {
 	// Returns a Warehouse.
 	Data *shared.GetWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.GetWarehouseV1Output {
+func (o *GetWarehouseWarehousesResponse200ResponseBody) GetData() *shared.GetWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetWarehouseWarehousesResponseResponseBody - OK
+type GetWarehouseWarehousesResponseResponseBody struct {
 	// Returns a Warehouse.
 	Data *shared.GetWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetWarehouseV1Output {
+func (o *GetWarehouseWarehousesResponseResponseBody) GetData() *shared.GetWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type GetWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// GetWarehouseWarehousesResponseBody - OK
+type GetWarehouseWarehousesResponseBody struct {
 	// Returns a Warehouse.
 	Data *shared.GetWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.GetWarehouseV1Output {
+func (o *GetWarehouseWarehousesResponseBody) GetData() *shared.GetWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetWarehouse200ApplicationJSON - OK
-type GetWarehouse200ApplicationJSON struct {
+// GetWarehouseResponseBody - OK
+type GetWarehouseResponseBody struct {
 	// Returns a Warehouse.
 	Data *shared.GetWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *GetWarehouse200ApplicationJSON) GetData() *shared.GetWarehouseV1Output {
+func (o *GetWarehouseResponseBody) GetData() *shared.GetWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *GetWarehouse200ApplicationJSON) GetData() *shared.GetWarehouseV1Output 
 }
 
 type GetWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *GetWarehouseWarehousesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *GetWarehouseWarehousesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *GetWarehouseWarehousesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type GetWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetWarehouse200ApplicationJSONObject *GetWarehouse200ApplicationJSON
-	// OK
-	GetWarehouse200ApplicationVndSegmentV1PlusJSONObject *GetWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	GetWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *GetWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	GetWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *GetWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *GetWarehouseResponse) GetTwoHundredApplicationJSONObject() *GetWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *GetWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *GetWarehouseWarehousesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *GetWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *GetWarehouseWarehousesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *GetWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *GetWarehouseWarehousesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *GetWarehouseResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *GetWarehouseResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetWarehouseResponse) GetGetWarehouse200ApplicationJSONObject() *GetWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehouse200ApplicationJSONObject
-}
-
-func (o *GetWarehouseResponse) GetGetWarehouse200ApplicationVndSegmentV1PlusJSONObject() *GetWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *GetWarehouseResponse) GetGetWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *GetWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *GetWarehouseResponse) GetGetWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *GetWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

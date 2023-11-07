@@ -26,52 +26,52 @@ func (o *RemoveFilterFromDestinationRequest) GetFilterID() string {
 	return o.FilterID
 }
 
-// RemoveFilterFromDestination200ApplicationVndSegmentV1betaPlusJSON - OK
-type RemoveFilterFromDestination200ApplicationVndSegmentV1betaPlusJSON struct {
+// RemoveFilterFromDestinationDestinationFiltersResponse200ResponseBody - OK
+type RemoveFilterFromDestinationDestinationFiltersResponse200ResponseBody struct {
 	// Output for DeleteDestinationFilterV1.
 	Data *shared.RemoveFilterFromDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *RemoveFilterFromDestination200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.RemoveFilterFromDestinationV1Output {
+func (o *RemoveFilterFromDestinationDestinationFiltersResponse200ResponseBody) GetData() *shared.RemoveFilterFromDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// RemoveFilterFromDestination200ApplicationVndSegmentV1alphaPlusJSON - OK
-type RemoveFilterFromDestination200ApplicationVndSegmentV1alphaPlusJSON struct {
+// RemoveFilterFromDestinationDestinationFiltersResponseResponseBody - OK
+type RemoveFilterFromDestinationDestinationFiltersResponseResponseBody struct {
 	// Output for DeleteDestinationFilterV1.
 	Data *shared.RemoveFilterFromDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *RemoveFilterFromDestination200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RemoveFilterFromDestinationV1Output {
+func (o *RemoveFilterFromDestinationDestinationFiltersResponseResponseBody) GetData() *shared.RemoveFilterFromDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// RemoveFilterFromDestination200ApplicationVndSegmentV1PlusJSON - OK
-type RemoveFilterFromDestination200ApplicationVndSegmentV1PlusJSON struct {
+// RemoveFilterFromDestinationDestinationFiltersResponseBody - OK
+type RemoveFilterFromDestinationDestinationFiltersResponseBody struct {
 	// Output for DeleteDestinationFilterV1.
 	Data *shared.RemoveFilterFromDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *RemoveFilterFromDestination200ApplicationVndSegmentV1PlusJSON) GetData() *shared.RemoveFilterFromDestinationV1Output {
+func (o *RemoveFilterFromDestinationDestinationFiltersResponseBody) GetData() *shared.RemoveFilterFromDestinationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// RemoveFilterFromDestination200ApplicationJSON - OK
-type RemoveFilterFromDestination200ApplicationJSON struct {
+// RemoveFilterFromDestinationResponseBody - OK
+type RemoveFilterFromDestinationResponseBody struct {
 	// Output for DeleteDestinationFilterV1.
 	Data *shared.RemoveFilterFromDestinationV1Output `json:"data,omitempty"`
 }
 
-func (o *RemoveFilterFromDestination200ApplicationJSON) GetData() *shared.RemoveFilterFromDestinationV1Output {
+func (o *RemoveFilterFromDestinationResponseBody) GetData() *shared.RemoveFilterFromDestinationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *RemoveFilterFromDestination200ApplicationJSON) GetData() *shared.Remove
 }
 
 type RemoveFilterFromDestinationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *RemoveFilterFromDestinationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *RemoveFilterFromDestinationDestinationFiltersResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *RemoveFilterFromDestinationDestinationFiltersResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *RemoveFilterFromDestinationDestinationFiltersResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type RemoveFilterFromDestinationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	RemoveFilterFromDestination200ApplicationJSONObject *RemoveFilterFromDestination200ApplicationJSON
-	// OK
-	RemoveFilterFromDestination200ApplicationVndSegmentV1PlusJSONObject *RemoveFilterFromDestination200ApplicationVndSegmentV1PlusJSON
-	// OK
-	RemoveFilterFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject *RemoveFilterFromDestination200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	RemoveFilterFromDestination200ApplicationVndSegmentV1betaPlusJSONObject *RemoveFilterFromDestination200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *RemoveFilterFromDestinationResponse) GetTwoHundredApplicationJSONObject() *RemoveFilterFromDestinationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *RemoveFilterFromDestinationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *RemoveFilterFromDestinationDestinationFiltersResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *RemoveFilterFromDestinationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *RemoveFilterFromDestinationDestinationFiltersResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *RemoveFilterFromDestinationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *RemoveFilterFromDestinationDestinationFiltersResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *RemoveFilterFromDestinationResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *RemoveFilterFromDestinationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *RemoveFilterFromDestinationResponse) GetRemoveFilterFromDestination200ApplicationJSONObject() *RemoveFilterFromDestination200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.RemoveFilterFromDestination200ApplicationJSONObject
-}
-
-func (o *RemoveFilterFromDestinationResponse) GetRemoveFilterFromDestination200ApplicationVndSegmentV1PlusJSONObject() *RemoveFilterFromDestination200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.RemoveFilterFromDestination200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *RemoveFilterFromDestinationResponse) GetRemoveFilterFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject() *RemoveFilterFromDestination200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.RemoveFilterFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *RemoveFilterFromDestinationResponse) GetRemoveFilterFromDestination200ApplicationVndSegmentV1betaPlusJSONObject() *RemoveFilterFromDestination200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.RemoveFilterFromDestination200ApplicationVndSegmentV1betaPlusJSONObject
 }

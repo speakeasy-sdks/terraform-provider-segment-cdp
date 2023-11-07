@@ -2,8 +2,8 @@
 
 package shared
 
-// PreviewDestinationFilterV1InputPreviewDestinationFilterV1 - A simplified Destination filter that includes the if and actions for a DestinationFilterV1.
-type PreviewDestinationFilterV1InputPreviewDestinationFilterV1 struct {
+// PreviewDestinationFilterV1 - A simplified Destination filter that includes the if and actions for a DestinationFilterV1.
+type PreviewDestinationFilterV1 struct {
 	// The filtering action to take on events that match the "if" statement.
 	// Action types must be one of: "drop", "allow_properties", "drop_properties" or "sample".
 	Actions []DestinationFilterActionV1 `json:"actions"`
@@ -13,14 +13,14 @@ type PreviewDestinationFilterV1InputPreviewDestinationFilterV1 struct {
 	If string `json:"if"`
 }
 
-func (o *PreviewDestinationFilterV1InputPreviewDestinationFilterV1) GetActions() []DestinationFilterActionV1 {
+func (o *PreviewDestinationFilterV1) GetActions() []DestinationFilterActionV1 {
 	if o == nil {
 		return []DestinationFilterActionV1{}
 	}
 	return o.Actions
 }
 
-func (o *PreviewDestinationFilterV1InputPreviewDestinationFilterV1) GetIf() string {
+func (o *PreviewDestinationFilterV1) GetIf() string {
 	if o == nil {
 		return ""
 	}
@@ -31,14 +31,14 @@ func (o *PreviewDestinationFilterV1InputPreviewDestinationFilterV1) GetIf() stri
 // For guidance on using FQL, see the Segment documentation site.
 type PreviewDestinationFilterV1Input struct {
 	// The filter to preview.
-	Filter PreviewDestinationFilterV1InputPreviewDestinationFilterV1 `json:"filter"`
+	Filter PreviewDestinationFilterV1 `json:"filter"`
 	// The JSON payload to apply the filter to.
 	Payload map[string]interface{} `json:"payload"`
 }
 
-func (o *PreviewDestinationFilterV1Input) GetFilter() PreviewDestinationFilterV1InputPreviewDestinationFilterV1 {
+func (o *PreviewDestinationFilterV1Input) GetFilter() PreviewDestinationFilterV1 {
 	if o == nil {
-		return PreviewDestinationFilterV1InputPreviewDestinationFilterV1{}
+		return PreviewDestinationFilterV1{}
 	}
 	return o.Filter
 }

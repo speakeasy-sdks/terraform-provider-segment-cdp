@@ -7,52 +7,52 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateUserGroup200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateUserGroup200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateUserGroupIAMGroupsResponse200ResponseBody - OK
+type CreateUserGroupIAMGroupsResponse200ResponseBody struct {
 	// Returns the newly created user group.
 	Data *shared.CreateUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateUserGroup200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateUserGroupV1Output {
+func (o *CreateUserGroupIAMGroupsResponse200ResponseBody) GetData() *shared.CreateUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateUserGroup200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateUserGroup200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateUserGroupIAMGroupsResponseResponseBody - OK
+type CreateUserGroupIAMGroupsResponseResponseBody struct {
 	// Returns the newly created user group.
 	Data *shared.CreateUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateUserGroup200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateUserGroupV1Output {
+func (o *CreateUserGroupIAMGroupsResponseResponseBody) GetData() *shared.CreateUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateUserGroup200ApplicationVndSegmentV1PlusJSON - OK
-type CreateUserGroup200ApplicationVndSegmentV1PlusJSON struct {
+// CreateUserGroupIAMGroupsResponseBody - OK
+type CreateUserGroupIAMGroupsResponseBody struct {
 	// Returns the newly created user group.
 	Data *shared.CreateUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateUserGroup200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateUserGroupV1Output {
+func (o *CreateUserGroupIAMGroupsResponseBody) GetData() *shared.CreateUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateUserGroup200ApplicationJSON - OK
-type CreateUserGroup200ApplicationJSON struct {
+// CreateUserGroupResponseBody - OK
+type CreateUserGroupResponseBody struct {
 	// Returns the newly created user group.
 	Data *shared.CreateUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateUserGroup200ApplicationJSON) GetData() *shared.CreateUserGroupV1Output {
+func (o *CreateUserGroupResponseBody) GetData() *shared.CreateUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
@@ -60,6 +60,14 @@ func (o *CreateUserGroup200ApplicationJSON) GetData() *shared.CreateUserGroupV1O
 }
 
 type CreateUserGroupResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateUserGroupResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateUserGroupIAMGroupsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateUserGroupIAMGroupsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateUserGroupIAMGroupsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -68,14 +76,34 @@ type CreateUserGroupResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateUserGroup200ApplicationJSONObject *CreateUserGroup200ApplicationJSON
-	// OK
-	CreateUserGroup200ApplicationVndSegmentV1PlusJSONObject *CreateUserGroup200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject *CreateUserGroup200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateUserGroup200ApplicationVndSegmentV1betaPlusJSONObject *CreateUserGroup200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateUserGroupResponse) GetTwoHundredApplicationJSONObject() *CreateUserGroupResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateUserGroupResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateUserGroupIAMGroupsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateUserGroupResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateUserGroupIAMGroupsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateUserGroupResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateUserGroupIAMGroupsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateUserGroupResponse) GetContentType() string {
@@ -104,32 +132,4 @@ func (o *CreateUserGroupResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateUserGroupResponse) GetCreateUserGroup200ApplicationJSONObject() *CreateUserGroup200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateUserGroup200ApplicationJSONObject
-}
-
-func (o *CreateUserGroupResponse) GetCreateUserGroup200ApplicationVndSegmentV1PlusJSONObject() *CreateUserGroup200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateUserGroup200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateUserGroupResponse) GetCreateUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateUserGroup200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateUserGroupResponse) GetCreateUserGroup200ApplicationVndSegmentV1betaPlusJSONObject() *CreateUserGroup200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateUserGroup200ApplicationVndSegmentV1betaPlusJSONObject
 }

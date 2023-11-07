@@ -29,13 +29,13 @@ func (o *ListProfilesWarehouseInSpaceRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListProfilesWarehouseInSpaceResponseBody - OK
+type ListProfilesWarehouseInSpaceResponseBody struct {
 	// Returns all Profiles Warehouse based on spaceID and pagination.
 	Data *shared.ListProfilesWarehouseInSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListProfilesWarehouseInSpaceAlphaOutput {
+func (o *ListProfilesWarehouseInSpaceResponseBody) GetData() *shared.ListProfilesWarehouseInSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -52,7 +52,7 @@ type ListProfilesWarehouseInSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSONObject *ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *ListProfilesWarehouseInSpaceResponseBody
 }
 
 func (o *ListProfilesWarehouseInSpaceResponse) GetContentType() string {
@@ -83,9 +83,9 @@ func (o *ListProfilesWarehouseInSpaceResponse) GetRequestErrorEnvelope() *shared
 	return o.RequestErrorEnvelope
 }
 
-func (o *ListProfilesWarehouseInSpaceResponse) GetListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *ListProfilesWarehouseInSpaceResponse) GetObject() *ListProfilesWarehouseInSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.ListProfilesWarehouseInSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

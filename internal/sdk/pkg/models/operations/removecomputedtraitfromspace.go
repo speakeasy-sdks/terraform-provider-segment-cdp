@@ -26,13 +26,13 @@ func (o *RemoveComputedTraitFromSpaceRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// RemoveComputedTraitFromSpaceResponseBody - OK
+type RemoveComputedTraitFromSpaceResponseBody struct {
 	// Delete computed trait endpoint output.
 	Data *shared.RemoveComputedTraitFromSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RemoveComputedTraitFromSpaceAlphaOutput {
+func (o *RemoveComputedTraitFromSpaceResponseBody) GetData() *shared.RemoveComputedTraitFromSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type RemoveComputedTraitFromSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject *RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *RemoveComputedTraitFromSpaceResponseBody
 }
 
 func (o *RemoveComputedTraitFromSpaceResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *RemoveComputedTraitFromSpaceResponse) GetRequestErrorEnvelope() *shared
 	return o.RequestErrorEnvelope
 }
 
-func (o *RemoveComputedTraitFromSpaceResponse) GetRemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *RemoveComputedTraitFromSpaceResponse) GetObject() *RemoveComputedTraitFromSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.RemoveComputedTraitFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

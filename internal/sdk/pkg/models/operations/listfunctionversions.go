@@ -29,13 +29,13 @@ func (o *ListFunctionVersionsRequest) GetPagination() shared.PaginationInput {
 	return o.Pagination
 }
 
-// ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListFunctionVersionsResponseBody - OK
+type ListFunctionVersionsResponseBody struct {
 	// Lists Versions of a Function.
 	Data *shared.ListFunctionVersionsAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListFunctionVersionsAlphaOutput {
+func (o *ListFunctionVersionsResponseBody) GetData() *shared.ListFunctionVersionsAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -52,7 +52,7 @@ type ListFunctionVersionsResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSONObject *ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSON
+	Object *ListFunctionVersionsResponseBody
 }
 
 func (o *ListFunctionVersionsResponse) GetContentType() string {
@@ -83,9 +83,9 @@ func (o *ListFunctionVersionsResponse) GetRequestErrorEnvelope() *shared.Request
 	return o.RequestErrorEnvelope
 }
 
-func (o *ListFunctionVersionsResponse) GetListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSONObject() *ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *ListFunctionVersionsResponse) GetObject() *ListFunctionVersionsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.ListFunctionVersions200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

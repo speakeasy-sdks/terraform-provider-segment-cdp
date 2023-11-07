@@ -21,52 +21,52 @@ func (o *ListSuppressionsRequest) GetPagination() shared.PaginationInput {
 	return o.Pagination
 }
 
-// ListSuppressions200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListSuppressions200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListSuppressionsDeletionAndSuppressionResponse200ResponseBody - OK
+type ListSuppressionsDeletionAndSuppressionResponse200ResponseBody struct {
 	// The output of a list suppressed call for a Workspace.
 	Data *shared.ListSuppressionsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSuppressions200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListSuppressionsV1Output {
+func (o *ListSuppressionsDeletionAndSuppressionResponse200ResponseBody) GetData() *shared.ListSuppressionsV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSuppressions200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListSuppressions200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListSuppressionsDeletionAndSuppressionResponseResponseBody - OK
+type ListSuppressionsDeletionAndSuppressionResponseResponseBody struct {
 	// The output of a list suppressed call for a Workspace.
 	Data *shared.ListSuppressionsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSuppressions200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListSuppressionsV1Output {
+func (o *ListSuppressionsDeletionAndSuppressionResponseResponseBody) GetData() *shared.ListSuppressionsV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSuppressions200ApplicationVndSegmentV1PlusJSON - OK
-type ListSuppressions200ApplicationVndSegmentV1PlusJSON struct {
+// ListSuppressionsDeletionAndSuppressionResponseBody - OK
+type ListSuppressionsDeletionAndSuppressionResponseBody struct {
 	// The output of a list suppressed call for a Workspace.
 	Data *shared.ListSuppressionsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSuppressions200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListSuppressionsV1Output {
+func (o *ListSuppressionsDeletionAndSuppressionResponseBody) GetData() *shared.ListSuppressionsV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSuppressions200ApplicationJSON - OK
-type ListSuppressions200ApplicationJSON struct {
+// ListSuppressionsResponseBody - OK
+type ListSuppressionsResponseBody struct {
 	// The output of a list suppressed call for a Workspace.
 	Data *shared.ListSuppressionsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSuppressions200ApplicationJSON) GetData() *shared.ListSuppressionsV1Output {
+func (o *ListSuppressionsResponseBody) GetData() *shared.ListSuppressionsV1Output {
 	if o == nil {
 		return nil
 	}
@@ -74,6 +74,14 @@ func (o *ListSuppressions200ApplicationJSON) GetData() *shared.ListSuppressionsV
 }
 
 type ListSuppressionsResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListSuppressionsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListSuppressionsDeletionAndSuppressionResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListSuppressionsDeletionAndSuppressionResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListSuppressionsDeletionAndSuppressionResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -82,14 +90,34 @@ type ListSuppressionsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListSuppressions200ApplicationJSONObject *ListSuppressions200ApplicationJSON
-	// OK
-	ListSuppressions200ApplicationVndSegmentV1PlusJSONObject *ListSuppressions200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListSuppressions200ApplicationVndSegmentV1alphaPlusJSONObject *ListSuppressions200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListSuppressions200ApplicationVndSegmentV1betaPlusJSONObject *ListSuppressions200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListSuppressionsResponse) GetTwoHundredApplicationJSONObject() *ListSuppressionsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListSuppressionsResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListSuppressionsDeletionAndSuppressionResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListSuppressionsResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListSuppressionsDeletionAndSuppressionResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListSuppressionsResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListSuppressionsDeletionAndSuppressionResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListSuppressionsResponse) GetContentType() string {
@@ -118,32 +146,4 @@ func (o *ListSuppressionsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListSuppressionsResponse) GetListSuppressions200ApplicationJSONObject() *ListSuppressions200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSuppressions200ApplicationJSONObject
-}
-
-func (o *ListSuppressionsResponse) GetListSuppressions200ApplicationVndSegmentV1PlusJSONObject() *ListSuppressions200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSuppressions200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListSuppressionsResponse) GetListSuppressions200ApplicationVndSegmentV1alphaPlusJSONObject() *ListSuppressions200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSuppressions200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListSuppressionsResponse) GetListSuppressions200ApplicationVndSegmentV1betaPlusJSONObject() *ListSuppressions200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSuppressions200ApplicationVndSegmentV1betaPlusJSONObject
 }

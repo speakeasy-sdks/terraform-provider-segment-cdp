@@ -15,15 +15,15 @@ import (
 	"strings"
 )
 
-// warehouses - A Warehouse is a central repository of data collected from one or more Sources. This is what commonly comes to mind when you think about a relational database: structured data that fits into rows and columns.
+// Warehouses - A Warehouse is a central repository of data collected from one or more Sources. This is what commonly comes to mind when you think about a relational database: structured data that fits into rows and columns.
 //
 // Using the Segment Public API, you can create, delete, update, list, validate and connect Warehouses.
-type warehouses struct {
+type Warehouses struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newWarehouses(sdkConfig sdkConfiguration) *warehouses {
-	return &warehouses{
+func newWarehouses(sdkConfig sdkConfiguration) *Warehouses {
+	return &Warehouses{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -32,7 +32,7 @@ func newWarehouses(sdkConfig sdkConfiguration) *warehouses {
 // Connects a Source to a Warehouse.
 //
 // • When called, this endpoint may generate the `Storage Destination Modified` event in the [audit trail](/tag/Audit-Trail).
-func (s *warehouses) AddConnectionFromSourceToWarehouse(ctx context.Context, request operations.AddConnectionFromSourceToWarehouseRequest, opts ...operations.Option) (*operations.AddConnectionFromSourceToWarehouseResponse, error) {
+func (s *Warehouses) AddConnectionFromSourceToWarehouse(ctx context.Context, request operations.AddConnectionFromSourceToWarehouseRequest, opts ...operations.Option) (*operations.AddConnectionFromSourceToWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -89,33 +89,33 @@ func (s *warehouses) AddConnectionFromSourceToWarehouse(ctx context.Context, req
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.AddConnectionFromSourceToWarehouse200ApplicationJSON
+			var out operations.AddConnectionFromSourceToWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddConnectionFromSourceToWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.AddConnectionFromSourceToWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.AddConnectionFromSourceToWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.AddConnectionFromSourceToWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddConnectionFromSourceToWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -144,7 +144,7 @@ func (s *warehouses) AddConnectionFromSourceToWarehouse(ctx context.Context, req
 // Validates input settings against a Warehouse.
 //
 // • When called, this endpoint may generate the `Storage Destination Settings Validation` event in the [audit trail](/tag/Audit-Trail).
-func (s *warehouses) CreateValidationInWarehouse(ctx context.Context, request shared.CreateValidationInWarehouseV1Input, opts ...operations.Option) (*operations.CreateValidationInWarehouseResponse, error) {
+func (s *Warehouses) CreateValidationInWarehouse(ctx context.Context, request shared.CreateValidationInWarehouseV1Input, opts ...operations.Option) (*operations.CreateValidationInWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -212,33 +212,33 @@ func (s *warehouses) CreateValidationInWarehouse(ctx context.Context, request sh
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateValidationInWarehouse200ApplicationJSON
+			var out operations.CreateValidationInWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateValidationInWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateValidationInWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateValidationInWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateValidationInWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateValidationInWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateValidationInWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateValidationInWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -267,7 +267,7 @@ func (s *warehouses) CreateValidationInWarehouse(ctx context.Context, request sh
 // Creates a new Warehouse.
 //
 // • When called, this endpoint may generate the `Storage Destination Created` event in the [audit trail](/tag/Audit-Trail).
-func (s *warehouses) CreateWarehouse(ctx context.Context, request shared.CreateWarehouseV1Input, opts ...operations.Option) (*operations.CreateWarehouseResponse, error) {
+func (s *Warehouses) CreateWarehouse(ctx context.Context, request shared.CreateWarehouseV1Input, opts ...operations.Option) (*operations.CreateWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -335,33 +335,33 @@ func (s *warehouses) CreateWarehouse(ctx context.Context, request shared.CreateW
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateWarehouse200ApplicationJSON
+			var out operations.CreateWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -390,7 +390,7 @@ func (s *warehouses) CreateWarehouse(ctx context.Context, request shared.CreateW
 // Deletes an existing Warehouse.
 //
 // • When called, this endpoint may generate the `Storage Destination Deleted` event in the [audit trail](/tag/Audit-Trail).
-func (s *warehouses) DeleteWarehouse(ctx context.Context, request operations.DeleteWarehouseRequest, opts ...operations.Option) (*operations.DeleteWarehouseResponse, error) {
+func (s *Warehouses) DeleteWarehouse(ctx context.Context, request operations.DeleteWarehouseRequest, opts ...operations.Option) (*operations.DeleteWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -447,33 +447,33 @@ func (s *warehouses) DeleteWarehouse(ctx context.Context, request operations.Del
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteWarehouse200ApplicationJSON
+			var out operations.DeleteWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.DeleteWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.DeleteWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.DeleteWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -502,7 +502,7 @@ func (s *warehouses) DeleteWarehouse(ctx context.Context, request operations.Del
 // Verifies the state of Warehouse connection settings.
 //
 // The rate limit for this endpoint is 200 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *warehouses) GetConnectionStateFromWarehouse(ctx context.Context, request operations.GetConnectionStateFromWarehouseRequest, opts ...operations.Option) (*operations.GetConnectionStateFromWarehouseResponse, error) {
+func (s *Warehouses) GetConnectionStateFromWarehouse(ctx context.Context, request operations.GetConnectionStateFromWarehouseRequest, opts ...operations.Option) (*operations.GetConnectionStateFromWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -559,33 +559,33 @@ func (s *warehouses) GetConnectionStateFromWarehouse(ctx context.Context, reques
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetConnectionStateFromWarehouse200ApplicationJSON
+			var out operations.GetConnectionStateFromWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetConnectionStateFromWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetConnectionStateFromWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetConnectionStateFromWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetConnectionStateFromWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetConnectionStateFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -612,7 +612,7 @@ func (s *warehouses) GetConnectionStateFromWarehouse(ctx context.Context, reques
 
 // GetWarehouse - Get Warehouse
 // Returns a Warehouse by its id.
-func (s *warehouses) GetWarehouse(ctx context.Context, request operations.GetWarehouseRequest, opts ...operations.Option) (*operations.GetWarehouseResponse, error) {
+func (s *Warehouses) GetWarehouse(ctx context.Context, request operations.GetWarehouseRequest, opts ...operations.Option) (*operations.GetWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -669,33 +669,33 @@ func (s *warehouses) GetWarehouse(ctx context.Context, request operations.GetWar
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetWarehouse200ApplicationJSON
+			var out operations.GetWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -722,7 +722,7 @@ func (s *warehouses) GetWarehouse(ctx context.Context, request operations.GetWar
 
 // ListConnectedSourcesFromWarehouse - List Connected Sources from Warehouse
 // Returns the list of Sources that are connected to a Warehouse.
-func (s *warehouses) ListConnectedSourcesFromWarehouse(ctx context.Context, request operations.ListConnectedSourcesFromWarehouseRequest, opts ...operations.Option) (*operations.ListConnectedSourcesFromWarehouseResponse, error) {
+func (s *Warehouses) ListConnectedSourcesFromWarehouse(ctx context.Context, request operations.ListConnectedSourcesFromWarehouseRequest, opts ...operations.Option) (*operations.ListConnectedSourcesFromWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -783,33 +783,33 @@ func (s *warehouses) ListConnectedSourcesFromWarehouse(ctx context.Context, requ
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListConnectedSourcesFromWarehouse200ApplicationJSON
+			var out operations.ListConnectedSourcesFromWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedSourcesFromWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListConnectedSourcesFromWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListConnectedSourcesFromWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListConnectedSourcesFromWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListConnectedSourcesFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -836,7 +836,7 @@ func (s *warehouses) ListConnectedSourcesFromWarehouse(ctx context.Context, requ
 
 // ListWarehouses - List Warehouses
 // Returns a list of Warehouses.
-func (s *warehouses) ListWarehouses(ctx context.Context, request operations.ListWarehousesRequest, opts ...operations.Option) (*operations.ListWarehousesResponse, error) {
+func (s *Warehouses) ListWarehouses(ctx context.Context, request operations.ListWarehousesRequest, opts ...operations.Option) (*operations.ListWarehousesResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -894,33 +894,33 @@ func (s *warehouses) ListWarehouses(ctx context.Context, request operations.List
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListWarehouses200ApplicationJSON
+			var out operations.ListWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListWarehouses200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListWarehouses200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListWarehousesWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListWarehouses200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListWarehouses200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListWarehousesWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListWarehouses200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListWarehouses200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListWarehousesWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListWarehouses200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -947,7 +947,7 @@ func (s *warehouses) ListWarehouses(ctx context.Context, request operations.List
 
 // RemoveSourceConnectionFromWarehouse - Remove Source Connection from Warehouse
 // Disconnects a Source from a Warehouse.
-func (s *warehouses) RemoveSourceConnectionFromWarehouse(ctx context.Context, request operations.RemoveSourceConnectionFromWarehouseRequest, opts ...operations.Option) (*operations.RemoveSourceConnectionFromWarehouseResponse, error) {
+func (s *Warehouses) RemoveSourceConnectionFromWarehouse(ctx context.Context, request operations.RemoveSourceConnectionFromWarehouseRequest, opts ...operations.Option) (*operations.RemoveSourceConnectionFromWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1004,33 +1004,33 @@ func (s *warehouses) RemoveSourceConnectionFromWarehouse(ctx context.Context, re
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.RemoveSourceConnectionFromWarehouse200ApplicationJSON
+			var out operations.RemoveSourceConnectionFromWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.RemoveSourceConnectionFromWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.RemoveSourceConnectionFromWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.RemoveSourceConnectionFromWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.RemoveSourceConnectionFromWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.RemoveSourceConnectionFromWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.RemoveSourceConnectionFromWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.RemoveSourceConnectionFromWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.RemoveSourceConnectionFromWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.RemoveSourceConnectionFromWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.RemoveSourceConnectionFromWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1060,7 +1060,7 @@ func (s *warehouses) RemoveSourceConnectionFromWarehouse(ctx context.Context, re
 //
 // • When called, this endpoint may generate one or more of the following [audit trail](/tag/Audit-Trail) events:* Storage Destination Modified
 // * Storage Destination Enabled
-func (s *warehouses) UpdateWarehouse(ctx context.Context, request operations.UpdateWarehouseRequest, opts ...operations.Option) (*operations.UpdateWarehouseResponse, error) {
+func (s *Warehouses) UpdateWarehouse(ctx context.Context, request operations.UpdateWarehouseRequest, opts ...operations.Option) (*operations.UpdateWarehouseResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1131,33 +1131,33 @@ func (s *warehouses) UpdateWarehouse(ctx context.Context, request operations.Upd
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.UpdateWarehouse200ApplicationJSON
+			var out operations.UpdateWarehouseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateWarehouse200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.UpdateWarehouse200ApplicationVndSegmentV1PlusJSON
+			var out operations.UpdateWarehouseWarehousesResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateWarehouse200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateWarehouseWarehousesResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.UpdateWarehouseWarehousesResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

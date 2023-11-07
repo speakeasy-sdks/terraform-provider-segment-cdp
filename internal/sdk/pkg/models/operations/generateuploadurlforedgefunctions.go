@@ -18,13 +18,13 @@ func (o *GenerateUploadURLForEdgeFunctionsRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// GenerateUploadURLForEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GenerateUploadURLForEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GenerateUploadURLForEdgeFunctionsResponseBody - OK
+type GenerateUploadURLForEdgeFunctionsResponseBody struct {
 	// Output for GenerateSignedUrl.
 	Data *shared.GenerateUploadURLForEdgeFunctionsAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *GenerateUploadURLForEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GenerateUploadURLForEdgeFunctionsAlphaOutput {
+func (o *GenerateUploadURLForEdgeFunctionsResponseBody) GetData() *shared.GenerateUploadURLForEdgeFunctionsAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -41,7 +41,7 @@ type GenerateUploadURLForEdgeFunctionsResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	GenerateUploadURLForEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject *GenerateUploadURLForEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON
+	Object *GenerateUploadURLForEdgeFunctionsResponseBody
 }
 
 func (o *GenerateUploadURLForEdgeFunctionsResponse) GetContentType() string {
@@ -72,9 +72,9 @@ func (o *GenerateUploadURLForEdgeFunctionsResponse) GetRequestErrorEnvelope() *s
 	return o.RequestErrorEnvelope
 }
 
-func (o *GenerateUploadURLForEdgeFunctionsResponse) GetGenerateUploadURLForEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject() *GenerateUploadURLForEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *GenerateUploadURLForEdgeFunctionsResponse) GetObject() *GenerateUploadURLForEdgeFunctionsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.GenerateUploadURLForEdgeFunctions200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

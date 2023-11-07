@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-// destinations - Destinations receive data _from_ Segment.
+// Destinations receive data _from_ Segment.
 //
 // In the Segment Public API, you can manipulate Destinations and the connections between Sources and Destinations, as well as list and inspect their relationships.
 //
@@ -36,12 +36,12 @@ import (
 // | updateTime     | Not returned                                    |
 //
 // To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
-type destinations struct {
+type Destinations struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newDestinations(sdkConfig sdkConfiguration) *destinations {
-	return &destinations{
+func newDestinations(sdkConfig sdkConfiguration) *Destinations {
+	return &Destinations{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -50,7 +50,7 @@ func newDestinations(sdkConfig sdkConfiguration) *destinations {
 // Creates a new Destination.
 //
 // • When called, this endpoint may generate the `Integration Created` event in the [audit trail](/tag/Audit-Trail).
-func (s *destinations) CreateDestination(ctx context.Context, request shared.CreateDestinationV1Input, opts ...operations.Option) (*operations.CreateDestinationResponse, error) {
+func (s *Destinations) CreateDestination(ctx context.Context, request shared.CreateDestinationV1Input, opts ...operations.Option) (*operations.CreateDestinationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -118,33 +118,33 @@ func (s *destinations) CreateDestination(ctx context.Context, request shared.Cre
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateDestination200ApplicationJSON
+			var out operations.CreateDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateDestination200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateDestination200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateDestinationDestinationsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateDestination200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateDestination200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateDestinationDestinationsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateDestination200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateDestination200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateDestinationDestinationsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateDestination200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -175,7 +175,7 @@ func (s *destinations) CreateDestination(ctx context.Context, request shared.Cre
 // • This endpoint is in **Alpha** testing.  Please submit any feedback by sending email to friends@segment.com.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Destination Subscriptions feature enabled. Please reach out to your customer success manager for more information.
-func (s *destinations) CreateDestinationSubscription(ctx context.Context, request operations.CreateDestinationSubscriptionRequest, opts ...operations.Option) (*operations.CreateDestinationSubscriptionResponse, error) {
+func (s *Destinations) CreateDestinationSubscription(ctx context.Context, request operations.CreateDestinationSubscriptionRequest, opts ...operations.Option) (*operations.CreateDestinationSubscriptionResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -246,12 +246,12 @@ func (s *destinations) CreateDestinationSubscription(ctx context.Context, reques
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateDestinationSubscriptionResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateDestinationSubscription200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -283,7 +283,7 @@ func (s *destinations) CreateDestinationSubscription(ctx context.Context, reques
 //
 // Config API omitted fields:
 // - `catalogId`
-func (s *destinations) DeleteDestination(ctx context.Context, request operations.DeleteDestinationRequest, opts ...operations.Option) (*operations.DeleteDestinationResponse, error) {
+func (s *Destinations) DeleteDestination(ctx context.Context, request operations.DeleteDestinationRequest, opts ...operations.Option) (*operations.DeleteDestinationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -340,33 +340,33 @@ func (s *destinations) DeleteDestination(ctx context.Context, request operations
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteDestination200ApplicationJSON
+			var out operations.DeleteDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteDestination200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.DeleteDestination200ApplicationVndSegmentV1PlusJSON
+			var out operations.DeleteDestinationDestinationsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteDestination200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteDestination200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteDestinationDestinationsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteDestination200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.DeleteDestination200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.DeleteDestinationDestinationsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteDestination200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -397,7 +397,7 @@ func (s *destinations) DeleteDestination(ctx context.Context, request operations
 //	Config API omitted fields:
 //
 // - `catalogId`
-func (s *destinations) GetDestination(ctx context.Context, request operations.GetDestinationRequest, opts ...operations.Option) (*operations.GetDestinationResponse, error) {
+func (s *Destinations) GetDestination(ctx context.Context, request operations.GetDestinationRequest, opts ...operations.Option) (*operations.GetDestinationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -454,33 +454,33 @@ func (s *destinations) GetDestination(ctx context.Context, request operations.Ge
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetDestination200ApplicationJSON
+			var out operations.GetDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestination200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetDestination200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetDestinationDestinationsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestination200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetDestination200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetDestinationDestinationsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestination200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetDestination200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetDestinationDestinationsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetDestination200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -511,7 +511,7 @@ func (s *destinations) GetDestination(ctx context.Context, request operations.Ge
 // • This endpoint is in **Alpha** testing.  Please submit any feedback by sending email to friends@segment.com.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Destination Subscriptions feature enabled. Please reach out to your customer success manager for more information.
-func (s *destinations) GetSubscriptionFromDestination(ctx context.Context, request operations.GetSubscriptionFromDestinationRequest, opts ...operations.Option) (*operations.GetSubscriptionFromDestinationResponse, error) {
+func (s *Destinations) GetSubscriptionFromDestination(ctx context.Context, request operations.GetSubscriptionFromDestinationRequest, opts ...operations.Option) (*operations.GetSubscriptionFromDestinationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -568,12 +568,12 @@ func (s *destinations) GetSubscriptionFromDestination(ctx context.Context, reque
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetSubscriptionFromDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -600,7 +600,7 @@ func (s *destinations) GetSubscriptionFromDestination(ctx context.Context, reque
 
 // ListDestinations - List Destinations
 // Returns a list of Destinations.
-func (s *destinations) ListDestinations(ctx context.Context, request operations.ListDestinationsRequest, opts ...operations.Option) (*operations.ListDestinationsResponse, error) {
+func (s *Destinations) ListDestinations(ctx context.Context, request operations.ListDestinationsRequest, opts ...operations.Option) (*operations.ListDestinationsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -658,33 +658,33 @@ func (s *destinations) ListDestinations(ctx context.Context, request operations.
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListDestinations200ApplicationJSON
+			var out operations.ListDestinationsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListDestinations200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListDestinations200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListDestinationsDestinationsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListDestinations200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListDestinations200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListDestinationsDestinationsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListDestinations200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListDestinations200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListDestinationsDestinationsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListDestinations200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -715,7 +715,7 @@ func (s *destinations) ListDestinations(ctx context.Context, request operations.
 // • This endpoint is in **Alpha** testing.  Please submit any feedback by sending email to friends@segment.com.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Destination Subscriptions feature enabled. Please reach out to your customer success manager for more information.
-func (s *destinations) ListSubscriptionsFromDestination(ctx context.Context, request operations.ListSubscriptionsFromDestinationRequest, opts ...operations.Option) (*operations.ListSubscriptionsFromDestinationResponse, error) {
+func (s *Destinations) ListSubscriptionsFromDestination(ctx context.Context, request operations.ListSubscriptionsFromDestinationRequest, opts ...operations.Option) (*operations.ListSubscriptionsFromDestinationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -776,12 +776,12 @@ func (s *destinations) ListSubscriptionsFromDestination(ctx context.Context, req
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListSubscriptionsFromDestination200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListSubscriptionsFromDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSubscriptionsFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -812,7 +812,7 @@ func (s *destinations) ListSubscriptionsFromDestination(ctx context.Context, req
 // • This endpoint is in **Alpha** testing.  Please submit any feedback by sending email to friends@segment.com.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Destination Subscriptions feature enabled. Please reach out to your customer success manager for more information.
-func (s *destinations) RemoveSubscriptionFromDestination(ctx context.Context, request operations.RemoveSubscriptionFromDestinationRequest, opts ...operations.Option) (*operations.RemoveSubscriptionFromDestinationResponse, error) {
+func (s *Destinations) RemoveSubscriptionFromDestination(ctx context.Context, request operations.RemoveSubscriptionFromDestinationRequest, opts ...operations.Option) (*operations.RemoveSubscriptionFromDestinationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -869,12 +869,12 @@ func (s *destinations) RemoveSubscriptionFromDestination(ctx context.Context, re
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.RemoveSubscriptionFromDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.RemoveSubscriptionFromDestination200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -911,7 +911,7 @@ func (s *destinations) RemoveSubscriptionFromDestination(ctx context.Context, re
 //
 // Config API omitted fields:
 // - `updateMask`
-func (s *destinations) UpdateDestination(ctx context.Context, request operations.UpdateDestinationRequest, opts ...operations.Option) (*operations.UpdateDestinationResponse, error) {
+func (s *Destinations) UpdateDestination(ctx context.Context, request operations.UpdateDestinationRequest, opts ...operations.Option) (*operations.UpdateDestinationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -982,33 +982,33 @@ func (s *destinations) UpdateDestination(ctx context.Context, request operations
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.UpdateDestination200ApplicationJSON
+			var out operations.UpdateDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateDestination200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.UpdateDestination200ApplicationVndSegmentV1PlusJSON
+			var out operations.UpdateDestinationDestinationsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateDestination200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateDestination200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateDestinationDestinationsResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateDestination200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.UpdateDestination200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.UpdateDestinationDestinationsResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateDestination200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1039,7 +1039,7 @@ func (s *destinations) UpdateDestination(ctx context.Context, request operations
 // • This endpoint is in **Alpha** testing.  Please submit any feedback by sending email to friends@segment.com.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Destination Subscriptions feature enabled. Please reach out to your customer success manager for more information.
-func (s *destinations) UpdateSubscriptionForDestination(ctx context.Context, request operations.UpdateSubscriptionForDestinationRequest, opts ...operations.Option) (*operations.UpdateSubscriptionForDestinationResponse, error) {
+func (s *Destinations) UpdateSubscriptionForDestination(ctx context.Context, request operations.UpdateSubscriptionForDestinationRequest, opts ...operations.Option) (*operations.UpdateSubscriptionForDestinationResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1110,12 +1110,12 @@ func (s *destinations) UpdateSubscriptionForDestination(ctx context.Context, req
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateSubscriptionForDestinationResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateSubscriptionForDestination200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

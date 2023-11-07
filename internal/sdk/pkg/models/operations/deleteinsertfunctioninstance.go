@@ -18,13 +18,13 @@ func (o *DeleteInsertFunctionInstanceRequest) GetInstanceID() string {
 	return o.InstanceID
 }
 
-// DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON - OK
-type DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON struct {
+// DeleteInsertFunctionInstanceResponseBody - OK
+type DeleteInsertFunctionInstanceResponseBody struct {
 	// Delete an insert Function instance.
 	Data *shared.DeleteInsertFunctionInstanceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.DeleteInsertFunctionInstanceAlphaOutput {
+func (o *DeleteInsertFunctionInstanceResponseBody) GetData() *shared.DeleteInsertFunctionInstanceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -41,7 +41,7 @@ type DeleteInsertFunctionInstanceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject *DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON
+	Object *DeleteInsertFunctionInstanceResponseBody
 }
 
 func (o *DeleteInsertFunctionInstanceResponse) GetContentType() string {
@@ -72,9 +72,9 @@ func (o *DeleteInsertFunctionInstanceResponse) GetRequestErrorEnvelope() *shared
 	return o.RequestErrorEnvelope
 }
 
-func (o *DeleteInsertFunctionInstanceResponse) GetDeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject() *DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *DeleteInsertFunctionInstanceResponse) GetObject() *DeleteInsertFunctionInstanceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.DeleteInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

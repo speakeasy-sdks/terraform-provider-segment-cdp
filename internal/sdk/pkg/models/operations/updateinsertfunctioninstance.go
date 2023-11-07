@@ -26,13 +26,13 @@ func (o *UpdateInsertFunctionInstanceRequest) GetInstanceID() string {
 	return o.InstanceID
 }
 
-// UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateInsertFunctionInstanceResponseBody - OK
+type UpdateInsertFunctionInstanceResponseBody struct {
 	// Returns the updated insert Function instance.
 	Data *shared.UpdateInsertFunctionInstanceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateInsertFunctionInstanceAlphaOutput {
+func (o *UpdateInsertFunctionInstanceResponseBody) GetData() *shared.UpdateInsertFunctionInstanceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type UpdateInsertFunctionInstanceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON
+	Object *UpdateInsertFunctionInstanceResponseBody
 }
 
 func (o *UpdateInsertFunctionInstanceResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *UpdateInsertFunctionInstanceResponse) GetRequestErrorEnvelope() *shared
 	return o.RequestErrorEnvelope
 }
 
-func (o *UpdateInsertFunctionInstanceResponse) GetUpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *UpdateInsertFunctionInstanceResponse) GetObject() *UpdateInsertFunctionInstanceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.UpdateInsertFunctionInstance200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

@@ -29,52 +29,52 @@ func (o *RemoveUsersFromUserGroupRequest) GetUserGroupID() string {
 	return o.UserGroupID
 }
 
-// RemoveUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON - OK
-type RemoveUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON struct {
+// RemoveUsersFromUserGroupIAMGroupsResponse200ResponseBody - OK
+type RemoveUsersFromUserGroupIAMGroupsResponse200ResponseBody struct {
 	// Returns the status of the removal operation.
 	Data *shared.RemoveUsersFromUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *RemoveUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.RemoveUsersFromUserGroupV1Output {
+func (o *RemoveUsersFromUserGroupIAMGroupsResponse200ResponseBody) GetData() *shared.RemoveUsersFromUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// RemoveUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON - OK
-type RemoveUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON struct {
+// RemoveUsersFromUserGroupIAMGroupsResponseResponseBody - OK
+type RemoveUsersFromUserGroupIAMGroupsResponseResponseBody struct {
 	// Returns the status of the removal operation.
 	Data *shared.RemoveUsersFromUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *RemoveUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RemoveUsersFromUserGroupV1Output {
+func (o *RemoveUsersFromUserGroupIAMGroupsResponseResponseBody) GetData() *shared.RemoveUsersFromUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// RemoveUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON - OK
-type RemoveUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON struct {
+// RemoveUsersFromUserGroupIAMGroupsResponseBody - OK
+type RemoveUsersFromUserGroupIAMGroupsResponseBody struct {
 	// Returns the status of the removal operation.
 	Data *shared.RemoveUsersFromUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *RemoveUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON) GetData() *shared.RemoveUsersFromUserGroupV1Output {
+func (o *RemoveUsersFromUserGroupIAMGroupsResponseBody) GetData() *shared.RemoveUsersFromUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// RemoveUsersFromUserGroup200ApplicationJSON - OK
-type RemoveUsersFromUserGroup200ApplicationJSON struct {
+// RemoveUsersFromUserGroupResponseBody - OK
+type RemoveUsersFromUserGroupResponseBody struct {
 	// Returns the status of the removal operation.
 	Data *shared.RemoveUsersFromUserGroupV1Output `json:"data,omitempty"`
 }
 
-func (o *RemoveUsersFromUserGroup200ApplicationJSON) GetData() *shared.RemoveUsersFromUserGroupV1Output {
+func (o *RemoveUsersFromUserGroupResponseBody) GetData() *shared.RemoveUsersFromUserGroupV1Output {
 	if o == nil {
 		return nil
 	}
@@ -82,6 +82,14 @@ func (o *RemoveUsersFromUserGroup200ApplicationJSON) GetData() *shared.RemoveUse
 }
 
 type RemoveUsersFromUserGroupResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *RemoveUsersFromUserGroupResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *RemoveUsersFromUserGroupIAMGroupsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *RemoveUsersFromUserGroupIAMGroupsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *RemoveUsersFromUserGroupIAMGroupsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -90,14 +98,34 @@ type RemoveUsersFromUserGroupResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	RemoveUsersFromUserGroup200ApplicationJSONObject *RemoveUsersFromUserGroup200ApplicationJSON
-	// OK
-	RemoveUsersFromUserGroup200ApplicationVndSegmentV1PlusJSONObject *RemoveUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON
-	// OK
-	RemoveUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject *RemoveUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	RemoveUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSONObject *RemoveUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *RemoveUsersFromUserGroupResponse) GetTwoHundredApplicationJSONObject() *RemoveUsersFromUserGroupResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *RemoveUsersFromUserGroupResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *RemoveUsersFromUserGroupIAMGroupsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *RemoveUsersFromUserGroupResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *RemoveUsersFromUserGroupIAMGroupsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *RemoveUsersFromUserGroupResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *RemoveUsersFromUserGroupIAMGroupsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *RemoveUsersFromUserGroupResponse) GetContentType() string {
@@ -126,32 +154,4 @@ func (o *RemoveUsersFromUserGroupResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *RemoveUsersFromUserGroupResponse) GetRemoveUsersFromUserGroup200ApplicationJSONObject() *RemoveUsersFromUserGroup200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.RemoveUsersFromUserGroup200ApplicationJSONObject
-}
-
-func (o *RemoveUsersFromUserGroupResponse) GetRemoveUsersFromUserGroup200ApplicationVndSegmentV1PlusJSONObject() *RemoveUsersFromUserGroup200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.RemoveUsersFromUserGroup200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *RemoveUsersFromUserGroupResponse) GetRemoveUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject() *RemoveUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.RemoveUsersFromUserGroup200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *RemoveUsersFromUserGroupResponse) GetRemoveUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSONObject() *RemoveUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.RemoveUsersFromUserGroup200ApplicationVndSegmentV1betaPlusJSONObject
 }

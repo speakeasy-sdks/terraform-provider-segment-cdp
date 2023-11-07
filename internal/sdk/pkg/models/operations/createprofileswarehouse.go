@@ -26,13 +26,13 @@ func (o *CreateProfilesWarehouseRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// CreateProfilesWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateProfilesWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateProfilesWarehouseResponseBody - OK
+type CreateProfilesWarehouseResponseBody struct {
 	// Returns the newly created Warehouse.
 	Data *shared.CreateProfilesWarehouseAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *CreateProfilesWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateProfilesWarehouseAlphaOutput {
+func (o *CreateProfilesWarehouseResponseBody) GetData() *shared.CreateProfilesWarehouseAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type CreateProfilesWarehouseResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	CreateProfilesWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *CreateProfilesWarehouse200ApplicationVndSegmentV1alphaPlusJSON
+	Object *CreateProfilesWarehouseResponseBody
 }
 
 func (o *CreateProfilesWarehouseResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *CreateProfilesWarehouseResponse) GetRequestErrorEnvelope() *shared.Requ
 	return o.RequestErrorEnvelope
 }
 
-func (o *CreateProfilesWarehouseResponse) GetCreateProfilesWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateProfilesWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *CreateProfilesWarehouseResponse) GetObject() *CreateProfilesWarehouseResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.CreateProfilesWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

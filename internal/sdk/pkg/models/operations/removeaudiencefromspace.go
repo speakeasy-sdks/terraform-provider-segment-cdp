@@ -26,13 +26,13 @@ func (o *RemoveAudienceFromSpaceRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// RemoveAudienceFromSpaceResponseBody - OK
+type RemoveAudienceFromSpaceResponseBody struct {
 	// Delete audience endpoint output.
 	Data *shared.RemoveAudienceFromSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.RemoveAudienceFromSpaceAlphaOutput {
+func (o *RemoveAudienceFromSpaceResponseBody) GetData() *shared.RemoveAudienceFromSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type RemoveAudienceFromSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject *RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *RemoveAudienceFromSpaceResponseBody
 }
 
 func (o *RemoveAudienceFromSpaceResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *RemoveAudienceFromSpaceResponse) GetRequestErrorEnvelope() *shared.Requ
 	return o.RequestErrorEnvelope
 }
 
-func (o *RemoveAudienceFromSpaceResponse) GetRemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *RemoveAudienceFromSpaceResponse) GetObject() *RemoveAudienceFromSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.RemoveAudienceFromSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

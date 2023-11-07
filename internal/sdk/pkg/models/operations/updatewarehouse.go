@@ -26,52 +26,52 @@ func (o *UpdateWarehouseRequest) GetWarehouseID() string {
 	return o.WarehouseID
 }
 
-// UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// UpdateWarehouseWarehousesResponse200ResponseBody - OK
+type UpdateWarehouseWarehousesResponse200ResponseBody struct {
 	// Returns the updated Warehouse.
 	Data *shared.UpdateWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.UpdateWarehouseV1Output {
+func (o *UpdateWarehouseWarehousesResponse200ResponseBody) GetData() *shared.UpdateWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateWarehouseWarehousesResponseResponseBody - OK
+type UpdateWarehouseWarehousesResponseResponseBody struct {
 	// Returns the updated Warehouse.
 	Data *shared.UpdateWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateWarehouseV1Output {
+func (o *UpdateWarehouseWarehousesResponseResponseBody) GetData() *shared.UpdateWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type UpdateWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// UpdateWarehouseWarehousesResponseBody - OK
+type UpdateWarehouseWarehousesResponseBody struct {
 	// Returns the updated Warehouse.
 	Data *shared.UpdateWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.UpdateWarehouseV1Output {
+func (o *UpdateWarehouseWarehousesResponseBody) GetData() *shared.UpdateWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateWarehouse200ApplicationJSON - OK
-type UpdateWarehouse200ApplicationJSON struct {
+// UpdateWarehouseResponseBody - OK
+type UpdateWarehouseResponseBody struct {
 	// Returns the updated Warehouse.
 	Data *shared.UpdateWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateWarehouse200ApplicationJSON) GetData() *shared.UpdateWarehouseV1Output {
+func (o *UpdateWarehouseResponseBody) GetData() *shared.UpdateWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *UpdateWarehouse200ApplicationJSON) GetData() *shared.UpdateWarehouseV1O
 }
 
 type UpdateWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *UpdateWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *UpdateWarehouseWarehousesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *UpdateWarehouseWarehousesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *UpdateWarehouseWarehousesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type UpdateWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	UpdateWarehouse200ApplicationJSONObject *UpdateWarehouse200ApplicationJSON
-	// OK
-	UpdateWarehouse200ApplicationVndSegmentV1PlusJSONObject *UpdateWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *UpdateWarehouseResponse) GetTwoHundredApplicationJSONObject() *UpdateWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *UpdateWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *UpdateWarehouseWarehousesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *UpdateWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *UpdateWarehouseWarehousesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *UpdateWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *UpdateWarehouseWarehousesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *UpdateWarehouseResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *UpdateWarehouseResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *UpdateWarehouseResponse) GetUpdateWarehouse200ApplicationJSONObject() *UpdateWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateWarehouse200ApplicationJSONObject
-}
-
-func (o *UpdateWarehouseResponse) GetUpdateWarehouse200ApplicationVndSegmentV1PlusJSONObject() *UpdateWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *UpdateWarehouseResponse) GetUpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *UpdateWarehouseResponse) GetUpdateWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

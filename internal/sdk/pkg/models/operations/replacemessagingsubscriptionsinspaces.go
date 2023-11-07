@@ -26,13 +26,13 @@ func (o *ReplaceMessagingSubscriptionsInSpacesRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ReplaceMessagingSubscriptionsInSpacesResponseBody - OK
+type ReplaceMessagingSubscriptionsInSpacesResponseBody struct {
 	// Output for the endpoint.
 	Data *shared.ReplaceMessagingSubscriptionsInSpacesAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ReplaceMessagingSubscriptionsInSpacesAlphaOutput {
+func (o *ReplaceMessagingSubscriptionsInSpacesResponseBody) GetData() *shared.ReplaceMessagingSubscriptionsInSpacesAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type ReplaceMessagingSubscriptionsInSpacesResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSONObject *ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSON
+	Object *ReplaceMessagingSubscriptionsInSpacesResponseBody
 }
 
 func (o *ReplaceMessagingSubscriptionsInSpacesResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *ReplaceMessagingSubscriptionsInSpacesResponse) GetRequestErrorEnvelope(
 	return o.RequestErrorEnvelope
 }
 
-func (o *ReplaceMessagingSubscriptionsInSpacesResponse) GetReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *ReplaceMessagingSubscriptionsInSpacesResponse) GetObject() *ReplaceMessagingSubscriptionsInSpacesResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.ReplaceMessagingSubscriptionsInSpaces200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

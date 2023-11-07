@@ -21,52 +21,52 @@ func (o *ListInvitesRequest) GetPagination() shared.PaginationInput {
 	return o.Pagination
 }
 
-// ListInvites200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListInvites200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListInvitesIAMUsersResponse200ResponseBody - OK
+type ListInvitesIAMUsersResponse200ResponseBody struct {
 	// Returns the list of invites.
 	Data *shared.ListInvitesV1Output `json:"data,omitempty"`
 }
 
-func (o *ListInvites200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListInvitesV1Output {
+func (o *ListInvitesIAMUsersResponse200ResponseBody) GetData() *shared.ListInvitesV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListInvites200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListInvites200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListInvitesIAMUsersResponseResponseBody - OK
+type ListInvitesIAMUsersResponseResponseBody struct {
 	// Returns the list of invites.
 	Data *shared.ListInvitesV1Output `json:"data,omitempty"`
 }
 
-func (o *ListInvites200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListInvitesV1Output {
+func (o *ListInvitesIAMUsersResponseResponseBody) GetData() *shared.ListInvitesV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListInvites200ApplicationVndSegmentV1PlusJSON - OK
-type ListInvites200ApplicationVndSegmentV1PlusJSON struct {
+// ListInvitesIAMUsersResponseBody - OK
+type ListInvitesIAMUsersResponseBody struct {
 	// Returns the list of invites.
 	Data *shared.ListInvitesV1Output `json:"data,omitempty"`
 }
 
-func (o *ListInvites200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListInvitesV1Output {
+func (o *ListInvitesIAMUsersResponseBody) GetData() *shared.ListInvitesV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListInvites200ApplicationJSON - OK
-type ListInvites200ApplicationJSON struct {
+// ListInvitesResponseBody - OK
+type ListInvitesResponseBody struct {
 	// Returns the list of invites.
 	Data *shared.ListInvitesV1Output `json:"data,omitempty"`
 }
 
-func (o *ListInvites200ApplicationJSON) GetData() *shared.ListInvitesV1Output {
+func (o *ListInvitesResponseBody) GetData() *shared.ListInvitesV1Output {
 	if o == nil {
 		return nil
 	}
@@ -74,6 +74,14 @@ func (o *ListInvites200ApplicationJSON) GetData() *shared.ListInvitesV1Output {
 }
 
 type ListInvitesResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListInvitesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListInvitesIAMUsersResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListInvitesIAMUsersResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListInvitesIAMUsersResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -82,14 +90,34 @@ type ListInvitesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListInvites200ApplicationJSONObject *ListInvites200ApplicationJSON
-	// OK
-	ListInvites200ApplicationVndSegmentV1PlusJSONObject *ListInvites200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListInvites200ApplicationVndSegmentV1alphaPlusJSONObject *ListInvites200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListInvites200ApplicationVndSegmentV1betaPlusJSONObject *ListInvites200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListInvitesResponse) GetTwoHundredApplicationJSONObject() *ListInvitesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListInvitesResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListInvitesIAMUsersResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListInvitesResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListInvitesIAMUsersResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListInvitesResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListInvitesIAMUsersResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListInvitesResponse) GetContentType() string {
@@ -118,32 +146,4 @@ func (o *ListInvitesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListInvitesResponse) GetListInvites200ApplicationJSONObject() *ListInvites200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListInvites200ApplicationJSONObject
-}
-
-func (o *ListInvitesResponse) GetListInvites200ApplicationVndSegmentV1PlusJSONObject() *ListInvites200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListInvites200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListInvitesResponse) GetListInvites200ApplicationVndSegmentV1alphaPlusJSONObject() *ListInvites200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListInvites200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListInvitesResponse) GetListInvites200ApplicationVndSegmentV1betaPlusJSONObject() *ListInvites200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListInvites200ApplicationVndSegmentV1betaPlusJSONObject
 }

@@ -26,52 +26,52 @@ func (o *ReplaceRulesInTrackingPlanRequest) GetTrackingPlanID() string {
 	return o.TrackingPlanID
 }
 
-// ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSON - OK
-type ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSON struct {
+// ReplaceRulesInTrackingPlanTrackingPlansResponse200ResponseBody - OK
+type ReplaceRulesInTrackingPlanTrackingPlansResponse200ResponseBody struct {
 	// Replaces Tracking Plan rules.
 	Data *shared.ReplaceRulesInTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ReplaceRulesInTrackingPlanV1Output {
+func (o *ReplaceRulesInTrackingPlanTrackingPlansResponse200ResponseBody) GetData() *shared.ReplaceRulesInTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ReplaceRulesInTrackingPlanTrackingPlansResponseResponseBody - OK
+type ReplaceRulesInTrackingPlanTrackingPlansResponseResponseBody struct {
 	// Replaces Tracking Plan rules.
 	Data *shared.ReplaceRulesInTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ReplaceRulesInTrackingPlanV1Output {
+func (o *ReplaceRulesInTrackingPlanTrackingPlansResponseResponseBody) GetData() *shared.ReplaceRulesInTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSON - OK
-type ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSON struct {
+// ReplaceRulesInTrackingPlanTrackingPlansResponseBody - OK
+type ReplaceRulesInTrackingPlanTrackingPlansResponseBody struct {
 	// Replaces Tracking Plan rules.
 	Data *shared.ReplaceRulesInTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ReplaceRulesInTrackingPlanV1Output {
+func (o *ReplaceRulesInTrackingPlanTrackingPlansResponseBody) GetData() *shared.ReplaceRulesInTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ReplaceRulesInTrackingPlan200ApplicationJSON - OK
-type ReplaceRulesInTrackingPlan200ApplicationJSON struct {
+// ReplaceRulesInTrackingPlanResponseBody - OK
+type ReplaceRulesInTrackingPlanResponseBody struct {
 	// Replaces Tracking Plan rules.
 	Data *shared.ReplaceRulesInTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *ReplaceRulesInTrackingPlan200ApplicationJSON) GetData() *shared.ReplaceRulesInTrackingPlanV1Output {
+func (o *ReplaceRulesInTrackingPlanResponseBody) GetData() *shared.ReplaceRulesInTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *ReplaceRulesInTrackingPlan200ApplicationJSON) GetData() *shared.Replace
 }
 
 type ReplaceRulesInTrackingPlanResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ReplaceRulesInTrackingPlanResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ReplaceRulesInTrackingPlanTrackingPlansResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ReplaceRulesInTrackingPlanTrackingPlansResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ReplaceRulesInTrackingPlanTrackingPlansResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type ReplaceRulesInTrackingPlanResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ReplaceRulesInTrackingPlan200ApplicationJSONObject *ReplaceRulesInTrackingPlan200ApplicationJSON
-	// OK
-	ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSONObject *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ReplaceRulesInTrackingPlanResponse) GetTwoHundredApplicationJSONObject() *ReplaceRulesInTrackingPlanResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ReplaceRulesInTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ReplaceRulesInTrackingPlanTrackingPlansResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ReplaceRulesInTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceRulesInTrackingPlanTrackingPlansResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ReplaceRulesInTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ReplaceRulesInTrackingPlanTrackingPlansResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ReplaceRulesInTrackingPlanResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *ReplaceRulesInTrackingPlanResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ReplaceRulesInTrackingPlanResponse) GetReplaceRulesInTrackingPlan200ApplicationJSONObject() *ReplaceRulesInTrackingPlan200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceRulesInTrackingPlan200ApplicationJSONObject
-}
-
-func (o *ReplaceRulesInTrackingPlanResponse) GetReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSONObject() *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ReplaceRulesInTrackingPlanResponse) GetReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject() *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ReplaceRulesInTrackingPlanResponse) GetReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject() *ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject
 }

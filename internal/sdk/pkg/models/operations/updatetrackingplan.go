@@ -26,52 +26,52 @@ func (o *UpdateTrackingPlanRequest) GetTrackingPlanID() string {
 	return o.TrackingPlanID
 }
 
-// UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON - OK
-type UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON struct {
+// UpdateTrackingPlanTrackingPlansResponse200ResponseBody - OK
+type UpdateTrackingPlanTrackingPlansResponse200ResponseBody struct {
 	// Result of an UpdateTrackingPlan call.
 	Data *shared.UpdateTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.UpdateTrackingPlanV1Output {
+func (o *UpdateTrackingPlanTrackingPlansResponse200ResponseBody) GetData() *shared.UpdateTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateTrackingPlanTrackingPlansResponseResponseBody - OK
+type UpdateTrackingPlanTrackingPlansResponseResponseBody struct {
 	// Result of an UpdateTrackingPlan call.
 	Data *shared.UpdateTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateTrackingPlanV1Output {
+func (o *UpdateTrackingPlanTrackingPlansResponseResponseBody) GetData() *shared.UpdateTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSON - OK
-type UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSON struct {
+// UpdateTrackingPlanTrackingPlansResponseBody - OK
+type UpdateTrackingPlanTrackingPlansResponseBody struct {
 	// Result of an UpdateTrackingPlan call.
 	Data *shared.UpdateTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSON) GetData() *shared.UpdateTrackingPlanV1Output {
+func (o *UpdateTrackingPlanTrackingPlansResponseBody) GetData() *shared.UpdateTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateTrackingPlan200ApplicationJSON - OK
-type UpdateTrackingPlan200ApplicationJSON struct {
+// UpdateTrackingPlanResponseBody - OK
+type UpdateTrackingPlanResponseBody struct {
 	// Result of an UpdateTrackingPlan call.
 	Data *shared.UpdateTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateTrackingPlan200ApplicationJSON) GetData() *shared.UpdateTrackingPlanV1Output {
+func (o *UpdateTrackingPlanResponseBody) GetData() *shared.UpdateTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *UpdateTrackingPlan200ApplicationJSON) GetData() *shared.UpdateTrackingP
 }
 
 type UpdateTrackingPlanResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *UpdateTrackingPlanResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *UpdateTrackingPlanTrackingPlansResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *UpdateTrackingPlanTrackingPlansResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *UpdateTrackingPlanTrackingPlansResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type UpdateTrackingPlanResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	UpdateTrackingPlan200ApplicationJSONObject *UpdateTrackingPlan200ApplicationJSON
-	// OK
-	UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSONObject *UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSON
-	// OK
-	UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject *UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *UpdateTrackingPlanResponse) GetTwoHundredApplicationJSONObject() *UpdateTrackingPlanResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *UpdateTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *UpdateTrackingPlanTrackingPlansResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *UpdateTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *UpdateTrackingPlanTrackingPlansResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *UpdateTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *UpdateTrackingPlanTrackingPlansResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *UpdateTrackingPlanResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *UpdateTrackingPlanResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *UpdateTrackingPlanResponse) GetUpdateTrackingPlan200ApplicationJSONObject() *UpdateTrackingPlan200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateTrackingPlan200ApplicationJSONObject
-}
-
-func (o *UpdateTrackingPlanResponse) GetUpdateTrackingPlan200ApplicationVndSegmentV1PlusJSONObject() *UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *UpdateTrackingPlanResponse) GetUpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *UpdateTrackingPlanResponse) GetUpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject() *UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject
 }

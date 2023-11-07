@@ -29,52 +29,52 @@ func (o *ListConnectedWarehousesFromSourceRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListConnectedWarehousesFromSourceSourcesResponse200ResponseBody - OK
+type ListConnectedWarehousesFromSourceSourcesResponse200ResponseBody struct {
 	// Returns a list of Warehouses connected to a Source.
 	Data *shared.ListConnectedWarehousesFromSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListConnectedWarehousesFromSourceV1Output {
+func (o *ListConnectedWarehousesFromSourceSourcesResponse200ResponseBody) GetData() *shared.ListConnectedWarehousesFromSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListConnectedWarehousesFromSourceSourcesResponseResponseBody - OK
+type ListConnectedWarehousesFromSourceSourcesResponseResponseBody struct {
 	// Returns a list of Warehouses connected to a Source.
 	Data *shared.ListConnectedWarehousesFromSourceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListConnectedWarehousesFromSourceAlphaOutput {
+func (o *ListConnectedWarehousesFromSourceSourcesResponseResponseBody) GetData() *shared.ListConnectedWarehousesFromSourceAlphaOutput {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSON - OK
-type ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSON struct {
+// ListConnectedWarehousesFromSourceSourcesResponseBody - OK
+type ListConnectedWarehousesFromSourceSourcesResponseBody struct {
 	// Returns a list of Warehouses connected to a Source.
 	Data *shared.ListConnectedWarehousesFromSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListConnectedWarehousesFromSourceV1Output {
+func (o *ListConnectedWarehousesFromSourceSourcesResponseBody) GetData() *shared.ListConnectedWarehousesFromSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListConnectedWarehousesFromSource200ApplicationJSON - OK
-type ListConnectedWarehousesFromSource200ApplicationJSON struct {
+// ListConnectedWarehousesFromSourceResponseBody - OK
+type ListConnectedWarehousesFromSourceResponseBody struct {
 	// Returns a list of Warehouses connected to a Source.
 	Data *shared.ListConnectedWarehousesFromSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ListConnectedWarehousesFromSource200ApplicationJSON) GetData() *shared.ListConnectedWarehousesFromSourceV1Output {
+func (o *ListConnectedWarehousesFromSourceResponseBody) GetData() *shared.ListConnectedWarehousesFromSourceV1Output {
 	if o == nil {
 		return nil
 	}
@@ -82,6 +82,14 @@ func (o *ListConnectedWarehousesFromSource200ApplicationJSON) GetData() *shared.
 }
 
 type ListConnectedWarehousesFromSourceResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListConnectedWarehousesFromSourceResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListConnectedWarehousesFromSourceSourcesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListConnectedWarehousesFromSourceSourcesResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListConnectedWarehousesFromSourceSourcesResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -90,14 +98,34 @@ type ListConnectedWarehousesFromSourceResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListConnectedWarehousesFromSource200ApplicationJSONObject *ListConnectedWarehousesFromSource200ApplicationJSON
-	// OK
-	ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSONObject *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSONObject *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSONObject *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListConnectedWarehousesFromSourceResponse) GetTwoHundredApplicationJSONObject() *ListConnectedWarehousesFromSourceResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListConnectedWarehousesFromSourceResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListConnectedWarehousesFromSourceSourcesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListConnectedWarehousesFromSourceResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListConnectedWarehousesFromSourceSourcesResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListConnectedWarehousesFromSourceResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListConnectedWarehousesFromSourceSourcesResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListConnectedWarehousesFromSourceResponse) GetContentType() string {
@@ -126,32 +154,4 @@ func (o *ListConnectedWarehousesFromSourceResponse) GetRawResponse() *http.Respo
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListConnectedWarehousesFromSourceResponse) GetListConnectedWarehousesFromSource200ApplicationJSONObject() *ListConnectedWarehousesFromSource200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListConnectedWarehousesFromSource200ApplicationJSONObject
-}
-
-func (o *ListConnectedWarehousesFromSourceResponse) GetListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSONObject() *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListConnectedWarehousesFromSourceResponse) GetListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSONObject() *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListConnectedWarehousesFromSourceResponse) GetListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSONObject() *ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListConnectedWarehousesFromSource200ApplicationVndSegmentV1betaPlusJSONObject
 }

@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-// trackingPlans - A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources.
+// TrackingPlans - A Tracking Plan is a data spec outlining the events and properties you intend to collect across your Segment Sources.
 //
 // The Segment Tracking Plan feature allows you to validate your expected events against the live events that Segment receives. Segment generates violations when an event doesn’t match the spec’d event in the Tracking Plan.
 //
@@ -35,12 +35,12 @@ import (
 // | `createTime`   | `createdAt` |
 //
 // To migrate, replace any use of the Config API endpoints with the Segment Public API counterparts, using the field mappings in the table above.
-type trackingPlans struct {
+type TrackingPlans struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newTrackingPlans(sdkConfig sdkConfiguration) *trackingPlans {
-	return &trackingPlans{
+func newTrackingPlans(sdkConfig sdkConfiguration) *TrackingPlans {
+	return &TrackingPlans{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -51,7 +51,7 @@ func newTrackingPlans(sdkConfig sdkConfiguration) *trackingPlans {
 // • When called, this endpoint may generate the `Source Modified` event in the [audit trail](/tag/Audit-Trail).
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Protocols feature enabled. Please reach out to your customer success manager for more information.
-func (s *trackingPlans) AddSourceToTrackingPlan(ctx context.Context, request operations.AddSourceToTrackingPlanRequest, opts ...operations.Option) (*operations.AddSourceToTrackingPlanResponse, error) {
+func (s *TrackingPlans) AddSourceToTrackingPlan(ctx context.Context, request operations.AddSourceToTrackingPlanRequest, opts ...operations.Option) (*operations.AddSourceToTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -122,33 +122,33 @@ func (s *trackingPlans) AddSourceToTrackingPlan(ctx context.Context, request ope
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.AddSourceToTrackingPlan200ApplicationJSON
+			var out operations.AddSourceToTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddSourceToTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.AddSourceToTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.AddSourceToTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddSourceToTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.AddSourceToTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.AddSourceToTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddSourceToTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.AddSourceToTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.AddSourceToTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.AddSourceToTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -177,7 +177,7 @@ func (s *trackingPlans) AddSourceToTrackingPlan(ctx context.Context, request ope
 // Creates a Tracking Plan.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Protocols feature enabled. Please reach out to your customer success manager for more information.
-func (s *trackingPlans) CreateTrackingPlan(ctx context.Context, request shared.CreateTrackingPlanV1Input, opts ...operations.Option) (*operations.CreateTrackingPlanResponse, error) {
+func (s *TrackingPlans) CreateTrackingPlan(ctx context.Context, request shared.CreateTrackingPlanV1Input, opts ...operations.Option) (*operations.CreateTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -245,33 +245,33 @@ func (s *trackingPlans) CreateTrackingPlan(ctx context.Context, request shared.C
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.CreateTrackingPlan200ApplicationJSON
+			var out operations.CreateTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.CreateTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.CreateTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.CreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.CreateTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -300,7 +300,7 @@ func (s *trackingPlans) CreateTrackingPlan(ctx context.Context, request shared.C
 // Deletes a Tracking Plan.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Protocols feature enabled. Please reach out to your customer success manager for more information.
-func (s *trackingPlans) DeleteTrackingPlan(ctx context.Context, request operations.DeleteTrackingPlanRequest, opts ...operations.Option) (*operations.DeleteTrackingPlanResponse, error) {
+func (s *TrackingPlans) DeleteTrackingPlan(ctx context.Context, request operations.DeleteTrackingPlanRequest, opts ...operations.Option) (*operations.DeleteTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -357,33 +357,33 @@ func (s *trackingPlans) DeleteTrackingPlan(ctx context.Context, request operatio
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.DeleteTrackingPlan200ApplicationJSON
+			var out operations.DeleteTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.DeleteTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.DeleteTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.DeleteTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.DeleteTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -412,7 +412,7 @@ func (s *trackingPlans) DeleteTrackingPlan(ctx context.Context, request operatio
 // Returns a Tracking Plan.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Protocols feature enabled. Please reach out to your customer success manager for more information.
-func (s *trackingPlans) GetTrackingPlan(ctx context.Context, request operations.GetTrackingPlanRequest, opts ...operations.Option) (*operations.GetTrackingPlanResponse, error) {
+func (s *TrackingPlans) GetTrackingPlan(ctx context.Context, request operations.GetTrackingPlanRequest, opts ...operations.Option) (*operations.GetTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -469,33 +469,33 @@ func (s *trackingPlans) GetTrackingPlan(ctx context.Context, request operations.
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.GetTrackingPlan200ApplicationJSON
+			var out operations.GetTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.GetTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.GetTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.GetTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.GetTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -526,7 +526,7 @@ func (s *trackingPlans) GetTrackingPlan(ctx context.Context, request operations.
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Protocols feature enabled. Please reach out to your customer success manager for more information.
 //
 // The rate limit for this endpoint is 200 requests per minute, which is lower than the default due to access pattern restrictions. Once reached, this endpoint will respond with the 429 HTTP status code with headers indicating the limit parameters. See [Rate Limiting](/#tag/Rate-Limits) for more information.
-func (s *trackingPlans) ListRulesFromTrackingPlan(ctx context.Context, request operations.ListRulesFromTrackingPlanRequest, opts ...operations.Option) (*operations.ListRulesFromTrackingPlanResponse, error) {
+func (s *TrackingPlans) ListRulesFromTrackingPlan(ctx context.Context, request operations.ListRulesFromTrackingPlanRequest, opts ...operations.Option) (*operations.ListRulesFromTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -587,33 +587,33 @@ func (s *trackingPlans) ListRulesFromTrackingPlan(ctx context.Context, request o
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListRulesFromTrackingPlan200ApplicationJSON
+			var out operations.ListRulesFromTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListRulesFromTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListRulesFromTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListRulesFromTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListRulesFromTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -646,7 +646,7 @@ func (s *trackingPlans) ListRulesFromTrackingPlan(ctx context.Context, request o
 // This endpoint requires the user to have at least the following permission(s):
 //   - Source Read-only
 //   - Tracking Plan Read-only
-func (s *trackingPlans) ListSourcesFromTrackingPlan(ctx context.Context, request operations.ListSourcesFromTrackingPlanRequest, opts ...operations.Option) (*operations.ListSourcesFromTrackingPlanResponse, error) {
+func (s *TrackingPlans) ListSourcesFromTrackingPlan(ctx context.Context, request operations.ListSourcesFromTrackingPlanRequest, opts ...operations.Option) (*operations.ListSourcesFromTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -707,33 +707,33 @@ func (s *trackingPlans) ListSourcesFromTrackingPlan(ctx context.Context, request
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ListSourcesFromTrackingPlan200ApplicationJSON
+			var out operations.ListSourcesFromTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSourcesFromTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ListSourcesFromTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.ListSourcesFromTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSourcesFromTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListSourcesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListSourcesFromTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSourcesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ListSourcesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ListSourcesFromTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListSourcesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -762,7 +762,7 @@ func (s *trackingPlans) ListSourcesFromTrackingPlan(ctx context.Context, request
 // Replaces Tracking Plan rules.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Protocols feature enabled. Please reach out to your customer success manager for more information.
-func (s *trackingPlans) ReplaceRulesInTrackingPlan(ctx context.Context, request operations.ReplaceRulesInTrackingPlanRequest, opts ...operations.Option) (*operations.ReplaceRulesInTrackingPlanResponse, error) {
+func (s *TrackingPlans) ReplaceRulesInTrackingPlan(ctx context.Context, request operations.ReplaceRulesInTrackingPlanRequest, opts ...operations.Option) (*operations.ReplaceRulesInTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -833,33 +833,33 @@ func (s *trackingPlans) ReplaceRulesInTrackingPlan(ctx context.Context, request 
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.ReplaceRulesInTrackingPlan200ApplicationJSON
+			var out operations.ReplaceRulesInTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceRulesInTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.ReplaceRulesInTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ReplaceRulesInTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.ReplaceRulesInTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ReplaceRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -888,7 +888,7 @@ func (s *trackingPlans) ReplaceRulesInTrackingPlan(ctx context.Context, request 
 // Updates Tracking Plan rules.
 //
 // • In order to successfully call this endpoint, the specified Workspace needs to have the Protocols feature enabled. Please reach out to your customer success manager for more information.
-func (s *trackingPlans) UpdateRulesInTrackingPlan(ctx context.Context, request operations.UpdateRulesInTrackingPlanRequest, opts ...operations.Option) (*operations.UpdateRulesInTrackingPlanResponse, error) {
+func (s *TrackingPlans) UpdateRulesInTrackingPlan(ctx context.Context, request operations.UpdateRulesInTrackingPlanRequest, opts ...operations.Option) (*operations.UpdateRulesInTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -959,33 +959,33 @@ func (s *trackingPlans) UpdateRulesInTrackingPlan(ctx context.Context, request o
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.UpdateRulesInTrackingPlan200ApplicationJSON
+			var out operations.UpdateRulesInTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateRulesInTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.UpdateRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.UpdateRulesInTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateRulesInTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateRulesInTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateRulesInTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.UpdateRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.UpdateRulesInTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateRulesInTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -1017,7 +1017,7 @@ func (s *trackingPlans) UpdateRulesInTrackingPlan(ctx context.Context, request o
 //
 // Config API omitted fields:
 // - `updateMask`
-func (s *trackingPlans) UpdateTrackingPlan(ctx context.Context, request operations.UpdateTrackingPlanRequest, opts ...operations.Option) (*operations.UpdateTrackingPlanResponse, error) {
+func (s *TrackingPlans) UpdateTrackingPlan(ctx context.Context, request operations.UpdateTrackingPlanRequest, opts ...operations.Option) (*operations.UpdateTrackingPlanResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -1088,33 +1088,33 @@ func (s *trackingPlans) UpdateTrackingPlan(ctx context.Context, request operatio
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/json`):
-			var out operations.UpdateTrackingPlan200ApplicationJSON
+			var out operations.UpdateTrackingPlanResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateTrackingPlan200ApplicationJSONObject = &out
+			res.TwoHundredApplicationJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1+json`):
-			var out operations.UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSON
+			var out operations.UpdateTrackingPlanTrackingPlansResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateTrackingPlan200ApplicationVndSegmentV1PlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1PlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateTrackingPlanTrackingPlansResponseResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject = &out
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1beta+json`):
-			var out operations.UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+			var out operations.UpdateTrackingPlanTrackingPlansResponse200ResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject = &out
+			res.TwoHundredApplicationVndSegmentV1betaPlusJSONObject = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

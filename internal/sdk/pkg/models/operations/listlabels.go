@@ -7,52 +7,52 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// ListLabels200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListLabels200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListLabelsLabelsResponse200ResponseBody - OK
+type ListLabelsLabelsResponse200ResponseBody struct {
 	// Returns all available labels for the current Workspace.
 	Data *shared.ListLabelsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListLabels200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListLabelsV1Output {
+func (o *ListLabelsLabelsResponse200ResponseBody) GetData() *shared.ListLabelsV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListLabels200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListLabels200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListLabelsLabelsResponseResponseBody - OK
+type ListLabelsLabelsResponseResponseBody struct {
 	// Returns all available labels for the current Workspace.
 	Data *shared.ListLabelsAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *ListLabels200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListLabelsAlphaOutput {
+func (o *ListLabelsLabelsResponseResponseBody) GetData() *shared.ListLabelsAlphaOutput {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListLabels200ApplicationVndSegmentV1PlusJSON - OK
-type ListLabels200ApplicationVndSegmentV1PlusJSON struct {
+// ListLabelsLabelsResponseBody - OK
+type ListLabelsLabelsResponseBody struct {
 	// Returns all available labels for the current Workspace.
 	Data *shared.ListLabelsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListLabels200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListLabelsV1Output {
+func (o *ListLabelsLabelsResponseBody) GetData() *shared.ListLabelsV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListLabels200ApplicationJSON - OK
-type ListLabels200ApplicationJSON struct {
+// ListLabelsResponseBody - OK
+type ListLabelsResponseBody struct {
 	// Returns all available labels for the current Workspace.
 	Data *shared.ListLabelsV1Output `json:"data,omitempty"`
 }
 
-func (o *ListLabels200ApplicationJSON) GetData() *shared.ListLabelsV1Output {
+func (o *ListLabelsResponseBody) GetData() *shared.ListLabelsV1Output {
 	if o == nil {
 		return nil
 	}
@@ -60,6 +60,14 @@ func (o *ListLabels200ApplicationJSON) GetData() *shared.ListLabelsV1Output {
 }
 
 type ListLabelsResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListLabelsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListLabelsLabelsResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListLabelsLabelsResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListLabelsLabelsResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -68,14 +76,34 @@ type ListLabelsResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListLabels200ApplicationJSONObject *ListLabels200ApplicationJSON
-	// OK
-	ListLabels200ApplicationVndSegmentV1PlusJSONObject *ListLabels200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListLabels200ApplicationVndSegmentV1alphaPlusJSONObject *ListLabels200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListLabels200ApplicationVndSegmentV1betaPlusJSONObject *ListLabels200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListLabelsResponse) GetTwoHundredApplicationJSONObject() *ListLabelsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListLabelsResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListLabelsLabelsResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListLabelsResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListLabelsLabelsResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListLabelsResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListLabelsLabelsResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListLabelsResponse) GetContentType() string {
@@ -104,32 +132,4 @@ func (o *ListLabelsResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListLabelsResponse) GetListLabels200ApplicationJSONObject() *ListLabels200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListLabels200ApplicationJSONObject
-}
-
-func (o *ListLabelsResponse) GetListLabels200ApplicationVndSegmentV1PlusJSONObject() *ListLabels200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListLabels200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListLabelsResponse) GetListLabels200ApplicationVndSegmentV1alphaPlusJSONObject() *ListLabels200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListLabels200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListLabelsResponse) GetListLabels200ApplicationVndSegmentV1betaPlusJSONObject() *ListLabels200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListLabels200ApplicationVndSegmentV1betaPlusJSONObject
 }

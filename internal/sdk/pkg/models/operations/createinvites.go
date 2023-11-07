@@ -7,52 +7,52 @@ import (
 	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
-// CreateInvites200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateInvites200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateInvitesIAMUsersResponse200ResponseBody - OK
+type CreateInvitesIAMUsersResponse200ResponseBody struct {
 	// Returns the emails of the invited users.
 	Data *shared.CreateInvitesV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateInvites200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateInvitesV1Output {
+func (o *CreateInvitesIAMUsersResponse200ResponseBody) GetData() *shared.CreateInvitesV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateInvites200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateInvites200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateInvitesIAMUsersResponseResponseBody - OK
+type CreateInvitesIAMUsersResponseResponseBody struct {
 	// Returns the emails of the invited users.
 	Data *shared.CreateInvitesV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateInvites200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateInvitesV1Output {
+func (o *CreateInvitesIAMUsersResponseResponseBody) GetData() *shared.CreateInvitesV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateInvites200ApplicationVndSegmentV1PlusJSON - OK
-type CreateInvites200ApplicationVndSegmentV1PlusJSON struct {
+// CreateInvitesIAMUsersResponseBody - OK
+type CreateInvitesIAMUsersResponseBody struct {
 	// Returns the emails of the invited users.
 	Data *shared.CreateInvitesV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateInvites200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateInvitesV1Output {
+func (o *CreateInvitesIAMUsersResponseBody) GetData() *shared.CreateInvitesV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateInvites200ApplicationJSON - OK
-type CreateInvites200ApplicationJSON struct {
+// CreateInvitesResponseBody - OK
+type CreateInvitesResponseBody struct {
 	// Returns the emails of the invited users.
 	Data *shared.CreateInvitesV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateInvites200ApplicationJSON) GetData() *shared.CreateInvitesV1Output {
+func (o *CreateInvitesResponseBody) GetData() *shared.CreateInvitesV1Output {
 	if o == nil {
 		return nil
 	}
@@ -60,6 +60,14 @@ func (o *CreateInvites200ApplicationJSON) GetData() *shared.CreateInvitesV1Outpu
 }
 
 type CreateInvitesResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateInvitesResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateInvitesIAMUsersResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateInvitesIAMUsersResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateInvitesIAMUsersResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -68,14 +76,34 @@ type CreateInvitesResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateInvites200ApplicationJSONObject *CreateInvites200ApplicationJSON
-	// OK
-	CreateInvites200ApplicationVndSegmentV1PlusJSONObject *CreateInvites200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateInvites200ApplicationVndSegmentV1alphaPlusJSONObject *CreateInvites200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateInvites200ApplicationVndSegmentV1betaPlusJSONObject *CreateInvites200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateInvitesResponse) GetTwoHundredApplicationJSONObject() *CreateInvitesResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateInvitesResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateInvitesIAMUsersResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateInvitesResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateInvitesIAMUsersResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateInvitesResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateInvitesIAMUsersResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateInvitesResponse) GetContentType() string {
@@ -104,32 +132,4 @@ func (o *CreateInvitesResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateInvitesResponse) GetCreateInvites200ApplicationJSONObject() *CreateInvites200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateInvites200ApplicationJSONObject
-}
-
-func (o *CreateInvitesResponse) GetCreateInvites200ApplicationVndSegmentV1PlusJSONObject() *CreateInvites200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateInvites200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateInvitesResponse) GetCreateInvites200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateInvites200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateInvites200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateInvitesResponse) GetCreateInvites200ApplicationVndSegmentV1betaPlusJSONObject() *CreateInvites200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateInvites200ApplicationVndSegmentV1betaPlusJSONObject
 }

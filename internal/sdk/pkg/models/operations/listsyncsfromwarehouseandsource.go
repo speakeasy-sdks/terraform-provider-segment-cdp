@@ -37,56 +37,56 @@ func (o *ListSyncsFromWarehouseAndSourceRequest) GetWarehouseID() string {
 	return o.WarehouseID
 }
 
-// ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListSyncsFromWarehouseAndSourceSelectiveSyncResponse200ResponseBody - OK
+type ListSyncsFromWarehouseAndSourceSelectiveSyncResponse200ResponseBody struct {
 	// Returns a list that contains the most recent syncs for a Warehouse-source pair, filtered and constrained by a given
 	// set of pagination parameters.
 	Data *shared.ListSyncsFromWarehouseAndSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListSyncsFromWarehouseAndSourceV1Output {
+func (o *ListSyncsFromWarehouseAndSourceSelectiveSyncResponse200ResponseBody) GetData() *shared.ListSyncsFromWarehouseAndSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListSyncsFromWarehouseAndSourceSelectiveSyncResponseResponseBody - OK
+type ListSyncsFromWarehouseAndSourceSelectiveSyncResponseResponseBody struct {
 	// Returns a list that contains the most recent syncs for a Warehouse-source pair, filtered and constrained by a given
 	// set of pagination parameters.
 	Data *shared.ListSyncsFromWarehouseAndSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListSyncsFromWarehouseAndSourceV1Output {
+func (o *ListSyncsFromWarehouseAndSourceSelectiveSyncResponseResponseBody) GetData() *shared.ListSyncsFromWarehouseAndSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1PlusJSON - OK
-type ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1PlusJSON struct {
+// ListSyncsFromWarehouseAndSourceSelectiveSyncResponseBody - OK
+type ListSyncsFromWarehouseAndSourceSelectiveSyncResponseBody struct {
 	// Returns a list that contains the most recent syncs for a Warehouse-source pair, filtered and constrained by a given
 	// set of pagination parameters.
 	Data *shared.ListSyncsFromWarehouseAndSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListSyncsFromWarehouseAndSourceV1Output {
+func (o *ListSyncsFromWarehouseAndSourceSelectiveSyncResponseBody) GetData() *shared.ListSyncsFromWarehouseAndSourceV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListSyncsFromWarehouseAndSource200ApplicationJSON - OK
-type ListSyncsFromWarehouseAndSource200ApplicationJSON struct {
+// ListSyncsFromWarehouseAndSourceResponseBody - OK
+type ListSyncsFromWarehouseAndSourceResponseBody struct {
 	// Returns a list that contains the most recent syncs for a Warehouse-source pair, filtered and constrained by a given
 	// set of pagination parameters.
 	Data *shared.ListSyncsFromWarehouseAndSourceV1Output `json:"data,omitempty"`
 }
 
-func (o *ListSyncsFromWarehouseAndSource200ApplicationJSON) GetData() *shared.ListSyncsFromWarehouseAndSourceV1Output {
+func (o *ListSyncsFromWarehouseAndSourceResponseBody) GetData() *shared.ListSyncsFromWarehouseAndSourceV1Output {
 	if o == nil {
 		return nil
 	}
@@ -94,6 +94,14 @@ func (o *ListSyncsFromWarehouseAndSource200ApplicationJSON) GetData() *shared.Li
 }
 
 type ListSyncsFromWarehouseAndSourceResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListSyncsFromWarehouseAndSourceResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListSyncsFromWarehouseAndSourceSelectiveSyncResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListSyncsFromWarehouseAndSourceSelectiveSyncResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListSyncsFromWarehouseAndSourceSelectiveSyncResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -102,14 +110,34 @@ type ListSyncsFromWarehouseAndSourceResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListSyncsFromWarehouseAndSource200ApplicationJSONObject *ListSyncsFromWarehouseAndSource200ApplicationJSON
-	// OK
-	ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1PlusJSONObject *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1alphaPlusJSONObject *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1betaPlusJSONObject *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListSyncsFromWarehouseAndSourceResponse) GetTwoHundredApplicationJSONObject() *ListSyncsFromWarehouseAndSourceResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListSyncsFromWarehouseAndSourceResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListSyncsFromWarehouseAndSourceSelectiveSyncResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListSyncsFromWarehouseAndSourceResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListSyncsFromWarehouseAndSourceSelectiveSyncResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListSyncsFromWarehouseAndSourceResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListSyncsFromWarehouseAndSourceSelectiveSyncResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListSyncsFromWarehouseAndSourceResponse) GetContentType() string {
@@ -138,32 +166,4 @@ func (o *ListSyncsFromWarehouseAndSourceResponse) GetRawResponse() *http.Respons
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListSyncsFromWarehouseAndSourceResponse) GetListSyncsFromWarehouseAndSource200ApplicationJSONObject() *ListSyncsFromWarehouseAndSource200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSyncsFromWarehouseAndSource200ApplicationJSONObject
-}
-
-func (o *ListSyncsFromWarehouseAndSourceResponse) GetListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1PlusJSONObject() *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListSyncsFromWarehouseAndSourceResponse) GetListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1alphaPlusJSONObject() *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListSyncsFromWarehouseAndSourceResponse) GetListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1betaPlusJSONObject() *ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListSyncsFromWarehouseAndSource200ApplicationVndSegmentV1betaPlusJSONObject
 }

@@ -18,52 +18,52 @@ func (o *GetUserRequest) GetUserID() string {
 	return o.UserID
 }
 
-// GetUser200ApplicationVndSegmentV1betaPlusJSON - OK
-type GetUser200ApplicationVndSegmentV1betaPlusJSON struct {
+// GetUserIAMUsersResponse200ResponseBody - OK
+type GetUserIAMUsersResponse200ResponseBody struct {
 	// Returns the user.
 	Data *shared.GetUserV1Output `json:"data,omitempty"`
 }
 
-func (o *GetUser200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.GetUserV1Output {
+func (o *GetUserIAMUsersResponse200ResponseBody) GetData() *shared.GetUserV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetUser200ApplicationVndSegmentV1alphaPlusJSON - OK
-type GetUser200ApplicationVndSegmentV1alphaPlusJSON struct {
+// GetUserIAMUsersResponseResponseBody - OK
+type GetUserIAMUsersResponseResponseBody struct {
 	// Returns the user.
 	Data *shared.GetUserV1Output `json:"data,omitempty"`
 }
 
-func (o *GetUser200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.GetUserV1Output {
+func (o *GetUserIAMUsersResponseResponseBody) GetData() *shared.GetUserV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetUser200ApplicationVndSegmentV1PlusJSON - OK
-type GetUser200ApplicationVndSegmentV1PlusJSON struct {
+// GetUserIAMUsersResponseBody - OK
+type GetUserIAMUsersResponseBody struct {
 	// Returns the user.
 	Data *shared.GetUserV1Output `json:"data,omitempty"`
 }
 
-func (o *GetUser200ApplicationVndSegmentV1PlusJSON) GetData() *shared.GetUserV1Output {
+func (o *GetUserIAMUsersResponseBody) GetData() *shared.GetUserV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// GetUser200ApplicationJSON - OK
-type GetUser200ApplicationJSON struct {
+// GetUserResponseBody - OK
+type GetUserResponseBody struct {
 	// Returns the user.
 	Data *shared.GetUserV1Output `json:"data,omitempty"`
 }
 
-func (o *GetUser200ApplicationJSON) GetData() *shared.GetUserV1Output {
+func (o *GetUserResponseBody) GetData() *shared.GetUserV1Output {
 	if o == nil {
 		return nil
 	}
@@ -71,6 +71,14 @@ func (o *GetUser200ApplicationJSON) GetData() *shared.GetUserV1Output {
 }
 
 type GetUserResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *GetUserResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *GetUserIAMUsersResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *GetUserIAMUsersResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *GetUserIAMUsersResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -79,14 +87,34 @@ type GetUserResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	GetUser200ApplicationJSONObject *GetUser200ApplicationJSON
-	// OK
-	GetUser200ApplicationVndSegmentV1PlusJSONObject *GetUser200ApplicationVndSegmentV1PlusJSON
-	// OK
-	GetUser200ApplicationVndSegmentV1alphaPlusJSONObject *GetUser200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	GetUser200ApplicationVndSegmentV1betaPlusJSONObject *GetUser200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *GetUserResponse) GetTwoHundredApplicationJSONObject() *GetUserResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *GetUserResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *GetUserIAMUsersResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *GetUserResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *GetUserIAMUsersResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *GetUserResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *GetUserIAMUsersResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *GetUserResponse) GetContentType() string {
@@ -115,32 +143,4 @@ func (o *GetUserResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *GetUserResponse) GetGetUser200ApplicationJSONObject() *GetUser200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetUser200ApplicationJSONObject
-}
-
-func (o *GetUserResponse) GetGetUser200ApplicationVndSegmentV1PlusJSONObject() *GetUser200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetUser200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *GetUserResponse) GetGetUser200ApplicationVndSegmentV1alphaPlusJSONObject() *GetUser200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetUser200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *GetUserResponse) GetGetUser200ApplicationVndSegmentV1betaPlusJSONObject() *GetUser200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.GetUser200ApplicationVndSegmentV1betaPlusJSONObject
 }

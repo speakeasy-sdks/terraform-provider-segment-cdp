@@ -26,52 +26,52 @@ func (o *UpdateSelectiveSyncForWarehouseRequest) GetWarehouseID() string {
 	return o.WarehouseID
 }
 
-// UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1betaPlusJSON - OK
-type UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1betaPlusJSON struct {
+// UpdateSelectiveSyncForWarehouseSelectiveSyncResponse200ResponseBody - OK
+type UpdateSelectiveSyncForWarehouseSelectiveSyncResponse200ResponseBody struct {
 	// Results from updating the schema for a Warehouse/source pair.
 	Data *shared.UpdateSelectiveSyncForWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.UpdateSelectiveSyncForWarehouseV1Output {
+func (o *UpdateSelectiveSyncForWarehouseSelectiveSyncResponse200ResponseBody) GetData() *shared.UpdateSelectiveSyncForWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateSelectiveSyncForWarehouseSelectiveSyncResponseResponseBody - OK
+type UpdateSelectiveSyncForWarehouseSelectiveSyncResponseResponseBody struct {
 	// Results from updating the schema for a Warehouse/source pair.
 	Data *shared.UpdateSelectiveSyncForWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateSelectiveSyncForWarehouseV1Output {
+func (o *UpdateSelectiveSyncForWarehouseSelectiveSyncResponseResponseBody) GetData() *shared.UpdateSelectiveSyncForWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1PlusJSON - OK
-type UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1PlusJSON struct {
+// UpdateSelectiveSyncForWarehouseSelectiveSyncResponseBody - OK
+type UpdateSelectiveSyncForWarehouseSelectiveSyncResponseBody struct {
 	// Results from updating the schema for a Warehouse/source pair.
 	Data *shared.UpdateSelectiveSyncForWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1PlusJSON) GetData() *shared.UpdateSelectiveSyncForWarehouseV1Output {
+func (o *UpdateSelectiveSyncForWarehouseSelectiveSyncResponseBody) GetData() *shared.UpdateSelectiveSyncForWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// UpdateSelectiveSyncForWarehouse200ApplicationJSON - OK
-type UpdateSelectiveSyncForWarehouse200ApplicationJSON struct {
+// UpdateSelectiveSyncForWarehouseResponseBody - OK
+type UpdateSelectiveSyncForWarehouseResponseBody struct {
 	// Results from updating the schema for a Warehouse/source pair.
 	Data *shared.UpdateSelectiveSyncForWarehouseV1Output `json:"data,omitempty"`
 }
 
-func (o *UpdateSelectiveSyncForWarehouse200ApplicationJSON) GetData() *shared.UpdateSelectiveSyncForWarehouseV1Output {
+func (o *UpdateSelectiveSyncForWarehouseResponseBody) GetData() *shared.UpdateSelectiveSyncForWarehouseV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *UpdateSelectiveSyncForWarehouse200ApplicationJSON) GetData() *shared.Up
 }
 
 type UpdateSelectiveSyncForWarehouseResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *UpdateSelectiveSyncForWarehouseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *UpdateSelectiveSyncForWarehouseSelectiveSyncResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *UpdateSelectiveSyncForWarehouseSelectiveSyncResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *UpdateSelectiveSyncForWarehouseSelectiveSyncResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type UpdateSelectiveSyncForWarehouseResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	UpdateSelectiveSyncForWarehouse200ApplicationJSONObject *UpdateSelectiveSyncForWarehouse200ApplicationJSON
-	// OK
-	UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1PlusJSONObject *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1PlusJSON
-	// OK
-	UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1betaPlusJSONObject *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *UpdateSelectiveSyncForWarehouseResponse) GetTwoHundredApplicationJSONObject() *UpdateSelectiveSyncForWarehouseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *UpdateSelectiveSyncForWarehouseResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *UpdateSelectiveSyncForWarehouseSelectiveSyncResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *UpdateSelectiveSyncForWarehouseResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *UpdateSelectiveSyncForWarehouseSelectiveSyncResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *UpdateSelectiveSyncForWarehouseResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *UpdateSelectiveSyncForWarehouseSelectiveSyncResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *UpdateSelectiveSyncForWarehouseResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *UpdateSelectiveSyncForWarehouseResponse) GetRawResponse() *http.Respons
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *UpdateSelectiveSyncForWarehouseResponse) GetUpdateSelectiveSyncForWarehouse200ApplicationJSONObject() *UpdateSelectiveSyncForWarehouse200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateSelectiveSyncForWarehouse200ApplicationJSONObject
-}
-
-func (o *UpdateSelectiveSyncForWarehouseResponse) GetUpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1PlusJSONObject() *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *UpdateSelectiveSyncForWarehouseResponse) GetUpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *UpdateSelectiveSyncForWarehouseResponse) GetUpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1betaPlusJSONObject() *UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.UpdateSelectiveSyncForWarehouse200ApplicationVndSegmentV1betaPlusJSONObject
 }

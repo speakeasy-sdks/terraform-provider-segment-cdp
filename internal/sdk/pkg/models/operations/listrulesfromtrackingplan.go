@@ -29,52 +29,52 @@ func (o *ListRulesFromTrackingPlanRequest) GetTrackingPlanID() string {
 	return o.TrackingPlanID
 }
 
-// ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSON - OK
-type ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSON struct {
+// ListRulesFromTrackingPlanTrackingPlansResponse200ResponseBody - OK
+type ListRulesFromTrackingPlanTrackingPlansResponse200ResponseBody struct {
 	// Lists a Tracking Plan's rules.
 	Data *shared.ListRulesFromTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.ListRulesFromTrackingPlanV1Output {
+func (o *ListRulesFromTrackingPlanTrackingPlansResponse200ResponseBody) GetData() *shared.ListRulesFromTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListRulesFromTrackingPlanTrackingPlansResponseResponseBody - OK
+type ListRulesFromTrackingPlanTrackingPlansResponseResponseBody struct {
 	// Lists a Tracking Plan's rules.
 	Data *shared.ListRulesFromTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListRulesFromTrackingPlanV1Output {
+func (o *ListRulesFromTrackingPlanTrackingPlansResponseResponseBody) GetData() *shared.ListRulesFromTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSON - OK
-type ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSON struct {
+// ListRulesFromTrackingPlanTrackingPlansResponseBody - OK
+type ListRulesFromTrackingPlanTrackingPlansResponseBody struct {
 	// Lists a Tracking Plan's rules.
 	Data *shared.ListRulesFromTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSON) GetData() *shared.ListRulesFromTrackingPlanV1Output {
+func (o *ListRulesFromTrackingPlanTrackingPlansResponseBody) GetData() *shared.ListRulesFromTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// ListRulesFromTrackingPlan200ApplicationJSON - OK
-type ListRulesFromTrackingPlan200ApplicationJSON struct {
+// ListRulesFromTrackingPlanResponseBody - OK
+type ListRulesFromTrackingPlanResponseBody struct {
 	// Lists a Tracking Plan's rules.
 	Data *shared.ListRulesFromTrackingPlanV1Output `json:"data,omitempty"`
 }
 
-func (o *ListRulesFromTrackingPlan200ApplicationJSON) GetData() *shared.ListRulesFromTrackingPlanV1Output {
+func (o *ListRulesFromTrackingPlanResponseBody) GetData() *shared.ListRulesFromTrackingPlanV1Output {
 	if o == nil {
 		return nil
 	}
@@ -82,6 +82,14 @@ func (o *ListRulesFromTrackingPlan200ApplicationJSON) GetData() *shared.ListRule
 }
 
 type ListRulesFromTrackingPlanResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *ListRulesFromTrackingPlanResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *ListRulesFromTrackingPlanTrackingPlansResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *ListRulesFromTrackingPlanTrackingPlansResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *ListRulesFromTrackingPlanTrackingPlansResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -90,14 +98,34 @@ type ListRulesFromTrackingPlanResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	ListRulesFromTrackingPlan200ApplicationJSONObject *ListRulesFromTrackingPlan200ApplicationJSON
-	// OK
-	ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSONObject *ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSON
-	// OK
-	ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject *ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject *ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *ListRulesFromTrackingPlanResponse) GetTwoHundredApplicationJSONObject() *ListRulesFromTrackingPlanResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *ListRulesFromTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *ListRulesFromTrackingPlanTrackingPlansResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *ListRulesFromTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *ListRulesFromTrackingPlanTrackingPlansResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *ListRulesFromTrackingPlanResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *ListRulesFromTrackingPlanTrackingPlansResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *ListRulesFromTrackingPlanResponse) GetContentType() string {
@@ -126,32 +154,4 @@ func (o *ListRulesFromTrackingPlanResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *ListRulesFromTrackingPlanResponse) GetListRulesFromTrackingPlan200ApplicationJSONObject() *ListRulesFromTrackingPlan200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListRulesFromTrackingPlan200ApplicationJSONObject
-}
-
-func (o *ListRulesFromTrackingPlanResponse) GetListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSONObject() *ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListRulesFromTrackingPlan200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *ListRulesFromTrackingPlanResponse) GetListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject() *ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListRulesFromTrackingPlan200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *ListRulesFromTrackingPlanResponse) GetListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject() *ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.ListRulesFromTrackingPlan200ApplicationVndSegmentV1betaPlusJSONObject
 }

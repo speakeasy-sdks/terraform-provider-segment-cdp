@@ -26,52 +26,52 @@ func (o *CreateCloudSourceRegulationRequest) GetSourceID() string {
 	return o.SourceID
 }
 
-// CreateCloudSourceRegulation200ApplicationVndSegmentV1betaPlusJSON - OK
-type CreateCloudSourceRegulation200ApplicationVndSegmentV1betaPlusJSON struct {
+// CreateCloudSourceRegulationDeletionAndSuppressionResponse200ResponseBody - OK
+type CreateCloudSourceRegulationDeletionAndSuppressionResponse200ResponseBody struct {
 	// The output of a create Cloud Source regulation call.
 	Data *shared.CreateCloudSourceRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateCloudSourceRegulation200ApplicationVndSegmentV1betaPlusJSON) GetData() *shared.CreateCloudSourceRegulationV1Output {
+func (o *CreateCloudSourceRegulationDeletionAndSuppressionResponse200ResponseBody) GetData() *shared.CreateCloudSourceRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateCloudSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON - OK
-type CreateCloudSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON struct {
+// CreateCloudSourceRegulationDeletionAndSuppressionResponseResponseBody - OK
+type CreateCloudSourceRegulationDeletionAndSuppressionResponseResponseBody struct {
 	// The output of a create Cloud Source regulation call.
 	Data *shared.CreateCloudSourceRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateCloudSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.CreateCloudSourceRegulationV1Output {
+func (o *CreateCloudSourceRegulationDeletionAndSuppressionResponseResponseBody) GetData() *shared.CreateCloudSourceRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateCloudSourceRegulation200ApplicationVndSegmentV1PlusJSON - OK
-type CreateCloudSourceRegulation200ApplicationVndSegmentV1PlusJSON struct {
+// CreateCloudSourceRegulationDeletionAndSuppressionResponseBody - OK
+type CreateCloudSourceRegulationDeletionAndSuppressionResponseBody struct {
 	// The output of a create Cloud Source regulation call.
 	Data *shared.CreateCloudSourceRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateCloudSourceRegulation200ApplicationVndSegmentV1PlusJSON) GetData() *shared.CreateCloudSourceRegulationV1Output {
+func (o *CreateCloudSourceRegulationDeletionAndSuppressionResponseBody) GetData() *shared.CreateCloudSourceRegulationV1Output {
 	if o == nil {
 		return nil
 	}
 	return o.Data
 }
 
-// CreateCloudSourceRegulation200ApplicationJSON - OK
-type CreateCloudSourceRegulation200ApplicationJSON struct {
+// CreateCloudSourceRegulationResponseBody - OK
+type CreateCloudSourceRegulationResponseBody struct {
 	// The output of a create Cloud Source regulation call.
 	Data *shared.CreateCloudSourceRegulationV1Output `json:"data,omitempty"`
 }
 
-func (o *CreateCloudSourceRegulation200ApplicationJSON) GetData() *shared.CreateCloudSourceRegulationV1Output {
+func (o *CreateCloudSourceRegulationResponseBody) GetData() *shared.CreateCloudSourceRegulationV1Output {
 	if o == nil {
 		return nil
 	}
@@ -79,6 +79,14 @@ func (o *CreateCloudSourceRegulation200ApplicationJSON) GetData() *shared.Create
 }
 
 type CreateCloudSourceRegulationResponse struct {
+	// OK
+	TwoHundredApplicationJSONObject *CreateCloudSourceRegulationResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1PlusJSONObject *CreateCloudSourceRegulationDeletionAndSuppressionResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1alphaPlusJSONObject *CreateCloudSourceRegulationDeletionAndSuppressionResponseResponseBody
+	// OK
+	TwoHundredApplicationVndSegmentV1betaPlusJSONObject *CreateCloudSourceRegulationDeletionAndSuppressionResponse200ResponseBody
 	// HTTP response content type for this operation
 	ContentType string
 	// Resource not found
@@ -87,14 +95,34 @@ type CreateCloudSourceRegulationResponse struct {
 	StatusCode int
 	// Raw HTTP response; suitable for custom response parsing
 	RawResponse *http.Response
-	// OK
-	CreateCloudSourceRegulation200ApplicationJSONObject *CreateCloudSourceRegulation200ApplicationJSON
-	// OK
-	CreateCloudSourceRegulation200ApplicationVndSegmentV1PlusJSONObject *CreateCloudSourceRegulation200ApplicationVndSegmentV1PlusJSON
-	// OK
-	CreateCloudSourceRegulation200ApplicationVndSegmentV1alphaPlusJSONObject *CreateCloudSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON
-	// OK
-	CreateCloudSourceRegulation200ApplicationVndSegmentV1betaPlusJSONObject *CreateCloudSourceRegulation200ApplicationVndSegmentV1betaPlusJSON
+}
+
+func (o *CreateCloudSourceRegulationResponse) GetTwoHundredApplicationJSONObject() *CreateCloudSourceRegulationResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationJSONObject
+}
+
+func (o *CreateCloudSourceRegulationResponse) GetTwoHundredApplicationVndSegmentV1PlusJSONObject() *CreateCloudSourceRegulationDeletionAndSuppressionResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1PlusJSONObject
+}
+
+func (o *CreateCloudSourceRegulationResponse) GetTwoHundredApplicationVndSegmentV1alphaPlusJSONObject() *CreateCloudSourceRegulationDeletionAndSuppressionResponseResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1alphaPlusJSONObject
+}
+
+func (o *CreateCloudSourceRegulationResponse) GetTwoHundredApplicationVndSegmentV1betaPlusJSONObject() *CreateCloudSourceRegulationDeletionAndSuppressionResponse200ResponseBody {
+	if o == nil {
+		return nil
+	}
+	return o.TwoHundredApplicationVndSegmentV1betaPlusJSONObject
 }
 
 func (o *CreateCloudSourceRegulationResponse) GetContentType() string {
@@ -123,32 +151,4 @@ func (o *CreateCloudSourceRegulationResponse) GetRawResponse() *http.Response {
 		return nil
 	}
 	return o.RawResponse
-}
-
-func (o *CreateCloudSourceRegulationResponse) GetCreateCloudSourceRegulation200ApplicationJSONObject() *CreateCloudSourceRegulation200ApplicationJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateCloudSourceRegulation200ApplicationJSONObject
-}
-
-func (o *CreateCloudSourceRegulationResponse) GetCreateCloudSourceRegulation200ApplicationVndSegmentV1PlusJSONObject() *CreateCloudSourceRegulation200ApplicationVndSegmentV1PlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateCloudSourceRegulation200ApplicationVndSegmentV1PlusJSONObject
-}
-
-func (o *CreateCloudSourceRegulationResponse) GetCreateCloudSourceRegulation200ApplicationVndSegmentV1alphaPlusJSONObject() *CreateCloudSourceRegulation200ApplicationVndSegmentV1alphaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateCloudSourceRegulation200ApplicationVndSegmentV1alphaPlusJSONObject
-}
-
-func (o *CreateCloudSourceRegulationResponse) GetCreateCloudSourceRegulation200ApplicationVndSegmentV1betaPlusJSONObject() *CreateCloudSourceRegulation200ApplicationVndSegmentV1betaPlusJSON {
-	if o == nil {
-		return nil
-	}
-	return o.CreateCloudSourceRegulation200ApplicationVndSegmentV1betaPlusJSONObject
 }

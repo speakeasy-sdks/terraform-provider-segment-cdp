@@ -21,13 +21,13 @@ func (o *ListReverseEtlModelsRequest) GetPagination() shared.PaginationInput {
 	return o.Pagination
 }
 
-// ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSON - OK
-type ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSON struct {
+// ListReverseEtlModelsResponseBody - OK
+type ListReverseEtlModelsResponseBody struct {
 	// Defines the result of listing Models.
 	Data *shared.ListReverseEtlModelsOutput `json:"data,omitempty"`
 }
 
-func (o *ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.ListReverseEtlModelsOutput {
+func (o *ListReverseEtlModelsResponseBody) GetData() *shared.ListReverseEtlModelsOutput {
 	if o == nil {
 		return nil
 	}
@@ -44,7 +44,7 @@ type ListReverseEtlModelsResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSONObject *ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSON
+	Object *ListReverseEtlModelsResponseBody
 }
 
 func (o *ListReverseEtlModelsResponse) GetContentType() string {
@@ -75,9 +75,9 @@ func (o *ListReverseEtlModelsResponse) GetRequestErrorEnvelope() *shared.Request
 	return o.RequestErrorEnvelope
 }
 
-func (o *ListReverseEtlModelsResponse) GetListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSONObject() *ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *ListReverseEtlModelsResponse) GetObject() *ListReverseEtlModelsResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

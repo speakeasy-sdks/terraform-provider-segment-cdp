@@ -15,7 +15,7 @@ import (
 	"strings"
 )
 
-// reverseETL - Reverse ETL allows the use of a database (aka: Segment Warehouse) as a source of
+// ReverseETL - Reverse ETL allows the use of a database (aka: Segment Warehouse) as a source of
 // data to be connected and sent to supported Segment Destinations. Previously, it
 // was only possible to use a Segment Warehouse as a destination.
 //
@@ -92,12 +92,12 @@ import (
 //
 // [go-time-parse-duration]: https://pkg.go.dev/time#ParseDuration
 // [iana-timezones]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-type reverseETL struct {
+type ReverseETL struct {
 	sdkConfiguration sdkConfiguration
 }
 
-func newReverseETL(sdkConfig sdkConfiguration) *reverseETL {
-	return &reverseETL{
+func newReverseETL(sdkConfig sdkConfiguration) *ReverseETL {
+	return &ReverseETL{
 		sdkConfiguration: sdkConfig,
 	}
 }
@@ -106,7 +106,7 @@ func newReverseETL(sdkConfig sdkConfiguration) *reverseETL {
 // Creates a new Reverse ETL Model.
 //
 // • When called, this endpoint may generate the `Model Created` event in the [audit trail](/tag/Audit-Trail).
-func (s *reverseETL) CreateReverseEtlModel(ctx context.Context, request shared.CreateReverseEtlModelInput, opts ...operations.Option) (*operations.CreateReverseEtlModelResponse, error) {
+func (s *ReverseETL) CreateReverseEtlModel(ctx context.Context, request shared.CreateReverseEtlModelInput, opts ...operations.Option) (*operations.CreateReverseEtlModelResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -174,12 +174,12 @@ func (s *reverseETL) CreateReverseEtlModel(ctx context.Context, request shared.C
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.CreateReverseEtlModelResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.CreateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -208,7 +208,7 @@ func (s *reverseETL) CreateReverseEtlModel(ctx context.Context, request shared.C
 // Deletes an existing Model.
 //
 // • When called, this endpoint may generate the `Model Deleted` event in the [audit trail](/tag/Audit-Trail).
-func (s *reverseETL) DeleteReverseEtlModel(ctx context.Context, request operations.DeleteReverseEtlModelRequest, opts ...operations.Option) (*operations.DeleteReverseEtlModelResponse, error) {
+func (s *ReverseETL) DeleteReverseEtlModel(ctx context.Context, request operations.DeleteReverseEtlModelRequest, opts ...operations.Option) (*operations.DeleteReverseEtlModelResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -265,12 +265,12 @@ func (s *reverseETL) DeleteReverseEtlModel(ctx context.Context, request operatio
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.DeleteReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.DeleteReverseEtlModelResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.DeleteReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -297,7 +297,7 @@ func (s *reverseETL) DeleteReverseEtlModel(ctx context.Context, request operatio
 
 // GetReverseEtlModel - Get Reverse Etl Model
 // Returns a Reverse ETL Model by its id.
-func (s *reverseETL) GetReverseEtlModel(ctx context.Context, request operations.GetReverseEtlModelRequest, opts ...operations.Option) (*operations.GetReverseEtlModelResponse, error) {
+func (s *ReverseETL) GetReverseEtlModel(ctx context.Context, request operations.GetReverseEtlModelRequest, opts ...operations.Option) (*operations.GetReverseEtlModelResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -354,12 +354,12 @@ func (s *reverseETL) GetReverseEtlModel(ctx context.Context, request operations.
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.GetReverseEtlModelResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.GetReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -386,7 +386,7 @@ func (s *reverseETL) GetReverseEtlModel(ctx context.Context, request operations.
 
 // ListReverseEtlModels - List Reverse Etl Models
 // Returns a list of Reverse ETL Models.
-func (s *reverseETL) ListReverseEtlModels(ctx context.Context, request operations.ListReverseEtlModelsRequest, opts ...operations.Option) (*operations.ListReverseEtlModelsResponse, error) {
+func (s *ReverseETL) ListReverseEtlModels(ctx context.Context, request operations.ListReverseEtlModelsRequest, opts ...operations.Option) (*operations.ListReverseEtlModelsResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -444,12 +444,12 @@ func (s *reverseETL) ListReverseEtlModels(ctx context.Context, request operation
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.ListReverseEtlModelsResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.ListReverseEtlModels200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}
@@ -479,7 +479,7 @@ func (s *reverseETL) ListReverseEtlModels(ctx context.Context, request operation
 //
 // • When called, this endpoint may generate one or more of the following [audit trail](/tag/Audit-Trail) events:* Model Settings Saved
 // * Model State Change Toggled
-func (s *reverseETL) UpdateReverseEtlModel(ctx context.Context, request operations.UpdateReverseEtlModelRequest, opts ...operations.Option) (*operations.UpdateReverseEtlModelResponse, error) {
+func (s *ReverseETL) UpdateReverseEtlModel(ctx context.Context, request operations.UpdateReverseEtlModelRequest, opts ...operations.Option) (*operations.UpdateReverseEtlModelResponse, error) {
 	o := operations.Options{}
 	supportedOptions := []string{
 		operations.SupportedOptionAcceptHeaderOverride,
@@ -550,12 +550,12 @@ func (s *reverseETL) UpdateReverseEtlModel(ctx context.Context, request operatio
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(contentType, `application/vnd.segment.v1alpha+json`):
-			var out operations.UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSON
+			var out operations.UpdateReverseEtlModelResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}
 
-			res.UpdateReverseEtlModel200ApplicationVndSegmentV1alphaPlusJSONObject = &out
+			res.Object = &out
 		default:
 			return nil, sdkerrors.NewSDKError(fmt.Sprintf("unknown content-type received: %s", contentType), httpRes.StatusCode, string(rawBody), httpRes)
 		}

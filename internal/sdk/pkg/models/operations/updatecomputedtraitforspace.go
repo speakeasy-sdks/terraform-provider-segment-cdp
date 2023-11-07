@@ -34,13 +34,13 @@ func (o *UpdateComputedTraitForSpaceRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// UpdateComputedTraitForSpaceResponseBody - OK
+type UpdateComputedTraitForSpaceResponseBody struct {
 	// Computed Trait output for get and update.
 	Data *shared.UpdateComputedTraitForSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.UpdateComputedTraitForSpaceAlphaOutput {
+func (o *UpdateComputedTraitForSpaceResponseBody) GetData() *shared.UpdateComputedTraitForSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -57,7 +57,7 @@ type UpdateComputedTraitForSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSONObject *UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *UpdateComputedTraitForSpaceResponseBody
 }
 
 func (o *UpdateComputedTraitForSpaceResponse) GetContentType() string {
@@ -88,9 +88,9 @@ func (o *UpdateComputedTraitForSpaceResponse) GetRequestErrorEnvelope() *shared.
 	return o.RequestErrorEnvelope
 }
 
-func (o *UpdateComputedTraitForSpaceResponse) GetUpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *UpdateComputedTraitForSpaceResponse) GetObject() *UpdateComputedTraitForSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.UpdateComputedTraitForSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }

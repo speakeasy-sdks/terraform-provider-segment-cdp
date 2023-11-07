@@ -26,13 +26,13 @@ func (o *BatchQueryMessagingSubscriptionsForSpaceRequest) GetSpaceID() string {
 	return o.SpaceID
 }
 
-// BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON - OK
-type BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON struct {
+// BatchQueryMessagingSubscriptionsForSpaceResponseBody - OK
+type BatchQueryMessagingSubscriptionsForSpaceResponseBody struct {
 	// Batch get response.
 	Data *shared.BatchQueryMessagingSubscriptionsForSpaceAlphaOutput `json:"data,omitempty"`
 }
 
-func (o *BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON) GetData() *shared.BatchQueryMessagingSubscriptionsForSpaceAlphaOutput {
+func (o *BatchQueryMessagingSubscriptionsForSpaceResponseBody) GetData() *shared.BatchQueryMessagingSubscriptionsForSpaceAlphaOutput {
 	if o == nil {
 		return nil
 	}
@@ -49,7 +49,7 @@ type BatchQueryMessagingSubscriptionsForSpaceResponse struct {
 	// Resource not found
 	RequestErrorEnvelope *shared.RequestErrorEnvelope
 	// OK
-	BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSONObject *BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON
+	Object *BatchQueryMessagingSubscriptionsForSpaceResponseBody
 }
 
 func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetContentType() string {
@@ -80,9 +80,9 @@ func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetRequestErrorEnvelo
 	return o.RequestErrorEnvelope
 }
 
-func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetBatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSONObject() *BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSON {
+func (o *BatchQueryMessagingSubscriptionsForSpaceResponse) GetObject() *BatchQueryMessagingSubscriptionsForSpaceResponseBody {
 	if o == nil {
 		return nil
 	}
-	return o.BatchQueryMessagingSubscriptionsForSpace200ApplicationVndSegmentV1alphaPlusJSONObject
+	return o.Object
 }
