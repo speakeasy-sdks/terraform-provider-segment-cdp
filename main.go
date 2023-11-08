@@ -7,8 +7,8 @@ import (
 	"flag"
 	"log"
 
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/provider"
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
-	"segment_public_api/internal/provider"
 )
 
 // Run "go generate" to format example terraform files and generate the docs for the registry/website

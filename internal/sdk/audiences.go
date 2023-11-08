@@ -6,12 +6,12 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/operations"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/sdkerrors"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/shared"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/utils"
 	"io"
 	"net/http"
-	"segment_public_api/internal/sdk/pkg/models/operations"
-	"segment_public_api/internal/sdk/pkg/models/sdkerrors"
-	"segment_public_api/internal/sdk/pkg/models/shared"
-	"segment_public_api/internal/sdk/pkg/utils"
 )
 
 // Audiences play a key role in gaining a deeper understanding of your users. Audiences allow you to group users or profiles based on shared characteristics, behaviors, and attributes. Using events passed into Segment, traits, and computed traits you can create Audiences which can help unlock more relevant engagement and communication.

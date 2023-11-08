@@ -6,6 +6,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	tfReflect "github.com/ds-terraform/terraform-provider-segment_public_api/internal/provider/reflect"
 	"github.com/hashicorp/terraform-plugin-framework/diag"
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -14,7 +15,6 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"reflect"
-	tfReflect "segment_public_api/internal/provider/reflect"
 )
 
 func debugResponse(response *http.Response) string {

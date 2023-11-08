@@ -6,12 +6,12 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/operations"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/sdkerrors"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/shared"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/utils"
 	"io"
 	"net/http"
-	"segment_public_api/internal/sdk/pkg/models/operations"
-	"segment_public_api/internal/sdk/pkg/models/sdkerrors"
-	"segment_public_api/internal/sdk/pkg/models/shared"
-	"segment_public_api/internal/sdk/pkg/utils"
 )
 
 // SelectiveSync - Warehouse Selective Sync allows you to manage the data that you send to your Warehouses. You can use this feature to stop syncing specific events (also known as collections) or properties that aren’t relevant, and may slow down your Warehouse syncs.

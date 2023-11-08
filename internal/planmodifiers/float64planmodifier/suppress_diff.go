@@ -4,7 +4,7 @@ package float64planmodifier
 
 import (
 	"context"
-	"segment_public_api/internal/planmodifiers/utils"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/planmodifiers/utils"
 
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/planmodifier"
 )

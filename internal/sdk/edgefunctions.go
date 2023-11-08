@@ -6,12 +6,12 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/operations"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/sdkerrors"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/shared"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/utils"
 	"io"
 	"net/http"
-	"segment_public_api/internal/sdk/pkg/models/operations"
-	"segment_public_api/internal/sdk/pkg/models/sdkerrors"
-	"segment_public_api/internal/sdk/pkg/models/shared"
-	"segment_public_api/internal/sdk/pkg/utils"
 )
 
 // EdgeFunctions - Edge functions enables you to write event enrichment and transformation logic in Javascript outside

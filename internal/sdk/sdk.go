@@ -5,9 +5,9 @@ package sdk
 import (
 	"context"
 	"fmt"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/shared"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/utils"
 	"net/http"
-	"segment_public_api/internal/sdk/pkg/models/shared"
-	"segment_public_api/internal/sdk/pkg/utils"
 	"time"
 )
 
@@ -632,9 +632,9 @@ func New(opts ...SDKOption) *SegmentPublicAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "36.2.0",
-			SDKVersion:        "0.7.0",
-			GenVersion:        "2.181.1",
-			UserAgent:         "speakeasy-sdk/go 0.7.0 2.181.1 36.2.0 segment_public_api",
+			SDKVersion:        "0.8.0",
+			GenVersion:        "2.183.0",
+			UserAgent:         "speakeasy-sdk/go 0.8.0 2.183.0 36.2.0 segment_public_api",
 		},
 	}
 	for _, opt := range opts {

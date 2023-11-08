@@ -1,4 +1,4 @@
-module segment_public_api
+module github.com/ds-terraform/terraform-provider-segment_public_api
 
 go 1.18
 

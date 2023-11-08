@@ -4,7 +4,7 @@ package operations
 
 import (
 	"errors"
-	"segment_public_api/internal/sdk/pkg/utils"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/utils"
 )
 
 var ErrUnsupportedOption = errors.New("unsupported option")

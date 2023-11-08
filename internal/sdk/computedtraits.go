@@ -6,12 +6,12 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/operations"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/sdkerrors"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/shared"
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/utils"
 	"io"
 	"net/http"
-	"segment_public_api/internal/sdk/pkg/models/operations"
-	"segment_public_api/internal/sdk/pkg/models/sdkerrors"
-	"segment_public_api/internal/sdk/pkg/models/shared"
-	"segment_public_api/internal/sdk/pkg/utils"
 )
 
 // ComputedTraits - Computed traits allow you to quickly create new traits for a user or profile based on that user's tracked interactions. Using the events and event properties that you send through page and track calls, Segment will calculate and keep up-to-date, over time, the value for your defined computed trait. These can be computations like the total number of orders a customer has completed, the lifetime revenue of a customer, the most frequent user to determine which user is most active in an account, or the unique visitors count to assess how many visitors from a single domain.

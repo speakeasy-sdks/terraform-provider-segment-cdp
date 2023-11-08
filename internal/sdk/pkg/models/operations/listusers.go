@@ -3,8 +3,8 @@
 package operations
 
 import (
+	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/shared"
 	"net/http"
-	"segment_public_api/internal/sdk/pkg/models/shared"
 )
 
 type ListUsersRequest struct {
