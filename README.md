@@ -71,7 +71,7 @@ terraform {
   required_providers {
     segment_public_api = {
       source  = "ds-terraform/segment_public_api"
-      version = "0.10.1"
+      version = "0.11.0"
     }
   }
 }
@@ -109,6 +109,8 @@ TF_REATTACH_PROVIDERS=... terraform apply
 
 <!-- Start Available Resources and Operations [operations] -->
 ## Available Resources and Operations
+
+
 <!-- End Available Resources and Operations [operations] -->
 
 
