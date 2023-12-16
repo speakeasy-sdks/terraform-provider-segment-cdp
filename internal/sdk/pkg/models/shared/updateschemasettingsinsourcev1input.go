@@ -40,8 +40,8 @@ func (e *CommonEventOnViolations) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// GroupSourceSettingsV1 - Group settings.
-type GroupSourceSettingsV1 struct {
+// Group settings.
+type Group struct {
 	// Enable to allow group traits on violations.
 	//
 	// Config API note: equal to `allowGroupTraitsOnViolations`.
@@ -56,21 +56,21 @@ type GroupSourceSettingsV1 struct {
 	CommonEventOnViolations *CommonEventOnViolations `json:"commonEventOnViolations,omitempty"`
 }
 
-func (o *GroupSourceSettingsV1) GetAllowTraitsOnViolations() *bool {
+func (o *Group) GetAllowTraitsOnViolations() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowTraitsOnViolations
 }
 
-func (o *GroupSourceSettingsV1) GetAllowUnplannedTraits() *bool {
+func (o *Group) GetAllowUnplannedTraits() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowUnplannedTraits
 }
 
-func (o *GroupSourceSettingsV1) GetCommonEventOnViolations() *CommonEventOnViolations {
+func (o *Group) GetCommonEventOnViolations() *CommonEventOnViolations {
 	if o == nil {
 		return nil
 	}
@@ -110,8 +110,8 @@ func (e *UpdateSchemaSettingsInSourceV1InputCommonEventOnViolations) UnmarshalJS
 	}
 }
 
-// IdentifySourceSettingsV1 - Identify settings.
-type IdentifySourceSettingsV1 struct {
+// Identify settings.
+type Identify struct {
 	// Enable to allow identify traits on violations.
 	//
 	// Config API note: equal to `allowIdentifyTraitsOnViolations`.
@@ -126,21 +126,21 @@ type IdentifySourceSettingsV1 struct {
 	CommonEventOnViolations *UpdateSchemaSettingsInSourceV1InputCommonEventOnViolations `json:"commonEventOnViolations,omitempty"`
 }
 
-func (o *IdentifySourceSettingsV1) GetAllowTraitsOnViolations() *bool {
+func (o *Identify) GetAllowTraitsOnViolations() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowTraitsOnViolations
 }
 
-func (o *IdentifySourceSettingsV1) GetAllowUnplannedTraits() *bool {
+func (o *Identify) GetAllowUnplannedTraits() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowUnplannedTraits
 }
 
-func (o *IdentifySourceSettingsV1) GetCommonEventOnViolations() *UpdateSchemaSettingsInSourceV1InputCommonEventOnViolations {
+func (o *Identify) GetCommonEventOnViolations() *UpdateSchemaSettingsInSourceV1InputCommonEventOnViolations {
 	if o == nil {
 		return nil
 	}
@@ -180,8 +180,8 @@ func (e *UpdateSchemaSettingsInSourceV1InputSchemasCommonEventOnViolations) Unma
 	}
 }
 
-// TrackSourceSettingsV1 - Track settings.
-type TrackSourceSettingsV1 struct {
+// Track settings.
+type Track struct {
 	// Allow track event on violations.
 	//
 	// Config API note: equal to `allowTrackEventOnViolations`.
@@ -204,35 +204,35 @@ type TrackSourceSettingsV1 struct {
 	CommonEventOnViolations *UpdateSchemaSettingsInSourceV1InputSchemasCommonEventOnViolations `json:"commonEventOnViolations,omitempty"`
 }
 
-func (o *TrackSourceSettingsV1) GetAllowEventOnViolations() *bool {
+func (o *Track) GetAllowEventOnViolations() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowEventOnViolations
 }
 
-func (o *TrackSourceSettingsV1) GetAllowPropertiesOnViolations() *bool {
+func (o *Track) GetAllowPropertiesOnViolations() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowPropertiesOnViolations
 }
 
-func (o *TrackSourceSettingsV1) GetAllowUnplannedEventProperties() *bool {
+func (o *Track) GetAllowUnplannedEventProperties() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowUnplannedEventProperties
 }
 
-func (o *TrackSourceSettingsV1) GetAllowUnplannedEvents() *bool {
+func (o *Track) GetAllowUnplannedEvents() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowUnplannedEvents
 }
 
-func (o *TrackSourceSettingsV1) GetCommonEventOnViolations() *UpdateSchemaSettingsInSourceV1InputSchemasCommonEventOnViolations {
+func (o *Track) GetCommonEventOnViolations() *UpdateSchemaSettingsInSourceV1InputSchemasCommonEventOnViolations {
 	if o == nil {
 		return nil
 	}
@@ -246,11 +246,11 @@ type UpdateSchemaSettingsInSourceV1Input struct {
 	// Source id to forward violations to.
 	ForwardingViolationsTo *string `json:"forwardingViolationsTo,omitempty"`
 	// Group settings.
-	Group *GroupSourceSettingsV1 `json:"group,omitempty"`
+	Group *Group `json:"group,omitempty"`
 	// Identify settings.
-	Identify *IdentifySourceSettingsV1 `json:"identify,omitempty"`
+	Identify *Identify `json:"identify,omitempty"`
 	// Track settings.
-	Track *TrackSourceSettingsV1 `json:"track,omitempty"`
+	Track *Track `json:"track,omitempty"`
 }
 
 func (o *UpdateSchemaSettingsInSourceV1Input) GetForwardingBlockedEventsTo() *string {
@@ -267,21 +267,21 @@ func (o *UpdateSchemaSettingsInSourceV1Input) GetForwardingViolationsTo() *strin
 	return o.ForwardingViolationsTo
 }
 
-func (o *UpdateSchemaSettingsInSourceV1Input) GetGroup() *GroupSourceSettingsV1 {
+func (o *UpdateSchemaSettingsInSourceV1Input) GetGroup() *Group {
 	if o == nil {
 		return nil
 	}
 	return o.Group
 }
 
-func (o *UpdateSchemaSettingsInSourceV1Input) GetIdentify() *IdentifySourceSettingsV1 {
+func (o *UpdateSchemaSettingsInSourceV1Input) GetIdentify() *Identify {
 	if o == nil {
 		return nil
 	}
 	return o.Identify
 }
 
-func (o *UpdateSchemaSettingsInSourceV1Input) GetTrack() *TrackSourceSettingsV1 {
+func (o *UpdateSchemaSettingsInSourceV1Input) GetTrack() *Track {
 	if o == nil {
 		return nil
 	}

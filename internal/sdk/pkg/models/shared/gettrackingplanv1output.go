@@ -44,8 +44,8 @@ func (e *GetTrackingPlanV1OutputType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// GetTrackingPlanV1OutputTrackingPlanV1 - Represents a Tracking Plan.
-type GetTrackingPlanV1OutputTrackingPlanV1 struct {
+// GetTrackingPlanV1OutputTrackingPlan - The requested Tracking Plan.
+type GetTrackingPlanV1OutputTrackingPlan struct {
 	// The timestamp of this Tracking Plan's creation.
 	//
 	// Config API note: equal to `createTime`.
@@ -72,49 +72,49 @@ type GetTrackingPlanV1OutputTrackingPlanV1 struct {
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
 
-func (o *GetTrackingPlanV1OutputTrackingPlanV1) GetCreatedAt() *string {
+func (o *GetTrackingPlanV1OutputTrackingPlan) GetCreatedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedAt
 }
 
-func (o *GetTrackingPlanV1OutputTrackingPlanV1) GetDescription() *string {
+func (o *GetTrackingPlanV1OutputTrackingPlan) GetDescription() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *GetTrackingPlanV1OutputTrackingPlanV1) GetID() string {
+func (o *GetTrackingPlanV1OutputTrackingPlan) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *GetTrackingPlanV1OutputTrackingPlanV1) GetName() *string {
+func (o *GetTrackingPlanV1OutputTrackingPlan) GetName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Name
 }
 
-func (o *GetTrackingPlanV1OutputTrackingPlanV1) GetSlug() *string {
+func (o *GetTrackingPlanV1OutputTrackingPlan) GetSlug() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Slug
 }
 
-func (o *GetTrackingPlanV1OutputTrackingPlanV1) GetType() GetTrackingPlanV1OutputType {
+func (o *GetTrackingPlanV1OutputTrackingPlan) GetType() GetTrackingPlanV1OutputType {
 	if o == nil {
 		return GetTrackingPlanV1OutputType("")
 	}
 	return o.Type
 }
 
-func (o *GetTrackingPlanV1OutputTrackingPlanV1) GetUpdatedAt() *string {
+func (o *GetTrackingPlanV1OutputTrackingPlan) GetUpdatedAt() *string {
 	if o == nil {
 		return nil
 	}
@@ -124,12 +124,12 @@ func (o *GetTrackingPlanV1OutputTrackingPlanV1) GetUpdatedAt() *string {
 // GetTrackingPlanV1Output - Gets a single Tracking Plan.
 type GetTrackingPlanV1Output struct {
 	// The requested Tracking Plan.
-	TrackingPlan GetTrackingPlanV1OutputTrackingPlanV1 `json:"trackingPlan"`
+	TrackingPlan GetTrackingPlanV1OutputTrackingPlan `json:"trackingPlan"`
 }
 
-func (o *GetTrackingPlanV1Output) GetTrackingPlan() GetTrackingPlanV1OutputTrackingPlanV1 {
+func (o *GetTrackingPlanV1Output) GetTrackingPlan() GetTrackingPlanV1OutputTrackingPlan {
 	if o == nil {
-		return GetTrackingPlanV1OutputTrackingPlanV1{}
+		return GetTrackingPlanV1OutputTrackingPlan{}
 	}
 	return o.TrackingPlan
 }

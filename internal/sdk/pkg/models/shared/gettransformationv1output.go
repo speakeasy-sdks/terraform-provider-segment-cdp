@@ -2,8 +2,8 @@
 
 package shared
 
-// GetTransformationV1OutputTransformationV1 - Represents a Transformation.
-type GetTransformationV1OutputTransformationV1 struct {
+// GetTransformationV1OutputTransformation - The retrieved Transformation.
+type GetTransformationV1OutputTransformation struct {
 	// The optional Destination metadata associated with the Transformation.
 	DestinationMetadataID *string `json:"destinationMetadataId,omitempty"`
 	// If the Transformation is enabled.
@@ -31,70 +31,70 @@ type GetTransformationV1OutputTransformationV1 struct {
 	SourceID string `json:"sourceId"`
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetDestinationMetadataID() *string {
+func (o *GetTransformationV1OutputTransformation) GetDestinationMetadataID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DestinationMetadataID
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetEnabled() bool {
+func (o *GetTransformationV1OutputTransformation) GetEnabled() bool {
 	if o == nil {
 		return false
 	}
 	return o.Enabled
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetFqlDefinedProperties() []FQLDefinedPropertyV1 {
+func (o *GetTransformationV1OutputTransformation) GetFqlDefinedProperties() []FQLDefinedPropertyV1 {
 	if o == nil {
 		return nil
 	}
 	return o.FqlDefinedProperties
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetID() string {
+func (o *GetTransformationV1OutputTransformation) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetIf() string {
+func (o *GetTransformationV1OutputTransformation) GetIf() string {
 	if o == nil {
 		return ""
 	}
 	return o.If
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetName() string {
+func (o *GetTransformationV1OutputTransformation) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetNewEventName() *string {
+func (o *GetTransformationV1OutputTransformation) GetNewEventName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.NewEventName
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetPropertyRenames() []PropertyRenameV1 {
+func (o *GetTransformationV1OutputTransformation) GetPropertyRenames() []PropertyRenameV1 {
 	if o == nil {
 		return nil
 	}
 	return o.PropertyRenames
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetPropertyValueTransformations() []PropertyValueTransformationV1 {
+func (o *GetTransformationV1OutputTransformation) GetPropertyValueTransformations() []PropertyValueTransformationV1 {
 	if o == nil {
 		return nil
 	}
 	return o.PropertyValueTransformations
 }
 
-func (o *GetTransformationV1OutputTransformationV1) GetSourceID() string {
+func (o *GetTransformationV1OutputTransformation) GetSourceID() string {
 	if o == nil {
 		return ""
 	}
@@ -104,12 +104,12 @@ func (o *GetTransformationV1OutputTransformationV1) GetSourceID() string {
 // GetTransformationV1Output - The output of Transformation retrieval.
 type GetTransformationV1Output struct {
 	// The retrieved Transformation.
-	Transformation GetTransformationV1OutputTransformationV1 `json:"transformation"`
+	Transformation GetTransformationV1OutputTransformation `json:"transformation"`
 }
 
-func (o *GetTransformationV1Output) GetTransformation() GetTransformationV1OutputTransformationV1 {
+func (o *GetTransformationV1Output) GetTransformation() GetTransformationV1OutputTransformation {
 	if o == nil {
-		return GetTransformationV1OutputTransformationV1{}
+		return GetTransformationV1OutputTransformation{}
 	}
 	return o.Transformation
 }

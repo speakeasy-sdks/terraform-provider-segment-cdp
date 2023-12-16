@@ -2,11 +2,8 @@
 
 package shared
 
-// ListConnectedDestinationsFromSourceV1OutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListConnectedDestinationsFromSourceV1OutputPaginationOutput struct {
+// ListConnectedDestinationsFromSourceV1OutputPagination - Information about the pagination of this response.
+type ListConnectedDestinationsFromSourceV1OutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListConnectedDestinationsFromSourceV1OutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListConnectedDestinationsFromSourceV1OutputPaginationOutput) GetCurrent() string {
+func (o *ListConnectedDestinationsFromSourceV1OutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListConnectedDestinationsFromSourceV1OutputPaginationOutput) GetNext() *string {
+func (o *ListConnectedDestinationsFromSourceV1OutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListConnectedDestinationsFromSourceV1OutputPaginationOutput) GetPrevious() *string {
+func (o *ListConnectedDestinationsFromSourceV1OutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListConnectedDestinationsFromSourceV1OutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListConnectedDestinationsFromSourceV1OutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -62,7 +59,7 @@ type ListConnectedDestinationsFromSourceV1Output struct {
 	// A list that contains the Destinations connected to the Source.
 	Destinations []DestinationV1 `json:"destinations"`
 	// Information about the pagination of this response.
-	Pagination ListConnectedDestinationsFromSourceV1OutputPaginationOutput `json:"pagination"`
+	Pagination ListConnectedDestinationsFromSourceV1OutputPagination `json:"pagination"`
 }
 
 func (o *ListConnectedDestinationsFromSourceV1Output) GetDestinations() []DestinationV1 {
@@ -72,9 +69,9 @@ func (o *ListConnectedDestinationsFromSourceV1Output) GetDestinations() []Destin
 	return o.Destinations
 }
 
-func (o *ListConnectedDestinationsFromSourceV1Output) GetPagination() ListConnectedDestinationsFromSourceV1OutputPaginationOutput {
+func (o *ListConnectedDestinationsFromSourceV1Output) GetPagination() ListConnectedDestinationsFromSourceV1OutputPagination {
 	if o == nil {
-		return ListConnectedDestinationsFromSourceV1OutputPaginationOutput{}
+		return ListConnectedDestinationsFromSourceV1OutputPagination{}
 	}
 	return o.Pagination
 }

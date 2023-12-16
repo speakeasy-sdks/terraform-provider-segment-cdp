@@ -2,8 +2,8 @@
 
 package shared
 
-// UpdateSourceAlphaOutputLogosBeta - Represents a logo.
-type UpdateSourceAlphaOutputLogosBeta struct {
+// UpdateSourceAlphaOutputLogos - The logos for this Source.
+type UpdateSourceAlphaOutputLogos struct {
 	// The alternative text for this logo.
 	Alt *string `json:"alt,omitempty"`
 	// The default URL for this logo.
@@ -12,29 +12,31 @@ type UpdateSourceAlphaOutputLogosBeta struct {
 	Mark *string `json:"mark,omitempty"`
 }
 
-func (o *UpdateSourceAlphaOutputLogosBeta) GetAlt() *string {
+func (o *UpdateSourceAlphaOutputLogos) GetAlt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Alt
 }
 
-func (o *UpdateSourceAlphaOutputLogosBeta) GetDefault() string {
+func (o *UpdateSourceAlphaOutputLogos) GetDefault() string {
 	if o == nil {
 		return ""
 	}
 	return o.Default
 }
 
-func (o *UpdateSourceAlphaOutputLogosBeta) GetMark() *string {
+func (o *UpdateSourceAlphaOutputLogos) GetMark() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Mark
 }
 
-// UpdateSourceAlphaOutputSourceMetadataV1 - A website, server library, mobile SDK, or cloud application which can send data into Segment.
-type UpdateSourceAlphaOutputSourceMetadataV1 struct {
+// UpdateSourceAlphaOutputMetadata - The metadata for the Source.
+//
+// Config API note: includes `catalogName` and `catalogId`.
+type UpdateSourceAlphaOutputMetadata struct {
 	// A list of categories this Source belongs to.
 	Categories []string `json:"categories"`
 	// The description of this Source.
@@ -46,7 +48,7 @@ type UpdateSourceAlphaOutputSourceMetadataV1 struct {
 	// True if this is a Cloud Event Source.
 	IsCloudEventSource bool `json:"isCloudEventSource"`
 	// The logos for this Source.
-	Logos UpdateSourceAlphaOutputLogosBeta `json:"logos"`
+	Logos UpdateSourceAlphaOutputLogos `json:"logos"`
 	// The user-friendly name of this Source.
 	//
 	// Config API note: equal to `displayName`.
@@ -59,64 +61,64 @@ type UpdateSourceAlphaOutputSourceMetadataV1 struct {
 	Slug string `json:"slug"`
 }
 
-func (o *UpdateSourceAlphaOutputSourceMetadataV1) GetCategories() []string {
+func (o *UpdateSourceAlphaOutputMetadata) GetCategories() []string {
 	if o == nil {
 		return []string{}
 	}
 	return o.Categories
 }
 
-func (o *UpdateSourceAlphaOutputSourceMetadataV1) GetDescription() string {
+func (o *UpdateSourceAlphaOutputMetadata) GetDescription() string {
 	if o == nil {
 		return ""
 	}
 	return o.Description
 }
 
-func (o *UpdateSourceAlphaOutputSourceMetadataV1) GetID() string {
+func (o *UpdateSourceAlphaOutputMetadata) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *UpdateSourceAlphaOutputSourceMetadataV1) GetIsCloudEventSource() bool {
+func (o *UpdateSourceAlphaOutputMetadata) GetIsCloudEventSource() bool {
 	if o == nil {
 		return false
 	}
 	return o.IsCloudEventSource
 }
 
-func (o *UpdateSourceAlphaOutputSourceMetadataV1) GetLogos() UpdateSourceAlphaOutputLogosBeta {
+func (o *UpdateSourceAlphaOutputMetadata) GetLogos() UpdateSourceAlphaOutputLogos {
 	if o == nil {
-		return UpdateSourceAlphaOutputLogosBeta{}
+		return UpdateSourceAlphaOutputLogos{}
 	}
 	return o.Logos
 }
 
-func (o *UpdateSourceAlphaOutputSourceMetadataV1) GetName() string {
+func (o *UpdateSourceAlphaOutputMetadata) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *UpdateSourceAlphaOutputSourceMetadataV1) GetOptions() []IntegrationOptionBeta {
+func (o *UpdateSourceAlphaOutputMetadata) GetOptions() []IntegrationOptionBeta {
 	if o == nil {
 		return []IntegrationOptionBeta{}
 	}
 	return o.Options
 }
 
-func (o *UpdateSourceAlphaOutputSourceMetadataV1) GetSlug() string {
+func (o *UpdateSourceAlphaOutputMetadata) GetSlug() string {
 	if o == nil {
 		return ""
 	}
 	return o.Slug
 }
 
-// UpdateSourceAlphaOutputSourceAlpha - Defines a data Source for Segment data.
-type UpdateSourceAlphaOutputSourceAlpha struct {
+// UpdateSourceAlphaOutputSource - The updated Source.
+type UpdateSourceAlphaOutputSource struct {
 	// Enable to receive data from the Source.
 	Enabled bool `json:"enabled"`
 	// The id of the Source.
@@ -128,7 +130,7 @@ type UpdateSourceAlphaOutputSourceAlpha struct {
 	// The metadata for the Source.
 	//
 	// Config API note: includes `catalogName` and `catalogId`.
-	Metadata UpdateSourceAlphaOutputSourceMetadataV1 `json:"metadata"`
+	Metadata UpdateSourceAlphaOutputMetadata `json:"metadata"`
 	// The name of the Source.
 	//
 	// Config API note: equal to `displayName`.
@@ -148,63 +150,63 @@ type UpdateSourceAlphaOutputSourceAlpha struct {
 	WriteKeys []string `json:"writeKeys"`
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetEnabled() bool {
+func (o *UpdateSourceAlphaOutputSource) GetEnabled() bool {
 	if o == nil {
 		return false
 	}
 	return o.Enabled
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetID() string {
+func (o *UpdateSourceAlphaOutputSource) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetLabels() []LabelV1 {
+func (o *UpdateSourceAlphaOutputSource) GetLabels() []LabelV1 {
 	if o == nil {
 		return []LabelV1{}
 	}
 	return o.Labels
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetMetadata() UpdateSourceAlphaOutputSourceMetadataV1 {
+func (o *UpdateSourceAlphaOutputSource) GetMetadata() UpdateSourceAlphaOutputMetadata {
 	if o == nil {
-		return UpdateSourceAlphaOutputSourceMetadataV1{}
+		return UpdateSourceAlphaOutputMetadata{}
 	}
 	return o.Metadata
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetName() *string {
+func (o *UpdateSourceAlphaOutputSource) GetName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Name
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetSettings() map[string]interface{} {
+func (o *UpdateSourceAlphaOutputSource) GetSettings() map[string]interface{} {
 	if o == nil {
 		return nil
 	}
 	return o.Settings
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetSlug() string {
+func (o *UpdateSourceAlphaOutputSource) GetSlug() string {
 	if o == nil {
 		return ""
 	}
 	return o.Slug
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetWorkspaceID() string {
+func (o *UpdateSourceAlphaOutputSource) GetWorkspaceID() string {
 	if o == nil {
 		return ""
 	}
 	return o.WorkspaceID
 }
 
-func (o *UpdateSourceAlphaOutputSourceAlpha) GetWriteKeys() []string {
+func (o *UpdateSourceAlphaOutputSource) GetWriteKeys() []string {
 	if o == nil {
 		return []string{}
 	}
@@ -214,12 +216,12 @@ func (o *UpdateSourceAlphaOutputSourceAlpha) GetWriteKeys() []string {
 // UpdateSourceAlphaOutput - Returns the updated Source.
 type UpdateSourceAlphaOutput struct {
 	// The updated Source.
-	Source UpdateSourceAlphaOutputSourceAlpha `json:"source"`
+	Source UpdateSourceAlphaOutputSource `json:"source"`
 }
 
-func (o *UpdateSourceAlphaOutput) GetSource() UpdateSourceAlphaOutputSourceAlpha {
+func (o *UpdateSourceAlphaOutput) GetSource() UpdateSourceAlphaOutputSource {
 	if o == nil {
-		return UpdateSourceAlphaOutputSourceAlpha{}
+		return UpdateSourceAlphaOutputSource{}
 	}
 	return o.Source
 }

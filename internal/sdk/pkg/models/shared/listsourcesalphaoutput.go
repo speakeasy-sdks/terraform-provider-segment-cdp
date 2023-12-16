@@ -2,11 +2,8 @@
 
 package shared
 
-// ListSourcesAlphaOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListSourcesAlphaOutputPaginationOutput struct {
+// ListSourcesAlphaOutputPagination - Information about the pagination of this response.
+type ListSourcesAlphaOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListSourcesAlphaOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListSourcesAlphaOutputPaginationOutput) GetCurrent() string {
+func (o *ListSourcesAlphaOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListSourcesAlphaOutputPaginationOutput) GetNext() *string {
+func (o *ListSourcesAlphaOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListSourcesAlphaOutputPaginationOutput) GetPrevious() *string {
+func (o *ListSourcesAlphaOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListSourcesAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListSourcesAlphaOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -60,14 +57,14 @@ func (o *ListSourcesAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
 // ListSourcesAlphaOutput - Returns a list of Sources that belong to the current Workspace.
 type ListSourcesAlphaOutput struct {
 	// Information about the pagination of this response.
-	Pagination ListSourcesAlphaOutputPaginationOutput `json:"pagination"`
+	Pagination ListSourcesAlphaOutputPagination `json:"pagination"`
 	// A list of Sources that belong to the Workspace.
 	Sources []SourceAlpha `json:"sources"`
 }
 
-func (o *ListSourcesAlphaOutput) GetPagination() ListSourcesAlphaOutputPaginationOutput {
+func (o *ListSourcesAlphaOutput) GetPagination() ListSourcesAlphaOutputPagination {
 	if o == nil {
-		return ListSourcesAlphaOutputPaginationOutput{}
+		return ListSourcesAlphaOutputPagination{}
 	}
 	return o.Pagination
 }

@@ -2,22 +2,22 @@
 
 package shared
 
-// ReplaceAdvancedSyncScheduleForWarehouseV1OutputAdvancedWarehouseSyncScheduleV1Output - Defines the advanced sync schedule for a Warehouse.
-type ReplaceAdvancedSyncScheduleForWarehouseV1OutputAdvancedWarehouseSyncScheduleV1Output struct {
+// ReplaceAdvancedSyncScheduleForWarehouseV1OutputSchedule - The schedule that contains the overrides for the Warehouse, if enabled.
+type ReplaceAdvancedSyncScheduleForWarehouseV1OutputSchedule struct {
 	// A list that contains the times when syncs should occur.
 	Times []WarehouseAdvancedSyncV1 `json:"times,omitempty"`
 	// A TZ-database timezone for this sync schedule.
 	Timezone *string `json:"timezone,omitempty"`
 }
 
-func (o *ReplaceAdvancedSyncScheduleForWarehouseV1OutputAdvancedWarehouseSyncScheduleV1Output) GetTimes() []WarehouseAdvancedSyncV1 {
+func (o *ReplaceAdvancedSyncScheduleForWarehouseV1OutputSchedule) GetTimes() []WarehouseAdvancedSyncV1 {
 	if o == nil {
 		return nil
 	}
 	return o.Times
 }
 
-func (o *ReplaceAdvancedSyncScheduleForWarehouseV1OutputAdvancedWarehouseSyncScheduleV1Output) GetTimezone() *string {
+func (o *ReplaceAdvancedSyncScheduleForWarehouseV1OutputSchedule) GetTimezone() *string {
 	if o == nil {
 		return nil
 	}
@@ -29,7 +29,7 @@ type ReplaceAdvancedSyncScheduleForWarehouseV1Output struct {
 	// Indicates if an advanced sync schedule is enabled for the Warehouse.
 	Enabled bool `json:"enabled"`
 	// The schedule that contains the overrides for the Warehouse, if enabled.
-	Schedule *ReplaceAdvancedSyncScheduleForWarehouseV1OutputAdvancedWarehouseSyncScheduleV1Output `json:"schedule,omitempty"`
+	Schedule *ReplaceAdvancedSyncScheduleForWarehouseV1OutputSchedule `json:"schedule,omitempty"`
 }
 
 func (o *ReplaceAdvancedSyncScheduleForWarehouseV1Output) GetEnabled() bool {
@@ -39,7 +39,7 @@ func (o *ReplaceAdvancedSyncScheduleForWarehouseV1Output) GetEnabled() bool {
 	return o.Enabled
 }
 
-func (o *ReplaceAdvancedSyncScheduleForWarehouseV1Output) GetSchedule() *ReplaceAdvancedSyncScheduleForWarehouseV1OutputAdvancedWarehouseSyncScheduleV1Output {
+func (o *ReplaceAdvancedSyncScheduleForWarehouseV1Output) GetSchedule() *ReplaceAdvancedSyncScheduleForWarehouseV1OutputSchedule {
 	if o == nil {
 		return nil
 	}

@@ -40,8 +40,8 @@ func (e *ListSchemaSettingsInSourceV1OutputSchemasSettingsCommonEventOnViolation
 	}
 }
 
-// ListSchemaSettingsInSourceV1OutputGroupSourceSettingsV1 - Group settings.
-type ListSchemaSettingsInSourceV1OutputGroupSourceSettingsV1 struct {
+// ListSchemaSettingsInSourceV1OutputGroup - Group settings.
+type ListSchemaSettingsInSourceV1OutputGroup struct {
 	// Enable to allow group traits on violations.
 	//
 	// Config API note: equal to `allowGroupTraitsOnViolations`.
@@ -56,21 +56,21 @@ type ListSchemaSettingsInSourceV1OutputGroupSourceSettingsV1 struct {
 	CommonEventOnViolations *ListSchemaSettingsInSourceV1OutputSchemasSettingsCommonEventOnViolations `json:"commonEventOnViolations,omitempty"`
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputGroupSourceSettingsV1) GetAllowTraitsOnViolations() *bool {
+func (o *ListSchemaSettingsInSourceV1OutputGroup) GetAllowTraitsOnViolations() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowTraitsOnViolations
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputGroupSourceSettingsV1) GetAllowUnplannedTraits() *bool {
+func (o *ListSchemaSettingsInSourceV1OutputGroup) GetAllowUnplannedTraits() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowUnplannedTraits
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputGroupSourceSettingsV1) GetCommonEventOnViolations() *ListSchemaSettingsInSourceV1OutputSchemasSettingsCommonEventOnViolations {
+func (o *ListSchemaSettingsInSourceV1OutputGroup) GetCommonEventOnViolations() *ListSchemaSettingsInSourceV1OutputSchemasSettingsCommonEventOnViolations {
 	if o == nil {
 		return nil
 	}
@@ -110,8 +110,8 @@ func (e *ListSchemaSettingsInSourceV1OutputCommonEventOnViolations) UnmarshalJSO
 	}
 }
 
-// ListSchemaSettingsInSourceV1OutputIdentifySourceSettingsV1 - Identify settings.
-type ListSchemaSettingsInSourceV1OutputIdentifySourceSettingsV1 struct {
+// ListSchemaSettingsInSourceV1OutputIdentify - Identify settings.
+type ListSchemaSettingsInSourceV1OutputIdentify struct {
 	// Enable to allow identify traits on violations.
 	//
 	// Config API note: equal to `allowIdentifyTraitsOnViolations`.
@@ -126,21 +126,21 @@ type ListSchemaSettingsInSourceV1OutputIdentifySourceSettingsV1 struct {
 	CommonEventOnViolations *ListSchemaSettingsInSourceV1OutputCommonEventOnViolations `json:"commonEventOnViolations,omitempty"`
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputIdentifySourceSettingsV1) GetAllowTraitsOnViolations() *bool {
+func (o *ListSchemaSettingsInSourceV1OutputIdentify) GetAllowTraitsOnViolations() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowTraitsOnViolations
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputIdentifySourceSettingsV1) GetAllowUnplannedTraits() *bool {
+func (o *ListSchemaSettingsInSourceV1OutputIdentify) GetAllowUnplannedTraits() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowUnplannedTraits
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputIdentifySourceSettingsV1) GetCommonEventOnViolations() *ListSchemaSettingsInSourceV1OutputCommonEventOnViolations {
+func (o *ListSchemaSettingsInSourceV1OutputIdentify) GetCommonEventOnViolations() *ListSchemaSettingsInSourceV1OutputCommonEventOnViolations {
 	if o == nil {
 		return nil
 	}
@@ -180,8 +180,8 @@ func (e *ListSchemaSettingsInSourceV1OutputSchemasCommonEventOnViolations) Unmar
 	}
 }
 
-// ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1 - Track settings.
-type ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1 struct {
+// ListSchemaSettingsInSourceV1OutputTrack - Track settings.
+type ListSchemaSettingsInSourceV1OutputTrack struct {
 	// Allow track event on violations.
 	//
 	// Config API note: equal to `allowTrackEventOnViolations`.
@@ -204,84 +204,84 @@ type ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1 struct {
 	CommonEventOnViolations *ListSchemaSettingsInSourceV1OutputSchemasCommonEventOnViolations `json:"commonEventOnViolations,omitempty"`
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1) GetAllowEventOnViolations() *bool {
+func (o *ListSchemaSettingsInSourceV1OutputTrack) GetAllowEventOnViolations() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowEventOnViolations
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1) GetAllowPropertiesOnViolations() *bool {
+func (o *ListSchemaSettingsInSourceV1OutputTrack) GetAllowPropertiesOnViolations() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowPropertiesOnViolations
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1) GetAllowUnplannedEventProperties() *bool {
+func (o *ListSchemaSettingsInSourceV1OutputTrack) GetAllowUnplannedEventProperties() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowUnplannedEventProperties
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1) GetAllowUnplannedEvents() *bool {
+func (o *ListSchemaSettingsInSourceV1OutputTrack) GetAllowUnplannedEvents() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.AllowUnplannedEvents
 }
 
-func (o *ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1) GetCommonEventOnViolations() *ListSchemaSettingsInSourceV1OutputSchemasCommonEventOnViolations {
+func (o *ListSchemaSettingsInSourceV1OutputTrack) GetCommonEventOnViolations() *ListSchemaSettingsInSourceV1OutputSchemasCommonEventOnViolations {
 	if o == nil {
 		return nil
 	}
 	return o.CommonEventOnViolations
 }
 
-// SourceSettingsOutputV1 - The output of Source settings.
-type SourceSettingsOutputV1 struct {
+// Settings - The Source settings.
+type Settings struct {
 	// SourceId to forward blocked events to.
 	ForwardingBlockedEventsTo *string `json:"forwardingBlockedEventsTo,omitempty"`
 	// SourceId to forward violations to.
 	ForwardingViolationsTo *string `json:"forwardingViolationsTo,omitempty"`
 	// Group settings.
-	Group *ListSchemaSettingsInSourceV1OutputGroupSourceSettingsV1 `json:"group,omitempty"`
+	Group *ListSchemaSettingsInSourceV1OutputGroup `json:"group,omitempty"`
 	// Identify settings.
-	Identify *ListSchemaSettingsInSourceV1OutputIdentifySourceSettingsV1 `json:"identify,omitempty"`
+	Identify *ListSchemaSettingsInSourceV1OutputIdentify `json:"identify,omitempty"`
 	// Track settings.
-	Track *ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1 `json:"track,omitempty"`
+	Track *ListSchemaSettingsInSourceV1OutputTrack `json:"track,omitempty"`
 }
 
-func (o *SourceSettingsOutputV1) GetForwardingBlockedEventsTo() *string {
+func (o *Settings) GetForwardingBlockedEventsTo() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ForwardingBlockedEventsTo
 }
 
-func (o *SourceSettingsOutputV1) GetForwardingViolationsTo() *string {
+func (o *Settings) GetForwardingViolationsTo() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ForwardingViolationsTo
 }
 
-func (o *SourceSettingsOutputV1) GetGroup() *ListSchemaSettingsInSourceV1OutputGroupSourceSettingsV1 {
+func (o *Settings) GetGroup() *ListSchemaSettingsInSourceV1OutputGroup {
 	if o == nil {
 		return nil
 	}
 	return o.Group
 }
 
-func (o *SourceSettingsOutputV1) GetIdentify() *ListSchemaSettingsInSourceV1OutputIdentifySourceSettingsV1 {
+func (o *Settings) GetIdentify() *ListSchemaSettingsInSourceV1OutputIdentify {
 	if o == nil {
 		return nil
 	}
 	return o.Identify
 }
 
-func (o *SourceSettingsOutputV1) GetTrack() *ListSchemaSettingsInSourceV1OutputTrackSourceSettingsV1 {
+func (o *Settings) GetTrack() *ListSchemaSettingsInSourceV1OutputTrack {
 	if o == nil {
 		return nil
 	}
@@ -291,16 +291,16 @@ func (o *SourceSettingsOutputV1) GetTrack() *ListSchemaSettingsInSourceV1OutputT
 // ListSchemaSettingsInSourceV1Output - Returns a list of settings for the Source.
 type ListSchemaSettingsInSourceV1Output struct {
 	// The Source settings.
-	Settings SourceSettingsOutputV1 `json:"settings"`
+	Settings Settings `json:"settings"`
 	// Source id.
 	//
 	// Config API note: analogous to `parent` and `name`.
 	SourceID string `json:"sourceId"`
 }
 
-func (o *ListSchemaSettingsInSourceV1Output) GetSettings() SourceSettingsOutputV1 {
+func (o *ListSchemaSettingsInSourceV1Output) GetSettings() Settings {
 	if o == nil {
-		return SourceSettingsOutputV1{}
+		return Settings{}
 	}
 	return o.Settings
 }

@@ -2,8 +2,8 @@
 
 package shared
 
-// GetAudienceAlphaOutputAudienceSummary - Defines an Audience.
-type GetAudienceAlphaOutputAudienceSummary struct {
+// Audience - The audience summary output.
+type Audience struct {
 	// Date the audience was created.
 	CreatedAt string `json:"createdAt"`
 	// User id who created the audience.
@@ -26,70 +26,70 @@ type GetAudienceAlphaOutputAudienceSummary struct {
 	UpdatedBy string `json:"updatedBy"`
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetCreatedAt() string {
+func (o *Audience) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetCreatedBy() string {
+func (o *Audience) GetCreatedBy() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedBy
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetDescription() string {
+func (o *Audience) GetDescription() string {
 	if o == nil {
 		return ""
 	}
 	return o.Description
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetEnabled() bool {
+func (o *Audience) GetEnabled() bool {
 	if o == nil {
 		return false
 	}
 	return o.Enabled
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetID() string {
+func (o *Audience) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetKey() string {
+func (o *Audience) GetKey() string {
 	if o == nil {
 		return ""
 	}
 	return o.Key
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetName() string {
+func (o *Audience) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetSpaceID() string {
+func (o *Audience) GetSpaceID() string {
 	if o == nil {
 		return ""
 	}
 	return o.SpaceID
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetUpdatedAt() string {
+func (o *Audience) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *GetAudienceAlphaOutputAudienceSummary) GetUpdatedBy() string {
+func (o *Audience) GetUpdatedBy() string {
 	if o == nil {
 		return ""
 	}
@@ -99,12 +99,12 @@ func (o *GetAudienceAlphaOutputAudienceSummary) GetUpdatedBy() string {
 // GetAudienceAlphaOutput - Audience output for update.
 type GetAudienceAlphaOutput struct {
 	// The audience summary output.
-	Audience GetAudienceAlphaOutputAudienceSummary `json:"audience"`
+	Audience Audience `json:"audience"`
 }
 
-func (o *GetAudienceAlphaOutput) GetAudience() GetAudienceAlphaOutputAudienceSummary {
+func (o *GetAudienceAlphaOutput) GetAudience() Audience {
 	if o == nil {
-		return GetAudienceAlphaOutputAudienceSummary{}
+		return Audience{}
 	}
 	return o.Audience
 }

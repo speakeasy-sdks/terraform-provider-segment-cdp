@@ -2,11 +2,8 @@
 
 package shared
 
-// ListRulesFromTrackingPlanV1OutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListRulesFromTrackingPlanV1OutputPaginationOutput struct {
+// ListRulesFromTrackingPlanV1OutputPagination - Information about the pagination of this response.
+type ListRulesFromTrackingPlanV1OutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListRulesFromTrackingPlanV1OutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListRulesFromTrackingPlanV1OutputPaginationOutput) GetCurrent() string {
+func (o *ListRulesFromTrackingPlanV1OutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListRulesFromTrackingPlanV1OutputPaginationOutput) GetNext() *string {
+func (o *ListRulesFromTrackingPlanV1OutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListRulesFromTrackingPlanV1OutputPaginationOutput) GetPrevious() *string {
+func (o *ListRulesFromTrackingPlanV1OutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListRulesFromTrackingPlanV1OutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListRulesFromTrackingPlanV1OutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -60,14 +57,14 @@ func (o *ListRulesFromTrackingPlanV1OutputPaginationOutput) GetTotalEntries() *f
 // ListRulesFromTrackingPlanV1Output - Lists a Tracking Plan's rules.
 type ListRulesFromTrackingPlanV1Output struct {
 	// Information about the pagination of this response.
-	Pagination ListRulesFromTrackingPlanV1OutputPaginationOutput `json:"pagination"`
+	Pagination ListRulesFromTrackingPlanV1OutputPagination `json:"pagination"`
 	// Rules associated with the given Tracking Plan.
 	Rules []RuleV1 `json:"rules"`
 }
 
-func (o *ListRulesFromTrackingPlanV1Output) GetPagination() ListRulesFromTrackingPlanV1OutputPaginationOutput {
+func (o *ListRulesFromTrackingPlanV1Output) GetPagination() ListRulesFromTrackingPlanV1OutputPagination {
 	if o == nil {
-		return ListRulesFromTrackingPlanV1OutputPaginationOutput{}
+		return ListRulesFromTrackingPlanV1OutputPagination{}
 	}
 	return o.Pagination
 }

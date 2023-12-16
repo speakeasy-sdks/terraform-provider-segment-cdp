@@ -2,11 +2,8 @@
 
 package shared
 
-// PaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type PaginationOutput struct {
+// Pagination - Information about the pagination of this response.
+type Pagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type PaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *PaginationOutput) GetCurrent() string {
+func (o *Pagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *PaginationOutput) GetNext() *string {
+func (o *Pagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *PaginationOutput) GetPrevious() *string {
+func (o *Pagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *PaginationOutput) GetTotalEntries() *float64 {
+func (o *Pagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -64,7 +61,7 @@ type BatchQueryMessagingSubscriptionsForSpaceAlphaOutput struct {
 	// Validation errors due to invalid types or email/phone numbers.
 	Failures []GetMessagingSubscriptionFailureResponse `json:"failures"`
 	// Information about the pagination of this response.
-	Pagination *PaginationOutput `json:"pagination,omitempty"`
+	Pagination *Pagination `json:"pagination,omitempty"`
 	// Array of successful subscription status.
 	Successes []GetMessagingSubscriptionSuccessResponse `json:"successes"`
 }
@@ -83,7 +80,7 @@ func (o *BatchQueryMessagingSubscriptionsForSpaceAlphaOutput) GetFailures() []Ge
 	return o.Failures
 }
 
-func (o *BatchQueryMessagingSubscriptionsForSpaceAlphaOutput) GetPagination() *PaginationOutput {
+func (o *BatchQueryMessagingSubscriptionsForSpaceAlphaOutput) GetPagination() *Pagination {
 	if o == nil {
 		return nil
 	}

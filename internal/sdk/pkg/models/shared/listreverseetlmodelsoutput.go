@@ -2,11 +2,8 @@
 
 package shared
 
-// ListReverseEtlModelsOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListReverseEtlModelsOutputPaginationOutput struct {
+// ListReverseEtlModelsOutputPagination - Information about the pagination of this response.
+type ListReverseEtlModelsOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListReverseEtlModelsOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListReverseEtlModelsOutputPaginationOutput) GetCurrent() string {
+func (o *ListReverseEtlModelsOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListReverseEtlModelsOutputPaginationOutput) GetNext() *string {
+func (o *ListReverseEtlModelsOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListReverseEtlModelsOutputPaginationOutput) GetPrevious() *string {
+func (o *ListReverseEtlModelsOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListReverseEtlModelsOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListReverseEtlModelsOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -62,7 +59,7 @@ type ListReverseEtlModelsOutput struct {
 	// A list of Models that belong to the Workspace.
 	Models []ReverseEtlModel `json:"models"`
 	// Information about the pagination of this response.
-	Pagination ListReverseEtlModelsOutputPaginationOutput `json:"pagination"`
+	Pagination ListReverseEtlModelsOutputPagination `json:"pagination"`
 }
 
 func (o *ListReverseEtlModelsOutput) GetModels() []ReverseEtlModel {
@@ -72,9 +69,9 @@ func (o *ListReverseEtlModelsOutput) GetModels() []ReverseEtlModel {
 	return o.Models
 }
 
-func (o *ListReverseEtlModelsOutput) GetPagination() ListReverseEtlModelsOutputPaginationOutput {
+func (o *ListReverseEtlModelsOutput) GetPagination() ListReverseEtlModelsOutputPagination {
 	if o == nil {
-		return ListReverseEtlModelsOutputPaginationOutput{}
+		return ListReverseEtlModelsOutputPagination{}
 	}
 	return o.Pagination
 }

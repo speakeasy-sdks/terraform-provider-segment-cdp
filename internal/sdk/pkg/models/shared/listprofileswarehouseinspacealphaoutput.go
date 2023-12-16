@@ -2,11 +2,8 @@
 
 package shared
 
-// ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput struct {
+// ListProfilesWarehouseInSpaceAlphaOutputPagination - Information about the pagination of this response.
+type ListProfilesWarehouseInSpaceAlphaOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput) GetCurrent() string {
+func (o *ListProfilesWarehouseInSpaceAlphaOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput) GetNext() *string {
+func (o *ListProfilesWarehouseInSpaceAlphaOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput) GetPrevious() *string {
+func (o *ListProfilesWarehouseInSpaceAlphaOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListProfilesWarehouseInSpaceAlphaOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -60,12 +57,12 @@ func (o *ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput) GetTotalEntrie
 // ListProfilesWarehouseInSpaceAlphaOutput - Returns all Profiles Warehouse based on spaceID and pagination.
 type ListProfilesWarehouseInSpaceAlphaOutput struct {
 	// Information about the pagination of this response.
-	Pagination *ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput `json:"pagination,omitempty"`
+	Pagination *ListProfilesWarehouseInSpaceAlphaOutputPagination `json:"pagination,omitempty"`
 	// A list of Warehouses that belong to the Workspace.
 	ProfilesWarehouses []ProfilesWarehouseAlpha `json:"profilesWarehouses"`
 }
 
-func (o *ListProfilesWarehouseInSpaceAlphaOutput) GetPagination() *ListProfilesWarehouseInSpaceAlphaOutputPaginationOutput {
+func (o *ListProfilesWarehouseInSpaceAlphaOutput) GetPagination() *ListProfilesWarehouseInSpaceAlphaOutputPagination {
 	if o == nil {
 		return nil
 	}

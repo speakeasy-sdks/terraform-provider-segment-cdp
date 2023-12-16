@@ -2,11 +2,8 @@
 
 package shared
 
-// ListFunctionVersionsAlphaOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListFunctionVersionsAlphaOutputPaginationOutput struct {
+// ListFunctionVersionsAlphaOutputPagination - Information about the pagination of this response.
+type ListFunctionVersionsAlphaOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListFunctionVersionsAlphaOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListFunctionVersionsAlphaOutputPaginationOutput) GetCurrent() string {
+func (o *ListFunctionVersionsAlphaOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListFunctionVersionsAlphaOutputPaginationOutput) GetNext() *string {
+func (o *ListFunctionVersionsAlphaOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListFunctionVersionsAlphaOutputPaginationOutput) GetPrevious() *string {
+func (o *ListFunctionVersionsAlphaOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListFunctionVersionsAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListFunctionVersionsAlphaOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -60,14 +57,14 @@ func (o *ListFunctionVersionsAlphaOutputPaginationOutput) GetTotalEntries() *flo
 // ListFunctionVersionsAlphaOutput - Lists Versions of a Function.
 type ListFunctionVersionsAlphaOutput struct {
 	// Information about the pagination of this response.
-	Pagination ListFunctionVersionsAlphaOutputPaginationOutput `json:"pagination"`
+	Pagination ListFunctionVersionsAlphaOutputPagination `json:"pagination"`
 	// An array of Functions.
 	Versions []Version `json:"versions"`
 }
 
-func (o *ListFunctionVersionsAlphaOutput) GetPagination() ListFunctionVersionsAlphaOutputPaginationOutput {
+func (o *ListFunctionVersionsAlphaOutput) GetPagination() ListFunctionVersionsAlphaOutputPagination {
 	if o == nil {
-		return ListFunctionVersionsAlphaOutputPaginationOutput{}
+		return ListFunctionVersionsAlphaOutputPagination{}
 	}
 	return o.Pagination
 }

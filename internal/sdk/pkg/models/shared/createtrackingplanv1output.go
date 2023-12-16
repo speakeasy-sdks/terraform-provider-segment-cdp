@@ -44,8 +44,8 @@ func (e *CreateTrackingPlanV1OutputType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// TrackingPlanV1 - Represents a Tracking Plan.
-type TrackingPlanV1 struct {
+// TrackingPlan - The created Tracking Plan.
+type TrackingPlan struct {
 	// The timestamp of this Tracking Plan's creation.
 	//
 	// Config API note: equal to `createTime`.
@@ -72,49 +72,49 @@ type TrackingPlanV1 struct {
 	UpdatedAt *string `json:"updatedAt,omitempty"`
 }
 
-func (o *TrackingPlanV1) GetCreatedAt() *string {
+func (o *TrackingPlan) GetCreatedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedAt
 }
 
-func (o *TrackingPlanV1) GetDescription() *string {
+func (o *TrackingPlan) GetDescription() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *TrackingPlanV1) GetID() string {
+func (o *TrackingPlan) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *TrackingPlanV1) GetName() *string {
+func (o *TrackingPlan) GetName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Name
 }
 
-func (o *TrackingPlanV1) GetSlug() *string {
+func (o *TrackingPlan) GetSlug() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Slug
 }
 
-func (o *TrackingPlanV1) GetType() CreateTrackingPlanV1OutputType {
+func (o *TrackingPlan) GetType() CreateTrackingPlanV1OutputType {
 	if o == nil {
 		return CreateTrackingPlanV1OutputType("")
 	}
 	return o.Type
 }
 
-func (o *TrackingPlanV1) GetUpdatedAt() *string {
+func (o *TrackingPlan) GetUpdatedAt() *string {
 	if o == nil {
 		return nil
 	}
@@ -124,12 +124,12 @@ func (o *TrackingPlanV1) GetUpdatedAt() *string {
 // CreateTrackingPlanV1Output - Result of a CreateTrackingPlan call.
 type CreateTrackingPlanV1Output struct {
 	// The created Tracking Plan.
-	TrackingPlan TrackingPlanV1 `json:"trackingPlan"`
+	TrackingPlan TrackingPlan `json:"trackingPlan"`
 }
 
-func (o *CreateTrackingPlanV1Output) GetTrackingPlan() TrackingPlanV1 {
+func (o *CreateTrackingPlanV1Output) GetTrackingPlan() TrackingPlan {
 	if o == nil {
-		return TrackingPlanV1{}
+		return TrackingPlan{}
 	}
 	return o.TrackingPlan
 }

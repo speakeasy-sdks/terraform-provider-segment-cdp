@@ -2,7 +2,7 @@
 
 package shared
 
-// GetFunctionVersionAlphaOutputVersion - Represents a Function Version in a list.
+// GetFunctionVersionAlphaOutputVersion - Functions version.
 type GetFunctionVersionAlphaOutputVersion struct {
 	// Author of this version.
 	Author *string `json:"author,omitempty"`

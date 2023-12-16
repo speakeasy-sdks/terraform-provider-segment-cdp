@@ -2,11 +2,8 @@
 
 package shared
 
-// ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput struct {
+// ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination - Information about the pagination of this response.
+type ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput) GetCurrent() string {
+func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput) GetNext() *string {
+func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput) GetPrevious() *string {
+func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -64,7 +61,7 @@ type ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutput struct {
 	// Represents a list of collections and properties synced to the Warehouse.
 	Items []SpaceWarehouseSelectiveSyncItemAlpha `json:"items"`
 	// Information about the pagination of this response.
-	Pagination ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput `json:"pagination"`
+	Pagination ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination `json:"pagination"`
 }
 
 func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutput) GetEnableEventTables() *bool {
@@ -81,9 +78,9 @@ func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutput) GetItems() []SpaceW
 	return o.Items
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutput) GetPagination() ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput {
+func (o *ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutput) GetPagination() ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination {
 	if o == nil {
-		return ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPaginationOutput{}
+		return ListSelectiveSyncsFromWarehouseAndSpaceAlphaOutputPagination{}
 	}
 	return o.Pagination
 }

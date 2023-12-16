@@ -2,7 +2,7 @@
 
 package shared
 
-// UpdateReverseEtlModelOutputReverseEtlModel - Defines a Reverse ETL Model.
+// UpdateReverseEtlModelOutputReverseEtlModel - The created Model.
 type UpdateReverseEtlModelOutputReverseEtlModel struct {
 	// A longer, more descriptive explanation of the Model.
 	Description string `json:"description"`

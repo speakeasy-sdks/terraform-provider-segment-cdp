@@ -2,11 +2,8 @@
 
 package shared
 
-// ListComputedTraitsAlphaOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListComputedTraitsAlphaOutputPaginationOutput struct {
+// ListComputedTraitsAlphaOutputPagination - Information about the pagination of this response.
+type ListComputedTraitsAlphaOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListComputedTraitsAlphaOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListComputedTraitsAlphaOutputPaginationOutput) GetCurrent() string {
+func (o *ListComputedTraitsAlphaOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListComputedTraitsAlphaOutputPaginationOutput) GetNext() *string {
+func (o *ListComputedTraitsAlphaOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListComputedTraitsAlphaOutputPaginationOutput) GetPrevious() *string {
+func (o *ListComputedTraitsAlphaOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListComputedTraitsAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListComputedTraitsAlphaOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -62,7 +59,7 @@ type ListComputedTraitsAlphaOutput struct {
 	// A list of computed trait summary results.
 	ComputedTraits []ComputedTraitSummary `json:"computedTraits"`
 	// Information about the pagination of this response.
-	Pagination ListComputedTraitsAlphaOutputPaginationOutput `json:"pagination"`
+	Pagination ListComputedTraitsAlphaOutputPagination `json:"pagination"`
 }
 
 func (o *ListComputedTraitsAlphaOutput) GetComputedTraits() []ComputedTraitSummary {
@@ -72,9 +69,9 @@ func (o *ListComputedTraitsAlphaOutput) GetComputedTraits() []ComputedTraitSumma
 	return o.ComputedTraits
 }
 
-func (o *ListComputedTraitsAlphaOutput) GetPagination() ListComputedTraitsAlphaOutputPaginationOutput {
+func (o *ListComputedTraitsAlphaOutput) GetPagination() ListComputedTraitsAlphaOutputPagination {
 	if o == nil {
-		return ListComputedTraitsAlphaOutputPaginationOutput{}
+		return ListComputedTraitsAlphaOutputPagination{}
 	}
 	return o.Pagination
 }

@@ -2,8 +2,8 @@
 
 package shared
 
-// UpdateAudienceForSpaceAlphaOutputAudienceSummary - Defines an Audience.
-type UpdateAudienceForSpaceAlphaOutputAudienceSummary struct {
+// UpdateAudienceForSpaceAlphaOutputAudience - The audience summary output.
+type UpdateAudienceForSpaceAlphaOutputAudience struct {
 	// Date the audience was created.
 	CreatedAt string `json:"createdAt"`
 	// User id who created the audience.
@@ -26,70 +26,70 @@ type UpdateAudienceForSpaceAlphaOutputAudienceSummary struct {
 	UpdatedBy string `json:"updatedBy"`
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetCreatedAt() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetCreatedBy() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetCreatedBy() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedBy
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetDescription() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetDescription() string {
 	if o == nil {
 		return ""
 	}
 	return o.Description
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetEnabled() bool {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetEnabled() bool {
 	if o == nil {
 		return false
 	}
 	return o.Enabled
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetID() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetKey() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetKey() string {
 	if o == nil {
 		return ""
 	}
 	return o.Key
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetName() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetSpaceID() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetSpaceID() string {
 	if o == nil {
 		return ""
 	}
 	return o.SpaceID
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetUpdatedAt() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.UpdatedAt
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetUpdatedBy() string {
+func (o *UpdateAudienceForSpaceAlphaOutputAudience) GetUpdatedBy() string {
 	if o == nil {
 		return ""
 	}
@@ -99,12 +99,12 @@ func (o *UpdateAudienceForSpaceAlphaOutputAudienceSummary) GetUpdatedBy() string
 // UpdateAudienceForSpaceAlphaOutput - Audience output for get.
 type UpdateAudienceForSpaceAlphaOutput struct {
 	// The audience summary output.
-	Audience UpdateAudienceForSpaceAlphaOutputAudienceSummary `json:"audience"`
+	Audience UpdateAudienceForSpaceAlphaOutputAudience `json:"audience"`
 }
 
-func (o *UpdateAudienceForSpaceAlphaOutput) GetAudience() UpdateAudienceForSpaceAlphaOutputAudienceSummary {
+func (o *UpdateAudienceForSpaceAlphaOutput) GetAudience() UpdateAudienceForSpaceAlphaOutputAudience {
 	if o == nil {
-		return UpdateAudienceForSpaceAlphaOutputAudienceSummary{}
+		return UpdateAudienceForSpaceAlphaOutputAudience{}
 	}
 	return o.Audience
 }

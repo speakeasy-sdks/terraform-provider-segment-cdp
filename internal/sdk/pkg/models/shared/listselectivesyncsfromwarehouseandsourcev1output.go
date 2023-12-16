@@ -2,11 +2,8 @@
 
 package shared
 
-// ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput struct {
+// ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination - Information about the pagination of this response.
+type ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput) GetCurrent() string {
+func (o *ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput) GetNext() *string {
+func (o *ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput) GetPrevious() *string {
+func (o *ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -62,7 +59,7 @@ type ListSelectiveSyncsFromWarehouseAndSourceV1Output struct {
 	// Represents a list of Source, collection, and properties synced to the Warehouse.
 	Items []WarehouseSelectiveSyncItemV1 `json:"items"`
 	// Information about the pagination of this response.
-	Pagination ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput `json:"pagination"`
+	Pagination ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination `json:"pagination"`
 }
 
 func (o *ListSelectiveSyncsFromWarehouseAndSourceV1Output) GetItems() []WarehouseSelectiveSyncItemV1 {
@@ -72,9 +69,9 @@ func (o *ListSelectiveSyncsFromWarehouseAndSourceV1Output) GetItems() []Warehous
 	return o.Items
 }
 
-func (o *ListSelectiveSyncsFromWarehouseAndSourceV1Output) GetPagination() ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput {
+func (o *ListSelectiveSyncsFromWarehouseAndSourceV1Output) GetPagination() ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination {
 	if o == nil {
-		return ListSelectiveSyncsFromWarehouseAndSourceV1OutputPaginationOutput{}
+		return ListSelectiveSyncsFromWarehouseAndSourceV1OutputPagination{}
 	}
 	return o.Pagination
 }

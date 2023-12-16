@@ -2,8 +2,8 @@
 
 package shared
 
-// GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha - Represents an Edge Function bundle.
-type GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha struct {
+// GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions - The latest version of Edge Function bundle.
+type GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions struct {
 	// Creation date.
 	CreatedAt string `json:"createdAt"`
 	// Creating user's id.
@@ -18,42 +18,42 @@ type GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha struct {
 	Version float64 `json:"version"`
 }
 
-func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetCreatedAt() string {
+func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetCreatedBy() string {
+func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions) GetCreatedBy() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedBy
 }
 
-func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetDownloadURL() string {
+func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions) GetDownloadURL() string {
 	if o == nil {
 		return ""
 	}
 	return o.DownloadURL
 }
 
-func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetID() string {
+func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetSourceID() string {
+func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions) GetSourceID() string {
 	if o == nil {
 		return ""
 	}
 	return o.SourceID
 }
 
-func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetVersion() float64 {
+func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions) GetVersion() float64 {
 	if o == nil {
 		return 0.0
 	}
@@ -63,12 +63,12 @@ func (o *GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetVersion() f
 // GetLatestFromEdgeFunctionsAlphaOutput - Output for GetLatestFromEdgeFunctions.
 type GetLatestFromEdgeFunctionsAlphaOutput struct {
 	// The latest version of Edge Function bundle.
-	EdgeFunctions GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha `json:"edgeFunctions"`
+	EdgeFunctions GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions `json:"edgeFunctions"`
 }
 
-func (o *GetLatestFromEdgeFunctionsAlphaOutput) GetEdgeFunctions() GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha {
+func (o *GetLatestFromEdgeFunctionsAlphaOutput) GetEdgeFunctions() GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions {
 	if o == nil {
-		return GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctionsAlpha{}
+		return GetLatestFromEdgeFunctionsAlphaOutputEdgeFunctions{}
 	}
 	return o.EdgeFunctions
 }

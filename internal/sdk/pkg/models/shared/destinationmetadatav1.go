@@ -7,8 +7,8 @@ import (
 	"fmt"
 )
 
-// LogosBeta - Represents a logo.
-type LogosBeta struct {
+// Logos - The Destination's logos.
+type Logos struct {
 	// The alternative text for this logo.
 	Alt *string `json:"alt,omitempty"`
 	// The default URL for this logo.
@@ -17,21 +17,21 @@ type LogosBeta struct {
 	Mark *string `json:"mark,omitempty"`
 }
 
-func (o *LogosBeta) GetAlt() *string {
+func (o *Logos) GetAlt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Alt
 }
 
-func (o *LogosBeta) GetDefault() string {
+func (o *Logos) GetDefault() string {
 	if o == nil {
 		return ""
 	}
 	return o.Default
 }
 
-func (o *LogosBeta) GetMark() *string {
+func (o *Logos) GetMark() *string {
 	if o == nil {
 		return nil
 	}
@@ -155,8 +155,10 @@ func (e *DeviceModeInstances) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// DestinationMetadataFeaturesV1 - Represents features that a given Destination supports.
-type DestinationMetadataFeaturesV1 struct {
+// SupportedFeatures - Features that this Destination supports.
+//
+// Config API note: holds `browserUnbundling` fields.
+type SupportedFeatures struct {
 	// Whether this Destination supports browser unbundling.
 	BrowserUnbundling *bool `json:"browserUnbundling,omitempty"`
 	// Whether this Destination supports public browser unbundling.
@@ -172,43 +174,45 @@ type DestinationMetadataFeaturesV1 struct {
 	Replay *bool `json:"replay,omitempty"`
 }
 
-func (o *DestinationMetadataFeaturesV1) GetBrowserUnbundling() *bool {
+func (o *SupportedFeatures) GetBrowserUnbundling() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.BrowserUnbundling
 }
 
-func (o *DestinationMetadataFeaturesV1) GetBrowserUnbundlingPublic() *bool {
+func (o *SupportedFeatures) GetBrowserUnbundlingPublic() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.BrowserUnbundlingPublic
 }
 
-func (o *DestinationMetadataFeaturesV1) GetCloudModeInstances() *CloudModeInstances {
+func (o *SupportedFeatures) GetCloudModeInstances() *CloudModeInstances {
 	if o == nil {
 		return nil
 	}
 	return o.CloudModeInstances
 }
 
-func (o *DestinationMetadataFeaturesV1) GetDeviceModeInstances() *DeviceModeInstances {
+func (o *SupportedFeatures) GetDeviceModeInstances() *DeviceModeInstances {
 	if o == nil {
 		return nil
 	}
 	return o.DeviceModeInstances
 }
 
-func (o *DestinationMetadataFeaturesV1) GetReplay() *bool {
+func (o *SupportedFeatures) GetReplay() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Replay
 }
 
-// DestinationMetadataMethodsV1 - Represents methods that a given Destination supports.
-type DestinationMetadataMethodsV1 struct {
+// SupportedMethods - Methods that this Destination supports.
+//
+// Config API note: equal to `methods`.
+type SupportedMethods struct {
 	// Identifies if the Destination supports the `alias` method.
 	Alias *bool `json:"alias,omitempty"`
 	// Identifies if the Destination supports the `group` method.
@@ -221,43 +225,45 @@ type DestinationMetadataMethodsV1 struct {
 	Track *bool `json:"track,omitempty"`
 }
 
-func (o *DestinationMetadataMethodsV1) GetAlias() *bool {
+func (o *SupportedMethods) GetAlias() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Alias
 }
 
-func (o *DestinationMetadataMethodsV1) GetGroup() *bool {
+func (o *SupportedMethods) GetGroup() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Group
 }
 
-func (o *DestinationMetadataMethodsV1) GetIdentify() *bool {
+func (o *SupportedMethods) GetIdentify() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Identify
 }
 
-func (o *DestinationMetadataMethodsV1) GetPageview() *bool {
+func (o *SupportedMethods) GetPageview() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Pageview
 }
 
-func (o *DestinationMetadataMethodsV1) GetTrack() *bool {
+func (o *SupportedMethods) GetTrack() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Track
 }
 
-// DestinationMetadataPlatformsV1 - Represents platforms that a given Destination supports.
-type DestinationMetadataPlatformsV1 struct {
+// SupportedPlatforms - Platforms from which the Destination receives events.
+//
+// Config API note: equal to `platforms`.
+type SupportedPlatforms struct {
 	// Whether this Destination supports browser events.
 	Browser *bool `json:"browser,omitempty"`
 	// Whether this Destination supports mobile events.
@@ -266,21 +272,21 @@ type DestinationMetadataPlatformsV1 struct {
 	Server *bool `json:"server,omitempty"`
 }
 
-func (o *DestinationMetadataPlatformsV1) GetBrowser() *bool {
+func (o *SupportedPlatforms) GetBrowser() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Browser
 }
 
-func (o *DestinationMetadataPlatformsV1) GetMobile() *bool {
+func (o *SupportedPlatforms) GetMobile() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.Mobile
 }
 
-func (o *DestinationMetadataPlatformsV1) GetServer() *bool {
+func (o *SupportedPlatforms) GetServer() *bool {
 	if o == nil {
 		return nil
 	}
@@ -306,7 +312,7 @@ type DestinationMetadataV1 struct {
 	// Config API note: analogous to `name`.
 	ID string `json:"id"`
 	// The Destination's logos.
-	Logos LogosBeta `json:"logos"`
+	Logos Logos `json:"logos"`
 	// The user-friendly name of the Destination.
 	//
 	// Config API note: equal to `displayName`.
@@ -328,15 +334,15 @@ type DestinationMetadataV1 struct {
 	// Features that this Destination supports.
 	//
 	// Config API note: holds `browserUnbundling` fields.
-	SupportedFeatures DestinationMetadataFeaturesV1 `json:"supportedFeatures"`
+	SupportedFeatures SupportedFeatures `json:"supportedFeatures"`
 	// Methods that this Destination supports.
 	//
 	// Config API note: equal to `methods`.
-	SupportedMethods DestinationMetadataMethodsV1 `json:"supportedMethods"`
+	SupportedMethods SupportedMethods `json:"supportedMethods"`
 	// Platforms from which the Destination receives events.
 	//
 	// Config API note: equal to `platforms`.
-	SupportedPlatforms DestinationMetadataPlatformsV1 `json:"supportedPlatforms"`
+	SupportedPlatforms SupportedPlatforms `json:"supportedPlatforms"`
 	// A list of supported regions for this Destination.
 	SupportedRegions []string `json:"supportedRegions,omitempty"`
 	// A website URL for this Destination.
@@ -385,9 +391,9 @@ func (o *DestinationMetadataV1) GetID() string {
 	return o.ID
 }
 
-func (o *DestinationMetadataV1) GetLogos() LogosBeta {
+func (o *DestinationMetadataV1) GetLogos() Logos {
 	if o == nil {
-		return LogosBeta{}
+		return Logos{}
 	}
 	return o.Logos
 }
@@ -448,23 +454,23 @@ func (o *DestinationMetadataV1) GetStatus() DestinationMetadataV1Status {
 	return o.Status
 }
 
-func (o *DestinationMetadataV1) GetSupportedFeatures() DestinationMetadataFeaturesV1 {
+func (o *DestinationMetadataV1) GetSupportedFeatures() SupportedFeatures {
 	if o == nil {
-		return DestinationMetadataFeaturesV1{}
+		return SupportedFeatures{}
 	}
 	return o.SupportedFeatures
 }
 
-func (o *DestinationMetadataV1) GetSupportedMethods() DestinationMetadataMethodsV1 {
+func (o *DestinationMetadataV1) GetSupportedMethods() SupportedMethods {
 	if o == nil {
-		return DestinationMetadataMethodsV1{}
+		return SupportedMethods{}
 	}
 	return o.SupportedMethods
 }
 
-func (o *DestinationMetadataV1) GetSupportedPlatforms() DestinationMetadataPlatformsV1 {
+func (o *DestinationMetadataV1) GetSupportedPlatforms() SupportedPlatforms {
 	if o == nil {
-		return DestinationMetadataPlatformsV1{}
+		return SupportedPlatforms{}
 	}
 	return o.SupportedPlatforms
 }

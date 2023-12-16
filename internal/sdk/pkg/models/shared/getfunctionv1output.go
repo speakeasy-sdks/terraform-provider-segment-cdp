@@ -40,8 +40,8 @@ func (e *GetFunctionV1OutputResourceType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// GetFunctionV1OutputFunctionV1 - Represents a Function.
-type GetFunctionV1OutputFunctionV1 struct {
+// GetFunctionV1OutputFunction - A Function object.
+type GetFunctionV1OutputFunction struct {
 	// The max count of the batch for this Function.
 	BatchMaxCount *float64 `json:"batchMaxCount,omitempty"`
 	// The catalog id of this Function.
@@ -74,98 +74,98 @@ type GetFunctionV1OutputFunctionV1 struct {
 	Settings []FunctionSettingV1 `json:"settings,omitempty"`
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetBatchMaxCount() *float64 {
+func (o *GetFunctionV1OutputFunction) GetBatchMaxCount() *float64 {
 	if o == nil {
 		return nil
 	}
 	return o.BatchMaxCount
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetCatalogID() *string {
+func (o *GetFunctionV1OutputFunction) GetCatalogID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CatalogID
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetCode() *string {
+func (o *GetFunctionV1OutputFunction) GetCode() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Code
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetCreatedAt() *string {
+func (o *GetFunctionV1OutputFunction) GetCreatedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedAt
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetCreatedBy() *string {
+func (o *GetFunctionV1OutputFunction) GetCreatedBy() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedBy
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetDeployedAt() *string {
+func (o *GetFunctionV1OutputFunction) GetDeployedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DeployedAt
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetDescription() *string {
+func (o *GetFunctionV1OutputFunction) GetDescription() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetDisplayName() *string {
+func (o *GetFunctionV1OutputFunction) GetDisplayName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DisplayName
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetID() *string {
+func (o *GetFunctionV1OutputFunction) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetIsLatestVersion() *bool {
+func (o *GetFunctionV1OutputFunction) GetIsLatestVersion() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.IsLatestVersion
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetLogoURL() *string {
+func (o *GetFunctionV1OutputFunction) GetLogoURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.LogoURL
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetPreviewWebhookURL() *string {
+func (o *GetFunctionV1OutputFunction) GetPreviewWebhookURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.PreviewWebhookURL
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetResourceType() *GetFunctionV1OutputResourceType {
+func (o *GetFunctionV1OutputFunction) GetResourceType() *GetFunctionV1OutputResourceType {
 	if o == nil {
 		return nil
 	}
 	return o.ResourceType
 }
 
-func (o *GetFunctionV1OutputFunctionV1) GetSettings() []FunctionSettingV1 {
+func (o *GetFunctionV1OutputFunction) GetSettings() []FunctionSettingV1 {
 	if o == nil {
 		return nil
 	}
@@ -175,10 +175,10 @@ func (o *GetFunctionV1OutputFunctionV1) GetSettings() []FunctionSettingV1 {
 // GetFunctionV1Output - Gets a single Function.
 type GetFunctionV1Output struct {
 	// A Function object.
-	Function *GetFunctionV1OutputFunctionV1 `json:"function"`
+	Function *GetFunctionV1OutputFunction `json:"function"`
 }
 
-func (o *GetFunctionV1Output) GetFunction() *GetFunctionV1OutputFunctionV1 {
+func (o *GetFunctionV1Output) GetFunction() *GetFunctionV1OutputFunction {
 	if o == nil {
 		return nil
 	}

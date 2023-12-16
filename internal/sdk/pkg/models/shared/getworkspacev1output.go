@@ -2,8 +2,8 @@
 
 package shared
 
-// WorkspaceV1 - An organized group of Sources and Destinations managed by a team.
-type WorkspaceV1 struct {
+// Workspace - The Workspace.
+type Workspace struct {
 	// The unique identifier.
 	ID string `json:"id"`
 	// The human-readable name.
@@ -12,21 +12,21 @@ type WorkspaceV1 struct {
 	Slug string `json:"slug"`
 }
 
-func (o *WorkspaceV1) GetID() string {
+func (o *Workspace) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *WorkspaceV1) GetName() string {
+func (o *Workspace) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *WorkspaceV1) GetSlug() string {
+func (o *Workspace) GetSlug() string {
 	if o == nil {
 		return ""
 	}
@@ -36,12 +36,12 @@ func (o *WorkspaceV1) GetSlug() string {
 // GetWorkspaceV1Output - Represents the output of loading the Workspace.
 type GetWorkspaceV1Output struct {
 	// The Workspace.
-	Workspace WorkspaceV1 `json:"workspace"`
+	Workspace Workspace `json:"workspace"`
 }
 
-func (o *GetWorkspaceV1Output) GetWorkspace() WorkspaceV1 {
+func (o *GetWorkspaceV1Output) GetWorkspace() Workspace {
 	if o == nil {
-		return WorkspaceV1{}
+		return Workspace{}
 	}
 	return o.Workspace
 }

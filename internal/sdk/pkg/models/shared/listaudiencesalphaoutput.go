@@ -2,11 +2,8 @@
 
 package shared
 
-// ListAudiencesAlphaOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListAudiencesAlphaOutputPaginationOutput struct {
+// ListAudiencesAlphaOutputPagination - Information about the pagination of this response.
+type ListAudiencesAlphaOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListAudiencesAlphaOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListAudiencesAlphaOutputPaginationOutput) GetCurrent() string {
+func (o *ListAudiencesAlphaOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListAudiencesAlphaOutputPaginationOutput) GetNext() *string {
+func (o *ListAudiencesAlphaOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListAudiencesAlphaOutputPaginationOutput) GetPrevious() *string {
+func (o *ListAudiencesAlphaOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListAudiencesAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListAudiencesAlphaOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -62,7 +59,7 @@ type ListAudiencesAlphaOutput struct {
 	// A list of audience summary results.
 	Audiences []AudienceSummary `json:"audiences"`
 	// Information about the pagination of this response.
-	Pagination ListAudiencesAlphaOutputPaginationOutput `json:"pagination"`
+	Pagination ListAudiencesAlphaOutputPagination `json:"pagination"`
 }
 
 func (o *ListAudiencesAlphaOutput) GetAudiences() []AudienceSummary {
@@ -72,9 +69,9 @@ func (o *ListAudiencesAlphaOutput) GetAudiences() []AudienceSummary {
 	return o.Audiences
 }
 
-func (o *ListAudiencesAlphaOutput) GetPagination() ListAudiencesAlphaOutputPaginationOutput {
+func (o *ListAudiencesAlphaOutput) GetPagination() ListAudiencesAlphaOutputPagination {
 	if o == nil {
-		return ListAudiencesAlphaOutputPaginationOutput{}
+		return ListAudiencesAlphaOutputPagination{}
 	}
 	return o.Pagination
 }

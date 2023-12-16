@@ -2,8 +2,8 @@
 
 package shared
 
-// UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha - The updated instance.
-type UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha struct {
+// UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance - The updated instance.
+type UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance struct {
 	ClassID           string                 `json:"classId"`
 	CreatedAt         string                 `json:"createdAt"`
 	Enabled           bool                   `json:"enabled"`
@@ -15,63 +15,63 @@ type UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha struct {
 	UpdatedAt         string                 `json:"updatedAt"`
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetClassID() string {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetClassID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ClassID
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetCreatedAt() string {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetEnabled() bool {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetEnabled() bool {
 	if o == nil {
 		return false
 	}
 	return o.Enabled
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetEncryptedSettings() map[string]interface{} {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetEncryptedSettings() map[string]interface{} {
 	if o == nil {
 		return map[string]interface{}{}
 	}
 	return o.EncryptedSettings
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetID() string {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetIntegrationID() string {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetIntegrationID() string {
 	if o == nil {
 		return ""
 	}
 	return o.IntegrationID
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetName() *string {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Name
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetSettings() map[string]interface{} {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetSettings() map[string]interface{} {
 	if o == nil {
 		return map[string]interface{}{}
 	}
 	return o.Settings
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) GetUpdatedAt() string {
+func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
@@ -81,12 +81,12 @@ func (o *UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha) Get
 // UpdateInsertFunctionInstanceAlphaOutput - Returns the updated insert Function instance.
 type UpdateInsertFunctionInstanceAlphaOutput struct {
 	// The updated instance.
-	InsertFunctionInstance UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha `json:"insertFunctionInstance"`
+	InsertFunctionInstance UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance `json:"insertFunctionInstance"`
 }
 
-func (o *UpdateInsertFunctionInstanceAlphaOutput) GetInsertFunctionInstance() UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha {
+func (o *UpdateInsertFunctionInstanceAlphaOutput) GetInsertFunctionInstance() UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance {
 	if o == nil {
-		return UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstanceAlpha{}
+		return UpdateInsertFunctionInstanceAlphaOutputInsertFunctionInstance{}
 	}
 	return o.InsertFunctionInstance
 }

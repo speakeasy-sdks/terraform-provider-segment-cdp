@@ -2,11 +2,8 @@
 
 package shared
 
-// ListFiltersFromDestinationV1OutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListFiltersFromDestinationV1OutputPaginationOutput struct {
+// ListFiltersFromDestinationV1OutputPagination - Information about the pagination of this response.
+type ListFiltersFromDestinationV1OutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListFiltersFromDestinationV1OutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListFiltersFromDestinationV1OutputPaginationOutput) GetCurrent() string {
+func (o *ListFiltersFromDestinationV1OutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListFiltersFromDestinationV1OutputPaginationOutput) GetNext() *string {
+func (o *ListFiltersFromDestinationV1OutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListFiltersFromDestinationV1OutputPaginationOutput) GetPrevious() *string {
+func (o *ListFiltersFromDestinationV1OutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListFiltersFromDestinationV1OutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListFiltersFromDestinationV1OutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -62,7 +59,7 @@ type ListFiltersFromDestinationV1Output struct {
 	// A list of the filters that belong to the specified Destination instance.
 	Filters []DestinationFilterV1 `json:"filters"`
 	// Information about the pagination of this response.
-	Pagination ListFiltersFromDestinationV1OutputPaginationOutput `json:"pagination"`
+	Pagination ListFiltersFromDestinationV1OutputPagination `json:"pagination"`
 }
 
 func (o *ListFiltersFromDestinationV1Output) GetFilters() []DestinationFilterV1 {
@@ -72,9 +69,9 @@ func (o *ListFiltersFromDestinationV1Output) GetFilters() []DestinationFilterV1 
 	return o.Filters
 }
 
-func (o *ListFiltersFromDestinationV1Output) GetPagination() ListFiltersFromDestinationV1OutputPaginationOutput {
+func (o *ListFiltersFromDestinationV1Output) GetPagination() ListFiltersFromDestinationV1OutputPagination {
 	if o == nil {
-		return ListFiltersFromDestinationV1OutputPaginationOutput{}
+		return ListFiltersFromDestinationV1OutputPagination{}
 	}
 	return o.Pagination
 }

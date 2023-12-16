@@ -2,8 +2,8 @@
 
 package shared
 
-// DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha - Represents an Edge Function bundle.
-type DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha struct {
+// DisableEdgeFunctionsAlphaOutputEdgeFunctions - The latest version of Edge Function bundle.
+type DisableEdgeFunctionsAlphaOutputEdgeFunctions struct {
 	// Creation date.
 	CreatedAt string `json:"createdAt"`
 	// Creating user's id.
@@ -18,42 +18,42 @@ type DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha struct {
 	Version float64 `json:"version"`
 }
 
-func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetCreatedAt() string {
+func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctions) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetCreatedBy() string {
+func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctions) GetCreatedBy() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedBy
 }
 
-func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetDownloadURL() string {
+func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctions) GetDownloadURL() string {
 	if o == nil {
 		return ""
 	}
 	return o.DownloadURL
 }
 
-func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetID() string {
+func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctions) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetSourceID() string {
+func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctions) GetSourceID() string {
 	if o == nil {
 		return ""
 	}
 	return o.SourceID
 }
 
-func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetVersion() float64 {
+func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctions) GetVersion() float64 {
 	if o == nil {
 		return 0.0
 	}
@@ -63,12 +63,12 @@ func (o *DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha) GetVersion() float64
 // DisableEdgeFunctionsAlphaOutput - Output for DisableEdgeFunctions.
 type DisableEdgeFunctionsAlphaOutput struct {
 	// The latest version of Edge Function bundle.
-	EdgeFunctions DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha `json:"edgeFunctions"`
+	EdgeFunctions DisableEdgeFunctionsAlphaOutputEdgeFunctions `json:"edgeFunctions"`
 }
 
-func (o *DisableEdgeFunctionsAlphaOutput) GetEdgeFunctions() DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha {
+func (o *DisableEdgeFunctionsAlphaOutput) GetEdgeFunctions() DisableEdgeFunctionsAlphaOutputEdgeFunctions {
 	if o == nil {
-		return DisableEdgeFunctionsAlphaOutputEdgeFunctionsAlpha{}
+		return DisableEdgeFunctionsAlphaOutputEdgeFunctions{}
 	}
 	return o.EdgeFunctions
 }

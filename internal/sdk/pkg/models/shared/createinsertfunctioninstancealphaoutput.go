@@ -2,8 +2,8 @@
 
 package shared
 
-// InsertFunctionInstanceAlpha - The created instance.
-type InsertFunctionInstanceAlpha struct {
+// InsertFunctionInstance - The created instance.
+type InsertFunctionInstance struct {
 	ClassID           string                 `json:"classId"`
 	CreatedAt         string                 `json:"createdAt"`
 	Enabled           bool                   `json:"enabled"`
@@ -15,63 +15,63 @@ type InsertFunctionInstanceAlpha struct {
 	UpdatedAt         string                 `json:"updatedAt"`
 }
 
-func (o *InsertFunctionInstanceAlpha) GetClassID() string {
+func (o *InsertFunctionInstance) GetClassID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ClassID
 }
 
-func (o *InsertFunctionInstanceAlpha) GetCreatedAt() string {
+func (o *InsertFunctionInstance) GetCreatedAt() string {
 	if o == nil {
 		return ""
 	}
 	return o.CreatedAt
 }
 
-func (o *InsertFunctionInstanceAlpha) GetEnabled() bool {
+func (o *InsertFunctionInstance) GetEnabled() bool {
 	if o == nil {
 		return false
 	}
 	return o.Enabled
 }
 
-func (o *InsertFunctionInstanceAlpha) GetEncryptedSettings() map[string]interface{} {
+func (o *InsertFunctionInstance) GetEncryptedSettings() map[string]interface{} {
 	if o == nil {
 		return map[string]interface{}{}
 	}
 	return o.EncryptedSettings
 }
 
-func (o *InsertFunctionInstanceAlpha) GetID() string {
+func (o *InsertFunctionInstance) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *InsertFunctionInstanceAlpha) GetIntegrationID() string {
+func (o *InsertFunctionInstance) GetIntegrationID() string {
 	if o == nil {
 		return ""
 	}
 	return o.IntegrationID
 }
 
-func (o *InsertFunctionInstanceAlpha) GetName() *string {
+func (o *InsertFunctionInstance) GetName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Name
 }
 
-func (o *InsertFunctionInstanceAlpha) GetSettings() map[string]interface{} {
+func (o *InsertFunctionInstance) GetSettings() map[string]interface{} {
 	if o == nil {
 		return map[string]interface{}{}
 	}
 	return o.Settings
 }
 
-func (o *InsertFunctionInstanceAlpha) GetUpdatedAt() string {
+func (o *InsertFunctionInstance) GetUpdatedAt() string {
 	if o == nil {
 		return ""
 	}
@@ -81,12 +81,12 @@ func (o *InsertFunctionInstanceAlpha) GetUpdatedAt() string {
 // CreateInsertFunctionInstanceAlphaOutput - Creates an insert Function instance.
 type CreateInsertFunctionInstanceAlphaOutput struct {
 	// The created instance.
-	InsertFunctionInstance InsertFunctionInstanceAlpha `json:"insertFunctionInstance"`
+	InsertFunctionInstance InsertFunctionInstance `json:"insertFunctionInstance"`
 }
 
-func (o *CreateInsertFunctionInstanceAlphaOutput) GetInsertFunctionInstance() InsertFunctionInstanceAlpha {
+func (o *CreateInsertFunctionInstanceAlphaOutput) GetInsertFunctionInstance() InsertFunctionInstance {
 	if o == nil {
-		return InsertFunctionInstanceAlpha{}
+		return InsertFunctionInstance{}
 	}
 	return o.InsertFunctionInstance
 }

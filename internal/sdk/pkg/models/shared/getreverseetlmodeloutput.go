@@ -2,7 +2,7 @@
 
 package shared
 
-// GetReverseEtlModelOutputReverseEtlModel - Defines a Reverse ETL Model.
+// GetReverseEtlModelOutputReverseEtlModel - The requested Model.
 type GetReverseEtlModelOutputReverseEtlModel struct {
 	// A longer, more descriptive explanation of the Model.
 	Description string `json:"description"`

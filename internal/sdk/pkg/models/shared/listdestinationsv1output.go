@@ -2,11 +2,8 @@
 
 package shared
 
-// ListDestinationsV1OutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListDestinationsV1OutputPaginationOutput struct {
+// ListDestinationsV1OutputPagination - Information about the pagination of this response.
+type ListDestinationsV1OutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListDestinationsV1OutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListDestinationsV1OutputPaginationOutput) GetCurrent() string {
+func (o *ListDestinationsV1OutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListDestinationsV1OutputPaginationOutput) GetNext() *string {
+func (o *ListDestinationsV1OutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListDestinationsV1OutputPaginationOutput) GetPrevious() *string {
+func (o *ListDestinationsV1OutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListDestinationsV1OutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListDestinationsV1OutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -62,7 +59,7 @@ type ListDestinationsV1Output struct {
 	// The list that contains the Destinations connected to the Workspace.
 	Destinations []DestinationV1 `json:"destinations"`
 	// Information about the pagination of this response.
-	Pagination ListDestinationsV1OutputPaginationOutput `json:"pagination"`
+	Pagination ListDestinationsV1OutputPagination `json:"pagination"`
 }
 
 func (o *ListDestinationsV1Output) GetDestinations() []DestinationV1 {
@@ -72,9 +69,9 @@ func (o *ListDestinationsV1Output) GetDestinations() []DestinationV1 {
 	return o.Destinations
 }
 
-func (o *ListDestinationsV1Output) GetPagination() ListDestinationsV1OutputPaginationOutput {
+func (o *ListDestinationsV1Output) GetPagination() ListDestinationsV1OutputPagination {
 	if o == nil {
-		return ListDestinationsV1OutputPaginationOutput{}
+		return ListDestinationsV1OutputPagination{}
 	}
 	return o.Pagination
 }

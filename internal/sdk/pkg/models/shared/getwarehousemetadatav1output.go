@@ -2,8 +2,8 @@
 
 package shared
 
-// GetWarehouseMetadataV1OutputLogosBeta - Represents a logo.
-type GetWarehouseMetadataV1OutputLogosBeta struct {
+// GetWarehouseMetadataV1OutputLogos - Logo information for this object.
+type GetWarehouseMetadataV1OutputLogos struct {
 	// The alternative text for this logo.
 	Alt *string `json:"alt,omitempty"`
 	// The default URL for this logo.
@@ -12,35 +12,35 @@ type GetWarehouseMetadataV1OutputLogosBeta struct {
 	Mark *string `json:"mark,omitempty"`
 }
 
-func (o *GetWarehouseMetadataV1OutputLogosBeta) GetAlt() *string {
+func (o *GetWarehouseMetadataV1OutputLogos) GetAlt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Alt
 }
 
-func (o *GetWarehouseMetadataV1OutputLogosBeta) GetDefault() string {
+func (o *GetWarehouseMetadataV1OutputLogos) GetDefault() string {
 	if o == nil {
 		return ""
 	}
 	return o.Default
 }
 
-func (o *GetWarehouseMetadataV1OutputLogosBeta) GetMark() *string {
+func (o *GetWarehouseMetadataV1OutputLogos) GetMark() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Mark
 }
 
-// GetWarehouseMetadataV1OutputWarehouseMetadataV1 - The metadata for an instance of Segment’s data Warehouse product.
-type GetWarehouseMetadataV1OutputWarehouseMetadataV1 struct {
+// WarehouseMetadata - The Warehouse catalog item.
+type WarehouseMetadata struct {
 	// A description, in English, of this object.
 	Description string `json:"description"`
 	// The id of this object.
 	ID string `json:"id"`
 	// Logo information for this object.
-	Logos GetWarehouseMetadataV1OutputLogosBeta `json:"logos"`
+	Logos GetWarehouseMetadataV1OutputLogos `json:"logos"`
 	// The name of this object.
 	Name string `json:"name"`
 	// The Integration options for this object.
@@ -49,42 +49,42 @@ type GetWarehouseMetadataV1OutputWarehouseMetadataV1 struct {
 	Slug string `json:"slug"`
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetDescription() string {
+func (o *WarehouseMetadata) GetDescription() string {
 	if o == nil {
 		return ""
 	}
 	return o.Description
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetID() string {
+func (o *WarehouseMetadata) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetLogos() GetWarehouseMetadataV1OutputLogosBeta {
+func (o *WarehouseMetadata) GetLogos() GetWarehouseMetadataV1OutputLogos {
 	if o == nil {
-		return GetWarehouseMetadataV1OutputLogosBeta{}
+		return GetWarehouseMetadataV1OutputLogos{}
 	}
 	return o.Logos
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetName() string {
+func (o *WarehouseMetadata) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetOptions() []IntegrationOptionBeta {
+func (o *WarehouseMetadata) GetOptions() []IntegrationOptionBeta {
 	if o == nil {
 		return []IntegrationOptionBeta{}
 	}
 	return o.Options
 }
 
-func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetSlug() string {
+func (o *WarehouseMetadata) GetSlug() string {
 	if o == nil {
 		return ""
 	}
@@ -94,12 +94,12 @@ func (o *GetWarehouseMetadataV1OutputWarehouseMetadataV1) GetSlug() string {
 // GetWarehouseMetadataV1Output - Returns a Warehouse catalog item looked up by id.
 type GetWarehouseMetadataV1Output struct {
 	// The Warehouse catalog item.
-	WarehouseMetadata GetWarehouseMetadataV1OutputWarehouseMetadataV1 `json:"warehouseMetadata"`
+	WarehouseMetadata WarehouseMetadata `json:"warehouseMetadata"`
 }
 
-func (o *GetWarehouseMetadataV1Output) GetWarehouseMetadata() GetWarehouseMetadataV1OutputWarehouseMetadataV1 {
+func (o *GetWarehouseMetadataV1Output) GetWarehouseMetadata() WarehouseMetadata {
 	if o == nil {
-		return GetWarehouseMetadataV1OutputWarehouseMetadataV1{}
+		return WarehouseMetadata{}
 	}
 	return o.WarehouseMetadata
 }

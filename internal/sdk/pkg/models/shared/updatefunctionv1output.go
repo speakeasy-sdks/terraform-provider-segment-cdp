@@ -40,8 +40,8 @@ func (e *UpdateFunctionV1OutputResourceType) UnmarshalJSON(data []byte) error {
 	}
 }
 
-// UpdateFunctionV1OutputFunctionV1 - Represents a Function.
-type UpdateFunctionV1OutputFunctionV1 struct {
+// UpdateFunctionV1OutputFunction - The updated Function object.
+type UpdateFunctionV1OutputFunction struct {
 	// The max count of the batch for this Function.
 	BatchMaxCount *float64 `json:"batchMaxCount,omitempty"`
 	// The catalog id of this Function.
@@ -74,98 +74,98 @@ type UpdateFunctionV1OutputFunctionV1 struct {
 	Settings []FunctionSettingV1 `json:"settings,omitempty"`
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetBatchMaxCount() *float64 {
+func (o *UpdateFunctionV1OutputFunction) GetBatchMaxCount() *float64 {
 	if o == nil {
 		return nil
 	}
 	return o.BatchMaxCount
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetCatalogID() *string {
+func (o *UpdateFunctionV1OutputFunction) GetCatalogID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CatalogID
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetCode() *string {
+func (o *UpdateFunctionV1OutputFunction) GetCode() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Code
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetCreatedAt() *string {
+func (o *UpdateFunctionV1OutputFunction) GetCreatedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedAt
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetCreatedBy() *string {
+func (o *UpdateFunctionV1OutputFunction) GetCreatedBy() *string {
 	if o == nil {
 		return nil
 	}
 	return o.CreatedBy
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetDeployedAt() *string {
+func (o *UpdateFunctionV1OutputFunction) GetDeployedAt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DeployedAt
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetDescription() *string {
+func (o *UpdateFunctionV1OutputFunction) GetDescription() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Description
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetDisplayName() *string {
+func (o *UpdateFunctionV1OutputFunction) GetDisplayName() *string {
 	if o == nil {
 		return nil
 	}
 	return o.DisplayName
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetID() *string {
+func (o *UpdateFunctionV1OutputFunction) GetID() *string {
 	if o == nil {
 		return nil
 	}
 	return o.ID
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetIsLatestVersion() *bool {
+func (o *UpdateFunctionV1OutputFunction) GetIsLatestVersion() *bool {
 	if o == nil {
 		return nil
 	}
 	return o.IsLatestVersion
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetLogoURL() *string {
+func (o *UpdateFunctionV1OutputFunction) GetLogoURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.LogoURL
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetPreviewWebhookURL() *string {
+func (o *UpdateFunctionV1OutputFunction) GetPreviewWebhookURL() *string {
 	if o == nil {
 		return nil
 	}
 	return o.PreviewWebhookURL
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetResourceType() *UpdateFunctionV1OutputResourceType {
+func (o *UpdateFunctionV1OutputFunction) GetResourceType() *UpdateFunctionV1OutputResourceType {
 	if o == nil {
 		return nil
 	}
 	return o.ResourceType
 }
 
-func (o *UpdateFunctionV1OutputFunctionV1) GetSettings() []FunctionSettingV1 {
+func (o *UpdateFunctionV1OutputFunction) GetSettings() []FunctionSettingV1 {
 	if o == nil {
 		return nil
 	}
@@ -175,12 +175,12 @@ func (o *UpdateFunctionV1OutputFunctionV1) GetSettings() []FunctionSettingV1 {
 // UpdateFunctionV1Output - Create a Function.
 type UpdateFunctionV1Output struct {
 	// The updated Function object.
-	Function UpdateFunctionV1OutputFunctionV1 `json:"function"`
+	Function UpdateFunctionV1OutputFunction `json:"function"`
 }
 
-func (o *UpdateFunctionV1Output) GetFunction() UpdateFunctionV1OutputFunctionV1 {
+func (o *UpdateFunctionV1Output) GetFunction() UpdateFunctionV1OutputFunction {
 	if o == nil {
-		return UpdateFunctionV1OutputFunctionV1{}
+		return UpdateFunctionV1OutputFunction{}
 	}
 	return o.Function
 }

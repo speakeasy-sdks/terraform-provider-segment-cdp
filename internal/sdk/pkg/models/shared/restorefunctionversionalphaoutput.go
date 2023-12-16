@@ -2,7 +2,7 @@
 
 package shared
 
-// RestoreFunctionVersionAlphaOutputVersion - Represents a Function Version in a list.
+// RestoreFunctionVersionAlphaOutputVersion - Restored version.
 type RestoreFunctionVersionAlphaOutputVersion struct {
 	// Author of this version.
 	Author *string `json:"author,omitempty"`

@@ -2,11 +2,8 @@
 
 package shared
 
-// ListSubscriptionsFromDestinationAlphaOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ListSubscriptionsFromDestinationAlphaOutputPaginationOutput struct {
+// ListSubscriptionsFromDestinationAlphaOutputPagination - Information about the pagination of this response.
+type ListSubscriptionsFromDestinationAlphaOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ListSubscriptionsFromDestinationAlphaOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ListSubscriptionsFromDestinationAlphaOutputPaginationOutput) GetCurrent() string {
+func (o *ListSubscriptionsFromDestinationAlphaOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ListSubscriptionsFromDestinationAlphaOutputPaginationOutput) GetNext() *string {
+func (o *ListSubscriptionsFromDestinationAlphaOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ListSubscriptionsFromDestinationAlphaOutputPaginationOutput) GetPrevious() *string {
+func (o *ListSubscriptionsFromDestinationAlphaOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ListSubscriptionsFromDestinationAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ListSubscriptionsFromDestinationAlphaOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -60,12 +57,12 @@ func (o *ListSubscriptionsFromDestinationAlphaOutputPaginationOutput) GetTotalEn
 // ListSubscriptionsFromDestinationAlphaOutput - Output for ListDestinationSubscriptionsAlpha.
 type ListSubscriptionsFromDestinationAlphaOutput struct {
 	// Information about the pagination of this response.
-	Pagination *ListSubscriptionsFromDestinationAlphaOutputPaginationOutput `json:"pagination,omitempty"`
+	Pagination *ListSubscriptionsFromDestinationAlphaOutputPagination `json:"pagination,omitempty"`
 	// A list of Destination subscriptions.
 	Subscriptions []DestinationSubscription `json:"subscriptions"`
 }
 
-func (o *ListSubscriptionsFromDestinationAlphaOutput) GetPagination() *ListSubscriptionsFromDestinationAlphaOutputPaginationOutput {
+func (o *ListSubscriptionsFromDestinationAlphaOutput) GetPagination() *ListSubscriptionsFromDestinationAlphaOutputPagination {
 	if o == nil {
 		return nil
 	}

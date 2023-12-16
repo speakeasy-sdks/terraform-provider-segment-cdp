@@ -2,8 +2,8 @@
 
 package shared
 
-// GetWarehouseV1OutputLogosBeta - Represents a logo.
-type GetWarehouseV1OutputLogosBeta struct {
+// GetWarehouseV1OutputLogos - Logo information for this object.
+type GetWarehouseV1OutputLogos struct {
 	// The alternative text for this logo.
 	Alt *string `json:"alt,omitempty"`
 	// The default URL for this logo.
@@ -12,35 +12,35 @@ type GetWarehouseV1OutputLogosBeta struct {
 	Mark *string `json:"mark,omitempty"`
 }
 
-func (o *GetWarehouseV1OutputLogosBeta) GetAlt() *string {
+func (o *GetWarehouseV1OutputLogos) GetAlt() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Alt
 }
 
-func (o *GetWarehouseV1OutputLogosBeta) GetDefault() string {
+func (o *GetWarehouseV1OutputLogos) GetDefault() string {
 	if o == nil {
 		return ""
 	}
 	return o.Default
 }
 
-func (o *GetWarehouseV1OutputLogosBeta) GetMark() *string {
+func (o *GetWarehouseV1OutputLogos) GetMark() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Mark
 }
 
-// GetWarehouseV1OutputWarehouseMetadataV1 - The metadata for an instance of Segment’s data Warehouse product.
-type GetWarehouseV1OutputWarehouseMetadataV1 struct {
+// GetWarehouseV1OutputMetadata - The metadata for the Warehouse.
+type GetWarehouseV1OutputMetadata struct {
 	// A description, in English, of this object.
 	Description string `json:"description"`
 	// The id of this object.
 	ID string `json:"id"`
 	// Logo information for this object.
-	Logos GetWarehouseV1OutputLogosBeta `json:"logos"`
+	Logos GetWarehouseV1OutputLogos `json:"logos"`
 	// The name of this object.
 	Name string `json:"name"`
 	// The Integration options for this object.
@@ -49,56 +49,56 @@ type GetWarehouseV1OutputWarehouseMetadataV1 struct {
 	Slug string `json:"slug"`
 }
 
-func (o *GetWarehouseV1OutputWarehouseMetadataV1) GetDescription() string {
+func (o *GetWarehouseV1OutputMetadata) GetDescription() string {
 	if o == nil {
 		return ""
 	}
 	return o.Description
 }
 
-func (o *GetWarehouseV1OutputWarehouseMetadataV1) GetID() string {
+func (o *GetWarehouseV1OutputMetadata) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *GetWarehouseV1OutputWarehouseMetadataV1) GetLogos() GetWarehouseV1OutputLogosBeta {
+func (o *GetWarehouseV1OutputMetadata) GetLogos() GetWarehouseV1OutputLogos {
 	if o == nil {
-		return GetWarehouseV1OutputLogosBeta{}
+		return GetWarehouseV1OutputLogos{}
 	}
 	return o.Logos
 }
 
-func (o *GetWarehouseV1OutputWarehouseMetadataV1) GetName() string {
+func (o *GetWarehouseV1OutputMetadata) GetName() string {
 	if o == nil {
 		return ""
 	}
 	return o.Name
 }
 
-func (o *GetWarehouseV1OutputWarehouseMetadataV1) GetOptions() []IntegrationOptionBeta {
+func (o *GetWarehouseV1OutputMetadata) GetOptions() []IntegrationOptionBeta {
 	if o == nil {
 		return []IntegrationOptionBeta{}
 	}
 	return o.Options
 }
 
-func (o *GetWarehouseV1OutputWarehouseMetadataV1) GetSlug() string {
+func (o *GetWarehouseV1OutputMetadata) GetSlug() string {
 	if o == nil {
 		return ""
 	}
 	return o.Slug
 }
 
-// GetWarehouseV1OutputWarehouseV1 - Defines a data Warehouse used as a Destination for Segment data.
-type GetWarehouseV1OutputWarehouseV1 struct {
+// GetWarehouseV1OutputWarehouse - The returned Warehouse object.
+type GetWarehouseV1OutputWarehouse struct {
 	// When set to true, this Warehouse receives data.
 	Enabled bool `json:"enabled"`
 	// The id of the Warehouse.
 	ID string `json:"id"`
 	// The metadata for the Warehouse.
-	Metadata GetWarehouseV1OutputWarehouseMetadataV1 `json:"metadata"`
+	Metadata GetWarehouseV1OutputMetadata `json:"metadata"`
 	// The settings associated with this Warehouse.
 	//
 	// Common settings are connection-related configuration used to connect to it, for example host, username, and port.
@@ -107,35 +107,35 @@ type GetWarehouseV1OutputWarehouseV1 struct {
 	WorkspaceID string `json:"workspaceId"`
 }
 
-func (o *GetWarehouseV1OutputWarehouseV1) GetEnabled() bool {
+func (o *GetWarehouseV1OutputWarehouse) GetEnabled() bool {
 	if o == nil {
 		return false
 	}
 	return o.Enabled
 }
 
-func (o *GetWarehouseV1OutputWarehouseV1) GetID() string {
+func (o *GetWarehouseV1OutputWarehouse) GetID() string {
 	if o == nil {
 		return ""
 	}
 	return o.ID
 }
 
-func (o *GetWarehouseV1OutputWarehouseV1) GetMetadata() GetWarehouseV1OutputWarehouseMetadataV1 {
+func (o *GetWarehouseV1OutputWarehouse) GetMetadata() GetWarehouseV1OutputMetadata {
 	if o == nil {
-		return GetWarehouseV1OutputWarehouseMetadataV1{}
+		return GetWarehouseV1OutputMetadata{}
 	}
 	return o.Metadata
 }
 
-func (o *GetWarehouseV1OutputWarehouseV1) GetSettings() map[string]interface{} {
+func (o *GetWarehouseV1OutputWarehouse) GetSettings() map[string]interface{} {
 	if o == nil {
 		return map[string]interface{}{}
 	}
 	return o.Settings
 }
 
-func (o *GetWarehouseV1OutputWarehouseV1) GetWorkspaceID() string {
+func (o *GetWarehouseV1OutputWarehouse) GetWorkspaceID() string {
 	if o == nil {
 		return ""
 	}
@@ -145,12 +145,12 @@ func (o *GetWarehouseV1OutputWarehouseV1) GetWorkspaceID() string {
 // GetWarehouseV1Output - Returns a Warehouse.
 type GetWarehouseV1Output struct {
 	// The returned Warehouse object.
-	Warehouse GetWarehouseV1OutputWarehouseV1 `json:"warehouse"`
+	Warehouse GetWarehouseV1OutputWarehouse `json:"warehouse"`
 }
 
-func (o *GetWarehouseV1Output) GetWarehouse() GetWarehouseV1OutputWarehouseV1 {
+func (o *GetWarehouseV1Output) GetWarehouse() GetWarehouseV1OutputWarehouse {
 	if o == nil {
-		return GetWarehouseV1OutputWarehouseV1{}
+		return GetWarehouseV1OutputWarehouse{}
 	}
 	return o.Warehouse
 }

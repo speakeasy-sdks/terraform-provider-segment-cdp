@@ -2,11 +2,8 @@
 
 package shared
 
-// ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput - Pagination metadata for a list response.
-//
-// Responses return this object alongside a list of resources, which provides the necessary metadata for manipulating a
-// paginated collection. In operations that return lists, it's always present, though some of its fields might not be.
-type ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput struct {
+// ReplaceMessagingSubscriptionsInSpacesAlphaOutputPagination - Information about the pagination of this response.
+type ReplaceMessagingSubscriptionsInSpacesAlphaOutputPagination struct {
 	// The current cursor within a collection.
 	//
 	// Consumers of the API must treat this value as opaque.
@@ -29,28 +26,28 @@ type ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput struct {
 	TotalEntries *float64 `json:"totalEntries,omitempty"`
 }
 
-func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput) GetCurrent() string {
+func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPagination) GetCurrent() string {
 	if o == nil {
 		return ""
 	}
 	return o.Current
 }
 
-func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput) GetNext() *string {
+func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPagination) GetNext() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Next
 }
 
-func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput) GetPrevious() *string {
+func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPagination) GetPrevious() *string {
 	if o == nil {
 		return nil
 	}
 	return o.Previous
 }
 
-func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput) GetTotalEntries() *float64 {
+func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPagination) GetTotalEntries() *float64 {
 	if o == nil {
 		return nil
 	}
@@ -62,7 +59,7 @@ type ReplaceMessagingSubscriptionsInSpacesAlphaOutput struct {
 	// Array of failure subscription status.
 	Failures []MessageSubscriptionResponse `json:"failures"`
 	// Information about the pagination of this response.
-	Pagination *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput `json:"pagination,omitempty"`
+	Pagination *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPagination `json:"pagination,omitempty"`
 	// Array of successful subscription status.
 	Successes []MessageSubscriptionResponse `json:"successes"`
 }
@@ -74,7 +71,7 @@ func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutput) GetFailures() []Messa
 	return o.Failures
 }
 
-func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutput) GetPagination() *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPaginationOutput {
+func (o *ReplaceMessagingSubscriptionsInSpacesAlphaOutput) GetPagination() *ReplaceMessagingSubscriptionsInSpacesAlphaOutputPagination {
 	if o == nil {
 		return nil
 	}
