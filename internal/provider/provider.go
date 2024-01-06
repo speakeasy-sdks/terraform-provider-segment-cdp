@@ -6,7 +6,6 @@ import (
 	"context"
 	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk"
 	"github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk/pkg/models/shared"
-
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"

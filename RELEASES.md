@@ -167,3 +167,11 @@ Based on:
 - Speakeasy CLI 1.130.1 (2.225.2) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [terraform v0.11.1] .
+
+## 2024-01-06 00:29:54
+### Changes
+Based on:
+- OpenAPI Doc 36.2.0 
+- Speakeasy CLI 1.133.1 (2.228.1) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [terraform v0.12.0] .
