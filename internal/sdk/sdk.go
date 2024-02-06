@@ -632,9 +632,9 @@ func New(opts ...SDKOption) *SegmentPublicAPI {
 		sdkConfiguration: sdkConfiguration{
 			Language:          "go",
 			OpenAPIDocVersion: "36.2.0",
-			SDKVersion:        "0.12.4",
-			GenVersion:        "2.237.2",
-			UserAgent:         "speakeasy-sdk/go 0.12.4 2.237.2 36.2.0 segment_public_api",
+			SDKVersion:        "0.13.0",
+			GenVersion:        "2.250.2",
+			UserAgent:         "speakeasy-sdk/go 0.13.0 2.250.2 36.2.0 segment_public_api",
 		},
 	}
 	for _, opt := range opts {

@@ -4,15 +4,15 @@ management:
   docChecksum: 57c3249c0d8939335f2b15be6a4bc7c9
   docVersion: 36.2.0
   speakeasyVersion: internal
-  generationVersion: 2.237.2
-  releaseVersion: 0.12.4
-  configChecksum: a32452b07709867f3110428d530e2013
+  generationVersion: 2.250.2
+  releaseVersion: 0.13.0
+  configChecksum: 798a82038235b09e1681432322546839
   repoURL: https://github.com/speakeasy-sdks/terraform-provider-segment-cdp.git
   repoSubDirectory: .
   published: true
 features:
   terraform:
-    core: 3.8.4
+    core: 3.9.4
     globalSecurity: 2.81.3
     globalServerURLs: 2.82.1
 generatedFiles:
