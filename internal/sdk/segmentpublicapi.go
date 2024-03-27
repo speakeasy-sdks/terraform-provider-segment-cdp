@@ -634,8 +634,8 @@ func New(opts ...SDKOption) *SegmentPublicAPI {
 			Language:          "go",
 			OpenAPIDocVersion: "36.2.0",
 			SDKVersion:        "0.0.1",
-			GenVersion:        "2.286.4",
-			UserAgent:         "speakeasy-sdk/go 0.0.1 2.286.4 36.2.0 github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk",
+			GenVersion:        "2.291.0",
+			UserAgent:         "speakeasy-sdk/go 0.0.1 2.291.0 36.2.0 github.com/ds-terraform/terraform-provider-segment_public_api/internal/sdk",
 			Hooks:             hooks.New(),
 		},
 	}
